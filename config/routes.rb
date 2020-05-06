@@ -15,7 +15,7 @@ Rails.application.routes.draw do
         member do
         end
       end 
-         
+
       resources :racing, only: [:index, :show] do
         member do
         end
