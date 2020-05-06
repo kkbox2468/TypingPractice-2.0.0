@@ -24,9 +24,11 @@ body .quote-input{
   background-color: rgba(0, 0, 0,.4);
   padding: 1rem;
   border-radius: .3rem;
-  width: 700px;
-  max-width: 90%;
+  width: 79vw;
+  height: 25vh;
+  /* max-width: 90%; */
   color: aliceblue;
+  top:9vh;
 }
 .time-counter{
   position: absolute;
@@ -56,22 +58,22 @@ body .quote-input{
 
 .quote-input{
   background-color: transparent;
-  border: 1px solid rgb(105, 105, 105);
+  /* border: 1px solid rgb(105, 105, 105); */
   border-radius: 2px;
   outline: none;
   width: 100%;
-  height: 8rem;
+  height: 30%;
   margin: auto;
   resize: none;
   padding: .5rem 1rem;
   font-size: 2rem;
-  color: rgb(179, 179, 179);
+  color: rgb(179, 179, 179,0);
   /* border-width: 0px; */
   /* color: transparent; */
 }
 
 .quote-input:focus{
-  border-color: rgb(239, 252, 255);
+  border-color: rgb(239, 252, 255,0);
 }
 .selected{
   text-decoration: underline;
@@ -86,4 +88,140 @@ body .quote-input{
 .incorrect{
   color: red;
   background: rgb(255, 182, 182);
+}
+
+/* ---------keyboard---------- */
+
+.keys {
+  /*min-width: /*1085px*//*50vw;
+  /* min-height: 50vh; */
+  /* font-family: monospace; */
+  padding: /*10px*/.8vw;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  border-radius: /*3px*/ .3vw;
+  display: grid;
+  grid-template-columns: repeat(30, /*30px*/2.2vw);
+  grid-template-rows: repeat(5, /*60px*/4.3vw);
+  grid-gap: /*5px*/.4vw;
+}
+.key span {
+  display: block;
+  margin-top: /*17px*/ 1vw;
+}
+.key_symbols {
+  line-height: /*2px*/ .2vw;
+}
+
+.key {
+  background-color: black;
+  border: /*2px*/.1vw solid green;
+  border-radius: /*3px*/ .3vw;
+  grid-column: span 2;
+  font-size: /*15px*/.95vw;
+  text-align: center;
+  padding-top: /*19px*/1.5vw;
+  color: greenyellow;
+  transition: all .1s ease;
+
+}
+
+
+.delete {
+  grid-column: span 4;
+}
+
+.tab {
+  grid-column: span 3;
+}
+
+.backslash {
+  grid-column: span 3;
+}
+
+.capslock {
+  grid-column: span 4;
+}
+
+.return {
+  grid-column: span 4;
+}
+
+.leftshift {
+  grid-column: span 5;
+}
+
+.rightshift {
+  grid-column: span 5;
+}
+
+.leftctrl {
+  grid-column: span 3;
+}
+
+.command {
+  grid-column: span 3;
+  
+}
+
+.space {
+  grid-column: span 13;
+}
+
+.arrowContainer{
+  margin: 0;
+}
+.arrowTop{
+  justify-content:center;
+  margin-left: /*72px*/5.2vw;
+}
+.arrowButtom{
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: /*7px*/.5vw;
+  
+}
+.top{
+  width: /*60px*/4.5em;
+  height: 50%;
+  padding-top: /*3px*/.3em;
+  text-align: center;
+}
+
+.right{
+  width: /*60px*/4.5em;
+  height: 50%;
+  padding-top: /*3px*/.3em;
+  transform: rotate(180deg);
+  text-align: center;
+}
+
+.left{
+  width: /*60px*/4.5em;
+  height: 50%;
+  padding-top: /*3px*/.3em;
+  margin-left: /*3px*/.3em;
+  text-align: center;
+  
+}
+
+.down{
+  width: /*60px*/4.5em;
+  height: 50%;
+  padding-top: /*3px*/.3em;
+  transform: rotate(180deg);
+  margin-left: /*9px*/.7em;
+  margin-right: /*10px*/.8em;
+  text-align: center;
+}
+
+
+.playing{
+  border: /*1px*/.1em solid green;
+  background-color: greenyellow;
+  color: black;
 }
