@@ -1,1 +1,21 @@
-<h1>Fake level</h1>
+<%# <h1>Fake level</h1> %>
+<!-- counter -->
+
+<div class="time-counter mt-5">
+  <%# <div class="timer" id="minutes"></div> %>
+  <div class="timer ml-2" id="seconds"></div>
+  <div class="timer millisec ml-2" id="millisec"></div>
+  <div class="timer " id="wpm"></div>
+</div>
+
+
+<div class="play-container mt-5">
+  <div class="quote-display" id="quoteDisplay"></div>
+  <textarea id="quoteInput" class="quote-input" autofocus type="hidden"></textarea>
+  <!-- autofocus 當頁面載入就會自動focus在input -->
+</div>
+
+<audio id="keyboard-sound">
+  <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
+</audio>
+<%#= javascript_pack_tag 'typearea', 'data-turbolinks-track': 'reload' %>
