@@ -6,17 +6,17 @@ Rails.application.routes.draw do
   resources :playground do
     collection do 
       
-      resources :typing, only: [:show] do
+      resources :typing, only: [:index, :show, :create] do
         member do
         end
       end 
 
-      resources :coding, only: [:show] do
+      resources :coding, only: [:index, :show] do
         member do
         end
       end 
          
-      resources :racing, only: [:show] do
+      resources :racing, only: [:index, :show] do
         member do
         end
       end 
