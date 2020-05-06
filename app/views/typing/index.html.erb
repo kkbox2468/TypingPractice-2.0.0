@@ -1,13 +1,18 @@
 <h1>關卡頁面</h1>
 <ul>
   <li>
-    <%= link_to  "新增關卡", typing_index_path, method: 'POST' %>
-    
+    <%= link_to  "新增關卡", new_typing_path, method: 'GET' %>
   </li>
-  <li>第一關</li>
-  <li>第二關</li>
-  <li>第三關</li>
   <li>
     <%= link_to  "假關卡", typing_path(:id) %>
   </li>
 </ul>
+
+<table class="table table-info">
+  <% @articles.each do |article| %>
+  <tr>
+    <th scope="row">第<%= article.id %>關</th>
+    <td><%= link_to article.content, typing_path(article.id) %></td>
+  </tr>
+  <% end %>
+</table>
