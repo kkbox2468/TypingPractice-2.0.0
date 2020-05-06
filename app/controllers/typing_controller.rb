@@ -6,6 +6,5 @@ class TypingController < ApplicationController
   end
   def create
     render html: 'Create something'
-    
   end
 end

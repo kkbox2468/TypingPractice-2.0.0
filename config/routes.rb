@@ -11,12 +11,12 @@ Rails.application.routes.draw do
         end
       end 
 
-      resources :coding, only: [:show] do
+      resources :coding, only: [:index, :show] do
         member do
         end
       end 
          
-      resources :racing, only: [:show] do
+      resources :racing, only: [:index, :show] do
         member do
         end
       end 
