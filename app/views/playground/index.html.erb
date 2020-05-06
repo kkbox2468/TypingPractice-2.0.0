@@ -1,0 +1,36 @@
+  <h1>
+    選擇模式：typing coding recing 
+  </h1>
+  <div class="lesson-area">
+    <div class="pure-typing">
+      <div class="typing-practice">
+        <div class="tp-title">
+          <p>Typing Practice</p>
+          <%= link_to  "Start!", playground_path(:id) %>
+        </div>
+        <div>
+          <%# 能量條 %>
+        </div>
+      </div>
+      <div class="typing-code">
+        <div class="tc-title">
+          <p>Typing Code</p>
+          <%= link_to  "Start!", coding_path(:id) %>
+        </div>
+        <div>
+          <%# 能量條 %>
+        </div>
+      </div>
+    </div>
+    <div class="race-mode">
+      <div class="typing-race">
+        <div class="tr-title">
+          <p>Typing Race</p>
+        </div>
+        <tr-pic>
+          <img src="https://picsum.photos/400/200" alt="">
+          <%= link_to  "Start!", racing_path(:id)	 %>
+        </tr-pic>
+      </div>
+    </div>
+  </div>
