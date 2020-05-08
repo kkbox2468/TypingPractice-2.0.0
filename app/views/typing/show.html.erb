@@ -10,7 +10,17 @@
 
 
 <div class="play-container mt-5">
-  <div class="quote-display" id="quoteDisplay"></div>
+  <div class="quote-display" id="quoteDisplay">
+    <% @article.each do |character| %>
+    <span><%= character %></span>
+    <% end %>
+
+    <span>a</span>
+    <span>&nbsp;</span>
+    <span>b</span>
+    <span>aasdasd</span>
+
+  </div>
   <textarea id="quoteInput" class="quote-input" autofocus type="hidden"></textarea>
   <!-- autofocus 當頁面載入就會自動focus在input -->
 
@@ -91,5 +101,12 @@
 </audio>
 <%#= javascript_pack_tag 'typearea', 'data-turbolinks-track': 'reload' %>
 
+
 <!-- Keyboard -->
-  
+
+
+<div>
+  <% @article.each do |character| %>
+    <span><%= character.html_safe %></span>
+  <% end %>
+</div>

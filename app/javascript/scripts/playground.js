@@ -86,7 +86,7 @@ quoteInputElement.addEventListener('input', () => {
   //   return textAmount = 0
   // }
   if (correct) {
-    renderNextQuote();
+    // renderNextQuote();
     return textAmount = 0;
   }
 })
@@ -151,7 +151,6 @@ function getTimerTime() {
 }
 function getTimeMillisec() {
   return Math.floor(new Date().getMilliseconds() / 10)
-  
 }
 /* 鍵盤音效 */
 function playSound() {
@@ -171,7 +170,9 @@ function getWpm(){
 }
 
 getWpm();
-renderNextQuote()
+// renderNextQuote()
+// setTimeout(function(){ renderNextQuote(); }, 3000);
+
 window.addEventListener('keydown', playSound);
 };
 

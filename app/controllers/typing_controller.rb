@@ -3,6 +3,9 @@ class TypingController < ApplicationController
     @articles = Article.all
   end
   def show
+    @article = Article.find(params[:id]).content.split(//) 
+    @a2 = Article.find(params[:id]).content
+    @a3 = to_half(@article)
   end
   def new
     @articles = Article.new
@@ -19,5 +22,11 @@ class TypingController < ApplicationController
   private
   def clean_article
     params.require(:article).permit(:content)
+  end
+
+  def to_half(str)
+    full = "　！＂＃＄％＆＇（）＊＋，－．／０１２３４５６７８９：；＜＝＞？＠ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ［＼］＾＿｀ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ｛｜｝～"
+    half = " !\"\#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~" 
+    str.try(full, half)
   end
 end
