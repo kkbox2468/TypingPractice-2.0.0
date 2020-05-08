@@ -3,30 +3,11 @@
 
 
 
-<% if current_user  %>
-  <%= link_to '登出' ,destroy_user_session_path , method: 'delete'  %>
 
-<% else  %>
-  <%= link_to '註冊' ,new_user_registration_path  %>
-  <%= link_to '登入' ,new_user_session_path %>
-<% end  %>
 
-<%= link_to '登出' ,destroy_user_session_path , method: 'delete'  %>
+
 <%= link_to 'admin登出' ,destroy_admin_session_path , method: 'delete'%>
 <%= link_to 'admin登入' ,new_admin_session_path , method: 'get'%>
 
 
-<%#= form_for(@admin ,url: admin_session_path, method: 'post') do |f| %>
 
-  
-  <div>
-    <%#= f.label :email %>   <!--在label後面加「, "姓名"」可改成中文-->
-    <%#= f.text_field :email %>
-  </div>
-  <div>
-    <%#= f.label :password %>
-    <%#= f.text_field :password %>
-  </div>
-  
-  <%#= f.submit %>
-<%# end %>
