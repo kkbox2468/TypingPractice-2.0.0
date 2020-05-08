@@ -1,0 +1,18 @@
+<h1>Coding關卡頁面</h1>
+<ul>
+  <li>
+    <%= link_to  "新增關卡", new_coding_path, method: 'GET' %>
+  </li>
+</ul>
+
+<table class="table table-info">
+  <% @codes.each do |code| %>
+  <tr>
+    <th scope="row">第<%= code.id %>關</th>
+    <td><%= link_to code.content, coding_path(code.id) %></td>
+    <td><%= link_to "編輯", edit_coding_path(code.id) %></td>
+    <td><%= link_to "刪除", coding_path(code.id), method: "DELETE" %></td>
+
+  </tr>
+  <% end %>
+</table>

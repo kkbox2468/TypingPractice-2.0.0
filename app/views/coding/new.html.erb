@@ -1,0 +1,6 @@
+<h1>Create Coding Topics</h1>
+<%= form_for @codes, url: '/playground/coding' do |form| %>
+  <%= form.label :content %>
+  <%= form.text_area :content %>
+  <%= form.submit %>
+<% end %>

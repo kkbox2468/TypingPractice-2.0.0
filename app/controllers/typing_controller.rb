@@ -9,8 +9,6 @@ class TypingController < ApplicationController
     str = Article.find(params[:id]).content
     test_ar = str.split('#')
     @code_item = test_ar.map{|c| c.split(//) }
-
-
   end
   def new
     @articles = Article.new
@@ -18,7 +16,7 @@ class TypingController < ApplicationController
   def create
     @articles = Article.new(clean_article)
     if @articles.save
-      redirect_to root_path
+      redirect_to typing_index_path
     else
       render json: params
     end
