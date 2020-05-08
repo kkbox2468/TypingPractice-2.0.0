@@ -99,14 +99,19 @@
 <audio id="keyboard-sound">
   <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
 </audio>
-<%#= javascript_pack_tag 'typearea', 'data-turbolinks-track': 'reload' %>
 
 
-<!-- Keyboard -->
+
+<div>
+>>>>>>> fix span space
 
 
 <div>
   <% @article.each do |character| %>
-    <span><%= character.html_safe %></span>
+  <span><%= character %></span>
   <% end %>
 </div>
+
+<% @code_item.each do |code| %>
+<div><%= code %></div>
+<% end %>
