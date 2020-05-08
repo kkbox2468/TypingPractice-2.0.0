@@ -57,6 +57,7 @@ body .quote-input{
 }
 .quote-display span{
   font-size: 2rem;
+  white-space: pre;
 }
 
 .quote-input{

@@ -6,12 +6,9 @@ class TypingController < ApplicationController
     @article = Article.find(params[:id]).content.split(//) 
     @a2 = Article.find(params[:id]).content
 
-    test_code = ["ary = Array.new", "Array.new(3)", "Array.new(3, true)"]
-    @code_item = test_code.map{|code| code.split(//)}
-
-    str = "ary = Array.new#Array.new(3)#Array.new(3, true)"
+    str = Article.find(params[:id]).content
     test_ar = str.split('#')
-    @code_item2 = test_ar.map{|c| c.split(//) }
+    @code_item = test_ar.map{|c| c.split(//) }
 
 
   end
