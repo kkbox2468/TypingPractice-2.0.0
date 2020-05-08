@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :playground do
     collection do 
       
-      resources :typing, only: [:index, :show, :create] do
+      resources :typing, only: [:index, :show, :create, :new] do
         member do
         end
       end 
