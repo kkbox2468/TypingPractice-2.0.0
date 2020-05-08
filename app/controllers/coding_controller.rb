@@ -9,7 +9,7 @@ class CodingController < ApplicationController
   def create
     @codes = Code.new(clean_code)
     if @codes.save
-      redirect_to coding_index_path
+      redirect_to coding_index_path, notice: 'The coding topic has created!'
     else
       render json: params
     end
@@ -25,7 +25,7 @@ class CodingController < ApplicationController
   def update
     @codes = Code.find(params[:id])
     if @codes.update(clean_code)
-      redirect_to coding_index_path
+      redirect_to coding_index_path, notice: 'The coding topic has updated!'
     else
       render :edit
     end
@@ -33,7 +33,7 @@ class CodingController < ApplicationController
   def destroy
     @codes = Code.find(params[:id])
     @codes.destroy
-    redirect_to coding_index_path
+    redirect_to coding_index_path, alert: 'The coding topic has destroyed!'
   end
 
 
