@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 2020_05_08_054823) do
     t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
+  create_table "articles", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
