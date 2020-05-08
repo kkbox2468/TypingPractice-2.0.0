@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_062858) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+<<<<<<< HEAD
   create_table "rubies", force: :cascade do |t|
 
     t.text "content"
