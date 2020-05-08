@@ -11,8 +11,9 @@
   <%= link_to '登入' ,new_user_session_path %>
 <% end  %>
 
-
+<%= link_to '登出' ,destroy_user_session_path , method: 'delete'  %>
 <%= link_to 'admin登出' ,destroy_admin_session_path , method: 'delete'%>
+<%= link_to 'admin登入' ,new_admin_session_path , method: 'get'%>
 
 
 <%#= form_for(@admin ,url: admin_session_path, method: 'post') do |f| %>
