@@ -5,32 +5,32 @@
     <div class="pure-typing">
       <div class="typing-practice">
         <div class="tp-title">
-          <p>Typing Practice</p>
-          <%= link_to  "Start!", typing_index_path %>
-        </div>
-        <div>
-          <%# 能量條 %>
+          <p>Typing Practice
+            <%= link_to  "Start!", typing_index_path %>
+          </p>
         </div>
       </div>
       <div class="typing-code">
         <div class="tc-title">
-          <p>Typing Code</p>
-          <%= link_to  "Start!", coding_index_path %>
-        </div>
-        <div>
-          <%# 能量條 %>
+          <p>Typing Code
+            <%= link_to  "Start!", coding_index_path %>
+          </p>
         </div>
       </div>
     </div>
-    <div class="race-mode">
-      <div class="typing-race">
-        <div class="tr-title">
-          <p>Typing Race</p>
+
+    <% if current_user %>
+      <div class="race-mode">
+        <div class="typing-race">
+          <div class="tr-title">
+            <p>Typing Race</p>
+          </div>
+          <tr-pic>
+            <img src="https://picsum.photos/400/200" alt="">
+            <%= link_to  "Start!", "#"	 %>
+          </tr-pic>
         </div>
-        <tr-pic>
-          <img src="https://picsum.photos/400/200" alt="">
-          <%= link_to  "Start!", racing_index_path	 %>
-        </tr-pic>
       </div>
-    </div>
+    <% end %>
+
   </div>
