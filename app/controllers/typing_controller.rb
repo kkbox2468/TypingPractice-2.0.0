@@ -5,7 +5,15 @@ class TypingController < ApplicationController
   def show
     @article = Article.find(params[:id]).content.split(//) 
     @a2 = Article.find(params[:id]).content
-    @code_item = [ "arr.select {|a| a > 3} ", "arr.reject {|a| a < 3} "," arr.drop_while {|a| a < 4}" ]
+
+    test_code = ["ary = Array.new", "Array.new(3)", "Array.new(3, true)"]
+    @code_item = test_code.map{|code| code.split(//)}
+
+    str = "ary = Array.new#Array.new(3)#Array.new(3, true)"
+    test_ar = str.split('#')
+    @code_item2 = test_ar.map{|c| c.split(//) }
+
+
   end
   def new
     @articles = Article.new
