@@ -1,4 +1,4 @@
-<h1>關卡頁面</h1>
+<h1>Typing 關卡頁面</h1>
 <ul>
   <li>
     <%= link_to  "新增關卡", new_typing_path, method: 'GET' %>
@@ -6,10 +6,14 @@
 </ul>
 
 <table class="table table-info">
+  <% n = 1 %>
   <% @articles.each do |article| %>
   <tr>
-    <th scope="row">第<%= article.id %>關</th>
+    <th scope="row">第<%= "#{n}" %>關</th>
     <td><%= link_to article.content, typing_path(article.id) %></td>
+    <td><%= link_to "編輯", edit_typing_path(article.id) %></td>
+    <td><%= link_to "刪除", typing_path(article.id), method: "DELETE" %></td>
   </tr>
+  <% n += 1 %>
   <% end %>
 </table>

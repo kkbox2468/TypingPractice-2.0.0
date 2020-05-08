@@ -1,0 +1,6 @@
+<h1>Edit Typing Topics</h1>
+<%= form_for @article, url: typing_path do |form| %>
+  <%= form.label :content %>
+  <%= form.text_area :content %>
+  <%= form.submit %>
+<% end %>

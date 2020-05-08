@@ -2,14 +2,7 @@ class TypingController < ApplicationController
   def index
     @articles = Article.all
   end
-  def show
-    @article = Article.find(params[:id]).content.split(//) 
-    @a2 = Article.find(params[:id]).content
 
-    str = Article.find(params[:id]).content
-    test_ar = str.split('#')
-    @code_item = test_ar.map{|c| c.split(//) }
-  end
   def new
     @articles = Article.new
   end
@@ -21,6 +14,27 @@ class TypingController < ApplicationController
       render json: params
     end
   end
+  def show
+    @article = Article.find(params[:id]).content.split(//) 
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(clean_article)
+      redirect_to typing_index_path
+    else
+      render :edit
+    end
+  end
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to typing_index_path
+  end
+
 
   private
   def clean_article
