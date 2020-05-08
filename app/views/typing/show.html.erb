@@ -14,12 +14,6 @@
     <% @article.each do |character| %>
     <span><%= character %></span>
     <% end %>
-
-    <span>a</span>
-    <span>&nbsp;</span>
-    <span>b</span>
-    <span>aasdasd</span>
-
   </div>
   <textarea id="quoteInput" class="quote-input" autofocus type="hidden"></textarea>
   <!-- autofocus 當頁面載入就會自動focus在input -->
@@ -96,22 +90,7 @@
   </div>
 </div>
 
-<audio id="keyboard-sound">
-  <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
-</audio>
-
-
-
+  <audio id="keyboard-sound">
+    <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
+  </audio>
 <div>
->>>>>>> fix span space
-
-
-<div>
-  <% @article.each do |character| %>
-  <span><%= character %></span>
-  <% end %>
-</div>
-
-<% @code_item.each do |code| %>
-<div><%= code %></div>
-<% end %>

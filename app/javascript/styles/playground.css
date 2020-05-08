@@ -70,7 +70,7 @@ body .quote-input{
   resize: none;
   padding: .5rem 1rem;
   font-size: 2rem;
-  color: rgb(179, 179, 179,0);
+  color: rgb(179, 179, 179);
   /* border-width: 0px; */
   /* color: transparent; */
 }
