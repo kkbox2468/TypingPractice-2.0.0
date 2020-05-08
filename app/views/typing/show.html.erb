@@ -12,15 +12,32 @@
 <div class="play-container mt-5">
   <div class="quote-display" id="quoteDisplay">
 
-    <% @article.each do |character| %>
+    <!-- <% @article.each do |character| %>
     <span><%= character %></span>
-    <% end %>
-    <% @code_item.each do |code| %>
+    <% end %> -->
+    <!-- <% @code_item.each do |code| %>
+    <div>
+      <% code.each do |character| %>
+      <% if character == " " %>
+        <span> </span>
+      <% else %>
+        <span><%= character %></span>
+      <% end %>
+      <% end %>
+    </div>
+    <% end %> -->
+    <% @code_item2.each do |code| %>
+    <div>
+      <% code.each do |character| %>
+      <% if character == " " %>
+        <span> </span>
+      <% else %>
+        <span><%= character %></span>
+      <% end %>
+      <% end %>
+    </div>
     <% end %>
   </div>
-  <% @code_item.each do |code| %>
-  <div><%= code %></div>
-  <% end %>
   <textarea id="quoteInput" class="quote-input" autofocus type="hidden"></textarea>
   <!-- autofocus 當頁面載入就會自動focus在input -->
 
@@ -100,7 +117,3 @@
     <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
   </audio>
 <div>
-
-  <% @code_item.each do |code| %>
-  <div><%= code %></div>
-  <% end %>
