@@ -1,0 +1,19 @@
+/* .card-title{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+} */
+
+body{
+    background-color: white;
+    background-image: url(/img/welcomeBG.svg);
+    background-repeat: no-repeat;
+    
+}
+
+.welcomeWrap{
+  margin-top: 10rem;
+}
+
+.welcomeContent p{
+  font-size: 3rem;
+  color: white;
+}
