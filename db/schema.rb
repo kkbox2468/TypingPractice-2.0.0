@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_08_054823) do
+ActiveRecord::Schema.define(version: 2020_05_11_062858) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -34,6 +34,33 @@ ActiveRecord::Schema.define(version: 2020_05_08_054823) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "rubies", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ruby_topics", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_articles", force: :cascade do |t|
+    t.float "time"
+    t.float "letter_count"
+    t.float "speed"
+    t.string "wrong_letter"
+    t.float "wrong_letter_count"
+    t.float "accuracy"
+    t.integer "user_id", null: false
+    t.integer "article_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_user_articles_on_article_id"
+    t.index ["user_id"], name: "index_user_articles_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -42,8 +69,11 @@ ActiveRecord::Schema.define(version: 2020_05_08_054823) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "user_articles", "articles"
+  add_foreign_key "user_articles", "users"
 end
