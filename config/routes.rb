@@ -22,12 +22,12 @@ Rails.application.routes.draw do
   resources :playground do
     collection do 
       
-      resources :typing, only: [:index, :show, :create, :new] do
+      resources :typing do
         member do
         end
       end 
 
-      resources :coding, only: [:index, :show] do
+      resources :coding do
         member do
         end
       end 
