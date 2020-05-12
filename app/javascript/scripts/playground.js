@@ -1,5 +1,5 @@
 window.onload = function() {
-  const RNADOM_QUOTE_API_URL = 'https://api.quotable.io/random'
+const RNADOM_QUOTE_API_URL = 'https://api.quotable.io/random'
 const quoteDisplayElement = document.getElementById('quoteDisplay')
 const quoteInputElement = document.getElementById('quoteInput')
 const wpmElement = document.getElementById('wpm')
@@ -29,8 +29,8 @@ const wpmElement = document.getElementById('wpm')
 //   e.preventDefault();
 // })
 
-/* 比對input內的文字，來標注正確與錯誤提示 */ 
 
+/* 比對input內的文字，來標注正確與錯誤提示 */ 
 let textAmount = 0;
 
 quoteInputElement.addEventListener('input', () => {
@@ -75,8 +75,8 @@ quoteInputElement.addEventListener('input', () => {
     console.log(`按鍵次數: ${textAmount}`);
   }
   //印出正確與錯誤次數
-  // console.log(`正確次數: ${rightCounter}`);
-  // console.log(`錯誤次數: ${wrongCounter}`);
+  console.log(`正確次數: ${rightCounter}`);
+  console.log(`錯誤次數: ${wrongCounter}`);
 
   //計算wpm
   // if (secElement.innerText % 5 === 0) {
@@ -182,11 +182,13 @@ window.addEventListener('keydown', function(e){
   console.log('e.code')
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);    //  取得按鍵對應的元素
   key.classList.add('playing');  //為該元素增加 class
-  e.preventDefault();  //阻止tab發生原生功能   
+  if (e.keyCode === 9)
+    e.preventDefault();  //阻止tab發生原生功能 
+  end  
 })
 
 window.addEventListener('keyup', function(e){
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);    //  取得按鍵對應的元素
   key.classList.remove('playing');//為該元素移除 class
-  e.preventDefault();   //阻止tab發生原生功能       
+  // e.preventDefault();   //阻止tab發生原生功能       
 })
