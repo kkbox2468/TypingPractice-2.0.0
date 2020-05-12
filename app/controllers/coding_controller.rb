@@ -1,13 +1,13 @@
 class CodingController < ApplicationController
   def index
     # render :file => "#{Rails.root}/public/404.html",  layout: false, status: :not_found
-    @codes = Code.all
+    @codes = Ruby.all
   end
   def new
-    @codes = Code.new
+    @codes = Ruby.new
   end
   def create
-    @codes = Code.new(clean_code)
+    @codes = Ruby.new(clean_code)
     if @codes.save
       redirect_to coding_index_path, notice: 'The coding topic has created!'
     else
@@ -15,15 +15,15 @@ class CodingController < ApplicationController
     end
   end
   def show
-    str = Code.find(params[:id]).content
+    str = Ruby.find(params[:id]).content
     test_ar = str.split('#')
     @code_item = test_ar.map{|c| c.split(//) }
   end
   def edit
-    @codes = Code.find(params[:id])
+    @codes = Ruby.find(params[:id])
   end
   def update
-    @codes = Code.find(params[:id])
+    @codes = Ruby.find(params[:id])
     if @codes.update(clean_code)
       redirect_to coding_index_path, notice: 'The coding topic has updated!'
     else
@@ -31,7 +31,7 @@ class CodingController < ApplicationController
     end
   end
   def destroy
-    @codes = Code.find(params[:id])
+    @codes = Ruby.find(params[:id])
     @codes.destroy
     redirect_to coding_index_path, alert: 'The coding topic has destroyed!'
   end
@@ -40,6 +40,6 @@ class CodingController < ApplicationController
 
   private
   def clean_code
-    params.require(:code).permit(:content)
+    params.require(:ruby).permit(:content)
   end
 end
