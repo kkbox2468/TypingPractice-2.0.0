@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   validates_uniqueness_of :nickname
+  validates_uniqueness_of :email
 
 
   has_many :user_articles
