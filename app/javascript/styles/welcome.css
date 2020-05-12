@@ -1,0 +1,21 @@
+
+
+#welcomeBg{
+    background-color: rgb(24, 36, 104,.9);
+    overflow: hidden;
+    z-index: -1;
+  
+    
+}
+
+.welcomeWrap{
+  /* position: absolute; */
+  z-index: 100;
+  margin-top: 10rem;
+}
+
+.welcomeContent p{
+  font-size: 3rem;
+  color: rgb(194, 4, 4);
+  font-family: 'Times New Roman', Times, serif;
+}

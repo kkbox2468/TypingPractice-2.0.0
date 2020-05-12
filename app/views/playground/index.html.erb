@@ -2,62 +2,40 @@
     Choose Mode
   </h1>
 
-  <div class="lesson-area ">
-
-    <div class="select-area  d-flex ">
-      <div class="card mb-3" >
-        <div class="row no-gutters">
-          <div class="col-md-4">
-              <img src="https://picsum.photos/150/260" alt="">
+  <div class="modeWrap  d-flex ">
+    <div class="lesson-area">
+      <div class="select-area  d-flex ">
+          <div class="card" style="width: 18rem;">
+              <img src="/img/TypingArticle.svg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title">Typing Practice</h5>
+                  <p class="card-text">打字練習</p>
+                  <a href="/playground/typing" class="btn btn-primary">START NOW</a>
+              </div>
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Typing Practice</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">
-                <%= link_to  "Start!", typing_index_path %>
-              </small></p>
-            </div>
+      
+          <div class="card " style="width: 18rem;">
+              <img src="/img/TypingCode.svg" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title">Typing Code</h5>
+                  <p class="card-text">打code練習</p>
+                  <a href="/playground/coding" class="btn btn-primary">START NOW</a>
+              </div>
           </div>
-        </div>
-      </div>
-      <div class="card mb-3" >
-        <div class="row no-gutters">
-          <div class="col-md-4">
-              <img src="https://picsum.photos/150/260" alt="">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Typing Code</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">
-                <%= link_to  "Start!", coding_index_path %>
-              </small></p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-
-
+  
     <% if current_user %>
       <div class="battle-area">
-        <div class="card ">
-          <div class="row no-gutters">
-            <div class="col-md-6">
-                <img src="https://picsum.photos/400/260" alt="">
-            </div>
-            <div class="col-md-6">
-              <div class="card-body">
-                <h5 class="card-title">Typing Race</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">
-                  <%= link_to  "Start!", "#"	 %>
-                </small></p>
-              </div>
-            </div>
+        <div class="card" style="width: 18rem;">
+          <img src="/img/TypingBattle.svg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Typing Battle</h5>
+            <p class="card-text">與對手對戰</p>
+            <%= link_to "START NOW", "#" ,	class: "btn btn-primary"%>
           </div>
         </div>
       </div>
     <% end %>
   </div>
+  

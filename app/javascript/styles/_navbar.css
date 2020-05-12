@@ -1,0 +1,14 @@
+.navbar {
+  font-family: MuseoSansRounded1000,Hack, sans-serif;
+}
+
+.bg-light {
+  background: rgb(190, 236, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(190, 236, 255, 1) 0%,
+    rgba(118, 184, 212, 1) 50%,
+    rgba(0, 155, 232, 1) 100%
+  );
+  
+}

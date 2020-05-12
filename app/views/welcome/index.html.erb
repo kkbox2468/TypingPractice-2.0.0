@@ -1,23 +1,25 @@
-<h1>首頁</h1>
-
-
-
-
-
-
-
-<%= link_to 'admin登出' ,destroy_admin_session_path , method: :delete %>
-<%= link_to 'admin登入' ,new_admin_session_path , method: 'get'%>
-
-
-
-<div class="card bg-dark text-white" style="border: none;">
-  <img src="https://picsum.photos/id/300/600/400" class="card-img"   alt="">
-  <div class="card-img-overlay" style="color: black; ">
-    <h5 class="card-title">Hacker Novice</h5>
-    <p class="card-text">打字練習</p>
-    <p class="card-text">
-      <%= link_to  "Start it now", playground_index_path, class: 'nav-link' %>
-    </p>
+  <canvas id="welcomeBg" width="1400px" height="3000px"></canvas>
+  
+  
+  <!-- admin權限登入要放出來？ -->
+  <%= link_to 'admin登出（是否要藏起來）' ,destroy_admin_session_path , method: :delete %>
+  <%= link_to 'admin登入（是否要藏起來）' ,new_admin_session_path , method: 'get'%> 
+  <!-- admin權限登入要放出來？ -->
+  
+  <div class="welcomeWrap">
+    <div class="welcomeContent">
+      <p>Try to type faster ! </p>
+      <%= link_to  "Start Now", playground_index_path, class: 'btn btn-primary' %>
+    </div>
   </div>
-</div>
+    
+
+
+
+
+
+
+
+
+
+
