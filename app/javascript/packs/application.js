@@ -22,3 +22,4 @@ require("scripts")
 // import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
+import "controllers"
