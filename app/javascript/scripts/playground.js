@@ -202,7 +202,7 @@ function playSound() {
 }
 
   
-let wpm
+let wpm = 0
   
 function getWpm(){
   var a = setInterval(() => {
