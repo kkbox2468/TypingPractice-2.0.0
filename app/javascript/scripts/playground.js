@@ -2,8 +2,8 @@ window.onload = function() {
 const RNADOM_QUOTE_API_URL = 'https://api.quotable.io/random'
 const quoteDisplayElement = document.getElementById('quoteDisplay')
 const quoteInputElement = document.getElementById('quoteInput')
+const quotetopicElement = document.getElementById('quotetopic')
 const wpmElement = document.getElementById('wpm')
-
 
 /* 監聽input中的改變 */ 
 // quoteInputElement.addEventListener('input', () => {
@@ -32,8 +32,15 @@ const wpmElement = document.getElementById('wpm')
 
 /* 比對input內的文字，來標注正確與錯誤提示 */ 
 let textAmount = 0;
+let startType = 0;
 
 quoteInputElement.addEventListener('input', () => {
+  if (startType === 0) {
+    startTimer();
+    getWpm();
+  }
+  startType++;
+
   const arrayQuote = quoteDisplayElement.querySelectorAll('span');
   const arrayValue = quoteInputElement.value.split('')
   const inputIndex = quoteInputElement.value.length
@@ -75,8 +82,8 @@ quoteInputElement.addEventListener('input', () => {
     console.log(`按鍵次數: ${textAmount}`);
   }
   //印出正確與錯誤次數
-  console.log(`正確次數: ${rightCounter}`);
-  console.log(`錯誤次數: ${wrongCounter}`);
+  // console.log(`正確次數: ${rightCounter}`);
+  // console.log(`錯誤次數: ${wrongCounter}`);
 
   //計算wpm
   // if (secElement.innerText % 5 === 0) {
@@ -89,6 +96,40 @@ quoteInputElement.addEventListener('input', () => {
     // renderNextQuote();
     return textAmount = 0;
   }
+  
+  /* console輸入結果 */
+  const inputValue = quoteInputElement.value
+  console.log(`輸入的內容:${inputValue}`)
+
+  const inputValueLength = inputValue.length 
+  console.log(`已輸入字數：${inputValueLength}`)  
+
+  const contentTest = (quotetopicElement.getElementsByTagName('span').length) 
+  console.log(`題目字數:${contentTest}`)
+
+
+  
+  const result = contentTest - inputValueLength    
+        
+  const corrextRate = rightCounter / contentTest * 100
+        
+  // 時間（秒數）
+  const timeSum = document.getElementById('seconds').innerText
+        
+  if (result > 0) {
+    console.log(`加油、還差：${result}個字`)
+    console.log(timeSum)
+  } else {
+    console.log("完成")
+    this.alert(
+      `
+      成績揭曉： 
+      打字平均速度為：${wpm}WPM,
+      總花費時間：${timeSum},
+      完成度：${corrextRate.toFixed(2)}％,
+      `
+    )
+  }  
 })
 
 
@@ -147,10 +188,10 @@ function startTimer() {
 }
 
 function getTimerTime() {
-  return Math.floor((new Date() - startTime) / 1000)
+  return `${Math.floor((new Date() - startTime) / 1000)}秒`
 }
 function getTimeMillisec() {
-  return Math.floor(new Date().getMilliseconds() / 10)
+  return `${Math.floor(new Date().getMilliseconds() / 10)}毫秒`
 }
 /* 鍵盤音效 */
 function playSound() {
@@ -160,16 +201,18 @@ function playSound() {
   sound.play();
 }
 
+  
+let wpm
+  
 function getWpm(){
   var a = setInterval(() => {
-    let wpm = Math.floor((textAmount / 0.83));
+    wpm = Math.floor((textAmount / 0.83));
     wpmElement.innerText = `${wpm}wpm`
     console.log(`-------------${wpm}------------`);
     return textAmount = 0
   }, 10000);
 }
 
-getWpm();
 // renderNextQuote()
 // setTimeout(function(){ renderNextQuote(); }, 3000);
 
@@ -182,16 +225,27 @@ window.addEventListener('keydown', function(e){
   // console.log('e.code')
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);    //  取得按鍵對應的元素
   key.classList.add('playing');  //為該元素增加 class
-  if (e.keyCode === 9)
+  if (e.keyCode === 9){
     e.preventDefault();  //阻止tab發生原生功能 
+<<<<<<< HEAD
 
   
+=======
+  }
+>>>>>>> master
 })
 
 window.addEventListener('keyup', function(e){
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);    //  取得按鍵對應的元素
   key.classList.remove('playing');//為該元素移除 class
+<<<<<<< HEAD
   if (e.keyCode === 9)
     e.preventDefault(); //阻止tab發生原生功能 
 
+=======
+  if (e.keyCode === 9){
+    e.preventDefault();  //阻止tab發生原生功能 
+  }
+  
+>>>>>>> master
 })

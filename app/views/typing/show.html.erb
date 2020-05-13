@@ -11,22 +11,21 @@
 
 <div class="play-container mt-5">
   <div class="quote-display" id="quoteDisplay">
+    <div id="quotetopic">
+      <% @article.each do |character| %>
+      <span ><%= character %></span>
+      <% end %>
+    </div>
 
-    <% @article.each do |character| %>
-    <span><%= character %></span>
-    <% end %>
+    <textarea id="quoteInput" class="quote-input" autofocus type="hidden"></textarea>
+<!-- autofocus 當頁面載入就會自動focus在input -->
 
-  <textarea id="quoteInput" class="quote-input" autofocus type="hidden"></textarea>
-  <!-- autofocus 當頁面載入就會自動focus在input -->
-  
-  
-  <audio id="keyboard-sound">
+    <audio id="keyboard-sound">
+      <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
+    </audio>
+  <div>
     
-    <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
-  </audio>
-<div>
-
-  <div class="keys" id="keyboard">
+  <div class="keys">
     <div class="key key_symbols" data-key="192">~<span>`</span></div>
     <div class="key key_symbols" data-key="49">!<span>1</span></div>
     <div class="key key_symbols" data-key="50">@<span>2</span></div>
@@ -86,9 +85,17 @@
     <div class="key space" data-key="32">Space</div>
     <div class="key command" data-key="93">Cmd</div>
     <div class="key arrows_all">
+<<<<<<< HEAD
       <div class="key top" data-key="38">↑</div>  
       <div class="key left" data-key="37">←</div>
       <div class="key down" data-key="40">↑</div>
       <div class="key right" data-key="39">←</div>
     </div>
+=======
+    <div class="key top" data-key="38">↑</div>  
+    <div class="key left" data-key="37">←</div>
+    <div class="key down" data-key="40">↑</div>
+    <div class="key right" data-key="39">←</div>
+  </div>
+>>>>>>> master
 </div>

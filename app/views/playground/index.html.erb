@@ -25,7 +25,8 @@
       </div>
     </div>
   
-    <% if current_user %>
+    <%# 無論會員跟開發者有無登入都看得到這塊 %>
+    <% if current_user || current_admin %> 
       <div class="battle-area">
         <div class="card" style="width: 18rem;">
           <img src="/img/TypingBattle.svg" class="card-img-top" alt="...">

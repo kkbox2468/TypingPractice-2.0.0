@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_05_11_062858) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -25,7 +28,6 @@ ActiveRecord::Schema.define(version: 2020_05_11_062858) do
     t.datetime "locked_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
   create_table "articles", force: :cascade do |t|
@@ -47,8 +49,8 @@ ActiveRecord::Schema.define(version: 2020_05_11_062858) do
     t.string "wrong_letter"
     t.float "wrong_letter_count"
     t.float "accuracy"
-    t.integer "user_id", null: false
-    t.integer "article_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "article_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["article_id"], name: "index_user_articles_on_article_id"
