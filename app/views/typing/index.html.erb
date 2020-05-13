@@ -17,3 +17,21 @@
   <% n += 1 %>
   <% end %>
 </table>
+
+
+
+
+<%# -------關卡卡片------- %>
+
+  <% n = 1 %>
+    <% @articles.each do |article| %>
+<div class="card table table-info" style="width: 18rem;" >
+    <div class="card-body">
+      <h5 class="card-title">第<%= "#{n}" %>關</h5>
+      <p class="card-text"><%= link_to article.content, typing_path(article.id) %></p>
+      <a href="#" class="btn btn-primary">編輯</a>
+      <a href="#" class="btn btn-primary">刪除</a>
+    </div>
+</div>
+    <% n += 1 %>
+  <% end %>

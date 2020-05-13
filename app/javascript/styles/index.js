@@ -7,6 +7,7 @@ import './playground.css'
 
 import './welcome.css'
 
+import './typing.css'
 
 
 import 'bootstrap/dist/css/bootstrap.css'

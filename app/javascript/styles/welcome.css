@@ -32,5 +32,9 @@
   color: black;
   background-color:white;
   border-color: black;
+}
+
+a:active{
+  color:white;
   
 }
