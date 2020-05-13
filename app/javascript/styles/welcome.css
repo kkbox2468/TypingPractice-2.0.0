@@ -1,6 +1,5 @@
 
 
-<<<<<<< HEAD
 #welcomeBg {
   background-color: rgba(0, 84, 163, 0.9);
   overflow: hidden;
@@ -12,14 +11,6 @@
   touch-action: none;
   -webkit-user-drag: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-=======
-#welcomeBg{
-    background-color: rgb(24, 36, 104,.9);
-    overflow: hidden;
-    margin: ;
-  
-    
->>>>>>> master
 }
 
 .welcomePage {
@@ -33,7 +24,6 @@
 .welcomeContent p {
   font-size: 3rem;
   color: rgb(255, 255, 255);
-<<<<<<< HEAD
   font-family:monospace;
 }
 
@@ -48,7 +38,3 @@ a:active{
   color:white;
   
 }
-=======
-  font-family: monospace;
-}
->>>>>>> master

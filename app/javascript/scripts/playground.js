@@ -227,25 +227,14 @@ window.addEventListener('keydown', function(e){
   key.classList.add('playing');  //為該元素增加 class
   if (e.keyCode === 9){
     e.preventDefault();  //阻止tab發生原生功能 
-<<<<<<< HEAD
-
-  
-=======
   }
->>>>>>> master
 })
 
 window.addEventListener('keyup', function(e){
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);    //  取得按鍵對應的元素
   key.classList.remove('playing');//為該元素移除 class
-<<<<<<< HEAD
-  if (e.keyCode === 9)
-    e.preventDefault(); //阻止tab發生原生功能 
-
-=======
   if (e.keyCode === 9){
     e.preventDefault();  //阻止tab發生原生功能 
   }
   
->>>>>>> master
 })

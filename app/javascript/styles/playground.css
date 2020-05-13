@@ -121,11 +121,7 @@ h1{
 }
 
 .battle-area .card{
-<<<<<<< HEAD
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-=======
   box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
->>>>>>> master
   
 }
 
@@ -151,19 +147,10 @@ h1{
   grid-template-rows: repeat(5, 4.3vw);
   grid-gap: .4vw;
 }
-<<<<<<< HEAD
 .keys span {
   display: block;
   margin-top: 1vw;
   font-size: .95vw;
-=======
-.key span{
-  display:block;
-  margin-top: 1vw;
-  font-size: .95vw;
-  /* background-color: black; */
-  color: greenyellow;
->>>>>>> master
 }
 .key_symbols {
   line-height:  .2vw;
@@ -270,18 +257,8 @@ h1{
 
 
 
-.playing{
+.playing {
   border: .1em solid green;
-<<<<<<< HEAD
-=======
-  background-color: greenyellow;
-  color: black;
-}
-
-
-.playing span{
-  /* border: .1em solid green; */
->>>>>>> master
   background-color: greenyellow;
   color: black;
   text-decoration: none;
