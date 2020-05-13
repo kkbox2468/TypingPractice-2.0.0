@@ -115,10 +115,11 @@ h1{
 
 .select-area .card{
   margin-right: 2rem;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
 }
 
-.battle-area{
-  /* background-color: red; */
+.battle-area .card{
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
   
 }
 
@@ -144,9 +145,12 @@ h1{
   grid-template-rows: repeat(5, 4.3vw);
   grid-gap: /*5px*/.4vw;
 }
-.key span {
-  display: block;
-  margin-top: /*17px*/ 1vw;
+.key span{
+  display:block;
+  margin-top: 1vw;
+  font-size: .95vw;
+  /* background-color: black; */
+  color: greenyellow;
 }
 .key_symbols {
   line-height: /*2px*/ .2vw;
@@ -254,7 +258,14 @@ h1{
 
 
 .playing{
-  border: /*1px*/.1em solid green;
+  border: .1em solid green;
+  background-color: greenyellow;
+  color: black;
+}
+
+
+.playing span{
+  /* border: .1em solid green; */
   background-color: greenyellow;
   color: black;
 }
