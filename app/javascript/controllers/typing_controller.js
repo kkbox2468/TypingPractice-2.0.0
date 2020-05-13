@@ -5,10 +5,12 @@ export default class extends Controller {
   
   typein() {
 
-    this.contentTarget.textContent = 'Hello, Stimulus!'
+    console.log('lol')
 
-    let myTypeInput = document.querySelector('.keys').value;
-    console.log(myTypeInput)
+    // this.contentTarget.textContent = 'Hello, Stimulus!'
+
+    // let myTypeInput = document.querySelector('.keys').value;
+    // console.log(myTypeInput)
     
     // this.mytimeTarget.textContent = 'Hello, Stimulus!'
   }

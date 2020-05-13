@@ -3,19 +3,42 @@
 
 
 
-<div class="time-counter mt-5 d-flex" >
+<div class="time-counter mt-5" >
   <%# <div class="timer" id="minutes" ></div> %>
-  <div class="timer ml-2" id="seconds" >0</div>
-  <div class="timer millisec ml-2" id="millisec"></div>
-  <div class="timer" id="wpm"></div>
+  <div class="timer">
+    <div>時間</div>       
+    <div class="timer ml-2" id="seconds" >0</div>
+    <div>秒</div>       
+  </div>
+  <!-- <div class="timer">
+    <div>：</div>       
+    <div class="timer millisec ml-2" id="millisec">0</div>
+  </div> -->
+  <div class="timer">
+    <div>|速度</div>       
+    <div class="timer" id="wpm">0</div>
+    <div>WPM</div>       
+  </div>
 </div>
+
+<form action="post">
+  <div class="inputtime">
+    <input type="text">
+  </div>
+  <div class="inputwpm">
+    <input type="text">
+  </div>
+  <input type="submit">
+</form>
+
+
 
 
 <div class="play-container mt-5" data-controller="typing">
   <div class="quote-display" id="quoteDisplay">
     <div id="quotetopic">
       <% @article.each do |character| %>
-      <span ><%= character %></span>
+      <span data-target="typing.content"><%= character %></span>
       <% end %>
     </div>
 
