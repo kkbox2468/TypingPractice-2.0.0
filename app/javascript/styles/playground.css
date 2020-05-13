@@ -101,7 +101,7 @@ h1{
   text-align: center;
   /* background-color: lawngreen; */
   font-family: hack;
-  color: white;
+  color: black;
   margin-bottom: 2rem;
 }
 
@@ -110,15 +110,18 @@ h1{
 }
 
 .select-area { 
+  
   justify-content: space-between;
 }
 
 .select-area .card{
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
   margin-right: 2rem;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
 }
 
-.battle-area{
-  /* background-color: red; */
+.battle-area .card{
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
   
 }
 
@@ -129,7 +132,7 @@ h1{
 
 
 
-.keys {
+#keyboard {
   /* width: 50rem;  */
   /* min-height: 50vh; */
   padding:.8vw;
@@ -142,14 +145,15 @@ h1{
   display: grid;
   grid-template-columns: repeat(30,2.2vw);
   grid-template-rows: repeat(5, 4.3vw);
-  grid-gap: /*5px*/.4vw;
+  grid-gap: .4vw;
 }
-.key span {
+.keys span {
   display: block;
-  margin-top: /*17px*/ 1vw;
+  margin-top: 1vw;
+  font-size: .95vw;
 }
 .key_symbols {
-  line-height: /*2px*/ .2vw;
+  line-height:  .2vw;
 }
 
 
@@ -253,8 +257,9 @@ h1{
 
 
 
-.playing{
-  border: /*1px*/.1em solid green;
+.playing {
+  border: .1em solid green;
   background-color: greenyellow;
   color: black;
+  text-decoration: none;
 }

@@ -1,20 +1,30 @@
-  <canvas id="welcomeBg" width="1400px" height="3000px"></canvas>
+  <canvas id="welcomeBg"></canvas>
   
   
   <!-- admin權限登入要放出來？ -->
-  <%= link_to 'admin登出（是否要藏起來）' ,destroy_admin_session_path , method: :delete %>
-  <%= link_to 'admin登入（是否要藏起來）' ,new_admin_session_path , method: 'get'%> 
+  <!-- <%= link_to 'admin登出（是否要藏起來）' ,destroy_admin_session_path , method: :delete %> -->
+  <!--  <%= link_to 'admin登入（是否要藏起來）' ,new_admin_session_path , method: 'get'%>  -->
   <!-- admin權限登入要放出來？ -->
   
-  <div class="welcomeWrap">
+  <div class="welcomePage" >
     <div class="welcomeContent">
       <p>Try to type faster ! </p>
       <%= link_to  "Start Now", playground_index_path, class: 'btn btn-primary' %>
     </div>
   </div>
-    
 
 
+
+
+  <!-- <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">Try to type faster !</p>
+      <a href="#" class="btn btn-primary">GO!</a>
+    </div>
+  </div>
+
+ -->
 
 
 
