@@ -13,14 +13,10 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" unless params[:controller] == 'welcome' && params[:action] == 'index'%>
-    <%= render "shared/flash"  unless params[:controller] == 'welcome' && params[:action] == 'index'%>
-    <% unless current_page?(root_path)%>
+    <%= render "shared/navbar" %>
+    <%= render "shared/flash"  %>
       <div class='container'>
         <%= yield %>
       </div>
-      <%else%>
-        <%= yield %> 
-    <%end%>
   </body>
 </html>

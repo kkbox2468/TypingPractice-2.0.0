@@ -13,9 +13,8 @@
   </head>
 
   <body>
-    <%# <%= render "shared/navbar" unless params[:controller] == 'welcome' && params[:action] == 'index'%> %>
-    <%= render "shared/flash"  unless params[:controller] == 'welcome' && params[:action] == 'index'%>
+    <%# <%= render "shared/pure_navbar"%> 
+    <%= render "shared/flash" %>
         <%= yield %>
-    <%end%>
   </body>
 </html>
