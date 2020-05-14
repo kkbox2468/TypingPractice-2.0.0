@@ -20,22 +20,8 @@
     <div>WPM</div>       
   </div>
 </div>
-<%
-=begin%>
- 
-<form action='/playground/typing'  method="post">
-  <div class="inputtime">
-    <input type="text">
-  </div>
-  <div class="inputwpm">
-    <input type="text">
-  </div>
-  <input type="submit">
-</form> 
-<%
-=end%>
 
-<%= form_for( @user_article, url: user_article_index_path , method: 'post') do |f| %>
+<!-- <%= form_for( @user_article, url: user_article_index_path , method: 'post') do |f| %>
   <div class="inputtime"><%= f.text_field :time %></div>
   <div class="inputtime"><%= f.text_field :time %></div>字數
   <div class="inputwpm"><%= f.text_field :speed %></div>
@@ -46,9 +32,7 @@
   <div class="articleId"><%= f.text_field :article_id, value: @article.id %></div>
 
   <%= f.submit name: 'submit_result' %>
-<% end %> 
-
-
+<% end %>  -->
 
 <div class="play-container mt-5" data-controller="typing">
   <div class="quote-display" id="quoteDisplay">
