@@ -98,13 +98,13 @@ quoteInputElement.addEventListener('input', () => {
   
   /* console輸入結果 */
   const inputValue = quoteInputElement.value
-  // console.log(`輸入的內容:${inputValue}`)
+  console.log(`輸入的內容:${inputValue}`)
 
   const inputValueLength = inputValue.length 
-  // console.log(`已輸入字數：${inputValueLength}`)  
+  console.log(`已輸入字數：${inputValueLength}`)  
 
   const contentTest = (quotetopicElement.getElementsByTagName('span').length) 
-  // console.log(`題目字數:${contentTest}`)
+  console.log(`題目字數:${contentTest}`)
 
   const result = contentTest - inputValueLength    
         
@@ -113,8 +113,8 @@ quoteInputElement.addEventListener('input', () => {
   // 時間（秒數）
   const timeSum = document.getElementById('seconds').innerText      
   if (result > 0) {
-    // console.log(`加油、還差：${result}個字`)
-    // console.log(timeSum)
+    console.log(`加油、還差：${result}個字`)
+    console.log(timeSum)
   } else {
     console.log("完成");
     this.alert(

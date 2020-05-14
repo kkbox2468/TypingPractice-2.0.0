@@ -20,8 +20,10 @@
     <div>WPM</div>       
   </div>
 </div>
-
-<form action="post">
+<%
+=begin%>
+ 
+<form action='/playground/typing'  method="post">
   <div class="inputtime">
     <input type="text">
   </div>
@@ -29,7 +31,19 @@
     <input type="text">
   </div>
   <input type="submit">
-</form>
+</form> 
+<%
+=end%>
+
+<%= form_for( @user_article, url: typing_index_path, remote: true, method: 'post') do |f| %>
+  <div class="inputtime">
+    <%= f.text_field :time %>
+  </div>
+  <div class="inputwpm">
+    <%= f.text_field :speed %>
+  </div>
+  <%= f.submit %>
+<% end %> 
 
 
 

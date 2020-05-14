@@ -15,7 +15,13 @@ class TypingController < ApplicationController
     end
   end
   def show
+    
+    # render html: params
+    # html: params
     @article = Article.find(params[:id]).content.split(//) 
+    # byebug
+
+    @user_article  = UserArticle.new
     
   end
 
