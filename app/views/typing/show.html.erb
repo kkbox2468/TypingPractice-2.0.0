@@ -36,20 +36,14 @@
 =end%>
 
 <%= form_for( @user_article, url: user_article_index_path , method: 'post') do |f| %>
-  <div class="inputtime">
-    <%= f.text_field :time %>
-  </div>
-  <div class="inputwpm">
-    <%= f.text_field :speed %>
-  </div>
-  <div class="userId">
-    <%= f.text_field :user_id, value: current_user.id %>
-  </div>
-  <div class="articleId">
-    <%= f.text_field :article_id, value: @article.id %>
-  </div>
-  <!-- <input value="<%= current_user.id %>">
-  <input value="<%= @article.id %>"> -->
+  <div class="inputtime"><%= f.text_field :time %></div>
+  <div class="inputtime"><%= f.text_field :time %></div>字數
+  <div class="inputwpm"><%= f.text_field :speed %></div>
+  <div class="inputwpm"><%= f.text_field :speed %></div>錯誤字母
+  <div class="inputwpm"><%= f.text_field :speed %></div>錯誤字數
+  <div class="inputwpm"><%= f.text_field :speed %></div>準確率
+  <div class="userId"><%= f.text_field :user_id, value: current_user.id %></div>
+  <div class="articleId"><%= f.text_field :article_id, value: @article.id %></div>
 
   <%= f.submit name: 'submit_result' %>
 <% end %> 
@@ -132,9 +126,9 @@
     <div class="key space" data-key="32">Space</div>
     <div class="key command" data-key="93">Cmd</div>
     <div class="key arrows_all">
-      <div class="key top" data-key="38">↑</div>  
-      <div class="key left" data-key="37">←</div>
-      <div class="key down" data-key="40">↑</div>
-      <div class="key right" data-key="39">←</div>
+    <div class="key top" data-key="38">↑</div>  
+    <div class="key left" data-key="37">←</div>
+    <div class="key down" data-key="40">↑</div>
+    <div class="key right" data-key="39">←</div>
     </div>
 </div>

@@ -244,7 +244,7 @@ window.addEventListener('keyup', function(e){
 })
 
 /* ----------result--------- */
-// getresult()d
+// getresult()
 
 function getresult() {
   let resultTime = document.querySelector('#seconds').innerText
