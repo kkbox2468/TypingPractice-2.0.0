@@ -5,6 +5,7 @@ const quoteInputElement = document.getElementById('quoteInput')
 const quotetopicElement = document.getElementById('quotetopic')
 const wpmElement = document.getElementById('wpm')
 
+
 /* 監聽input中的改變 */ 
 // quoteInputElement.addEventListener('input', () => {
 //   console.log('changed');
@@ -98,13 +99,13 @@ quoteInputElement.addEventListener('input', () => {
   
   /* console輸入結果 */
   const inputValue = quoteInputElement.value
-  console.log(`輸入的內容:${inputValue}`)
+  // console.log(`輸入的內容:${inputValue}`)
 
   const inputValueLength = inputValue.length 
-  console.log(`已輸入字數：${inputValueLength}`)  
+  // console.log(`已輸入字數：${inputValueLength}`)  
 
   const contentTest = (quotetopicElement.getElementsByTagName('span').length) 
-  console.log(`題目字數:${contentTest}`)
+  // console.log(`題目字數:${contentTest}`)
 
   const result = contentTest - inputValueLength    
         
@@ -113,9 +114,11 @@ quoteInputElement.addEventListener('input', () => {
   // 時間（秒數）
   const timeSum = document.getElementById('seconds').innerText      
   if (result > 0) {
-    console.log(`加油、還差：${result}個字`)
-    console.log(timeSum)
+    // console.log(`加油、還差：${result}個字`)
+    // console.log(timeSum)
   } else {
+    // console.log('!1')
+
     console.log("完成");
     this.alert(
       `
@@ -125,7 +128,12 @@ quoteInputElement.addEventListener('input', () => {
       完成度：${corrextRate.toFixed(2)}％,
       `
     );
+    // debugger
     getresult();
+    // console.log('!')
+      
+    const submitResult =  document.querySelector('#new_user_article')
+    submitResult.submit();
   }  
 })
 
@@ -156,7 +164,7 @@ async function renderNextQuote() {
     quoteDisplayElement.appendChild(characterSpan);
   });
   quoteInputElement.value = null
-  startTimer()
+  startTimer();
 }
 
 let startTime
@@ -236,17 +244,21 @@ window.addEventListener('keyup', function(e){
 })
 
 /* ----------result--------- */
+// getresult()d
 
-// getresult();
-
-window.addEventListener('keyup',function getresult() {
+function getresult() {
   let resultTime = document.querySelector('#seconds').innerText
-  let catchResultTime = document.querySelector('.inputtime')
-  catchResultTime.innerHTML=(resultTime)
-
+  let catchResultTime = document.getElementById('user_article_time')
+  catchResultTime.value = parseFloat(resultTime)
+  
   let resultWpm = document.querySelector('#wpm').innerText
-  let catchResultWpm = document.querySelector('.inputwpm')
-  catchResultWpm.innerHTML=(resultWpm)
+  let catchResultWpm = document.getElementById('user_article_speed')
+  catchResultWpm.value = parseFloat(resultWpm)
+}
 
-})
+window.addEventListener('keyup', getresult())
+
+
+/* ----------submit reslut--------- */
+
 

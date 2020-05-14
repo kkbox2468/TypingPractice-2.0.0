@@ -35,23 +35,31 @@
 <%
 =end%>
 
-<%= form_for( @user_article, url: typing_index_path, remote: true, method: 'post') do |f| %>
+<%= form_for( @user_article, url: user_article_index_path , method: 'post') do |f| %>
   <div class="inputtime">
     <%= f.text_field :time %>
   </div>
   <div class="inputwpm">
     <%= f.text_field :speed %>
   </div>
-  <%= f.submit %>
-<% end %> 
+  <div class="userId">
+    <%= f.text_field :user_id, value: current_user.id %>
+  </div>
+  <div class="articleId">
+    <%= f.text_field :article_id, value: @article.id %>
+  </div>
+  <!-- <input value="<%= current_user.id %>">
+  <input value="<%= @article.id %>"> -->
 
+  <%= f.submit name: 'submit_result' %>
+<% end %> 
 
 
 
 <div class="play-container mt-5" data-controller="typing">
   <div class="quote-display" id="quoteDisplay">
     <div id="quotetopic">
-      <% @article.each do |character| %>
+      <% @article.content.split(//).each do |character| %>
       <span data-target="typing.content"><%= character %></span>
       <% end %>
     </div>
