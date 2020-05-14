@@ -1,7 +1,7 @@
 class TypingController < ApplicationController
   def index
     @articles = Article.all
-  end
+  end 
 
   def new
     @articles = Article.new
@@ -15,7 +15,14 @@ class TypingController < ApplicationController
     end
   end
   def show
-    @article = Article.find(params[:id]).content.split(//) 
+    
+    # render html: params
+    # html: params
+    @article = Article.find(params[:id])
+    # @article = Article.find(params[:id]).content.split(//) 
+    @user_article  = UserArticle.new
+    # byebug
+
     
   end
 

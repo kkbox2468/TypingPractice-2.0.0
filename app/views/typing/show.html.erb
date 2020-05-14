@@ -1,23 +1,48 @@
 <%# <h1>Fake level</h1> %>
 <!-- counter -->
 
-<div class="time-counter mt-5">
-  <%# <div class="timer" id="minutes"></div> %>
-  <div class="timer ml-2" id="seconds"></div>
-  <div class="timer millisec ml-2" id="millisec"></div>
-  <div class="timer " id="wpm"></div>
+
+
+<div class="time-counter mt-5" >
+  <%# <div class="timer" id="minutes" ></div> %>
+  <div class="timer">
+    <div>時間</div>       
+    <div class="timer ml-2" id="seconds" >0</div>
+    <div>秒</div>       
+  </div>
+  <!-- <div class="timer">
+    <div>：</div>       
+    <div class="timer millisec ml-2" id="millisec">0</div>
+  </div> -->
+  <div class="timer">
+    <div>|速度</div>       
+    <div class="timer" id="wpm">0</div>
+    <div>WPM</div>       
+  </div>
 </div>
 
+<!-- <%= form_for( @user_article, url: user_article_index_path , method: 'post') do |f| %>
+  <div class="inputtime"><%= f.text_field :time %></div>
+  <div class="inputtime"><%= f.text_field :time %></div>字數
+  <div class="inputwpm"><%= f.text_field :speed %></div>
+  <div class="inputwpm"><%= f.text_field :speed %></div>錯誤字母
+  <div class="inputwpm"><%= f.text_field :speed %></div>錯誤字數
+  <div class="inputwpm"><%= f.text_field :speed %></div>準確率
+  <div class="userId"><%= f.text_field :user_id, value: current_user.id %></div>
+  <div class="articleId"><%= f.text_field :article_id, value: @article.id %></div>
 
-<div class="play-container mt-5">
+  <%= f.submit name: 'submit_result' %>
+<% end %>  -->
+
+<div class="play-container mt-5" data-controller="typing">
   <div class="quote-display" id="quoteDisplay">
     <div id="quotetopic">
-      <% @article.each do |character| %>
-      <span ><%= character %></span>
+      <% @article.content.split(//).each do |character| %>
+      <span data-target="typing.content"><%= character %></span>
       <% end %>
     </div>
 
-    <textarea id="quoteInput" class="quote-input" autofocus type="hidden"></textarea>
+    <textarea id="quoteInput" class="quote-input" autofocus type="hidden" data-action="typing#typein"></textarea>
 <!-- autofocus 當頁面載入就會自動focus在input -->
 
     <audio id="keyboard-sound">

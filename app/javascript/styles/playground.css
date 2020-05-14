@@ -31,7 +31,7 @@ body .quote-input{
   top:9vh;
 }
 .time-counter{
-  position: absolute;
+  /* position: absolute; */
   top: 1rem;
   display: flex;
 }
@@ -39,8 +39,10 @@ body .quote-input{
   /* position: absolute;
   top: 1rem; */
   color: rgb(9, 12, 44);
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
+  display: flex;
+  
 }
 .millisec{
   /* top: 5rem; */
