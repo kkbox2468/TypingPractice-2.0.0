@@ -1,3 +1,5 @@
+
+
 window.onload = function() {
 const RNADOM_QUOTE_API_URL = 'https://api.quotable.io/random'
 const quoteDisplayElement = document.getElementById('quoteDisplay')
@@ -44,7 +46,7 @@ quoteInputElement.addEventListener('input', () => {
   const arrayQuote = quoteDisplayElement.querySelectorAll('span');
   const arrayValue = quoteInputElement.value.split('')
   const inputIndex = quoteInputElement.value.length
-  let keyNumber = window.keyCode
+  // let keyNumber = window.keyCode
   // console.log(inputIndex)
   // console.log(arrayQuote[inputIndex])
   // console.log(arrayQuote[1]);
