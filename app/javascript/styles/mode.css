@@ -1,0 +1,58 @@
+/* -----遊玩模式區 ----- */
+
+.modeWrap {
+  justify-content: space-evenly;
+}
+
+.select-area {
+  justify-content: space-between;
+}
+
+.select-area .card {
+  background-color: #eeeeee;
+  border: none;
+  box-shadow: 7px 7px 14px #cfcfcf, -7px -7px 14px #ffffff;
+  margin-right: 2rem;
+}
+
+.select-area .card .btn-primary {
+  color:  rgb(70, 70, 70);
+  background-color: #eeeeee;
+  border: none;
+  box-shadow: 7px 7px 10px #cfcfcf, -7px -7px 10px #ffffff;
+}
+
+.battle-area .card {
+  border: none;
+  background-color: #eeeeee;
+  box-shadow: 7px 7px 14px #cfcfcf, -7px -7px 14px #ffffff;
+}
+
+.battle-area .card .btn-primary {
+  color:  rgb(70, 70, 70);
+  background-color: #eeeeee;
+  border: none;
+  box-shadow: 7px 7px 10px #cfcfcf, -7px -7px 10px #ffffff;
+}
+
+.battle-area .card .btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  border: none;
+  color:  rgb(70, 70, 70);
+  background-color: #eeeeee;
+  border: none;
+  box-shadow: inset 3px 3px 5px #cfcfcf, 
+              inset -3px -3px 5px #ffffff;
+}
+
+.select-area .card .btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  border: none;
+  color:  rgb(70, 70, 70);
+  background-color: #eeeeee;
+  border: none;
+  box-shadow: inset 3px 3px 5px #cfcfcf, 
+              inset -3px -3px 5px #ffffff;
+}

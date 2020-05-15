@@ -1,13 +1,13 @@
 //公共區
 import './_navbar.css'
-
+import './application.css'
 
 //
-import './playground.css'
-
 import './welcome.css'
 
-import './typing.css'
+import './playground.css'
+
+import './mode.css'
 
 
 import 'bootstrap/dist/css/bootstrap.css'

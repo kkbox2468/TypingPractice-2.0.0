@@ -6,6 +6,7 @@ body{
   background-size: 100%;
   background-repeat: no-repeat; */
   /* display: flex; */
+  background: #eeeeee;
   justify-content: center;
   align-items: center;
   min-height: 100vh; 
@@ -96,32 +97,9 @@ body .quote-input{
   background: rgb(255, 182, 182);
 }
 
-/* -----遊玩模式區 ----- */
 
-h1{
-  width: 65rem;
-  text-align: center;
-  font-family: hack;
-  color: black;
-  margin-bottom: 2rem;
-}
 
-.modeWrap{
-  justify-content: space-evenly;
-}
 
-.select-area { 
-  justify-content: space-between;
-}
-
-.select-area .card{
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-  margin-right: 2rem;
-}
-
-.battle-area .card{
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-}
 
 
 
