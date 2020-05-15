@@ -1,5 +1,5 @@
 #welcomeBg {
-  background-color: #eeeeee(0, 84, 163, 0.9);
+  background-color: #eec44c;
   overflow: hidden;
   position: absolute;
   z-index: -1;
@@ -20,7 +20,7 @@
 
 .welcomeContent p {
   font-size: 3rem;
-  color: rgb(95, 95, 95);
+  color:  rgb(70, 70, 70);
   font-family: Museo Sans Rounded, sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -29,16 +29,9 @@
 .welcomeContent .btn-primary {
   /* font-family: monospace, sans-serif; */
   color: rgb(70, 70, 70);
-  /* background-color: #eeeeee; */
-  background: rgb(211, 243, 255);
-  background: rgb(211, 243, 255);
-  background: linear-gradient(
-    128deg,
-    rgba(211, 243, 255, 1) 0%,
-    rgba(0, 167, 228, 1) 100%
-  );
+  background-color: #eec44c;
   border: none;
-  box-shadow: 2px 2px 5px #cfcfcf, -2px -2px 5px #ffffff;
+  box-shadow: 2px 2px 5px#cfab42, -2px -2px 5px #ffdd56;
 }
 
 .welcomeContent .btn-primary:not(:disabled):not(.disabled):active,
@@ -46,6 +39,7 @@
 .show > .btn-primary.dropdown-toggle {
   border-color: black;
   color: rgb(70, 70, 70);
-  background-color: #eeeeee;
-  box-shadow: inset 2px 2px 5px#5aa1cf, inset -2px -2px 5px #ffffff;
+  background-color:  #eec44c;
+  box-shadow: inset 2px 2px 5px#cfab42, 
+              inset -2px -2px 5px #ffdd56;
 }

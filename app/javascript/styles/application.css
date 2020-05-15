@@ -2,7 +2,7 @@ h1{
   font-family: Museo Sans Rounded, sans-serif;
   font-style: normal;
   font-weight: 700;
-  color: rgb(95, 95, 95);
+  color:  rgb(70, 70, 70);
   width: 65rem;
   text-align: center;
   margin-top: 2rem;
@@ -10,7 +10,7 @@ h1{
 }
 
 .btn-primary {
-  color: rgb(95, 95, 95);
+  color:  rgb(70, 70, 70);
   font-family: Museo Sans Rounded, sans-serif;
   font-style: normal;
   font-weight: 700;
