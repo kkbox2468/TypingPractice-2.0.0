@@ -227,10 +227,6 @@ body .quote-input{
   transform: rotate(180deg);
 }
 
-
-
-
-
 .playing {
   border: .1em solid green;
   background-color: greenyellow;
