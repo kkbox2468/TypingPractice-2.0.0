@@ -6,6 +6,7 @@ body{
   background-size: 100%;
   background-repeat: no-repeat; */
   /* display: flex; */
+  background: #eeeeee;
   justify-content: center;
   align-items: center;
   min-height: 100vh; 
@@ -96,36 +97,9 @@ body .quote-input{
   background: rgb(255, 182, 182);
 }
 
-/* -----遊玩模式區 ----- */
 
-h1{
-  width: 65rem;
-  text-align: center;
-  /* background-color: lawngreen; */
-  font-family: hack;
-  color: black;
-  margin-bottom: 2rem;
-}
 
-.modeWrap{
-  justify-content: space-evenly;
-}
 
-.select-area { 
-  
-  justify-content: space-between;
-}
-
-.select-area .card{
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
-  margin-right: 2rem;
-  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
-}
-
-.battle-area .card{
-  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
-  
-}
 
 
 
@@ -137,13 +111,13 @@ h1{
 #keyboard {
   /* width: 50rem;  */
   /* min-height: 50vh; */
-  padding:.8vw;
+  padding: .8vw;
   position: absolute;
   top: 78%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: black;
-  border-radius: /*3px*/ .3vw;
+  border-radius: .3vw;
   display: grid;
   grid-template-columns: repeat(30,2.2vw);
   grid-template-rows: repeat(5, 4.3vw);
@@ -154,12 +128,10 @@ h1{
   margin-top: 1vw;
   font-size: .95vw;
 }
+
 .key_symbols {
-  line-height:  .2vw;
+  line-height: .2vw;
 }
-
-
-
 
 .key {
   background-color: black;

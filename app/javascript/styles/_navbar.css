@@ -1,14 +1,26 @@
+.navbar-light .navbar-nav .nav-link{
+  color: rgb(70, 70, 70);
+}
+
 .navbar {
-  font-family: MuseoSansRounded1000,Hack, sans-serif;
+  font-family: MuseoSansRounded, sans-serif;
+  font-weight: 800;
 }
 
 .bg-light {
   background: rgb(190, 236, 255);
-  background: linear-gradient(
+  /* background: linear-gradient(
     180deg,
     rgba(190, 236, 255, 1) 0%,
     rgba(118, 184, 212, 1) 50%,
     rgba(0, 155, 232, 1) 100%
-  );
+  ); */
+  box-shadow:-3px -3px 5px rgba(255,255,255,0.02),
+              3px  3px 10px rgba(0, 0, 0, 0.2); ;
   
+}
+
+.navbar-brand{
+  padding-top:0;
+  padding-bottom:0.5rem;
 }
