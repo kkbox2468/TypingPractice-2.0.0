@@ -21,7 +21,7 @@
 .welcomeContent p {
   font-size: 3rem;
   color:  rgb(70, 70, 70);
-  font-family: Museo Sans Rounded, sans-serif;
+  font-family: museo-sans-rounded, sans-serif;
   font-style: normal;
   font-weight: 700;
 }

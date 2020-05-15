@@ -233,3 +233,8 @@ body .quote-input{
   color: black;
   text-decoration: none;
 }
+
+/* 傳送結果用的隱藏表單 */
+.statu-params{
+  display: none;
+}

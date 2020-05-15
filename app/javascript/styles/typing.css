@@ -1,4 +1,17 @@
-/* 傳送結果用的隱藏表單 */
-.statu-params{
-  display: none;
+.lesson-select ul .btn,
+.lesson-select .card-body,
+.lesson-select .card-body .btn{
+  border: none;
+  background-color: #eeeeee;
+  box-shadow: 7px 7px 14px #cfcfcf, -7px -7px 14px #ffffff;
+  color: rgb(70, 70, 70);
+}
+
+.lesson-select .card-body a:hover{
+  text-decoration: none;
+}
+
+.lesson-select .card-body a{
+  color: rgb(70, 70, 70);
+
 }
