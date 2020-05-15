@@ -227,13 +227,14 @@ body .quote-input{
   transform: rotate(180deg);
 }
 
-
-
-
-
 .playing {
   border: .1em solid green;
   background-color: greenyellow;
   color: black;
   text-decoration: none;
+}
+
+/* 傳送結果用的隱藏表單 */
+.statu-params{
+  display: none;
 }

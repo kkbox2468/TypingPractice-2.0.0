@@ -1,15 +1,14 @@
 class UserArticleController < ApplicationController
   def  create 
     # byebug
-      # @article = ...
-        @user_article  = UserArticle.create(article_params)
-        # redirect_to typing_path(1)
-        redirect_to request.referrer
+    @user_article  = UserArticle.create(article_params)
+    # redirect_to request.referrer
+    redirect_to playground_index_path
   end
 
   private
-  
+
   def article_params
-    params.require("user_article").permit("time", "speed","user_id","article_id")
+    params.require(:user_article).permit(:time, :speed, :user_id, :article_id)
   end
 end

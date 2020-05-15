@@ -120,6 +120,7 @@ quoteInputElement.addEventListener('input', () => {
     // console.log(timeSum)
   } else {
     // console.log('!1')
+    getresult();
 
     console.log("完成");
     this.alert(
@@ -131,7 +132,6 @@ quoteInputElement.addEventListener('input', () => {
       `
     );
     // debugger
-    getresult();
     // console.log('!')
       
     const submitResult =  document.querySelector('#new_user_article')
@@ -243,22 +243,23 @@ window.addEventListener('keyup', function(e){
     e.preventDefault();  //阻止tab發生原生功能 
   }
   
-})
+});
 
 /* ----------result--------- */
-// getresult()
+getresult()
 
 function getresult() {
   let resultTime = document.querySelector('#seconds').innerText
-  let catchResultTime = document.getElementById('user_article_time')
+  let catchResultTime = document.querySelector('#user_article_time')
   catchResultTime.value = parseFloat(resultTime)
+  // console.log(resultTime)
   
   let resultWpm = document.querySelector('#wpm').innerText
-  let catchResultWpm = document.getElementById('user_article_speed')
+  let catchResultWpm = document.querySelector('#user_article_speed')
   catchResultWpm.value = parseFloat(resultWpm)
-}
+};
 
-window.addEventListener('keyup', getresult())
+window.addEventListener('keyup', getresult());
 
 
 /* ----------submit reslut--------- */
