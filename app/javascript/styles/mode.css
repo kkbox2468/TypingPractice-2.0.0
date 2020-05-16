@@ -21,6 +21,7 @@
 
 .select-area .card .btn-primary {
   color:  rgb(70, 70, 70);
+  border-radius: 1rem;
   background-color: #eeeeee;
   border: none;
   box-shadow: 7px 7px 10px #cfcfcf, -7px -7px 10px #ffffff;
@@ -34,6 +35,7 @@
 
 .battle-area .card .btn-primary {
   color:  rgb(70, 70, 70);
+  border-radius: 1rem;
   background-color: #eeeeee;
   border: none;
   box-shadow: 7px 7px 10px #cfcfcf, -7px -7px 10px #ffffff;

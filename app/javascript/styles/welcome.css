@@ -1,4 +1,5 @@
 #welcomeBg {
+  /* background-color: #eec44c; */
   background-color: #eec44c;
   overflow: hidden;
   position: absolute;
@@ -27,7 +28,7 @@
 }
 
 .welcomeContent .btn-primary {
-  /* font-family: monospace, sans-serif; */
+  border-radius: 1rem;
   color: rgb(70, 70, 70);
   background-color: #eec44c;
   border: none;
