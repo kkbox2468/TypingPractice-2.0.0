@@ -22,4 +22,9 @@ require("scripts")
 // import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
+
 import "controllers"
+
+import 'sweetalert2'
+import Swal from 'sweetalert2'
+window.Swal = Swal
