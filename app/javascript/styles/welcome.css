@@ -34,8 +34,13 @@
 .welcome-Content h1 {
   display: block;
   font-size: 3rem;
+<<<<<<< HEAD
   color:  rgb(70, 70, 70);
   font-family: museo-sans-rounded, sans-serif;
+=======
+  color:  rgb(50, 50, 50);
+  font-family: Museo Sans Rounded, sans-serif;
+>>>>>>> grey_color_confirm
   font-style: normal;
   font-weight: 700;
   text-align: start;
@@ -45,7 +50,7 @@
 .welcome-Content .btn-primary {
   font-size: 1.5rem;
   border-radius: 2rem;
-  color: rgb(70, 70, 70);
+  color: rgb(50, 50, 50);
   background-color: #eec44c;
   border: none;
   box-shadow: 2px 2px 5px#cfab42, 
@@ -56,7 +61,7 @@
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   border-color: black;
-  color: rgb(70, 70, 70);
+  color: rgb(50, 50, 50);
   background-color:  #eec44c;
   box-shadow: inset 2px 2px 5px#cfab42, 
               inset -2px -2px 5px #ffdd56;

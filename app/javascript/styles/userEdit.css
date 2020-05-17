@@ -1,0 +1,22 @@
+.editWrap .field{
+  font-family:  Museo Sans Rounded, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: rgb(70, 70, 70);
+}
+
+.editWrap .field input{
+  border-radius: 1rem;
+  
+}
+
+.editWrap .actions .btn-primary{
+  border-radius: 1rem;
+  margin-top: 1rem;
+  color:  rgb(70, 70, 70);
+  background-color: #eecc44;
+  border: hidden;
+
+  /* position: absolute; */
+
+}
