@@ -1,6 +1,7 @@
 <h1>Stats</h1>
 
-<% current_user.user_articles.each do |i| %>
+<% if current_user %>
+  <h1><%= current_user.nickname %>的歷史紀錄 </h1>
   <table class="table">
     <thead>
       <tr>
@@ -14,18 +15,20 @@
         <th>完成度</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td><%= i.user_id %></td><br>
-        <td><%= i.article_id %></td>
-        <td><%= i.time %></td>
-        <td><%= i.letter_count %></td>
-        <td><%= i.speed %></td>
-        <td><%= i.wrong_letter %></td>
-        <td><%= i.wrong_letter_count %></td>
-        <td><%= i.accuracy %></td>
-      </tr> 
-    </tbody>
+    <% current_user.user_articles.each do |i| %>
+      <tbody>
+        <tr>
+          <td><%= i.user_id %></td>
+          <td><%= i.article_id %></td>
+          <td><%= i.time %></td>
+          <td><%= i.letter_count %></td>
+          <td><%= i.speed %></td>
+          <td><%= i.wrong_letter %></td>
+          <td><%= i.wrong_letter_count %></td>
+          <td><%= i.accuracy %></td>
+        </tr> 
+      </tbody>
+    <% end %>
     <tfoot>
 
     </tfoot>

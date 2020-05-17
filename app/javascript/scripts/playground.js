@@ -60,7 +60,32 @@ window.onload = function() {
     let resultWpm = document.querySelector('#wpm').innerText
     let catchResultWpm = document.querySelector('#user_article_speed')
     catchResultWpm.value = parseFloat(resultWpm) || 0
+
+
+    let correntOne = document.querySelector('#correct')
+    let inCorrentOne = document.querySelector('#incorrect')
+
+    let checkItOut = []
+    let checkItIn = quotetopicElement.innerHTML.split(',')
+    // for(let i of checkItIn){
+    //   if (i == correntOne){
+    //     console.log('ya')
+    //   }
+    //   else{
+    //     console.log('nnnnn')
+    //   }
+    //   // console.log(i.class )
+    // }
+    
+
+
+
+    // console.log(`測試：${checkItIn[0] }`)
+
+
   };
+
+  
 
 
   quoteInputElement.addEventListener('input', () => {
