@@ -2,6 +2,9 @@
 import './_navbar.css'
 import './application.css'
 
+//User 
+import './userEdit.css'
+
 //
 import './welcome.css'
 

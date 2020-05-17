@@ -15,8 +15,11 @@
   margin-right: 2rem;
 }
 
-.select-area .card-img-top img{
-  /* fill: greenyellow; */
+.lesson-area .card-title{
+  font-family:  museo-sans-rounded, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  
 }
 
 .select-area .card .btn-primary {
@@ -31,6 +34,13 @@
   border: none;
   background-color: #eeeeee;
   box-shadow: 7px 7px 14px #cfcfcf, -7px -7px 14px #ffffff;
+}
+
+.battle-area .card-title{
+  font-family: museo-sans-rounded, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  
 }
 
 .battle-area .card .btn-primary {
