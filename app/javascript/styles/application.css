@@ -1,8 +1,8 @@
-h1{
-  font-family: Museo Sans Rounded, sans-serif;
+h1 ,h2 {
+  font-family:  Museo Sans Rounded, sans-serif;
   font-style: normal;
-  font-weight: 700;
-  color:  rgb(70, 70, 70);
+  font-weight: 900;
+  color: rgb(50, 50, 50);
   width: 65rem;
   text-align: center;
   margin-top: 2rem;
@@ -10,20 +10,18 @@ h1{
 }
 
 .btn-primary {
-  color:  rgb(70, 70, 70);
+  color: rgb(50, 50, 50);
   font-family: Museo Sans Rounded, sans-serif;
   font-style: normal;
   font-weight: 700;
 }
 
-
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   border: none;
-  color: rgb(95, 95, 95);
-  background-color:#eeeeee;
+  color: rgb(50, 50, 50);
+  background-color: #eeeeee;
   border: none;
-  box-shadow: inset 7px 7px 10px #cfcfcf, 
-              inset -7px -7px 10px #ffffff;
+  box-shadow: inset 7px 7px 10px #cfcfcf, inset -7px -7px 10px #ffffff;
 }
