@@ -14,48 +14,60 @@
   box-shadow: 7px 7px 14px #cfcfcf, -7px -7px 14px #ffffff;
   margin-right: 2rem;
 }
-
+.select-area .card img{
+  background-color: #eec44c;
+}
 .lesson-area .card-title{
-  font-family:  museo-sans-rounded, sans-serif;
+  font-family:  museo sans rounded, sans-serif;
   font-style: normal;
   font-weight: 700;
   
 }
 
 .select-area .card .btn-primary {
-  color:  rgb(70, 70, 70);
+  color:  rgb(50, 50, 50);
   border-radius: 1rem;
   background-color: #eeeeee;
   border: none;
-  box-shadow: 7px 7px 10px #cfcfcf, -7px -7px 10px #ffffff;
+  box-shadow: 3px 3px 5px #cfcfcf, 
+              -3px -3px 5px #ffffff;
 }
-
 .battle-area .card {
   border: none;
   background-color: #eeeeee;
-  box-shadow: 7px 7px 14px #cfcfcf, -7px -7px 14px #ffffff;
+  box-shadow: 7px 7px 14px #cfcfcf, 
+              -7px -7px 14px #ffffff;
+}
+
+.battle-area .card img{
+  background-color: #eec44c;
+  
+}
+.battle-area .card-img-top {
+  fill: blueviolet;
 }
 
 .battle-area .card-title{
-  font-family: museo-sans-rounded, sans-serif;
+  font-family: museo sans rounded, sans-serif;
   font-style: normal;
   font-weight: 700;
   
 }
 
 .battle-area .card .btn-primary {
-  color:  rgb(70, 70, 70);
+  color:  rgb(50, 50, 50);
   border-radius: 1rem;
   background-color: #eeeeee;
   border: none;
-  box-shadow: 7px 7px 10px #cfcfcf, -7px -7px 10px #ffffff;
+  box-shadow: 3px 3px 5px #cfcfcf, 
+              -3px -3px 5px #ffffff;
 }
 
 .battle-area .card .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   border: none;
-  color:  rgb(70, 70, 70);
+  color:  rgb(50, 50, 50);
   background-color: #eeeeee;
   border: none;
   box-shadow: inset 3px 3px 5px #cfcfcf, 
@@ -66,7 +78,7 @@
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   border: none;
-  color:  rgb(70, 70, 70);
+  color:  rgb(50, 50, 50);
   background-color: #eeeeee;
   border: none;
   box-shadow: inset 3px 3px 5px #cfcfcf, 

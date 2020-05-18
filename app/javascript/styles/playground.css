@@ -116,7 +116,7 @@ body .quote-input{
   top: 78%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: black;
+  background-color:#eeeeee;
   border-radius: .3vw;
   display: grid;
   grid-template-columns: repeat(30,2.2vw);
@@ -134,14 +134,17 @@ body .quote-input{
 }
 
 .key {
-  background-color: black;
-  border: .1vw solid green;
+  background-color: #eeeeee;
+  /* border: .1vw solid green; */
   border-radius:  .3vw;
   grid-column: span 2;
   font-size: .95vw;
+  font-weight: bold;
   text-align: center;
   padding-top: 1.5vw;
-  color: greenyellow;
+  color: #323232;
+  box-shadow:  2px 2px 2px #c1c1c1, 
+              -2px -2px 2px #ffffff;
   /* transition: all .1s ease; */
 }
 
@@ -193,7 +196,10 @@ body .quote-input{
   grid-template-rows: 49% 49%;
   padding-top: 0;
   grid-gap: 2%;
-  border-style: hidden;    
+  border-style: hidden;  
+  box-shadow: none;  
+  font-family: monospace;
+  font-weight: bold;
 }
 
 .top{
@@ -201,21 +207,27 @@ body .quote-input{
   grid-column-end: 3; 
   grid-row-start: 0; 
   grid-row-end: 0; 
-  padding: 4%;
+  padding: 8%;
+  font-weight: bold;
+  /* box-shadow:  2px 2px 2px #c1c1c1, 
+              -2px -2px 2px #ffffff; */
 }
 
 .left{
   grid-column-start: 1; 
   grid-column-end: 1; 
-  padding: 4%;
+  padding: 8%;
+  
 }
 .down{
   grid-column-start: 2;
   grid-column-end: 3;  
   grid-row-start: 2; 
   grid-row-end: 0; 
-  padding: 2%;
-  transform: rotate(180deg);
+  padding: 8%;
+  /* transform: rotate(180deg); */
+  /* box-shadow:  2px 2px 2px #c1c1c1, 
+  -2px -2px 2px #ffffff; */
 }
 
 .right{
@@ -223,15 +235,20 @@ body .quote-input{
   grid-column-end: 4;  
   grid-row-start: 2; 
   grid-row-end: 0;
-  padding: 4%; 
-  transform: rotate(180deg);
+  padding: 8%; 
+  /* transform: rotate(180deg); */
+  /* box-shadow:  2px 2px 2px #c1c1c1, 
+  -2px -2px 2px #ffffff; */
 }
 
 .playing {
-  border: .1em solid green;
-  background-color: greenyellow;
+  /* border: .1em solid green; */
+  background-color: #eeeeee;
   color: black;
   text-decoration: none;
+  box-shadow: inset  2px 2px 2px #c1c1c1, 
+              inset -2px -2px 2px #ffffff;
+
 }
 
 /* 傳送結果用的隱藏表單 */
