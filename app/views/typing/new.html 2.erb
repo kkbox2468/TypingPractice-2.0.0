@@ -1,0 +1,6 @@
+<h1>Create something</h1>
+<%= form_for @articles, url: '/playground/typing' do |form| %>
+  <%= form.label :content %>
+  <%= form.text_area :content %>
+  <%= form.submit %>
+<% end %>
