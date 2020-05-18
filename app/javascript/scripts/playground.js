@@ -226,7 +226,7 @@ window.addEventListener('keydown', playSound);
 
 
 //---------- keyboard -------------//
-
+/* 
 window.addEventListener('keydown', function(e){
   // console.log('e.code')
   const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);    //  取得按鍵對應的元素
@@ -244,7 +244,7 @@ window.addEventListener('keyup', function(e){
   }
   
 });
-
+*/
 /* ----------result--------- */
 getresult()
 
