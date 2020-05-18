@@ -34,13 +34,8 @@
 .welcome-Content h1 {
   display: block;
   font-size: 3rem;
-<<<<<<< HEAD
-  color:  rgb(70, 70, 70);
-  font-family: museo-sans-rounded, sans-serif;
-=======
   color:  rgb(50, 50, 50);
   font-family: Museo Sans Rounded, sans-serif;
->>>>>>> grey_color_confirm
   font-style: normal;
   font-weight: 700;
   text-align: start;
