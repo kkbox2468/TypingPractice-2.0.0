@@ -3,11 +3,14 @@ import consumer from "./consumer"
 window.onload = function () {
   let roomElement = document.querySelector('#room-id')
   let roomId = roomElement.getAttribute('data-room-id')
+  let userElement = document.querySelector('#user-id')
+  let userId = Number(userElement.getAttribute('data-user-id'))
 
   consumer.subscriptions.create({ channel: "RoomChannel", room_id: roomId }, {
     connected() {
       // Called when the subscription is ready for use on the server
       console.log('connected to ' + roomId );
+      
     },
   
     disconnected() {
@@ -23,9 +26,6 @@ window.onload = function () {
       const arrayQuote = quoteDisplay2.querySelectorAll('span');
       const arrayValue = quoteInputRight.value.split('')
       const inputIndex = quoteInputRight.value.length
-
-      let userElement = document.querySelector('#user-id')
-      let userId = Number(userElement.getAttribute('data-user-id'))
 
       if (userId !== data.message.user_id) {
         checkCharacter(arrayQuote, arrayValue, inputIndex)
