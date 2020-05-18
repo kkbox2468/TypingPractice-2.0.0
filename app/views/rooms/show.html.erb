@@ -30,7 +30,8 @@
 
 </div>
 <div>
-  <div id="user-id" data-user-id="<%= current_user.id %>">Hero Id : <%= current_user.id %> Hero name : <%= current_user.nickname %></div>
-  <div id="room-id" data-room-id="<%= @room.id %>">Room Id : <%= @room.id %></div>
+  <div id="user-id" data-user-id="<%= current_user.id %>" data-user-name="<%= current_user.nickname %>">User Id : <%= current_user.id %></div>
+  <div id="user-name">User name : <%= current_user.nickname %></div>
+  <div id="room-id" data-room-id="<%= @room.id %>">Room Id : <%= @room.id %></div>  
 </div>
 <%= javascript_pack_tag 'channels', 'data-turbolinks-track': 'reload' %>

@@ -22,10 +22,10 @@
     </thead>
     <% @rooms_list.each do |room|%>
     <tbody>
-      <td><%= link_to room.name, room_path(room.id) %></td>
+      <td><%= room.name %></td>
       <td><%= room.description %></td>
       <td> </td>
-      <td><a href="#" class="btn btn-primary">Join</a></td>
+      <td><%= link_to "Join", room_path(room.id), class: 'btn btn-warning' %></td>
       <td><%= link_to "編輯", edit_room_path(room.id) %></td>
       <td><%= link_to "刪除", room_path(room.id), method: "DELETE" %></td>
     </tbody>
