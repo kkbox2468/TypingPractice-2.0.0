@@ -1,0 +1,34 @@
+<h1>Racing Romm List</h1>
+
+<div>
+  <%= form_for @room do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.submit %>
+  <% end %>
+</div>
+
+<div>
+  <table class="table table-hover">
+    <thead>
+      <th scope="col">Room</th>
+      <th scope="col">Description</th>
+      <th scope="col">人數</th>
+      <th scope="col">加入</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </thead>
+    <% @rooms_list.each do |room|%>
+    <tbody>
+      <td><%= room.name %></td>
+      <td><%= room.description %></td>
+      <td> </td>
+      <td><%= link_to "Join", room_path(room.id), class: 'btn btn-warning' %></td>
+      <td><%= link_to "編輯", edit_room_path(room.id) %></td>
+      <td><%= link_to "刪除", room_path(room.id), method: "DELETE" %></td>
+    </tbody>
+    <% end %>
+  </table>
+</div>

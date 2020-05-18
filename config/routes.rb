@@ -33,7 +33,8 @@ Rails.application.routes.draw do
       end 
 
       resources :racing, only: [:index, :show] do
-        member do
+        collection do
+          resources :rooms
         end
       end 
 
@@ -43,6 +44,6 @@ Rails.application.routes.draw do
   resources :stats, only: [:index]
 
   resources :user_article
-
+  resources :messages, only: [:new, :create]
   
 end
