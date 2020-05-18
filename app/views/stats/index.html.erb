@@ -1,7 +1,10 @@
 <h1>Stats</h1>
 
 <% if current_user %>
-  <h1><%= current_user.nickname %>的歷史紀錄 </h1>
+  <h3><%=  current_user.id%>的歷史紀錄</h3>
+  
+
+
   <table class="table">
     <thead>
       <tr>
@@ -23,7 +26,8 @@
           <td><%= i.time %></td>
           <td><%= i.letter_count %></td>
           <td><%= i.speed %></td>
-          <td><%= i.wrong_letter %></td>
+          <!-- <td><a href="#" class="wrong-letter">錯字</a></td>
+          <td><%= i.wrong_letter %></td>  -->
           <td><%= i.wrong_letter_count %></td>
           <td><%= i.accuracy %></td>
         </tr> 
@@ -34,3 +38,6 @@
     </tfoot>
   </table>
 <% end %>
+
+
+
