@@ -7,11 +7,22 @@
   color: rgb(70, 70, 70);
 }
 
+.lesson-select .card{
+  background-color: #eeeeee;
+  border: none;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+
+.lesson-select .card-body{
+
+}
+
 .lesson-select .card-body a:hover{
   text-decoration: none;
 }
 
 .lesson-select .card-body a{
   color: rgb(70, 70, 70);
-
 }
