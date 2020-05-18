@@ -74,7 +74,7 @@ window.onload = function() {
 
 
     arrayQuote.forEach((characterSpan, index) => {
-      const character = arrayValue[index] //這段不懂 index? 
+      const character = arrayValue[index] 
       // characterSpan.classList.add('selected')
 
       if (character == null){
@@ -179,7 +179,7 @@ window.onload = function() {
     let corrextRate = (corrects.length / contentTest).toFixed(2)
     let catchResultAccuracy = document.querySelector('#user_article_accuracy')
     catchResultAccuracy.value = parseFloat(corrextRate*100) || 0
-  })
+d  })
 
 
   /*  抓取隨機英文段落作為題目 */

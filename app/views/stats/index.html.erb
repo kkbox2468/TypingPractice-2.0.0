@@ -8,20 +8,20 @@
   <table class="table">
     <thead>
       <tr>
-        <th>使用者</th>
+        <!-- <th>使用者</th> -->
         <th>文章編號</th>
         <th>時間</th>
         <th>字數</th>
         <th>速度</th>
-        <th>錯誤字母</th>
+        <!-- <th>錯誤字母</th> -->
         <th>錯誤字數</th>
-        <th>完成度</th>
+        <th>準確度</th>
       </tr>
     </thead>
     <% current_user.user_articles.each do |i| %>
       <tbody>
         <tr>
-          <td><%= i.user_id %></td>
+          <!-- <td><%= i.user_id %></td> -->
           <td><%= i.article_id %></td>
           <td><%= i.time %></td>
           <td><%= i.letter_count %></td>
@@ -29,7 +29,7 @@
           <!-- <td><a href="#" class="wrong-letter">錯字</a></td>
           <td><%= i.wrong_letter %></td>  -->
           <td><%= i.wrong_letter_count %></td>
-          <td><%= i.accuracy %></td>
+          <td><%= i.accuracy %>%</td>
         </tr> 
       </tbody>
     <% end %>
