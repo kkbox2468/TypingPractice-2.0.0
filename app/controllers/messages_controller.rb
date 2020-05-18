@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
   def create
     @msg = Message.new(msg_params)
     @msg.user_id = current_user.id
+    ActionCable.server.broadcast "room_channel", content: @msg.content, message: @msg
   end
 
   private

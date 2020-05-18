@@ -1,26 +1,36 @@
 
-<h1>Room <%= @room.name %></h1>
+<h1><%= @room.name %></h1>
 
 
-<div class="wrap">
-  <%= form_for @message, remote: true do |f| %>
+<div class="row">
+  <div class="container-left col-6">
+    <%= form_for @message, remote: true do |f| %>
     <%= f.hidden_field :room_id, value: @room.id %>
-    <div class="container-left">
-      <h1>User: <%= current_user.nickname %></h1>
+      <p>User: <%= current_user.nickname %></p>
       <div class="quote-display" id="quoteDisplay">
+        <%= render 'quote', topic: @topic%>
       </div>
       <%= f.text_area :content, class: 'quote-input', 
                                 id: 'quoteInput', 
                                 type: 'hidden',
                                 autofocus: true %>
       <%= f.submit name: 'left_input'%>
-    </div>
-  <% end %>
+      <% end %>
+  </div>
+  
 
 
-  <div class="container-right">
+  <div class="container-right col-6">
+    <p>User: </p>
     <div class="quote-display2" id="quoteDisplay2">
+      <%= render 'quote', topic: @topic%>
     </div>
     <textarea class="quote-input2" id="quoteInput2" type="hidden" name="message[content]" style="display:none"></textarea>
   </div>
+
 </div>
+<div>
+  <div id="user-id" data-user-id="<%= current_user.id %>">Hero Id : <%= current_user.id %> Hero name : <%= current_user.nickname %></div>
+  <div id="room-id" data-room-id="<%= @room.id %>">Room Id : <%= @room.id %></div>
+</div>
+<%= javascript_pack_tag 'channels', 'data-turbolinks-track': 'reload' %>
