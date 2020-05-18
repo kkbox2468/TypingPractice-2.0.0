@@ -61,34 +61,42 @@ window.onload = function() {
     let catchResultWpm = document.querySelector('#user_article_speed')
     catchResultWpm.value = parseFloat(resultWpm) || 0
 
+    // 錯誤字母
+    // let catchResultInCorrentWord = document.querySelector('#user_article_wrong_letter')
+    // catchResultInCorrentWord.value = resultInCorrentWord || 0
 
-    let correntOne = document.querySelector('#correct')
-    let inCorrentOne = document.querySelector('#incorrect')
-
-    let checkItOut = []
-    let checkItIn = quotetopicElement.innerHTML.split(',')
-    // for(let i of checkItIn){
-    //   if (i == correntOne){
+    // for(let x in checkItIn){
+    //   if (x === correntOne){
     //     console.log('ya')
     //   }
     //   else{
     //     console.log('nnnnn')
     //   }
-    //   // console.log(i.class )
+    //   console.log(checkItIn[x])
     // }
-    
 
+    // console.log(`測試：${checkItIn }`)
+    // console.log(incorrectssss)
 
+    // function myFunction() {
+    //   var x = document.getElementsByClassName("example");
+    //   var i;
+    //   for (i = 0; i < x.length; i++) {
+    //     x[i].style.backgroundColor = "red";
+    //   }
+    // }
 
-    // console.log(`測試：${checkItIn[0] }`)
+    // let inCorrentWordArr =  []
 
 
   };
 
-  
+
+
 
 
   quoteInputElement.addEventListener('input', () => {
+  
     if (startType === 0) {
       startTimer();
       getWpm();
@@ -103,28 +111,55 @@ window.onload = function() {
     // console.log(arrayQuote[inputIndex])
     // console.log(arrayQuote[1]);
 
+
     arrayQuote.forEach((characterSpan, index) => {
       const character = arrayValue[index] //這段不懂 index? 
       // characterSpan.classList.add('selected')
+
       if (character == null){
         characterSpan.classList.remove('correct')
         characterSpan.classList.remove('incorrect')
-        // arrayQuote[inputIndex].classList.add('selected')
-        // arrayQuote[inputIndex + 1 ].classList.remove('selected')
-        // arrayQuote[inputIndex - 1 ].classList.remove('selected')
+        arrayQuote[inputIndex].classList.add('selected')
+        arrayQuote[inputIndex + 1 ].classList.remove('selected')
+        arrayQuote[inputIndex - 1 ].classList.remove('selected')
         correct = false
 
       } else if (character === characterSpan.innerText){
         characterSpan.classList.add('correct')
         characterSpan.classList.remove('incorrect')
-        rightCounter++;    
+        rightCounter++;  
       } else {
+        // inCorrentWordArr.length=0
         characterSpan.classList.remove('correct')
         characterSpan.classList.add('incorrect')
         wrongCounter++;
         correct = false
       }
     })
+
+    // 錯誤字母
+    let  resultInCorrentWord = []
+    let incorrectssss = document.querySelectorAll('#quotetopic .incorrect')
+    // incorrectssss.forEach(($dom) => { console.log($dom.innerText) })
+    incorrectssss.forEach(($dom) => { resultInCorrentWord.push($dom.innerText) })
+    
+    let catchResultInCorrentWord = document.querySelector('#user_article_wrong_letter')
+    catchResultInCorrentWord.value = resultInCorrentWord || ""
+
+    let catchResultInCorrentWordCount = document.querySelector('#user_article_wrong_letter_count')
+    catchResultInCorrentWordCount.value = resultInCorrentWord.length || ""
+
+
+    // var  incorrects = document.querySelectorAll('#quotetopic .incorrect')
+    // incorrects.length
+    // var words = []
+    // incorrects.forEach(($dom) => { console.log($dom.innerText) })
+    // incorrects.forEach(($dom) => { resultInCorrentWord.push($dom.innerText) })
+
+
+
+
+    console.log(inCorrentWordArr)
 
     if (event.data == null){
       return ;
@@ -173,7 +208,7 @@ window.onload = function() {
       
       console.log(`加油、還差：${countDownResult}個字`)
       console.log(`已輸入字數：${inputValueLength}`)  
-
+      getresult()    
     } 
     else{
       getresult();
