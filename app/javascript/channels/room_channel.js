@@ -1,10 +1,13 @@
 import consumer from "./consumer"
 
 window.onload = function () {
-  consumer.subscriptions.create("RoomChannel", {
+  let roomElement = document.querySelector('#room-id')
+  let roomId = roomElement.getAttribute('data-room-id')
+
+  consumer.subscriptions.create({ channel: "RoomChannel", room_id: roomId }, {
     connected() {
       // Called when the subscription is ready for use on the server
-      console.log('connected!');
+      console.log('connected to ' + roomId );
     },
   
     disconnected() {
