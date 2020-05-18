@@ -1,6 +1,7 @@
 module Accessible
   extend ActiveSupport::Concern
   included do
+    #當module Accessible被include會執行此block
     before_action :check_user
   end
 
