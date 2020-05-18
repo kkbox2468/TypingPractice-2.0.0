@@ -41,7 +41,7 @@
 
     
     
-  <!-- <div class="keys" id="keyboard">
+   <div class="keys" id="keyboard">
         <div class="key key_symbols" data-key="192">~<span>`</span></div>
         <div class="key key_symbols" data-key="49">!<span>1</span></div>
         <div class="key key_symbols" data-key="50">@<span>2</span></div>
@@ -106,7 +106,7 @@
           <div class="key down" data-key="40"><img src="/icon/arrow-down.svg" alt=""></div>
           <div class="key right" data-key="39"><img src="/icon/arrow-right.svg" alt=""></div>
         </div>
-    </div> -->
+    </div> 
 </div>
 
 <!-- 傳送結果用的隱藏表單 -->
@@ -116,9 +116,9 @@
       <div class="inputTime" ><%= f.text_field :time, value: 0 %></div>
       <div class="inputTypeNum"><%= f.text_field :letter_count, value: 0 %></div>
       <div class="inputWpm"><%= f.text_field :speed, value: 0 %></div>
-      <div class="inputW"><%= f.text_field :wrong_letter, value: 0 %></div>錯誤字母
-      <div class="inputN"><%= f.text_field :wrong_letter_count, value: 0 %></div>錯誤字數
-      <div class="inputPercent"><%= f.text_field :accuracy, value: 0 %></div>準確率
+      <div class="inputW"><%= f.text_field :wrong_letter, value: 0 %></div>
+      <div class="inputN"><%= f.text_field :wrong_letter_count, value: 0 %></div>
+      <div class="inputPercent"><%= f.text_field :accuracy, value: 0 %></div>
       <div class="userId"><%= f.text_field :user_id, value: current_user.id %></div>
       <div class="articleId"><%= f.text_field :article_id, value: @article.id %></div>
   

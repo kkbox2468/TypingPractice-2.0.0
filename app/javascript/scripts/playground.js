@@ -37,13 +37,6 @@ window.onload = function() {
   let rightCounter = 0;
   let wrongCounter = 0;
 
-  // let inputValue = quoteInputElement.value
-  // let inputValueLength = inputValue.length 
-  // const contentTest = (quotetopicElement.getElementsByTagName('span').length) 
-  // const countDownResult = contentTest - inputValueLength //還差幾個字完成
-  // const corrextRate = rightCounter / contentTest * 100 //完成度
-  // const timeSum = document.getElementById('seconds').innerText   //花費時間、秒數
-
 
   function getresult(){
     // 秒數
@@ -61,42 +54,10 @@ window.onload = function() {
     let catchResultWpm = document.querySelector('#user_article_speed')
     catchResultWpm.value = parseFloat(resultWpm) || 0
 
-    // 錯誤字母
-    // let catchResultInCorrentWord = document.querySelector('#user_article_wrong_letter')
-    // catchResultInCorrentWord.value = resultInCorrentWord || 0
-
-    // for(let x in checkItIn){
-    //   if (x === correntOne){
-    //     console.log('ya')
-    //   }
-    //   else{
-    //     console.log('nnnnn')
-    //   }
-    //   console.log(checkItIn[x])
-    // }
-
-    // console.log(`測試：${checkItIn }`)
-    // console.log(incorrectssss)
-
-    // function myFunction() {
-    //   var x = document.getElementsByClassName("example");
-    //   var i;
-    //   for (i = 0; i < x.length; i++) {
-    //     x[i].style.backgroundColor = "red";
-    //   }
-    // }
-
-    // let inCorrentWordArr =  []
-
-
   };
 
 
-
-
-
   quoteInputElement.addEventListener('input', () => {
-  
     if (startType === 0) {
       startTimer();
       getWpm();
@@ -137,30 +98,6 @@ window.onload = function() {
       }
     })
 
-    // 錯誤字母
-    let  resultInCorrentWord = []
-    let incorrectssss = document.querySelectorAll('#quotetopic .incorrect')
-    // incorrectssss.forEach(($dom) => { console.log($dom.innerText) })
-    incorrectssss.forEach(($dom) => { resultInCorrentWord.push($dom.innerText) })
-    
-    let catchResultInCorrentWord = document.querySelector('#user_article_wrong_letter')
-    catchResultInCorrentWord.value = resultInCorrentWord || ""
-
-    let catchResultInCorrentWordCount = document.querySelector('#user_article_wrong_letter_count')
-    catchResultInCorrentWordCount.value = resultInCorrentWord.length || ""
-
-
-    // var  incorrects = document.querySelectorAll('#quotetopic .incorrect')
-    // incorrects.length
-    // var words = []
-    // incorrects.forEach(($dom) => { console.log($dom.innerText) })
-    // incorrects.forEach(($dom) => { resultInCorrentWord.push($dom.innerText) })
-
-
-
-
-    console.log(inCorrentWordArr)
-
     if (event.data == null){
       return ;
     } else {
@@ -186,22 +123,19 @@ window.onload = function() {
     }
     
     /* console輸入結果 */
-
     getresult();
     let inputValue = quoteInputElement.value
-    console.log(`輸入的內容:${inputValue}`)
+    // console.log(`輸入的內容:${inputValue}`)
 
     let inputValueLength = inputValue.length 
-    console.log(`已輸入字數：${inputValueLength}`)  
+    // console.log(`已輸入字數：${inputValueLength}`)  
 
     const contentTest = (quotetopicElement.getElementsByTagName('span').length) 
-    console.log(`題目字數:${contentTest}`) 
+    // console.log(`題目字數:${contentTest}`) 
 
     const countDownResult = contentTest - inputValueLength //還差幾個字完成
-    console.log(`還差${countDownResult}` )
+    // console.log(`還差${countDownResult}` )
 
-    const corrextRate = rightCounter / contentTest * 100 //完成度
-          
     const timeSum = document.getElementById('seconds').innerText   //花費時間、秒數
 
     if (countDownResult > 0) {
@@ -218,14 +152,33 @@ window.onload = function() {
         成績揭曉： 
         打字平均速度為：${wpm}WPM,
         總花費時間：${timeSum},
-        完成度：${corrextRate.toFixed(2)}％,
         `
       );
       const submitResult =  document.querySelector('#new_user_article')
       submitResult.submit();
-      // debugger
-      // console.log('!')
     }  
+
+
+    // 錯誤字母
+    let  resultInCorrentWord = []
+    let incorrects = document.querySelectorAll('#quotetopic .incorrect')
+    // incorrects.forEach(($dom) => { console.log($dom.innerText) })
+    incorrects.forEach(($dom) => { resultInCorrentWord.push($dom.innerText) })
+    
+    let catchResultInCorrentWord = document.querySelector('#user_article_wrong_letter')
+    catchResultInCorrentWord.value = resultInCorrentWord || ""
+
+    let catchResultInCorrentWordCount = document.querySelector('#user_article_wrong_letter_count')
+    catchResultInCorrentWordCount.value = resultInCorrentWord.length || ""
+
+    // 準確度
+    let  resultCorrentWord = []
+    let corrects = document.querySelectorAll('#quotetopic .correct')
+    corrects.forEach(($dom) => { resultCorrentWord.push($dom.innerText) })
+
+    let corrextRate = (corrects.length / contentTest).toFixed(2)
+    let catchResultAccuracy = document.querySelector('#user_article_accuracy')
+    catchResultAccuracy.value = parseFloat(corrextRate*100) || 0
   })
 
 
@@ -331,6 +284,7 @@ window.onload = function() {
     if (e.keyCode === 9){
       e.preventDefault();  //阻止tab發生原生功能 
     }     
+    
   });
 
 };
