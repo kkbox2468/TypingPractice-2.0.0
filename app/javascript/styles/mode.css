@@ -15,12 +15,16 @@
   margin-right: 2rem;
 }
 
-.select-area .card-img-top img{
-  /* fill: greenyellow; */
+.lesson-area .card-title{
+  font-family:  museo-sans-rounded, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  
 }
 
 .select-area .card .btn-primary {
   color:  rgb(70, 70, 70);
+  border-radius: 1rem;
   background-color: #eeeeee;
   border: none;
   box-shadow: 7px 7px 10px #cfcfcf, -7px -7px 10px #ffffff;
@@ -32,8 +36,16 @@
   box-shadow: 7px 7px 14px #cfcfcf, -7px -7px 14px #ffffff;
 }
 
+.battle-area .card-title{
+  font-family: museo-sans-rounded, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  
+}
+
 .battle-area .card .btn-primary {
   color:  rgb(70, 70, 70);
+  border-radius: 1rem;
   background-color: #eeeeee;
   border: none;
   box-shadow: 7px 7px 10px #cfcfcf, -7px -7px 10px #ffffff;

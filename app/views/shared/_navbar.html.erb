@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light ">
   <a class="navbar-brand" href="/" id="navbaarBrand">
   <img src="/img/Logo.svg" type=display alt="">
   </a>
@@ -11,24 +11,24 @@
     <ul class="navbar-nav mr-auto">
       <% if current_user  %>
         <li class="nav-item">
-          <%= link_to  "Home", playground_index_path, class: 'nav-link' %>
+          <%= link_to  "Home", playground_index_path, class: 'btn btn-primary nav-btn' %>
         </li>
         <li class="nav-item">
-          <%= link_to  "Stats", stats_path, class: 'nav-link' %>
+          <%= link_to  "Stats", stats_path, class: 'btn btn-primary nav-btn' %>
         </li>
       <% end  %>
     </ul>
     <ul class="navbar-nav">
       <% if current_user  %>
       <li class="nav-item">
-        <%= link_to  "Setting", edit_user_registration_path, class: 'nav-link' %>
+        <%= link_to  "Setting", edit_user_registration_path, class: 'btn btn-primary nav-btn' %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Logout' ,destroy_user_session_path , method: 'delete',class: 'nav-link'  %>
+        <%= link_to 'Logout' ,destroy_user_session_path , method: 'delete',class: 'btn btn-primary nav-btn'  %>
       </li>
       <% else  %>
         <li class="nav-item">
-          <%= link_to 'Start', playground_index_path, class: 'nav-link'  %>
+          <%= link_to 'Start', playground_index_path, class: 'btn btn-primary nav-btn'  %>
         </li>
         <li class="nav-item">
           <%= link_to '註冊' ,new_user_registration_path, class: 'nav-link'  %>

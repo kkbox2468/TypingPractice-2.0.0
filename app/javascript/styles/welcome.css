@@ -3,43 +3,64 @@
   overflow: hidden;
   position: absolute;
   z-index: -1;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   user-select: none;
   touch-action: none;
   -webkit-user-drag: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.welcomePage {
+.welcome-Page {
   left: 30rem;
   top: 20rem;
   position: absolute;
   width: 30rem;
+  
 }
 
-.welcomeContent p {
+/* .logoIcon{
+  display:  flex;
+  align-items: center;
+  justify-content:  center;
+} */
+.welcome-Content img{
+  position: absolute;
+  left: 1rem;
+  bottom: 8rem;
+}
+
+
+.welcome-Content h1 {
+  display: block;
   font-size: 3rem;
-  color:  rgb(70, 70, 70);
-  font-family: museo-sans-rounded, sans-serif;
+  color:  rgb(50, 50, 50);
+  font-family: Museo Sans Rounded, sans-serif;
   font-style: normal;
   font-weight: 700;
+  text-align: start;
+  width: 30rem;
 }
 
-.welcomeContent .btn-primary {
-  /* font-family: monospace, sans-serif; */
-  color: rgb(70, 70, 70);
+.welcome-Content .btn-primary {
+  font-size: 1.5rem;
+  border-radius: 2rem;
+  color: rgb(50, 50, 50);
   background-color: #eec44c;
   border: none;
-  box-shadow: 2px 2px 5px#cfab42, -2px -2px 5px #ffdd56;
+  box-shadow: 2px 2px 5px#cfab42, 
+              -2px -2px 5px #ffdd56;
 }
 
-.welcomeContent .btn-primary:not(:disabled):not(.disabled):active,
+.welcome-Content .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   border-color: black;
-  color: rgb(70, 70, 70);
+  color: rgb(50, 50, 50);
   background-color:  #eec44c;
   box-shadow: inset 2px 2px 5px#cfab42, 
               inset -2px -2px 5px #ffdd56;
+}
+.txt-type > .txt {
+  border-right: 0.5rem solid rgb(70, 70, 70);
 }
