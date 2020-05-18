@@ -1,22 +1,56 @@
-.editWrap .field{
-  font-family:  Museo Sans Rounded, sans-serif;
+.editWrap {
+  /* margin-left: 10%; */
+}
+.editWrap .field {
+  font-family: Museo Sans Rounded, sans-serif;
   font-style: normal;
   font-weight: 700;
-  color: rgb(70, 70, 70);
-}
-
-.editWrap .field input{
-  border-radius: 1rem;
-  
-}
-
-.editWrap .actions .btn-primary{
-  border-radius: 1rem;
+  color: rgb(50, 50, 50);
   margin-top: 1rem;
-  color:  rgb(70, 70, 70);
+}
+
+.editWrap .field input {
+  border-radius: 0.4rem;
+  background: #eeeeee;
+  color: none;
+  box-shadow: inset 2px 2px 3px #c1c1c1, inset -2px -2px 3px #ffffff;
+}
+.editWrap .field input:focus {
+  outline-offset: 0px;
+  outline: none;
+}
+
+.editWrap .btn-primary {
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+  color: rgb(50, 50, 50);
   background-color: #eecc44;
+  box-shadow: 3px 3px 4px #cfcfcf, 
+              -3px -3px 4px #ffffff;
   border: hidden;
+}
 
-  /* position: absolute; */
+.editWrap .btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+  color: rgb(50, 50, 50);
+  background-color: #eecc44;
+  box-shadow: inset 3px 3px 4px #caa741, 
+              inset -3px -3px 4px #ffe157;
+  border: hidden;
+}
 
+.editWrap h3 {
+  font-family: Museo Sans Rounded, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  color: rgb(50, 50, 50);
+  width: 65rem;
+  margin-top: 3rem;
+}
+
+.editWrap i {
+  font-style: normal;
 }
