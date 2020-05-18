@@ -1,0 +1,26 @@
+
+<h1>Room <%= @room.name %></h1>
+
+
+<div class="wrap">
+  <%= form_for @message, remote: true do |f| %>
+    <%= f.hidden_field :room_id, value: @room.id %>
+    <div class="container-left">
+      <h1>User: <%= current_user.nickname %></h1>
+      <div class="quote-display" id="quoteDisplay">
+      </div>
+      <%= f.text_area :content, class: 'quote-input', 
+                                id: 'quoteInput', 
+                                type: 'hidden',
+                                autofocus: true %>
+      <%= f.submit name: 'left_input'%>
+    </div>
+  <% end %>
+
+
+  <div class="container-right">
+    <div class="quote-display2" id="quoteDisplay2">
+    </div>
+    <textarea class="quote-input2" id="quoteInput2" type="hidden" name="message[content]" style="display:none"></textarea>
+  </div>
+</div>
