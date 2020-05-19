@@ -14,6 +14,7 @@ class TypingController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @user_article  = UserArticle.new
+    @topic_article = @article.content.split(//)
   end
   def edit
     @article = Article.find(params[:id])

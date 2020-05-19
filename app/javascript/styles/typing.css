@@ -37,10 +37,10 @@ display: -webkit-box;
 -webkit-box-orient: vertical;
 white-space: normal;
 }
+
 #play-start:hover {
   box-shadow: inset 4px 4px 8px #cfcfcf, 
               inset -4px -4px 8px #ffffff;
-  /* color: #fa0; */
   transition: 0.05s;
   font-size: 15.5px;
 }
