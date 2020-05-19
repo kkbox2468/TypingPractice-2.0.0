@@ -1,6 +1,6 @@
 class UserArticleController < ApplicationController
   def  create 
-    byebug
+    # byebug
     @user_article  = UserArticle.create(article_params)
     # redirect_to request.referrer
     redirect_to playground_index_path

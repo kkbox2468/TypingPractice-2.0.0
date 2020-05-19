@@ -1,7 +1,6 @@
 class StatsController < ApplicationController
   def index
     find_type_history  
-    
   end
 
   private
