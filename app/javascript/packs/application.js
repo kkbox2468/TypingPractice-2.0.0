@@ -19,12 +19,14 @@ require("scripts")
 // const imagePath = (name) => images(name, true)
 
 
-// import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
 
+import 'jquery'
+import $ from 'jquery'
+window.$ = $
+
 import "controllers"
 
-import 'sweetalert2'
 import Swal from 'sweetalert2'
 window.Swal = Swal

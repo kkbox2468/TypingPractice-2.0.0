@@ -138,26 +138,14 @@ window.onload = function() {
 
     const timeSum = document.getElementById('seconds').innerText   //花費時間、秒數
 
-    if (countDownResult > 0) {
-      
+    if (countDownResult > 0) {      
       console.log(`加油、還差：${countDownResult}個字`)
       console.log(`已輸入字數：${inputValueLength}`)  
-      getresult()    
     } 
     else{
-      getresult();
       console.log("完成");
-      this.alert(
-        `
-        成績揭曉： 
-        打字平均速度為：${wpm}WPM,
-        總花費時間：${timeSum},
-        `
-      );
-      const submitResult =  document.querySelector('#new_user_article')
-      submitResult.submit();
+      $('#new_user_article').submit();
     }  
-
 
     // 錯誤字母
     let  resultInCorrentWord = []
@@ -179,7 +167,7 @@ window.onload = function() {
     let corrextRate = (corrects.length / contentTest).toFixed(2)
     let catchResultAccuracy = document.querySelector('#user_article_accuracy')
     catchResultAccuracy.value = parseFloat(corrextRate*100) || 0
-d  })
+  })
 
 
   /*  抓取隨機英文段落作為題目 */
