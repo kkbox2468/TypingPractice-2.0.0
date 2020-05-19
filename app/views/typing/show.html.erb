@@ -7,7 +7,7 @@
   <%# <div class="timer" id="minutes" ></div> %>
   <div class="timer">
     <div>時間</div>       
-    <div class="timer ml-2" id="seconds" >0</div>
+    <div class="timer ml-2" id="seconds" value="0"></div>
     <div>秒</div>       
   </div>
   <!-- <div class="timer">
@@ -16,7 +16,7 @@
   </div> -->
   <div class="timer">
     <div>|速度</div>       
-    <div class="timer" id="wpm">0</div>
+    <div class="timer" id="wpm" value="0"></div>
     <div>WPM</div>       
   </div>
 </div>
@@ -41,7 +41,7 @@
 
     
     
-  <div class="keys" id="keyboard">
+   <div class="keys" id="keyboard">
         <div class="key key_symbols" data-key="192">~<span>`</span></div>
         <div class="key key_symbols" data-key="49">!<span>1</span></div>
         <div class="key key_symbols" data-key="50">@<span>2</span></div>
@@ -106,23 +106,23 @@
           <div class="key down" data-key="40"><img src="/icon/arrow-down.svg" alt=""></div>
           <div class="key right" data-key="39"><img src="/icon/arrow-right.svg" alt=""></div>
         </div>
-    </div>
+    </div> 
 </div>
 
 <!-- 傳送結果用的隱藏表單 -->
 <div class="statu-params">
   <% if current_user %>
     <%= form_for( @user_article, url: user_article_index_path , method: 'post') do |f| %>
-      <div class="inputTime" ><%= f.text_field :time %></div>
-      <div class="inputTypeNum"><%= f.text_field :letter_count %></div>字數
-      <div class="inputWpm"><%= f.text_field :speed %></div>
-      <div class="inputW"><%= f.text_field :wrong_letter %></div>錯誤字母
-      <div class="inputN"><%= f.text_field :wrong_letter_count %></div>錯誤字數
-      <div class="inputPercent"><%= f.text_field :accuracy %></div>準確率
+      <div class="inputTime" ><%= f.text_field :time, value: 0 %></div>
+      <div class="inputTypeNum"><%= f.text_field :letter_count, value: 0 %></div>
+      <div class="inputWpm"><%= f.text_field :speed, value: 0 %></div>
+      <div class="inputW"><%= f.text_field :wrong_letter, value: 0 %></div>
+      <div class="inputN"><%= f.text_field :wrong_letter_count, value: 0 %></div>
+      <div class="inputPercent"><%= f.text_field :accuracy, value: 0 %></div>
       <div class="userId"><%= f.text_field :user_id, value: current_user.id %></div>
       <div class="articleId"><%= f.text_field :article_id, value: @article.id %></div>
   
-      <%= f.submit name: 'submit_result' %>
+      <%= f.submit name: 'submit_result'%>
     <% end %> 
   <% end %>  
 </div>

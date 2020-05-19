@@ -270,3 +270,10 @@ body .quote-input{
 .statu-params{
   display: none;
 }
+.statu-params div{
+  width: 50px;
+}
+.new_user_article{
+  width: 500px;
+  display: flex;
+}
