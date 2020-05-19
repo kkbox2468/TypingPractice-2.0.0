@@ -3,7 +3,8 @@
 .lesson-select .card-body .btn{
   border: none;
   background-color: #eeeeee;
-  box-shadow: 7px 7px 14px #cfcfcf, -7px -7px 14px #ffffff;
+  box-shadow: 7px 7px 14px #cfcfcf, 
+            -7px -7px 14px #ffffff;
   color: rgb(70, 70, 70);
 }
 
@@ -26,4 +27,20 @@
 
 .lesson-select .card-body a{
   color: rgb(70, 70, 70);
+}
+.ellipsis {
+overflow:hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+white-space: normal;
+}
+
+#play-start:hover {
+  box-shadow: inset 4px 4px 8px #cfcfcf, 
+              inset -4px -4px 8px #ffffff;
+  transition: 0.05s;
+  font-size: 15.5px;
 }

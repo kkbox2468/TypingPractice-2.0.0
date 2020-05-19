@@ -2,7 +2,6 @@ class TypingController < ApplicationController
   def index
     @articles = Article.all
   end 
-
   def new
     @articles = Article.new
   end
@@ -10,22 +9,13 @@ class TypingController < ApplicationController
     @articles = Article.new(clean_article)
     if @articles.save
       redirect_to typing_index_path, notice: 'The typing topic has created!'
-    else
-      render json: params
     end
   end
   def show
-    
-    # render html: params
-    # html: params
     @article = Article.find(params[:id])
-    # @article = Article.find(params[:id]).content.split(//) 
     @user_article  = UserArticle.new
-    # byebug
-
-    
+    @topic_article = @article.content.split(//)
   end
-
   def edit
     @article = Article.find(params[:id])
   end
@@ -42,7 +32,6 @@ class TypingController < ApplicationController
     @article.destroy
     redirect_to typing_index_path, alert: 'The typing topic has destroyed!'
   end
-
 
   private
   def clean_article
