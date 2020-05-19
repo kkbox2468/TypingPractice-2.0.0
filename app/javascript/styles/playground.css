@@ -268,7 +268,7 @@ body .quote-input{
 
 /* 傳送結果用的隱藏表單 */
 .statu-params{
-  display: none;
+  /* display: none; */
 }
 .statu-params div{
   width: 50px;
@@ -276,4 +276,13 @@ body .quote-input{
 .new_user_article{
   width: 500px;
   display: flex;
+}
+
+/* Alert */
+.swal2-actions .swal2-styled.swal2-confirm{
+  background: #f7c232;
+}
+
+.swal2-footer a{
+  color: #f8d472;
 }
