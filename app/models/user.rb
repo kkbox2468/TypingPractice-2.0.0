@@ -15,10 +15,10 @@ class User < ApplicationRecord
   
 
 
-  has_many(:battle_records, :foreign_key => :user_a_id, :dependent => :destroy)
-  has_many(:reverse_battle_records, :class_name => :BattleRecord,
-           :foreign_key => :user_b_id, :dependent => :destroy)
+  has_many :battle_records, foreign_key: :user_a_id, dependent: :destroy
+  has_many :reverse_battle_records, class_name: :BattleRecord,
+           foreign_key: :user_b_id, dependent: :destroy
 
-  has_many :users, :through => :battle_records, :source => :user_b
+  has_many :users, through: :battle_records, source: :user_b
           
 end
