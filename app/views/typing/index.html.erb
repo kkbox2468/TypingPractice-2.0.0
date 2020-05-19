@@ -1,22 +1,5 @@
 <h1>Typing 關卡頁面</h1>
-
-<div class="lesson-select">
-  <ul>
-      <%= link_to  "新增關卡", new_typing_path, method: 'GET', class:'btn' %>
-  </ul>
-  
-  <% n = 1 %>
-  <div class=" card ">
-    <% @articles.each do |article| %>
-      <div class="card-body" style="width: 15rem">
-        <h5 class="card-title">第<%= "#{n}" %>關</h5>
-        <p class="card-text"><%= link_to article.content, typing_path(article.id) %></p>
-        <%= link_to "編輯", edit_typing_path(article.id), class: "btn btn-primary" %>
-        <%= link_to "刪除", typing_path(article.id), method: "DELETE", class: "btn btn-primary" %>
-        <%= link_to "開始", typing_path(article.id), class: "btn btn-primary" %>
-      </div>
-    <% n += 1 %>
-  <% end %>
+<%= render 'shared/topics', topics: @articles, type: "typing" %>
 
 
   
