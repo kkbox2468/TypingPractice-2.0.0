@@ -141,10 +141,8 @@ window.onload = function() {
     if (countDownResult > 0) {      
       console.log(`加油、還差：${countDownResult}個字`)
       console.log(`已輸入字數：${inputValueLength}`)  
-      // getresult()    
     } 
     else{
-      // getresult();
       console.log("完成");
       $('#new_user_article').submit();
     }  
