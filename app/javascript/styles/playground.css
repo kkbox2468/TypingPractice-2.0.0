@@ -9,6 +9,9 @@ body{
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
 }
+body.dark-mode{
+  background-color: #212633;
+}
 body .quote-input{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

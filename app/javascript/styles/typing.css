@@ -15,10 +15,8 @@
   flex-flow: row wrap;
 }
 
-
 .lesson-select .card-body{
   margin: 10px;
-
 }
 
 .lesson-select .card-body a:hover{
@@ -28,6 +26,16 @@
 .lesson-select .card-body a{
   color: rgb(70, 70, 70);
 }
+.lesson-select .card.dark-mode{
+  background-color: #212633;
+}
+.lesson-select .card-body.dark-mode, .lesson-select .card-body .btn.dark-mode{
+  background-color: #212633;
+  box-shadow: 7px 7px 14px rgb(14, 14, 15, 0.5), 
+            -7px -7px 14px rgba(255, 255, 255, 0.05);
+  color: rgb(247, 208, 81);
+}
+
 .ellipsis {
 overflow:hidden;
 white-space: nowrap;

@@ -13,7 +13,6 @@ import './playground.css'
 import './mode.css'
 
 import './typing.css'
-import './racing.css'
 
 
 import 'bootstrap/dist/css/bootstrap.css'
