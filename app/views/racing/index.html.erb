@@ -3,15 +3,23 @@
 <div class="lesson-select">
   <div class="card">
     <div class="card-body">
-      <div class="form-group">
-        <%= form_for @room do |f|%>
-          <%= f.label :name %>
-          <%= f.text_field :name, class: 'form-control' %>
-          <%= f.label :description %>
-          <%= f.text_field :description, class: 'form-control' %>
-          <%= f.submit class: 'btn' %>
-        <% end %>
-      </div>
+      <%= form_for @room do |f|%>
+        <div class="form-row">
+          <div class="form-group mr-2">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+          <div class="form-group mr-2">
+            <%= f.label :description %>
+            <%= f.text_field :description, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.submit class: 'btn btn-primary' %>
+          </div>
+        </div>
+        
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

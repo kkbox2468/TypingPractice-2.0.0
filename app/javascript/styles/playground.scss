@@ -1,6 +1,4 @@
-*{
-  box-sizing: border-box;
-}
+
 body{
   background: #eeeeee;
   justify-content: center;
@@ -8,100 +6,80 @@ body{
   min-height: 100vh; 
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
+  &.dark-mode{
+    background-color: #212633;
+  }
+  .quote-input{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .row{
+    .play-container{
+      padding: 1rem;
+      border-radius: .3rem;
+      width: 79vw;
+      height: 30vh;
+      overflow-y: hidden;
+      top:9vh;
+      border: none;
+      background-color: #eeeeee;
+      box-shadow: 7px 7px 14px #cfcfcf, 
+                -7px -7px 14px #ffffff;
+      color: rgb(70, 70, 70);
+      .quote-display, .quote-display2{
+        padding-bottom: 1rem;
+        font-size: 0px;
+      }
+      .quote-display span, .quote-display2 span{
+        font-size: 2rem;
+        white-space: pre;
+      }
+      .quote-input, .quote-input2{
+        background-color: transparent;
+        border-radius: 2px;
+        outline: none;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        margin: auto;
+        resize: none;
+        padding: .5rem 1rem;
+        font-size: 2rem;
+        color: transparent;
+      }
+      .quote-input:focus{
+        border-color: rgba(239, 252, 255,0);
+      }
+      .selected{
+        text-decoration: underline;
+        background-color: rgb(117, 117, 117);
+      }
+      .correct{
+        color: rgb(93, 192, 0);
+        background-color: rgb(208, 238, 180);
+      }
+      .incorrect{
+        color: red;
+        background: rgb(255, 182, 182);
+      }
+    }
+    .time-counter{
+      top: 1rem;
+      display: flex;
+      .timer{
+        color: rgb(9, 12, 44);
+        font-size: 1rem;
+        font-weight: bold;
+        display: flex;
+        .millisec{
+          margin-left: 2rem;
+          color: red;
+        }
+      }
+    }
+  }
 }
-body.dark-mode{
-  background-color: #212633;
-}
-body .quote-input{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.play-container{
-  padding: 1rem;
-  border-radius: .3rem;
-  width: 79vw;
-  height: 30vh;
-  overflow-y: hidden;
-  /* max-width: 90%; */
-  top:9vh;
-  border: none;
-  background-color: #eeeeee;
-  box-shadow: 7px 7px 14px #cfcfcf, 
-            -7px -7px 14px #ffffff;
-  color: rgb(70, 70, 70);
-}
-.time-counter{
-  /* position: absolute; */
-  top: 1rem;
-  display: flex;
-}
-.timer{
-  /* position: absolute;
-  top: 1rem; */
-  color: rgb(9, 12, 44);
-  font-size: 1rem;
-  font-weight: bold;
-  display: flex;
-}
-.millisec{
-  margin-left: 2rem;
-  color: red;
-}
-
-#quotetopic{
-  transition: all 1s ease 0s;
-}
-.quote-display, .quote-display2{
-  padding-bottom: 1rem;
-  font-size: 0px;
-}
-
-.quote-display span, .quote-display2 span{
-  font-size: 3rem;
-  white-space: pre;
-}
-.quote-input, .quote-input2{
-  background-color: transparent;
-  /* border: 1px solid rgb(105, 105, 105); */
-  border-radius: 2px;
-  outline: none;
-  width: 100%;
-  height: 0;
-  overflow: hidden;
-  margin: auto;
-  resize: none;
-  padding: .5rem 1rem;
-  font-size: 2rem;
-  color: rgb(179, 179, 179);
-  /* border-width: 0px; */
-  /* color: transparent; */
-}
-.quote-input:focus{
-  border-color: rgb(239, 252, 255,0);
-}
-.selected{
-  text-decoration: underline;
-  background-color: rgb(117, 117, 117);
-}
-.correct{
-  color: rgb(93, 192, 0);
-  background-color: rgb(208, 238, 180);
-}
-.incorrect{
-  color: red;
-  background: rgb(255, 182, 182);
-}
-
-
-
-
-
-
-
 
 /* ---------keyboard---------- */
-
-
-
 #keyboard {
   /* width: 50rem;  */
   /* min-height: 50vh; */
@@ -141,7 +119,6 @@ body .quote-input{
               -2px -2px 2px #ffffff;
   /* transition: all .1s ease; */
 }
-
 
 .delete {
   grid-column: span 4;

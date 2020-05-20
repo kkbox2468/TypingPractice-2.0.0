@@ -8,11 +8,11 @@
       <% @code_item.each do |code| %>
       <div>
         <% code.each do |character| %>
-        <% if character == " " %>
-          <span> </span>
-        <% else %>
-          <span><%= character %></span>
-        <% end %>
+          <% if character == " " %>
+            <span> </span>
+          <% else %>
+            <span><%= character %></span>
+          <% end %>
         <% end %>
       </div>
       <% end %>
@@ -21,8 +21,5 @@
   </div>
 </div>
 
-
-
-
-
 <%= render 'shared/keyboard' %>
+<%= render 'shared/stats' %>
