@@ -1,7 +1,8 @@
 class StatsController < ApplicationController
   def index
     find_type_history  
-    # @user = User.id
+    # byebug
+    
   end
 
   private
@@ -21,3 +22,4 @@ class StatsController < ApplicationController
                                           :accuracy)
   end
 end
+

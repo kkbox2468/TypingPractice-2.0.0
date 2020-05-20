@@ -1,4 +1,28 @@
 <h1>Stats</h1>
+
+<div class="row user-profile">
+  <div class="user-pic col-3">
+    <img src="https://picsum.photos/id/684/100/100" alt="">
+  </div>
+  <div class="user-pic col-9">
+    <div class="user-info">
+      <div class="user-info-nickname">
+        <%= current_user.nickname %>
+      </div>
+      <div class="user-info-email">
+        <%= current_user.email %>
+      </div>
+      <div class="user-info-created_at">
+        <%= current_user.created_at %>
+      </div>
+
+      <%= link_to  "想改個帥氣的名字嗎？", edit_user_registration_path %>
+
+    </div>
+  </div>
+</div>
+
+
 <canvas id="chart" width="40" height="30"></canvas>
 
 
