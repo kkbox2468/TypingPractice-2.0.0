@@ -1,9 +1,8 @@
 $(function(){
-
   $('#quoteInput').on('keydown', function(){
-    let clinth = document.querySelector('.play-container')
-    let clinth12 = clinth.clientHeight * 0.33
-    // console.log(clinth12)
+    let container = document.querySelector('.play-container') 
+    let topicContain = container.clientHeight * 0.33
+    // console.log(topicContain)
 
     let startLine = document.querySelector('#quotetopic')
     let selected = document.querySelector('.selected')
@@ -13,18 +12,14 @@ $(function(){
     // console.log(nextWord.offsetTop)
     let gapAmount = (selected.offsetTop) - (startLine.offsetTop)
     // console.log(gapAmount)
-    let gapAmount2 = gapAmount - clinth12
+    let gapAmount2 = gapAmount - topicContain
     // console.log(gapAmount2)
 
-    if (gapAmount > clinth12) {
+    if (gapAmount > topicContain) {
       if (selected.offsetTop < nextWord.offsetTop) {
-        // console.log('換行啦')
         $('#quotetopic').css('margin-top',`-${gapAmount}px`)
-      } else if (selected.offsetTop < nextWord.offsetTop) {
+      } else {
         $('#quotetopic').css('margin-top',`-${gapAmount2}px`)
-      }
-      else {
-        // console.log('不要動')
       }
     } 
   })
