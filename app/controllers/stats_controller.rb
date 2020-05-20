@@ -1,6 +1,7 @@
 class StatsController < ApplicationController
   def index
     find_type_history  
+    # @user = User.id
   end
 
   private
