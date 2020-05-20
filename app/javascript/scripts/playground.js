@@ -275,7 +275,7 @@ window.onload = function() {
     
   });
 
-};
+}
 
 
 
