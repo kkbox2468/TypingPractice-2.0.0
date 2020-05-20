@@ -1,7 +1,5 @@
-$(document).ready( function(){
+$(document).ready(function(){
   $('#new_user_article').submit('turbolinks:load', function(e){
-    e.preventDefault()
-
     Swal.fire({
       icon: 'success',
       text: '完成！繼續挑戰？',
@@ -9,7 +7,6 @@ $(document).ready( function(){
       confirmButtonText: '來吧！',
       cancelButtonColor: '#aaaaaa'
     }).then(() => {
-      $('.submit_result').submit()
       window.location.replace('/playground/typing')
     })
   })

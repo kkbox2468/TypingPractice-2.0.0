@@ -139,8 +139,8 @@ window.onload = function() {
     const timeSum = document.getElementById('seconds').innerText   //花費時間、秒數
 
     if (countDownResult > 0) {      
-      console.log(`加油、還差：${countDownResult}個字`)
-      console.log(`已輸入字數：${inputValueLength}`)  
+      // console.log(`加油、還差：${countDownResult}個字`)
+      // console.log(`已輸入字數：${inputValueLength}`)  
     } 
     else{
       console.log("完成");
