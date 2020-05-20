@@ -43,13 +43,17 @@ body .quote-input{
   margin-left: 2rem;
   color: red;
 }
+
+#quotetopic{
+  transition: all 1s ease 0s;
+}
 .quote-display, .quote-display2{
   padding-bottom: 1rem;
-
   font-size: 0px;
 }
+
 .quote-display span, .quote-display2 span{
-  font-size: 2rem;
+  font-size: 3rem;
   white-space: pre;
 }
 .quote-input, .quote-input2{
