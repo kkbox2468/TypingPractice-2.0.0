@@ -1,4 +1,4 @@
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
   const RNADOM_QUOTE_API_URL = 'https://api.quotable.io/random'
   const quoteDisplayElement = document.getElementById('quoteDisplay')
   const quoteInputElement = document.getElementById('quoteInput')
@@ -225,9 +225,10 @@ window.onload = function() {
   function getTimerTime() {
     return `${Math.floor((new Date() - startTime) / 1000)}`
   }
-  function getTimeMillisec() {
-    return `${Math.floor(new Date().getMilliseconds() / 10)}毫秒`
-  }
+
+  // function getTimeMillisec() {
+  //   return `${Math.floor(new Date().getMilliseconds() / 10)}毫秒`
+  // } 毫秒的資料暫時不用所以先註解
 
   /* 鍵盤音效 */
   function playSound() {
@@ -275,7 +276,7 @@ window.onload = function() {
     
   });
 
-};
+})
 
 
 

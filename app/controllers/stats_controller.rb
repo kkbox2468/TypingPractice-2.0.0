@@ -1,6 +1,7 @@
 class StatsController < ApplicationController
   def index
     find_type_history  
+    # @user = User.id
   end
 
   private
@@ -10,13 +11,13 @@ class StatsController < ApplicationController
   end
 
   def article_params
-    params.require(:user_article).permit(:time, 
-                                         :speed, 
-                                         :user_id,
-                                         :letter_count, 
-                                         :article_id, 
-                                         :wrong_letter, 
-                                         :wrong_letter_count,
-                                         :accuracy)
+    params.require(:user_article).permit( :time, 
+                                          :speed, 
+                                          :user_id,
+                                          :letter_count, 
+                                          :article_id, 
+                                          :wrong_letter, 
+                                          :wrong_letter_count,
+                                          :accuracy)
   end
 end
