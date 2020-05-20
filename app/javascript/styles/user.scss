@@ -1,6 +1,6 @@
-.user{
-  .col-12{
-    .card{
+.user {
+  .col-12 {
+    .card {
       width: 340px;
       border: none;
       background-color: #eeeeee;
@@ -17,7 +17,7 @@
         box-shadow: inset 3px 3px 8px #cfcfcf, 
                     inset -3px -3px 3px #ffffff;
       }
-      input[type="submit"]{
+      input[type="submit"] {
         border: none;
         background-color: #f1c943;
         box-shadow:  3px 3px 8px #cfcfcf, 
@@ -32,7 +32,7 @@
                       inset -3px -3px 3px rgba(255, 255, 255, 0.08);
         }
       }
-      #error_explanation{
+      #error_explanation {
         ul{
           li{
             color: rgb(187, 9, 69);

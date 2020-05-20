@@ -4,11 +4,11 @@
   background: #eec44c;
   box-shadow:-3px -3px 5px rgba(255,255,255,0.02),
               3px  3px 10px rgba(0, 0, 0, 0.2);
-  .navbar-nav{
-    .nav-link{
+  .navbar-nav {
+    .nav-link {
       color: rgb(70, 70, 70);
     }
-    .nav-btn{
+    .nav-btn {
       margin-top: .1rem;
       margin-left: 1rem;
       border-radius: 1rem;
@@ -18,19 +18,19 @@
       border: hidden;
     }
   }
-  .navbar-brand{
+  .navbar-brand {
     padding-top:0;
   }
   .btn-primary:not(:disabled):not(.disabled):active,
   .btn-primary:not(:disabled):not(.disabled).active,
-  .show > .btn-primary.dropdown-toggle{
+  .show > .btn-primary.dropdown-toggle {
   color: rgb(70, 70, 70);
   background: #eec44c;
   box-shadow: inset  2px 2px 4px #caa741, 
               inset -2px -2px 4px #ffe157;
   border: hidden;
   }
-  .btn-primary:hover{
+  .btn-primary:hover {
     color: rgb(70, 70, 70);
     background: #eec44c;
     box-shadow:  2px 2px 4px #caa741, 

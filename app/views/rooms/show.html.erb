@@ -1,26 +1,29 @@
 <h1><%= @room.name %></h1>
 
 <div class="row">
-  <div class="container-left col-6">
-    <%= form_for @message, remote: true do |f| %>
-    <%= f.hidden_field :room_id, value: @room.id %>
-      <p>User: <%= current_user.nickname %></p>
-      <div class="quote-display play-container w-100" id="quoteDisplay">
+  <div class="col-6">
+    <div class="play-container w-100" id="quoteDisplay">
+      <div class="quote-display">
         <%= render 'quote', topic: @topic%>
       </div>
+    </div>
+      <%= form_for @message, remote: true do |f| %>
+      <%= f.hidden_field :room_id, value: @room.id %>
       <%= f.text_area :content, class: 'quote-input', 
                                 id: 'quoteInput', 
                                 type: 'hidden',
                                 autofocus: true %>
-      <%= f.submit name: 'left_input'%>
+      <%= f.submit name: 'left_input', class: "d-none" %>
       <% end %>
   </div>
-  <div class="container-right col-6">
-    <p>User: </p>
-    <div class="quote-display2 play-container w-100" id="quoteDisplay2">
-      <%= render 'quote', topic: @topic%>
-    </div>
+
+  <div class="col-6">
+    <div class="play-container w-100" id="quoteDisplay2">
+      <div class="quote-display2">
+        <%= render 'quote', topic: @topic%>
+      </div>
     <textarea class="quote-input2" id="quoteInput2" type="hidden" name="message[content]" style="display:none"></textarea>
+    </div>
   </div>
 </div>
 
@@ -29,4 +32,7 @@
   <div id="user-name">User name : <%= current_user.nickname %></div>
   <div id="room-id" data-room-id="<%= @room.id %>">Room Id : <%= @room.id %></div>  
 </div>
+<audio id="keyboard-sound">
+  <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
+</audio>
 <%= javascript_pack_tag 'channels', 'data-turbolinks-track': 'reload' %>
