@@ -4,20 +4,18 @@
   <div class="user-pic col-3">
     <img src="https://picsum.photos/id/684/100/100" alt="">
   </div>
-  <div class="user-pic col-9">
-    <div class="user-info">
-      <div class="user-info-nickname">
-        <%= current_user.nickname %>
-      </div>
-      <div class="user-info-email">
-        <%= current_user.email %>
-      </div>
-      <div class="user-info-created_at">
-        <%= current_user.created_at %>
-      </div>
-
-      <%= link_to  "想改個帥氣的名字嗎？", edit_user_registration_path %>
-
+  <div class="user-info col-9">
+    <div class="user-info-nickname">
+      <%= current_user.nickname %>
+    </div>
+    <div class="user-info-email">
+      <%= current_user.email %>
+    </div>
+    <div class="user-info-created_at">
+      You have been join us since <%= current_user.created_at.strftime('%Y/%m/%d')  %>
+    </div>
+    <div class="user-info-edit">
+      <%= link_to  "Wanna change a charming name?", edit_user_registration_path %>
     </div>
   </div>
 </div>
@@ -27,7 +25,7 @@
 
 
 
-<div class="row">
+<div class="row type-log">
   <% if current_user %>
     <h3><%=  current_user.id%>的歷史紀錄</h3>
     <table class="table">

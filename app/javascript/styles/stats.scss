@@ -1,0 +1,47 @@
+.user-profile{
+  margin-bottom: 30px;
+  padding: 30px 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  justify-content: space-around;
+  box-shadow: 7px 7px 14px #cfcfcf, -7px -7px 14px #ffffff;
+
+  .user-pic{
+    
+    img{
+      border-radius: 90px;
+    }
+  }
+  .user-info{
+    display: flex;
+    flex-direction: column;
+
+    .user-info-nickname{
+      font-size: 2rem;
+    }
+    .user-info-edit{
+      text-align: end;
+      font-size: 0.5rem;
+
+      a{
+        color:orange;
+      }
+    }
+
+  }
+}
+
+#chart{
+  margin-bottom: 30px;
+  padding: 30px 10px;
+  border-radius: 20px;
+  box-shadow: 7px 7px 14px #cfcfcf, -7px -7px 14px #ffffff;
+}
+
+.type-log{
+  margin-bottom: 30px;
+  padding: 30px 10px;
+  border-radius: 20px;
+  box-shadow: 7px 7px 14px #cfcfcf, -7px -7px 14px #ffffff;
+}
