@@ -6,6 +6,9 @@ class StatsController < ApplicationController
       redirect_to typing_index_path, notice: '還不是會員嗎？加入會員來記錄成果！'
     end
   
+    # find_type_history  
+    # @article_accuracy = UserArticle.(params[:id])
+    @arti_accuracy = current_user.user_articles.average(:accuracy).to_f #從current user抓底下create的所有文章裡的準確度.average可以算平均再算成浮點數
   end
 
   private

@@ -12,7 +12,6 @@ require("scripts")
 
 //chart.js
 import Chart from 'chart.js';
-// Windows.Chart = Chart;
 // var chart = new Chart(ctx, { }); //--->官網寫法
 
 // Uncomment to copy all static images under ../images to the output folder and reference

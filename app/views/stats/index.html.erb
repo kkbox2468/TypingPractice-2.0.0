@@ -22,6 +22,7 @@
 
 
 <canvas id="chart" width="40" height="30"></canvas>
+<canvas id="chart" width="40" height="30" data-accuracy="<%= @arti_accuracy %>%"></canvas>
 
 
 
@@ -41,12 +42,13 @@
           <th>準確度</th>
         </tr>
       </thead>
+      <!-- 把底下迴圈放在controller action做完再塞實體變數 -->
       <% current_user.user_articles.each do |i| %>
         <tbody>
           <tr>
             <!-- <td><%= i.user_id %></td> -->
             <td><%= i.article_id %></td>
-            <td><%= i.time %></td>
+            <td><%= i.time %>秒</td>
             <td><%= i.letter_count %></td>
             <td><%= i.speed %></td>
             <!-- <td><a href="#" class="wrong-letter">錯字</a></td>
