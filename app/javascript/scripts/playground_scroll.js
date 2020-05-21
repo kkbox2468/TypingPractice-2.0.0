@@ -1,4 +1,5 @@
 $(function(){
+
   $('#quoteInput').on('keydown', function(){
     let container = document.querySelector('.play-container') 
     let topicContain = container.clientHeight * 0.33
@@ -23,4 +24,5 @@ $(function(){
       }
     } 
   })
+  
 })

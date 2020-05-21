@@ -8,7 +8,6 @@ class UserArticleController < ApplicationController
   def article_params
     params.require(:user_article).permit(:time, 
                                          :speed, 
-                                         :user_id,
                                          :letter_count, 
                                          :article_id, 
                                          :wrong_letter, 

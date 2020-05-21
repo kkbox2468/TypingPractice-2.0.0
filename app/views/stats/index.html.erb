@@ -1,9 +1,31 @@
 <h1>Stats</h1>
+
+<div class="row user-profile">
+  <div class="user-pic col-3">
+    <img src="https://picsum.photos/id/684/100/100" alt="">
+  </div>
+  <div class="user-info col-9">
+    <div class="user-info-nickname">
+      <%= current_user.nickname %>
+    </div>
+    <div class="user-info-email">
+      <%= current_user.email %>
+    </div>
+    <div class="user-info-created_at">
+      You have been join us since <%= current_user.created_at.strftime('%Y/%m/%d')  %>
+    </div>
+    <div class="user-info-edit">
+      <%= link_to  "Wanna change a charming name?", edit_user_registration_path %>
+    </div>
+  </div>
+</div>
+
+
 <canvas id="chart" width="40" height="30"></canvas>
 
 
 
-<div class="row">
+<div class="row type-log">
   <% if current_user %>
     <h3><%=  current_user.id%>的歷史紀錄</h3>
     <table class="table">

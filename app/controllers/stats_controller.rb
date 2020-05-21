@@ -1,7 +1,11 @@
 class StatsController < ApplicationController
   def index
-    find_type_history  
-    # @user = User.id
+    if current_user
+      find_type_history 
+    else
+      redirect_to typing_index_path, notice: '還不是會員嗎？加入會員來記錄成果！'
+    end
+  
   end
 
   private
@@ -13,7 +17,6 @@ class StatsController < ApplicationController
   def article_params
     params.require(:user_article).permit( :time, 
                                           :speed, 
-                                          :user_id,
                                           :letter_count, 
                                           :article_id, 
                                           :wrong_letter, 
@@ -21,3 +24,4 @@ class StatsController < ApplicationController
                                           :accuracy)
   end
 end
+
