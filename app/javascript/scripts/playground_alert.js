@@ -4,7 +4,6 @@ $(document).ready(function(){
     let doneAt = document.querySelector('#user_article_time').value
     let doneWpm = document.querySelector('#user_article_speed').value
     
-    debugger
     Swal.fire({
       icon: 'success',
       title: '完成！繼續挑戰？',
