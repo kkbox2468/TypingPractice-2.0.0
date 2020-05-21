@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: 1
+  letter_count: 1
+  speed: 1.5
+  wrong_letter: MyString
+  wrong_letter_count: 1
+  accuracy: 1.5
+  user_id: 1
+  topic_id: 1
+
+two:
+  time: 1
+  letter_count: 1
+  speed: 1.5
+  wrong_letter: MyString
+  wrong_letter_count: 1
+  accuracy: 1.5
+  user_id: 1
+  topic_id: 1
