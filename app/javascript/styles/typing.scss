@@ -8,22 +8,25 @@
   .card-body {
     margin: 10px;
     border: none;
+    border-radius: 1rem;
     background-color: #eeeeee;
-    box-shadow: 7px 7px 14px #cfcfcf, 
-              -7px -7px 14px #ffffff;
+    box-shadow: 3px 3px 6px #cfcfcf, 
+                -3px -3px 6px #ffffff;
     color: rgb(70, 70, 70);
     position: relative;
 
     .btn {
+      border-radius: 1rem;
       border: none;
-      background-color: #eeeeee;
-      box-shadow: 7px 7px 14px #cfcfcf, 
-                -7px -7px 14px #ffffff;
+      background-color:  #eec44c;
+      box-shadow: 3px 3px 5px #cfcfcf, 
+                  -3px -3px 5px #ffffff;
       color: rgb(70, 70, 70);
     }
     &.dark-mode, .btn.dark-mode {
       background-color: #212633;
-      box-shadow: 7px 7px 14px rgba(14, 14, 15, 0.5), -7px -7px 14px rgba(255, 255, 255, 0.05);
+      box-shadow: 3px 3px 5px rgba(14, 14, 15, 0.5), 
+                  -3px -3px 5px rgba(255, 255, 255, 0.05);
       color: rgb(247, 208, 81);
     }
 
@@ -41,6 +44,9 @@
     }
   }
   .ellipsis {
+    font-family:  museo sans rounded, sans-serif;
+    font-style: normal;
+    font-weight: 200;
     overflow:hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -50,10 +56,13 @@
     white-space: normal;
     }
   #play-start:hover {
-    box-shadow: inset 4px 4px 8px #cfcfcf, 
-                inset -4px -4px 8px #ffffff;
+    box-shadow: inset 2px 2px 3px #cfcfcf, 
+                inset -2px -2px 3px #ffffff;
     transition: 0.05s;
     font-size: 15.5px;
+    :active{
+      
+    }
   }
 }
 
