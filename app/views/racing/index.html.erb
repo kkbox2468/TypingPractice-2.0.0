@@ -1,5 +1,5 @@
 <h1>Racing Rooms</h1>
-
+<button id="create-room-btn">Create a Room</button>
 <div class="lesson-select">
   <div class="card">
     <div class="card-body">
@@ -17,12 +17,11 @@
             <%= f.submit class: 'btn btn-primary' %>
           </div>
         </div>
-        
-        </div>
       <% end %>
-    </div>
+    </div>   
   </div>
 </div>
+
 
 <div class="lesson-select">
   <div class="card">
@@ -37,3 +36,22 @@
   <% end %>
   </div>
 </div>
+<script>
+  let roomBtn = document.querySelector('#create-room-btn')
+  roomBtn.addEventListener('click', () => {
+    console.log(this);
+    const { value: formValues } = Swal.fire({
+      title: 'Multiple inputs',
+      html:
+        '<input id="swal-input1" class="swal2-input">' +
+        '<input id="swal-input2" class="swal2-input">',
+      focusConfirm: false,
+      preConfirm: () => {
+        return [
+          document.getElementById('swal-input1').value,
+          document.getElementById('swal-input2').value
+        ]
+      }
+    })
+  })
+</script>

@@ -20,13 +20,13 @@
         <%= yield %>
       </div>
   </body>
+  <!-- 色彩模式切換測試 -->
   <script>
     let checkBox = document.querySelector('#mode')
     let cards = [...document.querySelectorAll('.card')]
     let cardBodys = [...document.querySelectorAll('.card-body')]
     let cardButtons = [...document.querySelectorAll('.btn')]
     let webBody = document.querySelector('body')
-    console.log(cards);
     checkBox.addEventListener('change', function () {
       cardButtons.forEach((e) => {
         modeHandler(e);
