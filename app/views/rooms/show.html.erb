@@ -4,30 +4,36 @@
   <div class="col-6">
     <div class="play-container w-100" id="quoteDisplay">
       <div class="quote-display">
-        <%= render 'quote', topic: @topic%>
+        <div id="quotetopic">
+          <%= render 'quote', topic: @topic%>
+        </div>
       </div>
     </div>
-      <%= form_for @message, remote: true do |f| %>
+    <%= form_for @message, remote: true do |f| %>
       <%= f.hidden_field :room_id, value: @room.id %>
       <%= f.text_area :content, class: 'quote-input', 
                                 id: 'quoteInput', 
                                 type: 'hidden',
                                 autofocus: true %>
       <%= f.submit name: 'left_input', class: "d-none" %>
-      <% end %>
+    <% end %>
   </div>
+
+  
 
   <div class="col-6">
     <div class="play-container w-100" id="quoteDisplay2">
       <div class="quote-display2">
-        <%= render 'quote', topic: @topic%>
+        <div id="quotetopic2">
+          <%= render 'quote', topic: @topic%>
+        </div>
       </div>
     <textarea class="quote-input2" id="quoteInput2" type="hidden" name="message[content]" style="display:none"></textarea>
     </div>
   </div>
 </div>
 
-<div>
+<div class="d-none">
   <div id="user-id" data-user-id="<%= current_user.id %>" data-user-name="<%= current_user.nickname %>">User Id : <%= current_user.id %></div>
   <div id="user-name">User name : <%= current_user.nickname %></div>
   <div id="room-id" data-room-id="<%= @room.id %>">Room Id : <%= @room.id %></div>  
