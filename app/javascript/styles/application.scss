@@ -1,3 +1,14 @@
+@font-face {
+  font-family: Museo Sans Rounded;
+  src: 
+      local("/fonts/MuseoSansRounded900"),
+      local("/fonts/MuseoSansRounded700"),
+      url("/fonts/MuseoSansRounded900.otf"),
+      url("/fonts/MuseoSansRounded700.otf");
+  font-weight: 900,700;
+}
+
+
 h1 ,h2 {
   font-family:  Museo Sans Rounded, sans-serif;
   font-style: normal;
