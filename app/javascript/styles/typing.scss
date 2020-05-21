@@ -1,0 +1,44 @@
+.lesson-select {
+  .card {
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .card-body {
+    margin: 10px;
+    border: none;
+    background-color: #eeeeee;
+    box-shadow: 7px 7px 14px #cfcfcf, 
+              -7px -7px 14px #ffffff;
+    color: rgb(70, 70, 70);
+    .btn {
+      border: none;
+      background-color: #eeeeee;
+      box-shadow: 7px 7px 14px #cfcfcf, 
+                -7px -7px 14px #ffffff;
+      color: rgb(70, 70, 70);
+    }
+    &.dark-mode, .btn.dark-mode {
+      background-color: #212633;
+      box-shadow: 7px 7px 14px rgba(14, 14, 15, 0.5), -7px -7px 14px rgba(255, 255, 255, 0.05);
+      color: rgb(247, 208, 81);
+    }
+  }
+  .ellipsis {
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    }
+  #play-start:hover {
+    box-shadow: inset 4px 4px 8px #cfcfcf, 
+                inset -4px -4px 8px #ffffff;
+    transition: 0.05s;
+    font-size: 15.5px;
+  }
+}
+
