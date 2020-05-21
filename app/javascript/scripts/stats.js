@@ -13,12 +13,12 @@ document.addEventListener("DOMContentLoaded", function() {
             label: 'Accuracy',
             data: accu_data,
             backgroundColor: [
-                '#acffa0',
-                '#ffb2bf'
+                '#3cce68',
+                '#ff7091'
             ],
             borderColor: [
-                '#acffa0',
-                '#ffb2bf'
+                '#3cce68',
+                '#ff7091'
             ],
             borderWidth: 0
         }]
@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", function() {
             label: 'wpm',
             data: wpm_data,
             backgroundColor: [
-                '#3e95cd'
+                '#6ac6ce'
             ],
             borderColor: [
-                '#3e95cd'
+                '#6ac6ce'
             ],
             borderWidth: 0
         }]
