@@ -7,11 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
+
 article_topic_csv = File.read('db/seeds/article_topic.csv', encoding: 'iso-8859-1')
+ruby_topic_csv = File.read('db/seeds/ruby_topic.csv', encoding: 'iso-8859-1')
+
 article = CSV.parse(article_topic_csv, headers: true)
+ruby = CSV.parse(ruby_topic_csv, headers: true)
 
 count = 0
-
 article.each do |row|
 
   content = row.to_hash['content'] 
@@ -21,4 +24,17 @@ article.each do |row|
    
 end 
 
-puts "#{count} articles have been saved"
+puts "#{count} article topics have been saved"
+
+
+count = 0
+ruby.each do |row|
+
+  content = row.to_hash['content'] 
+  Ruby.create(content: content) 
+    
+  count = count + 1 
+   
+end 
+
+puts "#{count} ruby topics have been saved"
