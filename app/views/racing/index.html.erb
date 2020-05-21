@@ -12,7 +12,7 @@
       <p><%= room.description %></p>
       <%= link_to "Join", room_path(room.id), class: 'btn' %>
       <%= link_to "編輯", edit_room_path(room.id), class: 'btn' %>
-      <%= link_to "刪除", room_path(room.id), class: 'btn', method: "DELETE" %>
+      <%= link_to "刪除", room_path(room.id), class: 'btn', id: "delete-room-btn", method: "DELETE" %>
     </div>
   <% end %>
   </div>
@@ -49,10 +49,11 @@
 <!-- Create Room 彈出視窗 -->
 <script>
   let roomBtn = document.querySelector('#create-room-btn')
+  let deleteRoomBtn = document.querySelectorAll('#delete-room-btn')
   let roomName = document.querySelector('#room_name')
   let roomDescription = document.querySelector('#room_description')
   let createBtn = document.querySelector('#room_submit')
-
+  
   roomBtn.addEventListener('click', () => {
     getData();
   })
@@ -82,7 +83,7 @@
     })
 
     if (formValues) {
-      // Swal.fire(JSON.stringify(formValues))
+
       let timerInterval
       Swal.fire({
         title: 'Room has created!',
@@ -101,4 +102,39 @@
       })
     }
   }
+  
+  let stepStatus = false
+  deleteRoomBtn.forEach((deleteBtn) => {
+    deleteBtn.addEventListener('click', (btn) => {
+      if (stepStatus === false) {
+        btn.preventDefault();
+        btn.stopPropagation();
+          Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.value) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Your room has deleted!',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            return stepStatus = true;
+          }
+        })
+      }
+
+
+      if (stepStatus === true) {
+        // deleteBtn.click();
+      }
+    })
+  })
+
 </script>
