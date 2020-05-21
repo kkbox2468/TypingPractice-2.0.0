@@ -6,8 +6,8 @@ class TypingController < ApplicationController
     @articles = Article.new
   end
   def create
-    
     @articles = Article.new(clean_article) if current_user
+
     if @articles.save
       redirect_to typing_index_path, notice: 'The typing topic has created!'
     else
@@ -16,6 +16,7 @@ class TypingController < ApplicationController
 
   end
   def show
+  
     @article = Article.find(params[:id])
     @user_article  = UserArticle.new
     @topic_article = @article.content.split(//)
