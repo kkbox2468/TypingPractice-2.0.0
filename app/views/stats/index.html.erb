@@ -20,25 +20,25 @@
   </div>
 </div>
 
-
-<canvas id="chart" width="40" height="30"></canvas>
-<canvas id="chart" width="40" height="30" data-accuracy="<%= @arti_accuracy %>%"></canvas>
-
-
-      <canvas id="arti_accuracy" 
-              width="40" height="30" 
-              data-accuracy="<%= @arti_accuracy %>%">
-      </canvas>
-
-      <canvas id="arti_wpm" 
-              width="40" height="4" 
-              data-wpm="<%= @arti_wpm %>sec">
-      </canvas>
+<div class="row user-profile">
+  <div class="user-info col-4">
+    <canvas id="arti_accuracy" 
+            width="40" height="30" 
+            data-accuracy="<%= @arti_accuracy %>%">
+    </canvas>
+  </div> 
+  <div class="user-info col-4">
+    <canvas id="arti_wpm" 
+            width="40" height="14" 
+            data-wpm="<%= @arti_wpm %>sec">
+    </canvas>
+  </div>
+</div>
 
 
 <div class="row type-log">
   <% if current_user %>
-    <h3><%=  current_user.id%>的資料分析</h3>
+    <h3><%= current_user.nickname %>的資料分析</h3>
     <table class="table">
 
 
