@@ -1,4 +1,5 @@
-class Article < ApplicationRecord
+class Article < Topic
+  
   validates :content, presence: true
 
 
