@@ -13,7 +13,7 @@
         <h5 class="card-title">Lesson<%= "#{n}" %></h5>
         <p class="card-text ellipsis"><%= topic.content %></p>
         <%= link_to "開始", send("#{type}_path", id: topic.id), class: "btn btn-primary d-flex justify-content-center ", id: "play-start" %>
-        <% if @done_article.include?(topic.id) %>
+        <% if done.include?(topic.id) %>
         <div class="progress d-flex" id="lessonBar" style="height: 10px;">
           <div class="progress-bar " role="progressbar"  style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
