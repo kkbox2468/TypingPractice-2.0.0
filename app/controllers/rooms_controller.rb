@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   def create
     @room = Room.new(room_data)
+    @room.user_id = current_user.id
     if @room.save
       redirect_to racing_index_path, notice: 'Room has created!'
     else
