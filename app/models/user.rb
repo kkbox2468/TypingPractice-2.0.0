@@ -23,5 +23,6 @@ class User < ApplicationRecord
           foreign_key: :user_b_id, dependent: :destroy
 
   has_many :users, through: :battle_records, source: :user_b
+  has_many :rooms
           
 end

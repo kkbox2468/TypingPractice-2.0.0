@@ -7,12 +7,15 @@
   </div>
   <div class="card">
   <% @rooms.each do |room|%>
-    <div class="card-body">
+    <div class="card-body w-25">
+      <p>Owner:<%= room.user.nickname %></p>
       <h5><%= room.name %></h5>
       <p><%= room.description %></p>
       <%= link_to "Join", room_path(room.id), class: 'btn' %>
-      <%= link_to "編輯", edit_room_path(room.id), class: 'btn' %>
-      <%= link_to "刪除", room_path(room.id), class: 'btn', id: "delete-room-btn", method: "DELETE" %>
+      <% if current_user.id == room.user_id%>
+        <%= link_to "編輯", edit_room_path(room.id), class: 'btn' %>
+        <%= link_to "刪除", room_path(room.id), class: 'btn', id: "delete-room-btn", method: "DELETE" %>
+      <% end %>
     </div>
   <% end %>
   </div>
