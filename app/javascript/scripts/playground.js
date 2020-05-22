@@ -143,6 +143,8 @@ document.addEventListener("DOMContentLoaded", function() {
       // console.log(`已輸入字數：${inputValueLength}`)  
     } 
     else{
+      // getresult();
+
       console.log("完成");
       // debugger
       $('.statu-params').submit();
