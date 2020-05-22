@@ -4,7 +4,7 @@
     <% topics.each do |topic| %>
       <div class="card-body" style="width: 15rem">
 
-        <% if @done_article.include?(topic.id) %>
+        <% if done.include?(topic.id) %>
           <div class="check-done">
             <img src="/icon/check-circle.svg" alt="">
           </div>
