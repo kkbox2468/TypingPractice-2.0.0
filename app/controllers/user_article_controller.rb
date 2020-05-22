@@ -1,14 +1,11 @@
 class UserArticleController < ApplicationController
   def  create 
-    @user_article  = UserArticle.create(article_params)
+    @user_article  = UserArticle.new(article_params)
     @user_article.user_id  = current_user.id
-    @user_article.save
-    # byebug
     if @user_article.save
-      flash[:niotice] = "Score successfully saved"
-      redirect_to typing_index_path
+      render json: { ok: true }
     else
-      redirect_to typing_index_path , notice: 'False, try again?'
+      render json: { ok: false, message: @user_article.errors.full_messages }
     end
   end
 
