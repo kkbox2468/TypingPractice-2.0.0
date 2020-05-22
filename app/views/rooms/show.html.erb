@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-6">
-    <div class="play-container w-100" id="quoteDisplay">
+    <div class="racing play-container w-100" id="quoteDisplay">
       <div class="quote-display">
         <div id="quotetopic">
           <%= render 'quote', topic: @topic%>
@@ -22,7 +22,7 @@
   
 
   <div class="col-6">
-    <div class="play-container w-100" id="quoteDisplay2">
+    <div class="racing play-container w-100" id="quoteDisplay2">
       <div class="quote-display2">
         <div id="quotetopic2">
           <%= render 'quote', topic: @topic%>
@@ -41,4 +41,3 @@
 <audio id="keyboard-sound">
   <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
 </audio>
-<%= javascript_pack_tag 'channels', 'data-turbolinks-track': 'reload' %>
