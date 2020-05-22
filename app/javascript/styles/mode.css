@@ -11,8 +11,8 @@
 .select-area .card {
   background-color: #eeeeee;
   border: none;
-  box-shadow: 7px 7px 14px #cfcfcf, 
-              -7px -7px 14px #ffffff;
+  box-shadow: 4px 4px 8px #cfcfcf, 
+              -4px -4px 8px #ffffff;
   margin-right: 2rem;
 }
 .select-area .card img{
@@ -36,8 +36,8 @@
 .battle-area .card {
   border: none;
   background-color: #eeeeee;
-  box-shadow: 7px 7px 14px #cfcfcf, 
-              -7px -7px 14px #ffffff;
+  box-shadow: 4px 4px 8px #cfcfcf, 
+              -4px -4px 8px #ffffff;
 }
 
 .battle-area .progress-bar {
@@ -92,7 +92,7 @@
 
 
 #typingModeBar .progress-bar{
-  background: rgb(112,232,133);
+  background: #70e885;
   background: linear-gradient(128deg, rgba(112,232,133,1) 0%, rgba(162,255,188,1) 100%);
 }
 
