@@ -1,6 +1,12 @@
 class UserArticleController < ApplicationController
   def  create 
-    @user_article  = UserArticle.create(article_params)
+    @user_article  = UserArticle.new(article_params)
+    @user_article.user_id  = current_user.id
+    if @user_article.save
+      render json: { ok: true }
+    else
+      render json: { ok: false, message: @user_article.errors.full_messages }
+    end
   end
 
   private

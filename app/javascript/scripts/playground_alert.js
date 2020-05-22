@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
-  $('#new_user_article').submit('turbolinks:load', function(e){
+  $('.statu-params').on('submit', function(e){
     let doneAt = document.querySelector('#user_article_time').value
     let doneWpm = document.querySelector('#user_article_speed').value
-    
+
     Swal.fire({
       icon: 'success',
       title: '完成！繼續挑戰？',
@@ -16,5 +16,6 @@ $(document).ready(function(){
       window.location.replace('/playground/typing')
     })
   })
+  
 })
 

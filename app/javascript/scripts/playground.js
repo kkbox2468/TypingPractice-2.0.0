@@ -138,14 +138,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const timeSum = document.getElementById('seconds').innerText   //花費時間、秒數
 
-    if (countDownResult > 0) {      
-      // console.log(`加油、還差：${countDownResult}個字`)
-      // console.log(`已輸入字數：${inputValueLength}`)  
-    } 
-    else{
-      console.log("完成");
-      $('#new_user_article').submit();
+    /* 送出成績 */
+    if (countDownResult <= 0 ) { 
+      $('.statu-params input[type="submit"]').click();
     }  
+
+
 
     // 錯誤字母
     let  resultInCorrentWord = []
