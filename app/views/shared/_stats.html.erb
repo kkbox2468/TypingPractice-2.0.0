@@ -1,6 +1,8 @@
 <!-- 傳送結果用的隱藏表單 -->
 <div class="statu-params">
-  <%= form_for( @user_article, url: user_article_index_path , method: 'post') do |f| %>
+
+  <%#= form_for( @user_article, url: user_article_index_path , method: 'post') do |f| %>
+  <%= form_for( achievement, url: user_topics_path , method: 'post') do |f| %>
   
     <div class="inputTime" ><%= f.text_field :time, value: 0 %></div>
     <div class="inputTypeNum"><%= f.text_field :letter_count, value: 0 %></div>
@@ -8,7 +10,9 @@
     <div class="inputW"><%= f.text_field :wrong_letter, value: 0 %></div>
     <div class="inputN"><%= f.text_field :wrong_letter_count, value: 0 %></div>
     <div class="inputPercent"><%= f.text_field :accuracy, value: 0 %></div>
-    <div class="articleId"><%= f.text_field :article_id, value: @article.id %></div>
+    <div class="userId"><%= f.text_field :user_id, value: 0 %></div>
+    <div class="topicId"><%= f.text_field :topic_id, value: 0 %></div>
+    <div class="articleId"><%#= f.text_field :article_id, value: @article.id %></div>
 
     <%= f.submit name: 'submit_result'%>
   <% end %>  

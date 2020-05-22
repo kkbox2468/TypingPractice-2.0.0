@@ -16,8 +16,10 @@ class CodingController < ApplicationController
   end
   def show
     str = Ruby.find(params[:id]).content
+    # byebug
     test_ar = str.split('#')
     @code_item = test_ar.map{|c| c.split(//) }
+    
   end
   def edit
     @codes = Ruby.find(params[:id])

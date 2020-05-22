@@ -55,9 +55,10 @@ document.addEventListener("DOMContentLoaded", function() {
     catchResultWpm.value = parseFloat(resultWpm) || 0
 
   };
-
+console.log("dddddddddd")
 
   quoteInputElement.addEventListener('input', () => {
+    console.log("dddddddddd")
     if (startType === 0) {
       startTimer();
       getWpm();
@@ -144,7 +145,8 @@ document.addEventListener("DOMContentLoaded", function() {
     } 
     else{
       console.log("完成");
-      $('#new_user_article').submit();
+      // $('#new_user_article').submit();
+      $('#new_user_topic').submit();
     }  
 
     // 錯誤字母
