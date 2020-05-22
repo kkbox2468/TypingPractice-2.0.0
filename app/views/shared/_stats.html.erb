@@ -1,6 +1,5 @@
 <!-- 傳送結果用的隱藏表單 -->
-<div class="statu-params">
-  <%= form_for( @user_article, url: user_article_index_path , method: 'post') do |f| %>
+  <%= form_for( @user_article, url: user_article_index_path , method: 'post', html: { class: 'statu-params' } ) do |f| %>
   
     <div class="inputTime" ><%= f.text_field :time, value: 0 %></div>
     <div class="inputTypeNum"><%= f.text_field :letter_count, value: 0 %></div>
@@ -12,4 +11,3 @@
 
     <%= f.submit name: 'submit_result'%>
   <% end %>  
-</div>

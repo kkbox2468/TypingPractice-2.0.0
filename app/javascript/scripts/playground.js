@@ -144,7 +144,8 @@ document.addEventListener("DOMContentLoaded", function() {
     } 
     else{
       console.log("完成");
-      $('#new_user_article').submit();
+      // debugger
+      $('.statu-params').submit();
     }  
 
     // 錯誤字母
