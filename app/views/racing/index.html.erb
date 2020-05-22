@@ -8,7 +8,9 @@
   <div class="card">
   <% @rooms.each do |room|%>
     <div class="card-body w-25">
-      <p>Owner:<%= room.user.nickname %></p>
+      <% if room.user %>
+        <p>Owner:<%= room.user.nickname %></p>
+      <% end %>
       <h5><%= room.name %></h5>
       <p><%= room.description %></p>
       <%= link_to "Join", room_path(room.id), class: 'btn' %>
