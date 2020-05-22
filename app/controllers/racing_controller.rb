@@ -1,6 +1,6 @@
 class RacingController < ApplicationController
   def index
     @room = Room.new
-    @rooms_list = Room.all
+    @rooms = Room.all
   end
 end
