@@ -43,3 +43,23 @@
   <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
 </audio>
 
+<div class="preloader">
+  <div class="loader-ground">
+    <div class="single9"></div>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let preloader = document.querySelector('.preloader')
+    let preloaderBar = document.querySelector('.single9')
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+    }, 2500);
+    setTimeout(() => {
+      preloader.classList.add('backward');
+      preloaderBar.classList.add('backward')
+    }, 4200);
+  })
+</script>

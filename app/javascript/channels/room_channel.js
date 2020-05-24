@@ -1,18 +1,21 @@
 import consumer from "./consumer"
-// import { checkCharacter } from "../scripts/playground_racing"
 
 window.onload = function () {
   let roomElement = document.querySelector('#room-id')
   let roomId = roomElement.getAttribute('data-room-id')
   let userElement = document.querySelector('#user-id')
   let userId = Number(userElement.getAttribute('data-user-id'))
-  const quoteInputRight = document.getElementById('racingQuoteInput2')
-  const quoteDisplayRight = document.getElementById('racingQuoteDisplay2')
-
+  /* select for highlight characters */
+  let quoteInputRight = document.getElementById('racingQuoteInput2')
+  let quoteDisplayRight = document.getElementById('racingQuoteDisplay2')
+  /* select for topic scroll */
   let quoteContainer = document.querySelector('.racing-ground')
   let topicContainer = quoteContainer.clientHeight * 0.33 
   let topicStartLine = document.querySelector('#racingQuoteTopic2')
-  
+  /* select for ending page */
+  let pageBody = document.querySelector('body')
+  let endPage = document.createElement('div')
+  endPage.className = "end-page"
 
   consumer.subscriptions.create({ channel: "RoomChannel", room_id: roomId }, {
     connected() {
@@ -30,12 +33,19 @@ window.onload = function () {
       // console.log(data.content);
 
       quoteInputRight.innerText = data.content
-      const arrayQuote = quoteDisplayRight.querySelectorAll('span');
-      const arrayValue = quoteInputRight.value.split('')
-      const inputIndex = quoteInputRight.value.length
+      let arrayQuote = quoteDisplayRight.querySelectorAll('span');
+      let arrayValue = quoteInputRight.value.split('')
+      let inputIndex = quoteInputRight.value.length
 
       if (userId !== data.message.user_id) {
         checkCharacter(arrayQuote, arrayValue, inputIndex)
+        if (inputIndex === arrayQuote.length) {
+          Swal.fire({
+            title: '遊戲結束！',
+          }).then(() => {
+            window.location.replace('/playground/racing')
+          })
+        }
       }
 
       let selected = document.querySelector('.selected2')
@@ -50,6 +60,7 @@ window.onload = function () {
           $('#racingQuoteTopic2').css('margin-top',`-${gapAmount2}px`)
         }
       } 
+
     }
   });
 }

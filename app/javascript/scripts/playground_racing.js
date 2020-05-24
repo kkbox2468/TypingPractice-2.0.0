@@ -1,24 +1,59 @@
+import Swal from "sweetalert2";
 
 document.addEventListener("DOMContentLoaded", function() {
 
-  const quoteDisplayLeft = document.getElementById('racingQuoteDisplay')
-  const quoteDisplayRight = document.getElementById('racingQuoteDisplay2')
-  const quoteInputLeft = document.getElementById('racingQuoteInput')
-  const quoteInputRight = document.getElementById('racingQuoteInput2')
-  const quotetopicLeft = document.getElementById('racingQuoteTopic')
-  const quotetopicRight = document.getElementById('racingQuoteTopic2')
-  const submitBtnLeft = document.querySelector('input[name="left_input"]')
+  /* select for highlight characters */
+  let quoteDisplayLeft = document.getElementById('racingQuoteDisplay')
+  let quoteInputLeft = document.getElementById('racingQuoteInput')
+  let submitBtnLeft = document.querySelector('input[name="left_input"]')
+  
+  /* select for topic scroll */
+  let quoteContainer = document.querySelector('.racing-ground')
+  let topicContainer = quoteContainer.clientHeight * 0.33 // ask what is 0.33?
+  let topicStartLine = document.querySelector('#racingQuoteTopic')
+  
+  /* select for ending page */
+  let pageBody = document.querySelector('body')
+  let endPage = document.createElement('div')
+  endPage.className = "end-page"
 
   /* 播放鍵盤音效 */
   window.addEventListener('keydown', playSound);
 
   quoteInputLeft.addEventListener('input', () => {
-    const arrayQuote = quoteDisplayLeft.querySelectorAll('span');
-    const arrayValue = quoteInputLeft.value.split('')
-    const inputIndex = quoteInputLeft.value.length
+
+    let arrayQuote = quoteDisplayLeft.querySelectorAll('span');
+    let arrayValue = quoteInputLeft.value.split('')
+    let inputIndex = quoteInputLeft.value.length
+
     checkCharacter(arrayQuote, arrayValue, inputIndex)
     submitBtnLeft.click()
+    if (inputIndex === arrayQuote.length) {
+      // pageBody.appendChild(endPage)
+      Swal.fire({
+        title: '遊戲結束！',
+      }).then(() => {
+        window.location.replace('/playground/racing')
+      })
+    }
   })
+
+  /* topic area scroll */
+  quoteInputLeft.addEventListener('keydown', () => {
+    let selected = document.querySelector('.selected')
+    let nextWord = selected.nextElementSibling
+    let gapAmount = (selected.offsetTop) - (topicStartLine.offsetTop)
+    let gapAmount2 = gapAmount - topicContainer
+
+    if (gapAmount > topicContainer) {
+      if (selected.offsetTop < nextWord.offsetTop) {
+        $('#racingQuoteTopic').css('margin-top',`-${gapAmount}px`)
+      } else {
+        $('#racingQuoteTopic').css('margin-top',`-${gapAmount2}px`)
+      }
+    } 
+  })
+
 
   function playSound() {
     const sound = document.getElementById('keyboard-sound')
@@ -46,4 +81,3 @@ function checkCharacter(arrayQuote, arrayValue, inputIndex) {
     }
   })
 }
-// export { checkCharacter }

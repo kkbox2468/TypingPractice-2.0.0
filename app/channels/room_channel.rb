@@ -3,6 +3,7 @@ class RoomChannel < ApplicationCable::Channel
     if params[:room_id]
       stream_from "room_channel_#{params[:room_id]}"
     end
+
   end
 
   def unsubscribed

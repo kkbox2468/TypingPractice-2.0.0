@@ -7,6 +7,7 @@ import './application.scss'
 import './user.scss'
 //
 import './welcome.css'
+import './preloader.css'
 
 import './playground.scss'
 import './playground_racing.scss'
