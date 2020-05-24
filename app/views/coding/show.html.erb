@@ -2,24 +2,53 @@
   <%= render 'shared/timer' %>
 </div>
 
+
+
 <div class="row justify-content-center">
   <div class="play-container mt-3">
     <div class="quote-display" id="quoteDisplay">
-      <% @code_item.each do |code| %>
-      <div>
-        <% code.each do |character| %>
-          <% if character == " " %>
-            <span> </span>
-          <% else %>
-            <span><%= character %></span>
-          <% end %>
+      <div id="quotetopic">
+        <% @code_item.each do |code| %>
+          <div>
+              <% code.each do |character| %>
+                <% if character == " " %>
+                  <span> </span>
+                <% else %>
+                  <span><%= character %></span>
+                <% end %>
+              <% end %>
+          </div>
         <% end %>
       </div>
-      <% end %>
+    </div>
+  </div>
+    <textarea id="quoteInput" class="quote-input" autofocus type="hidden"></textarea>
+      
+    <audio id="keyboard-sound">
+      <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
+    </audio>
+</div>
+
+<%= render 'shared/keyboard'  %>
+<%= render 'shared/stats', achievement: @user_topic ,topic: @codes %>
+
+<!--
+<div class="row justify-content-center">
+  <div class="play-container mt-3">
+    <div class="quote-display" id="quoteDisplay">
+      <%# @code_item.each do |code| %>
+        <div>
+          <#% code.each do |character| %>
+            <#% if character == " " %>
+              <span> </span>
+            <%# else %>
+              <span><%#= character %></span>
+            <%# end %>
+          <%# end %>
+        </div>
+      <%# end %>
     </div>
     <textarea id="quoteInput" class="quote-input" autofocus type="hidden"></textarea>
   </div>
 </div>
-
-<%= render 'shared/keyboard'  %>
-<%= render 'shared/stats' %>
+-->

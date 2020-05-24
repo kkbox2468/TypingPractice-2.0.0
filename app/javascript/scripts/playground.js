@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // 錯誤字數
     let catchResultInCorrentWordCount = document.querySelector('#wrong_letter_count')
     catchResultInCorrentWordCount.value = resultInCorrentWord.length 
-    console.log('bbbbb');
+    
     // 準確度
     let  resultCorrentWord = []//此行無作用？
     let corrects = document.querySelectorAll('#quotetopic .correct')
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(correctRate);
     let catchResultAccuracy = document.querySelector('#accuracy')
     catchResultAccuracy.value = parseFloat(correctRate * 100).toFixed(1) || 0
-    console.log('aaaa');
+    
 
   };
 
