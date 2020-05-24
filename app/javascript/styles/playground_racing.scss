@@ -13,6 +13,7 @@
         overflow: hidden;
         #racingQuoteTopic {
           font-size: 0;
+          transition: all 1s ease 0s;
           span {
             font-size: 2rem;
             white-space: pre;
@@ -24,6 +25,7 @@
         overflow: hidden;
         #racingQuoteTopic2 {
           font-size: 0;
+          transition: all 1s ease 0s;
           span {
             font-size: 2rem;
             white-space: pre;

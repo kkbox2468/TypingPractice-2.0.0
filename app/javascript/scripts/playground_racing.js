@@ -46,4 +46,4 @@ function checkCharacter(arrayQuote, arrayValue, inputIndex) {
     }
   })
 }
-export { checkCharacter }
+// export { checkCharacter }
