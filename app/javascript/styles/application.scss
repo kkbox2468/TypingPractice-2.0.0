@@ -13,11 +13,16 @@
   font-style: normal;
 }
 
+//標準色區
+$yellow1:#ffc44c;
+$darkgrey1:#323232;
+
+
 h1, h2, h3, h4 {
   font-family:  Museo Sans Rounded,jf-openhuninn, sans-serif;
   font-style: normal;
   font-weight: 900;
-  color: rgb(50, 50, 50);
+  color: $darkgrey1;
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
