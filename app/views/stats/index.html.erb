@@ -4,7 +4,7 @@
   <div class="user-pic col-3">
     <img src="/img/NoobAvatar.jpg" alt="">
   </div>
-  <div class="user-info col-9">
+  <div class="user-info col-6">
     <div class="user-info-nickname">
       <%= current_user.nickname %>
     </div>
@@ -23,7 +23,6 @@
 <div class="row user-profile">
   <div class="user-info col-4">
     <canvas id="arti_accuracy" 
-            width="40" height="30" 
             data-accuracy="<%= @arti_accuracy %>%">
     </canvas>
   </div> 

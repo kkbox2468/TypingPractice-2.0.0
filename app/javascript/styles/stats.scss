@@ -13,9 +13,11 @@
               -4px -4px 5px #ffffff;
 
   .user-pic{
-    max-width: 10%;
+    max-width: 100%;
     img{
-      border-radius: 90px;
+      border-radius: 10rem;
+      box-shadow:   .2rem .3em .3rem #cfcfcf, 
+                    -.2rem -.3rem .3rem #ffffff;
     }
   }
   .user-info{
@@ -28,6 +30,7 @@
     .user-info-edit{
       text-align: end;
       font-size: 0.5rem;
+      display: flex;
       
 
       a{
