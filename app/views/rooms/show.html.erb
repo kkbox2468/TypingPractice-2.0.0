@@ -5,17 +5,17 @@
 </div>
 <div class="row">
   <div class="col-6">
-    <div class="racing play-container w-100" id="quoteDisplay">
-      <div class="quote-display">
-        <div id="quotetopic">
+    <div class="racing w-100" id="racingQuoteDisplay">
+      <div class="racing-quote-display">
+        <div id="racingQuoteTopic">
           <%= render 'quote', topic: @topic%>
         </div>
       </div>
     </div>
     <%= form_for @message, remote: true do |f| %>
       <%= f.hidden_field :room_id, value: @room.id %>
-      <%= f.text_area :content, class: 'quote-input', 
-                                id: 'quoteInput', 
+      <%= f.text_area :content, class: 'racing-quote-input', 
+                                id: 'racingQuoteInput', 
                                 type: 'hidden',
                                 autofocus: true %>
       <%= f.submit name: 'left_input', class: "d-none" %>
@@ -25,13 +25,13 @@
   
 
   <div class="col-6">
-    <div class="racing play-container w-100" id="quoteDisplay2">
-      <div class="quote-display2">
-        <div id="quotetopic2">
+    <div class="racing w-100" id="racingQuoteDisplay2">
+      <div class="racing-quote-display2">
+        <div id="racingQuoteTopic2">
           <%= render 'quote', topic: @topic%>
         </div>
       </div>
-    <textarea class="quote-input2" id="quoteInput2" type="hidden" name="message[content]" style="display:none"></textarea>
+    <textarea class="racing-quote-input2" id="racingQuoteInput2" type="hidden" name="message[content]"></textarea>
     </div>
   </div>
 </div>
@@ -44,3 +44,5 @@
 <audio id="keyboard-sound">
   <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
 </audio>
+
+<%= javascript_pack_tag 'playground_racing', 'data-turbolinks-track': 'reload' %>
