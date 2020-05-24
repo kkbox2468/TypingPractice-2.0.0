@@ -1,5 +1,6 @@
 class UserArticleController < ApplicationController
   def  create 
+    # byebug
     @user_article  = UserArticle.create(article_params)
   end
 

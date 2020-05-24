@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const quoteInputElement = document.getElementById('quoteInput')
   const quotetopicElement = document.getElementById('quotetopic')
   const wpmElement = document.getElementById('wpm')
+  
 
   /* 監聽input中的改變 */ 
   // quoteInputElement.addEventListener('input', () => {
@@ -37,33 +38,91 @@ document.addEventListener("DOMContentLoaded", function() {
   let rightCounter = 0;
   let wrongCounter = 0;
 
+  /* 過濾存到資料庫之字母 */ 
+  function filterLetters(arrayLetter) {
+  
+    let permittedLetter = [];
+  
+    arrayLetter.forEach((letter) => { 
+      letter = letter.toLowerCase();
+      if (letter.match(/[a-z]/)) {
+        permittedLetter.push(letter);
+      }
+    })
+  
+    return [...new Set(permittedLetter)].sort();
+    
+  }
 
-  function getresult(){
+
+
+
+  function getresult(contentTest) {
+    
     // 秒數
     let resultTime = document.querySelector('#seconds').innerText
-    let catchResultTime = document.querySelector('#user_article_time')
+    // let catchResultTime = document.querySelector('#user_article_time')
+    let catchResultTime = document.querySelector('#time')
     catchResultTime.value = parseFloat(resultTime)
 
     // 字數
-    let resultType = document.querySelector('#quoteInput').value.length
-    let catchReslutType = document.querySelector('#user_article_letter_count')
+    // let resultType = document.querySelector('#quoteInput').value.length
+    let resultType = quotetopicElement.getElementsByTagName('span').length
+    // let catchReslutType = document.querySelector('#user_article_letter_count')
+    let catchReslutType = document.querySelector('#letter_count')
     catchReslutType.value =  parseFloat(resultType)
 
     // 速度
-    let resultWpm = document.querySelector('#wpm').innerText
-    let catchResultWpm = document.querySelector('#user_article_speed')
-    catchResultWpm.value = parseFloat(resultWpm) || 0
+    //存到資料庫不能是瞬時速度
+    // let resultWpm = document.querySelector('#wpm').innerText
+    
+    
+    let catchResultWpm = document.querySelector('#speed')
+    catchResultWpm.value =  parseFloat((resultType/5)/(resultTime/60)).toFixed(1)
+    // catchResultWpm.value = parseFloat(resultWpm) || 0
+
+
+    // 錯誤字母
+    let  resultInCorrentWord = []
+    let incorrects = document.querySelectorAll('#quotetopic .incorrect')
+    // incorrects.forEach(($dom) => { console.log($dom.innerText) })
+    incorrects.forEach(($dom) => { resultInCorrentWord.push($dom.innerText) })
+    
+    console.log(resultInCorrentWord);
+    let catchResultInCorrentWord = document.querySelector('#wrong_letter')
+    catchResultInCorrentWord.value = filterLetters(resultInCorrentWord) || ""
+
+    // 錯誤字數
+    let catchResultInCorrentWordCount = document.querySelector('#wrong_letter_count')
+    catchResultInCorrentWordCount.value = resultInCorrentWord.length 
+    console.log('bbbbb');
+    // 準確度
+    let  resultCorrentWord = []//此行無作用？
+    let corrects = document.querySelectorAll('#quotetopic .correct')
+    corrects.forEach(($dom) => { resultCorrentWord.push($dom.innerText) })//此行無作用？
+    
+    // let correctRate = (corrects.length / contentTest).toFixed(2)
+    let correctRate = (corrects.length / contentTest)
+    
+    console.log(correctRate);
+    let catchResultAccuracy = document.querySelector('#accuracy')
+    catchResultAccuracy.value = parseFloat(correctRate * 100).toFixed(1) || 0
+    console.log('aaaa');
 
   };
-console.log("dddddddddd")
+
 
   quoteInputElement.addEventListener('input', () => {
-    console.log("dddddddddd")
+
+     
+    
+    
     if (startType === 0) {
       startTimer();
       getWpm();
     }
     startType++;
+    
 
     const arrayQuote = quoteDisplayElement.querySelectorAll('span');
     const arrayValue = quoteInputElement.value.split('')
@@ -72,13 +131,15 @@ console.log("dddddddddd")
     // console.log(inputIndex)
     // console.log(arrayQuote[inputIndex])
     // console.log(arrayQuote[1]);
+ 
 
 
     arrayQuote.forEach((characterSpan, index) => {
       const character = arrayValue[index] 
       // characterSpan.classList.add('selected')
-
-      if (character == null){
+      // console.log(character)
+      if (character == null) {
+        // console.log(character)
         characterSpan.classList.remove('correct')
         characterSpan.classList.remove('incorrect')
         arrayQuote[inputIndex].classList.add('selected')
@@ -98,14 +159,30 @@ console.log("dddddddddd")
         correct = false
       }
     })
-
-    if (event.data == null){
-      return ;
-    } else {
+////////////////////////////// 改寫 //////////////////////////
+    // if (event.data == null) {
+      
+    //   console.log('null');
+    //   return ;//這裡return後，不會執行之後的程式碼
+    // } else {
+    //   textAmount++;
+    //   console.log(event.data);
+    //   console.log(`按鍵次數: ${textAmount}`);
+    // }
+    
+    if (event.data !== null) {
       textAmount++;
-      // console.log(event.data);
-      // console.log(`按鍵次數: ${textAmount}`);
-    }
+      console.log(event.data);
+      console.log(`按鍵次數: ${textAmount}`);
+    } 
+    
+
+  // if (correct) {
+      // renderNextQuote();
+      //return textAmount = 0; //這裡return後，不會執行之後的程式碼
+    //}
+    //////////////////////////////////////////////////////
+
     //印出正確與錯誤次數
     // console.log(`正確次數: ${rightCounter}`);
     // console.log(`錯誤次數: ${wrongCounter}`);
@@ -118,19 +195,20 @@ console.log("dddddddddd")
     //   return textAmount = 0
     // }
 
-    if (correct) {
-      // renderNextQuote();
-      return textAmount = 0;
-    }
+  
     
     /* console輸入結果 */
-    getresult();
+    
+ 
+    
+    // const quoteInputElement = document.getElementById('quoteInput')
     let inputValue = quoteInputElement.value
+
     // console.log(`輸入的內容:${inputValue}`)
 
     let inputValueLength = inputValue.length 
     // console.log(`已輸入字數：${inputValueLength}`)  
-
+    
     const contentTest = (quotetopicElement.getElementsByTagName('span').length) 
     // console.log(`題目字數:${contentTest}`) 
 
@@ -138,39 +216,28 @@ console.log("dddddddddd")
     // console.log(`還差${countDownResult}` )
 
     const timeSum = document.getElementById('seconds').innerText   //花費時間、秒數
+    
 
+    // console.log(contentTest)
+    // console.log(countDownResult)
+    getresult(contentTest);
     if (countDownResult > 0) {      
       // console.log(`加油、還差：${countDownResult}個字`)
       // console.log(`已輸入字數：${inputValueLength}`)  
+      // console.log("未完成");
     } 
     else{
-      console.log("完成");
+      // console.log("完成");
       // $('#new_user_article').submit();
-      $('#new_user_topic').submit();
+      
+      $('#achievement').submit();
+      
+      
     }  
 
-    // 錯誤字母
-    let  resultInCorrentWord = []
-    let incorrects = document.querySelectorAll('#quotetopic .incorrect')
-    // incorrects.forEach(($dom) => { console.log($dom.innerText) })
-    incorrects.forEach(($dom) => { resultInCorrentWord.push($dom.innerText) })
     
-    let catchResultInCorrentWord = document.querySelector('#user_article_wrong_letter')
-    catchResultInCorrentWord.value = resultInCorrentWord || ""
-
-    let catchResultInCorrentWordCount = document.querySelector('#user_article_wrong_letter_count')
-    catchResultInCorrentWordCount.value = resultInCorrentWord.length || ""
-
-    // 準確度
-    let  resultCorrentWord = []
-    let corrects = document.querySelectorAll('#quotetopic .correct')
-    corrects.forEach(($dom) => { resultCorrentWord.push($dom.innerText) })
-
-    let corrextRate = (corrects.length / contentTest).toFixed(2)
-    let catchResultAccuracy = document.querySelector('#user_article_accuracy')
-    catchResultAccuracy.value = parseFloat(corrextRate*100) || 0
   })
-
+//GO
 
   /*  抓取隨機英文段落作為題目 */
   function getRandomQuote() {
@@ -213,6 +280,7 @@ console.log("dddddddddd")
     startTime = new Date() //這會把時間設為current time
     setInterval(() => {
       secElement.innerText = getTimerTime()
+      
       // millisecElement.innerText = getTimeMillisec()
       /* 想要做歸零功能但不work */
       // if (secElement.innerText === 3){
@@ -242,14 +310,23 @@ console.log("dddddddddd")
 
   let wpm = 0
     
-  function getWpm(){
+  function getWpm() {
+    const ＷpmFactor = 0.83
     var a = setInterval(() => {
-      wpm = Math.floor((textAmount / 0.83));
+      wpm = Math.floor((textAmount / ＷpmFactor));
       wpmElement.innerText = `${wpm}`
-      console.log(`-------------${wpm}------------`);
+      // console.log(`-------------${wpm}------------`);
       return textAmount = 0
     }, 10000);
   }
+
+     //計算wpm
+    // if (secElement.innerText % 5 === 0) {
+    //   let wpm = Math.floor((textAmount / 0.5));
+    //   wpmElement.innerText = `${wpm}wpm`
+    //   console.log(`-------------${wpm}------------`);
+    //   return textAmount = 0
+    // }
 
   // renderNextQuote()
   // setTimeout(function(){ renderNextQuote(); }, 3000);
