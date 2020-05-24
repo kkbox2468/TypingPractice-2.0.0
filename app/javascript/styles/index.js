@@ -9,6 +9,7 @@ import './user.scss'
 import './welcome.css'
 
 import './playground.scss'
+import './playground_racing.scss'
 
 import './mode.css'
 

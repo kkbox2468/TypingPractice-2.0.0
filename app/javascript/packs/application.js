@@ -8,7 +8,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("styles")
-// require("scripts")
+require("scripts")
 
 //chart.js
 import Chart from 'chart.js';

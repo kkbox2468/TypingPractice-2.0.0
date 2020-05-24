@@ -5,7 +5,7 @@
 </div>
 <div class="row">
   <div class="col-6">
-    <div class="racing w-100" id="racingQuoteDisplay">
+    <div class="racing-ground w-100" id="racingQuoteDisplay">
       <div class="racing-quote-display">
         <div id="racingQuoteTopic">
           <%= render 'quote', topic: @topic%>
@@ -22,17 +22,15 @@
     <% end %>
   </div>
 
-  
-
   <div class="col-6">
-    <div class="racing w-100" id="racingQuoteDisplay2">
+    <div class="racing-ground w-100" id="racingQuoteDisplay2">
       <div class="racing-quote-display2">
         <div id="racingQuoteTopic2">
           <%= render 'quote', topic: @topic%>
         </div>
       </div>
-    <textarea class="racing-quote-input2" id="racingQuoteInput2" type="hidden" name="message[content]"></textarea>
     </div>
+    <textarea class="racing-quote-input2" id="racingQuoteInput2" type="hidden" name="message[content]"></textarea>
   </div>
 </div>
 
@@ -45,4 +43,3 @@
   <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
 </audio>
 
-<%= javascript_pack_tag 'playground_racing', 'data-turbolinks-track': 'reload' %>
