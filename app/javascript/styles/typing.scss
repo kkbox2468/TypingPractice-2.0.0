@@ -33,13 +33,12 @@
       
     }
     .card-title{
-      color: #eeeeee;
+      color: rgb(50, 50, 50);
       font-weight: 600;
       width: 10rem;
-      padding: .3rem;
       // background: linear-gradient(145deg, #d6b044, #ffd251);
-      text-shadow:  2px -2px 2px #868686,
-                    -2px 2px 2px #ffffff;
+      text-shadow:  -2px -2px 2px #ffffff,
+                    2px 2px 2px #b8b8b8;
     }
     
     .check-done{
