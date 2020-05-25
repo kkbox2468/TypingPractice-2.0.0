@@ -49,6 +49,7 @@
     <%= form_for :check, url: "/messages/new", method: 'GET',remote: true do |f| %>
       <%= f.label "Are you ready?" %>
       <%= f.check_box :content %>
+      <%= f.hidden_field :room_id, value: @room.id %>
       <%= f.submit name: 'check-left', class: 'd-none' %>
     <% end %>
   </div>

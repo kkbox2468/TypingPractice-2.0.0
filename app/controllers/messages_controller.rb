@@ -9,8 +9,10 @@ class MessagesController < ApplicationController
   def new
     # render json: {name: 'aaa', age: 18} #for AJAX
     user_id = current_user.id
-    ActionCable.server.broadcast "room_channel_40", check: params[:check][:content], user_id: user_id
-    
+    room_id = params[:check][:room_id]
+    # debugger
+    ActionCable.server.broadcast "room_channel_#{room_id}", check: params[:check][:content], user_id: user_id
+
 
     
   end
