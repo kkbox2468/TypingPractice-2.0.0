@@ -2,13 +2,13 @@ $(function(){
 
 //字體大小
   $('.typeT-item-sm').on('click', function(){
-    $('.quote-display span').css("font-size", "1rem");
-  })
-  $('.typeT-item-md').on('click', function(){
     $('.quote-display span').css("font-size", "2rem");
   })
-  $('.typeT-item-lg').on('click', function(){
+  $('.typeT-item-md').on('click', function(){
     $('.quote-display span').css("font-size", "3rem");
+  })
+  $('.typeT-item-lg').on('click', function(){
+    $('.quote-display span').css("font-size", "3.5rem");
   })
 
 //聲音
@@ -62,7 +62,4 @@ $(function(){
     $('body').removeClass();
     $('body').addClass("change-to-green")
   })
-  
-
-
 })
