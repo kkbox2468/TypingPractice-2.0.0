@@ -32,12 +32,12 @@ document.addEventListener("DOMContentLoaded", function() {
   let cur_wpm =  parseFloat(arti_wpm.dataset['wpm'])
   let wpm_data = [cur_wpm ]
   if(!!arti_wpm){ 
-    console.log(arti_wpm)
+    // console.log(arti_wpm)
     arti_wpm.getContext('2d');
     var chart = new Chart(arti_wpm, {
       type: 'horizontalBar',
       data: {
-        labels: ["Avg wpm"],
+        // labels: ["Avg wpm"],
         datasets: [{
             label: 'wpm',
             data: wpm_data,

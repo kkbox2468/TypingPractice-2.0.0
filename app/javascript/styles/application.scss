@@ -13,18 +13,27 @@
   font-style: normal;
 }
 
-h1 ,h2,h3,h4 {
+//標準色區
+$BGgrey:#eeeeee;
+$noob-yellow:#ffc44c;
+$grey1:#323232;
+$grey2:#757575;
+$correct:#5dc000;
+$incorrect:#ff0000;
+
+
+h1, h2, h3, h4 {
   font-family:  Museo Sans Rounded,jf-openhuninn, sans-serif;
   font-style: normal;
   font-weight: 900;
-  color: rgb(50, 50, 50);
+  color: $grey1;
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 .btn-primary {
-  color: rgb(50, 50, 50);
+  color:$grey1;
   font-family: Museo Sans Rounded, sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -34,8 +43,8 @@ h1 ,h2,h3,h4 {
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   border: none;
-  color: rgb(50, 50, 50);
-  background-color: #eeeeee;
+  color: $grey1;
+  background-color: $BGgrey;
   border: none;
   box-shadow: inset 7px 7px 10px #cfcfcf, 
               inset -7px -7px 10px #ffffff;

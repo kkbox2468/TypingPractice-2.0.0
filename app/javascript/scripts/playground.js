@@ -105,6 +105,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   quoteInputElement.addEventListener('input', () => {
 
+
+    
+    
     if (startType === 0) {
       startTimer();
       getWpm();
@@ -146,6 +149,8 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     })
 
+
+    
     if (event.data !== null) {
       textAmount++;
       console.log(event.data);
