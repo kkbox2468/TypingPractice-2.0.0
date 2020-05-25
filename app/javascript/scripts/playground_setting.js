@@ -49,14 +49,17 @@ $(function(){
 
 //鍵盤顏色
   $('.color-item-pink').on('click', function(){
+    $('body').removeClass();
     $('body').addClass("change-to-pink")
   })
 
   $('.color-item-blue').on('click', function(){
+    $('body').removeClass();
     $('body').addClass("change-to-blue")
   })
 
   $('.color-item-green').on('click', function(){
+    $('body').removeClass();
     $('body').addClass("change-to-green")
   })
   

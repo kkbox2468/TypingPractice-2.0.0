@@ -3,9 +3,10 @@
   display: inline-block;
   right: 0;
   box-shadow: inset 0px 10px 10px rgba(255, 255, 255, 0.02);
+  z-index: 1;
 
   .dropbtn {
-    background-color: #eeeeee;
+    background-color: rgba(0, 0, 0, 0);
     color: none;
     padding: 16px;
     border: none;
@@ -13,9 +14,9 @@
   }
   .dropdown-content {
     text-align: right;
-    display: none;
+    // display: none; ++++++++
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: rgba(0, 0, 0, 0);
     min-width: 160px;
     z-index: 1;
     right: 0;
@@ -24,7 +25,7 @@
       color: black;
       padding: 12px 16px;
       text-decoration: none;
-      display: block;
+      display: inline-block;
     }
     // a:hover {background-color: #f1f1f1}
 
@@ -32,48 +33,21 @@
     .dropdown-sound-item,
     .dropdown-keyboard-item,
     .dropdown-color-item{
-      display: flex;
+      // display: none;  ++++++++++++++
       flex-direction: row;
       justify-content: flex-end;
-
-
     }
 
-    // .dropdown-typeT-item{
-    //   .typeT-item{
-    //     display: none;
-      
-    //   }
-    // }
-    // .dropdown-sound-item{
-    //   .sound-item{
-    //     display: none;
-      
-    //   }
-    // }
-    // .dropdown-color-item{
-    //   .color-item{
-    //     display: none;
-      
-    //   }
-    // }
-   
-
-    .dropdown-typeT:hover .dropdown-typeT-item{
-      display: block;
-
-    }
-
-    .dropdown-sound:hover .dropdown-sound-item{
-      display: block;
-    }
-
-    .dropdown-keyboard:hover .dropdown-keyboard-item{
-      display: block;
-    }
-
-    .dropdown-color:hover .dropdown-color-item{
-      display: block;
+    .dropdown-typeT:hover,
+    .dropdown-sound:hover,
+    .dropdown-keyboard:hover,
+    .dropdown-color:hover{
+      .dropdown-typeT-item,
+      .dropdown-sound-item,
+      .dropdown-keyboard-item,
+      .dropdown-color-item{
+        display: flex;
+      }
     }
   }
 }
@@ -90,7 +64,7 @@
 
 //change-to-pink
 .change-to-pink{
-  background-color: #f1ccb8;
+  background-color: #f3d7c8;
   .navbar{
     background-color: #f1ccb8;
     li{
@@ -106,20 +80,20 @@
       }
   }
   #keyboard{
-    background-color: #f1ccb8;
+    background-color: #f3d7c8;
     .key{
       background-color: #f16d7a;
       box-shadow: 2px 2px 2px #c65964, 2px 2px 2px #ff8190;
     }
     .arrows_all{
-      background-color: #f1ccb8;
+      background-color: #f3d7c8;
       box-shadow: none;
     }
   }
 }
 //change-to-blue
 .change-to-blue{
-  background-color: #8b9fd8;
+  background-color: #b4c1e6;
   .navbar{
     background-color: #8b9fd8;
     li{
@@ -135,20 +109,20 @@
       }
   }
   #keyboard{
-    background-color: #8b9fd8;
+    background-color: #b4c1e6;
     .key{
       background-color: #5976ca;
       box-shadow: 2px 2px 2px #4961a6, 2px 2px 2px #698bee;
     }
     .arrows_all{
-      background-color: #8b9fd8;
+      background-color: #b4c1e6;
       box-shadow: none;
     }
   }
 }
 //change-to-green
 .change-to-green{
-  background-color: #72ca86;
+  background-color: #abe2b7;
   .navbar{
     background-color: #72ca86;
     li{
@@ -164,13 +138,13 @@
       }
   }
   #keyboard{
-    background-color: #72ca86;
+    background-color: #abe2b7;
     .key{
       background-color: #72ca86;
       box-shadow: 2px 2px 2px #5da66e, 2px 2px 2px #87ee9e;
     }
     .arrows_all{
-      background-color: #72ca86;
+      background-color: #abe2b7;
       box-shadow: none;
     }
   }

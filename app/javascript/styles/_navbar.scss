@@ -16,6 +16,7 @@
       box-shadow:  2px 2px 4px #caa741, 
                   -2px -2px 4px #ffe157;
       border: hidden;
+      display: inline-block;
     }
     .show{
       border-radius: 1rem 1rem 0rem 0rem;
@@ -36,9 +37,7 @@
       .dropdown-item:hover{
         background-color: palegoldenrod;
       }
-
     }
-
   }
   .navbar-brand {
     padding-top:0;
@@ -58,5 +57,36 @@
     box-shadow:  2px 2px 4px #caa741, 
                 -2px -2px 4px #ffe157;
     border: hidden;
+  }
+}
+
+@media (max-width: 991px){
+  .navbar{
+    .navbar-collapse{
+      li{
+        padding-bottom: 5px;
+      }
+      .navbar-nav{
+        display: list-item;
+        flex-direction: column;
+        #home-dropdown-menu{
+          // display: block;
+          // flex-direction: column;
+          
+    
+          .dropdown-menu{
+            // display: flex;
+          }
+        }
+        .show{
+          display: inline-table;
+          #btnGroupDrop::after{
+            margin-left: 10px;
+            transform: rotate(-90deg);
+            transition-duration: .5s;
+          }
+        }
+      }
+    }
   }
 }
