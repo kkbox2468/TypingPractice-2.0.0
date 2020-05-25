@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   resources :stats, only: [:index]
 
   resources :user_article
+  resources :user_topics, only: [:create]
   resources :messages, only: [:new, :create]
   
 end

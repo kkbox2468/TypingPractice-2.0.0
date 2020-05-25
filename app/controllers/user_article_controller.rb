@@ -1,5 +1,6 @@
 class UserArticleController < ApplicationController
   def  create 
+    
     @user_article  = UserArticle.new(article_params)
     @user_article.user_id  = current_user.id
     if @user_article.save
