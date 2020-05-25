@@ -1,36 +1,28 @@
 class StatsController < ApplicationController
   def index
+    find_type_history 
+
     if current_user
-      find_type_history 
+      # find_type_history 
       # find_type_history  
       # @article_accuracy = UserArticle.find_by(params[:id])
-      @arti_accuracy = current_user.user_articles.average(:accuracy).to_f #從current user抓底下create的所有文章裡的準確度.average可以算平均再算成浮點數
-      @arti_wpm = current_user.user_articles.average(:speed).to_i
+      @arti_accuracy = current_user.user_topics.average(:accuracy).to_f #從current user抓底下create的所有文章裡的準確度.average可以算平均再算成浮點數
+      @arti_wpm = current_user.user_topics.average(:speed)
       
-      @arti_date = current_user.user_articles.map(&:created_at)
-      @arti_amount = current_user.user_articles.average(:letter_count).to_i
-      @articles = current_user.user_articles
+      @arti_date = current_user.user_topics.map(&:created_at)
+      @arti_amount = current_user.user_topics.average(:letter_count).to_i
+      @articles = current_user.user_topics
       # render json: @articles
     else
       redirect_to typing_index_path, notice: '還不是會員嗎？加入會員來記錄成果！'
     end
   
   end
-
+  
   private
-
+  
   def find_type_history 
-    @user_article = UserArticle.find_by(params[:id])
-  end
-
-  def article_params
-    params.require(:user_article).permit( :time, 
-                                          :speed, 
-                                          :letter_count, 
-                                          :article_id, 
-                                          :wrong_letter, 
-                                          :wrong_letter_count,
-                                          :accuracy)
+    @user_topics = current_user.user_topics
+    # @topics_type = user_topics.find_by(params[:id]).topic_id
   end
 end
-
