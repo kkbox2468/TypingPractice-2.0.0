@@ -12,6 +12,21 @@ body {
   .quote-input {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
+  .container{
+    #create-room-btn{
+      border: none;
+      background-color: #eeeeee;
+      box-shadow: 7px 7px 14px #cfcfcf, 
+                -7px -7px 14px #ffffff;
+      color: rgb(70, 70, 70);
+      &:hover{
+        box-shadow: inset 4px 4px 8px #cfcfcf, 
+        inset -4px -4px 8px #ffffff;
+        transition: 0.05s;
+        // font-size: 15.5px;
+      }
+    }
+  }
   .row {
     .play-container {
       padding: 1rem;
@@ -78,6 +93,9 @@ body {
       padding: .5rem 1rem;
       font-size: 2rem;
       color: transparent;
+    }
+    .racing.play-container {
+      height: 50vh;
     }
   }
 }
@@ -261,3 +279,4 @@ body {
 .swal2-footer a{
   color: #f8d472;
 }
+

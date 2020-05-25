@@ -2,7 +2,7 @@
 
 <div class="row user-profile">
   <div class="user-pic col-3">
-    <img src="https://picsum.photos/id/684/100/100" alt="">
+    <img src="/img/NoobAvatar.jpg" alt="">
   </div>
   <div class="user-info col-9">
     <div class="user-info-nickname">
@@ -20,15 +20,28 @@
   </div>
 </div>
 
-
-<canvas id="chart" width="40" height="30"></canvas>
-
+<div class="row user-profile">
+  <div class="user-info col-4">
+    <canvas id="arti_accuracy" 
+            width="40" height="30" 
+            data-accuracy="<%= @arti_accuracy %>%">
+    </canvas>
+  </div> 
+  <div class="user-info col-4">
+    <canvas id="arti_wpm" 
+            width="40" height="14" 
+            data-wpm="<%= @arti_wpm %>sec">
+    </canvas>
+  </div>
+</div>
 
 
 <div class="row type-log">
   <% if current_user %>
-    <h3><%=  current_user.id%>的歷史紀錄</h3>
+    <h3><%= current_user.nickname %>的資料分析</h3>
     <table class="table">
+
+
       <thead>
         <tr>
           <!-- <th>使用者</th> -->
@@ -41,14 +54,15 @@
           <th>準確度</th>
         </tr>
       </thead>
+      <!-- 把底下迴圈放在controller action做完再塞實體變數 -->
       <% current_user.user_articles.each do |i| %>
         <tbody>
           <tr>
             <!-- <td><%= i.user_id %></td> -->
             <td><%= i.article_id %></td>
-            <td><%= i.time %></td>
+            <td><%= i.time %>秒</td>
             <td><%= i.letter_count %></td>
-            <td><%= i.speed %></td>
+            <td><%= i.speed %>WPM</td>
             <!-- <td><a href="#" class="wrong-letter">錯字</a></td>
             <td><%= i.wrong_letter %></td>  -->
             <td><%= i.wrong_letter_count %></td>

@@ -218,23 +218,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const timeSum = document.getElementById('seconds').innerText   //花費時間、秒數
     
 
-    // console.log(contentTest)
-    // console.log(countDownResult)
+    
     getresult(contentTest);
-    if (countDownResult > 0) {      
-      // console.log(`加油、還差：${countDownResult}個字`)
-      // console.log(`已輸入字數：${inputValueLength}`)  
-      // console.log("未完成");
-    } 
-    else{
-      // console.log("完成");
-      // $('#new_user_article').submit();
-      
+    if (countDownResult === 0) {     
+      /* 送出成績 */
       $('#achievement').submit();
-      
-      
-    }  
+    } 
+  
 
+    
+
+
+
+    
     
   })
 //GO
@@ -336,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
   //---------- keyboard -------------//
-
+  
   window.addEventListener('keydown', function(e){
     // console.log('e.code')
     const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);    //  取得按鍵對應的元素

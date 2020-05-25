@@ -1,8 +1,9 @@
 class RoomsController < ApplicationController
   def create
-    @rooms = Room.new(room_data)
-    if @rooms.save
-      redirect_to racing_index_path
+    @room = Room.new(room_data)
+    @room.user_id = current_user.id
+    if @room.save
+      redirect_to racing_index_path, notice: 'Room has created!'
     else
       redirect_to racing_index_path, alert: 'Room has not created!'
     end
@@ -10,8 +11,8 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     @message = Message.new
-    test_topic = "It’s not about ideas. It’s about making ideas happen."
-    @topic = test_topic.split(//)
+    article = "Whether you are training for a sports competition, a fight, a race or an exam, this quote from Nelson Mandela is a great example of determination and pugnacity."
+    @topic = article.split(//)
   end
   def edit
     @room = Room.find(params[:id])
@@ -23,6 +24,11 @@ class RoomsController < ApplicationController
     else
       redirect_to racing_index_path, alert: 'Room has not updated!'
     end
+  end
+  def destroy
+    @room = Room.find(params[:id])
+    @room.destroy
+    redirect_to racing_index_path, alert: 'Room has deleted!'
   end
 
   private

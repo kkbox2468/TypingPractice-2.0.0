@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+        :recoverable, :rememberable, :validatable
   
   validates_uniqueness_of :nickname
   validates_uniqueness_of :email
@@ -20,8 +20,9 @@ class User < ApplicationRecord
 
   has_many :battle_records, foreign_key: :user_a_id, dependent: :destroy
   has_many :reverse_battle_records, class_name: :BattleRecord,
-           foreign_key: :user_b_id, dependent: :destroy
+          foreign_key: :user_b_id, dependent: :destroy
 
   has_many :users, through: :battle_records, source: :user_b
+  has_many :rooms
           
 end

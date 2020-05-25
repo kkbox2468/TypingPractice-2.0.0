@@ -3,11 +3,24 @@
   <div class=" card ">
     <% topics.each do |topic| %>
       <div class="card-body" style="width: 15rem">
-        <h5 class="card-title">第<%= "#{n}" %>關</h5>
+
+        <% if done.include?(topic.id) %>
+          <div class="check-done">
+            <img src="/icon/check-circle.svg" alt="">
+          </div>
+        <% end %>
+
+        <h5 class="card-title">Lesson<%= "#{n}" %></h5>
         <p class="card-text ellipsis"><%= topic.content %></p>
-        <%= link_to "開始", send("#{type}_path", id: topic.id), class: "btn btn-primary d-flex justify-content-center w-50 mx-auto", id: "play-start" %>
+        <%= link_to "開始", send("#{type}_path", id: topic.id), class: "btn btn-primary d-flex justify-content-center ", id: "play-start" %>
+        <% if done.include?(topic.id) %>
+        <div class="progress d-flex" id="lessonBar" style="height: 10px;">
+          <div class="progress-bar " role="progressbar"  style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <% end %>
       </div>
       <% n += 1 %>
     <% end %>
   </div>
 </div>
+

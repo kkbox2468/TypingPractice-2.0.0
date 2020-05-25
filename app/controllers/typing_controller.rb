@@ -1,10 +1,15 @@
 class TypingController < ApplicationController
   def index
     @articles = Article.all
+    @done_article = current_user.user_articles.pluck(:article_id).uniq
+    # @done_article = current_user.user_topics.pluck(:topic_id).uniq
+
   end 
+
   def new
     @articles = Article.new
   end
+
   def create
     @articles = Article.new(clean_article) if current_user
 
@@ -15,6 +20,7 @@ class TypingController < ApplicationController
     end
 
   end
+
   def show
   
     @article = Article.find(params[:id])
@@ -22,9 +28,11 @@ class TypingController < ApplicationController
     @user_topic  = UserTopic.new
     # @user_article  = UserArticle.new
   end
+
   def edit
     @article = Article.find(params[:id])
   end
+
   def update
     @article = Article.find(params[:id])
     if @article.update(clean_article)
@@ -33,6 +41,7 @@ class TypingController < ApplicationController
       render :edit
     end
   end
+  
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
