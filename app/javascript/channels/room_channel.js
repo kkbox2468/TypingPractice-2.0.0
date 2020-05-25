@@ -16,6 +16,10 @@ window.onload = function () {
   let pageBody = document.querySelector('body')
   let endPage = document.createElement('div')
   endPage.className = "end-page"
+  /* select for check */
+  let guestStatus = document.querySelector('.guest-status')
+  let guestCheck = document.querySelector('#guest-check')
+
 
   consumer.subscriptions.create({ channel: "RoomChannel", room_id: roomId }, {
     connected() {
@@ -31,22 +35,42 @@ window.onload = function () {
     received(data) {
       // Called when there's incoming data on the websocket for this channel
       // console.log(data.content);
+      /* check players status */
+      if (data.check) {
+        if (userId !== data.user_id) {
+          if (data.check === "1") {
+            // guestStatus.innerText = "Ready"
+            guestStatus.classList.toggle('ready')
+            // console.log(guestCheck);
+            guestCheck.click();
+          } else {
+            // guestStatus.innerText = "Not Ready"
+            guestStatus.classList.toggle('ready')
+            guestCheck.click();
+          }
+        }
+      }
 
+
+      /* reder messages to other player's screen */
       quoteInputRight.innerText = data.content
       let arrayQuote = quoteDisplayRight.querySelectorAll('span');
       let arrayValue = quoteInputRight.value.split('')
       let inputIndex = quoteInputRight.value.length
 
-      if (userId !== data.message.user_id) {
-        checkCharacter(arrayQuote, arrayValue, inputIndex)
-        if (inputIndex === arrayQuote.length) {
-          Swal.fire({
-            title: '遊戲結束！',
-          }).then(() => {
-            window.location.replace('/playground/racing')
-          })
+      if (data.message) {
+        if (userId !== data.message.user_id) {
+          checkCharacter(arrayQuote, arrayValue, inputIndex)
+          if (inputIndex === arrayQuote.length) {
+            Swal.fire({
+              title: '遊戲結束！',
+            }).then(() => {
+              window.location.replace('/playground/racing')
+            })
+          }
         }
       }
+
 
       let selected = document.querySelector('.selected2')
       let nextWord = selected.nextElementSibling
@@ -86,3 +110,4 @@ function checkCharacter(arrayQuote, arrayValue, inputIndex) {
     }
   })
 }
+

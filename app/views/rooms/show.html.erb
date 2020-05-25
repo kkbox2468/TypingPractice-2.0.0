@@ -5,7 +5,6 @@
 </div>
 <h3>人數：<%= @members %></h3>
 
-
 <div class="row">
   <div class="col-6">
     <div class="racing-ground w-100" id="racingQuoteDisplay">
@@ -19,8 +18,7 @@
       <%= f.hidden_field :room_id, value: @room.id %>
       <%= f.text_area :content, class: 'racing-quote-input', 
                                 id: 'racingQuoteInput', 
-                                type: 'hidden',
-                                autofocus: true %>
+                                type: 'hidden' %>
       <%= f.submit name: 'left_input', class: "d-none" %>
     <% end %>
   </div>
@@ -46,12 +44,25 @@
   <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
 </audio>
 
+<div class="check-group d-flex justify-content-center">
+  <div class="col-6 chek-area">
+    <%= form_for :check, url: "/messages/new", method: 'GET',remote: true do |f| %>
+      <%= f.label "Are you ready?" %>
+      <%= f.check_box :content %>
+      <%= f.submit name: 'check-left', class: 'd-none' %>
+    <% end %>
+  </div>
+  <div class="col-6 chek-area">
+    <div class="guest-status"></div>
+    <input type="checkbox" id="guest-check">
+  </div>
+</div>
+
 <div class="preloader">
   <div class="loader-ground">
     <div class="single9"></div>
   </div>
 </div>
-
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {

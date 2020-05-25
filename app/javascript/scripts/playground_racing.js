@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import Rails from "@rails/ujs"
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -13,12 +14,17 @@ document.addEventListener("DOMContentLoaded", function() {
   let topicStartLine = document.querySelector('#racingQuoteTopic')
   
   /* select for ending page */
-  let pageBody = document.querySelector('body')
   let endPage = document.createElement('div')
   endPage.className = "end-page"
 
-  /* 播放鍵盤音效 */
-  window.addEventListener('keydown', playSound);
+  let readyBox = document.querySelector('#check_content')
+  let readySubmit = document.querySelector('input[name="check-left"]')
+  let guestCheck = document.querySelector('#guest-check')
+  let hostCheck = document.querySelector('#check_content')
+  let checkPage = document.querySelector('.check-group')
+  let startHandler = false
+  //const csrfToken = document.querySelector('[name=csrf-token]').content
+  //const url = "http://localhost:3000/messages"
 
   quoteInputLeft.addEventListener('input', () => {
 
@@ -34,10 +40,65 @@ document.addEventListener("DOMContentLoaded", function() {
         title: '遊戲結束！',
       }).then(() => {
         window.location.replace('/playground/racing')
-      })
+        
+  readyBox.addEventListener('input', function () {
+    //console.log(this.checked); //return true or false
+    // console.log(readySubmit);
+    this.classList.toggle('ready')
+    readySubmit.click();
+
+    if (this.className.includes('ready')) {
+      console.log('REady');
     }
+    /*
+    if (this.checked) {
+      Rails.ajax({
+        url: "http://localhost:3000/messages/new",
+        type: 'GET',
+        // data: 'A', //I got some problem here...why can't I pass data with 
+        success: resp => {
+          console.log(resp);
+        },
+        error: err => {
+          console.log(err);
+        }
+      })
+    }*/
   })
 
+
+
+
+
+  /* hightlight characters */
+  quoteInputLeft.addEventListener('input', () => {
+    if (startHandler === true) {
+      
+      let arrayQuote = quoteDisplayLeft.querySelectorAll('span');
+      let arrayValue = quoteInputLeft.value.split('')
+      let inputIndex = quoteInputLeft.value.length
+  
+      checkCharacter(arrayQuote, arrayValue, inputIndex)
+      submitBtnLeft.click()
+      if (inputIndex === arrayQuote.length) {
+        // pageBody.appendChild(endPage)
+        Swal.fire({
+          title: '遊戲結束！',
+        }).then(() => {
+          window.location.replace('/playground/racing')
+        })
+      }
+      /* 播放鍵盤音效 */
+      window.addEventListener('keydown', playSound);
+    }
+
+  })
+
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> add system for racing beginner
   /* topic area scroll */
   quoteInputLeft.addEventListener('keydown', () => {
     let selected = document.querySelector('.selected')
@@ -54,13 +115,31 @@ document.addEventListener("DOMContentLoaded", function() {
     } 
   })
 
+  let myVal = setInterval( function () {
+    if ( hostCheck.checked === true && guestCheck.checked === true) {
+      checkPage.classList.add('fade-out')
+      setTimeout(() => {
+        checkPage.classList.add('backward')
+        startHandler = true
+        return startHandler
+        
+      }, 1000);
+      clearInterval(myVal);
+    }
+  }, 1000);
+
+  let startVal = setInterval(() => {
+    if (startHandler === true) {
+      focusInput(quoteInputLeft);
+      clearInterval(startVal);
+    }
+  }, 1000);
 
   function playSound() {
     const sound = document.getElementById('keyboard-sound')
     sound.currentTime = 0; //rewind to the start 
     sound.play();
   }
-
 });
 function checkCharacter(arrayQuote, arrayValue, inputIndex) {
   arrayQuote.forEach((characterSpan, index) => {
@@ -80,4 +159,8 @@ function checkCharacter(arrayQuote, arrayValue, inputIndex) {
       characterSpan.classList.add('incorrect')
     }
   })
+}
+
+function focusInput(quoteInputLeft) {
+  quoteInputLeft.focus();
 }
