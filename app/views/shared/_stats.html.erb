@@ -1,7 +1,7 @@
 <!-- 傳送結果用的隱藏表單 -->
 <div class="statu-params">
 
-  <%#= form_for( @user_article, url: user_article_index_path , method: 'post') do |f| %>
+  
   <%= form_for( achievement, url: user_topics_path , method: 'post',html: {id: "achievement"}) do |f| %>
   
     <div class="time">time：<%= f.text_field :time, value: 0, id:"time" %></div>
@@ -12,7 +12,7 @@
     <div class="accuracy">accuracy：<%= f.text_field :accuracy, value: 0, id:"accuracy"  %></div>
     <div class="user_id">user_id：<%= f.text_field :user_id, value: current_user.id, id:"user_id"  %></div>
     <div class="topicId">topic_id：<%= f.text_field :topic_id, value: topic.id, id:"topic_id"  %></div>
-    <div class="topic_id"><%#= f.text_field :article_id, value: @article.id %></div>
+    
 
 
   <%= f.submit name: 'submit_result'%>

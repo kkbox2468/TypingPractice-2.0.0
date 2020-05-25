@@ -61,14 +61,12 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // 秒數
     let resultTime = document.querySelector('#seconds').innerText
-    // let catchResultTime = document.querySelector('#user_article_time')
     let catchResultTime = document.querySelector('#time')
     catchResultTime.value = parseFloat(resultTime)
 
     // 字數
     // let resultType = document.querySelector('#quoteInput').value.length
     let resultType = quotetopicElement.getElementsByTagName('span').length
-    // let catchReslutType = document.querySelector('#user_article_letter_count')
     let catchReslutType = document.querySelector('#letter_count')
     catchReslutType.value =  parseFloat(resultType)
 
@@ -97,11 +95,11 @@ document.addEventListener("DOMContentLoaded", function() {
     catchResultInCorrentWordCount.value = resultInCorrentWord.length 
     
     // 準確度
-    let  resultCorrentWord = []//此行無作用？
-    let corrects = document.querySelectorAll('#quotetopic .correct')
-    corrects.forEach(($dom) => { resultCorrentWord.push($dom.innerText) })//此行無作用？
     
-    // let correctRate = (corrects.length / contentTest).toFixed(2)
+    let corrects = document.querySelectorAll('#quotetopic .correct')
+    
+    
+    
     let correctRate = (corrects.length / contentTest)
     
     console.log(correctRate);
@@ -159,16 +157,8 @@ document.addEventListener("DOMContentLoaded", function() {
         correct = false
       }
     })
-////////////////////////////// 改寫 //////////////////////////
-    // if (event.data == null) {
-      
-    //   console.log('null');
-    //   return ;//這裡return後，不會執行之後的程式碼
-    // } else {
-    //   textAmount++;
-    //   console.log(event.data);
-    //   console.log(`按鍵次數: ${textAmount}`);
-    // }
+
+   
     
     if (event.data !== null) {
       textAmount++;
@@ -177,11 +167,7 @@ document.addEventListener("DOMContentLoaded", function() {
     } 
     
 
-  // if (correct) {
-      // renderNextQuote();
-      //return textAmount = 0; //這裡return後，不會執行之後的程式碼
-    //}
-    //////////////////////////////////////////////////////
+  
 
     //印出正確與錯誤次數
     // console.log(`正確次數: ${rightCounter}`);
@@ -233,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     
   })
-//GO
+
 
   /*  抓取隨機英文段落作為題目 */
   function getRandomQuote() {
