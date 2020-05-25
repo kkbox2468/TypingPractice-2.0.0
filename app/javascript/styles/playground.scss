@@ -15,13 +15,13 @@ body {
     #create-room-btn{
       border: none;
       background-color: #eeeeee;
-      box-shadow:   7px 7px 14px #cfcfcf, 
+      box-shadow:  7px 7px 14px #cfcfcf, 
                   -7px -7px 14px #ffffff;
       color: rgb(70, 70, 70);
       &:hover{
         box-shadow: inset 4px 4px 8px #cfcfcf, 
-        inset -4px -4px 8px #ffffff;
-        transition: 0.05s;
+                    inset -4px -4px 8px #ffffff;
+        // transition: 0.05s;
         // font-size: 15.5px;
       }
     }
@@ -128,18 +128,18 @@ body {
     display: inline-block;
     left: 0%;
     bottom: -.3rem;
-    animation-name:oxxo;
+    animation-name:tug;
     animation-duration:3s;
     animation-iteration-count:infinite;
     animation-direction: alternate;
   }
-  @keyframes oxxo{
-    from{
-    margin-left: 0%;
-    }
-    to{
-    margin-left: 50%;
-    }
+@keyframes tug{
+  from{
+  margin-left: 0%;
+  }
+  to{
+  margin-left: 50%;
+  }
 }
 
   // .enemy-point{
