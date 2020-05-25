@@ -2,9 +2,8 @@ class UserTopicsController < ApplicationController
   def create
 
     if current_user
-   
-      @user_topic = UserTopic.new(user_topic_params.merge(user_id:current_user.id))
       
+      @user_topic = UserTopic.new(user_topic_params.merge(user_id:current_user.id))
       if @user_topic.save
         redirect_to url, notice:  '儲存成功'
       else

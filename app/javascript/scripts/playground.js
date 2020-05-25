@@ -55,8 +55,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 
-
-
   function getresult(contentTest) {
     
     // 秒數
@@ -98,30 +96,21 @@ document.addEventListener("DOMContentLoaded", function() {
     
     let corrects = document.querySelectorAll('#quotetopic .correct')
     
-    
-    
     let correctRate = (corrects.length / contentTest)
     
     console.log(correctRate);
     let catchResultAccuracy = document.querySelector('#accuracy')
     catchResultAccuracy.value = parseFloat(correctRate * 100).toFixed(1) || 0
-    
-
   };
-
 
   quoteInputElement.addEventListener('input', () => {
 
-     
-    
-    
     if (startType === 0) {
       startTimer();
       getWpm();
     }
     startType++;
     
-
     const arrayQuote = quoteDisplayElement.querySelectorAll('span');
     const arrayValue = quoteInputElement.value.split('')
     const inputIndex = quoteInputElement.value.length
@@ -130,8 +119,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // console.log(arrayQuote[inputIndex])
     // console.log(arrayQuote[1]);
  
-
-
     arrayQuote.forEach((characterSpan, index) => {
       const character = arrayValue[index] 
       // characterSpan.classList.add('selected')
@@ -149,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function() {
         characterSpan.classList.add('correct')
         characterSpan.classList.remove('incorrect')
         rightCounter++;  
+
       } else {
         // inCorrentWordArr.length=0
         characterSpan.classList.remove('correct')
@@ -158,17 +146,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     })
 
-   
-    
     if (event.data !== null) {
       textAmount++;
       console.log(event.data);
       console.log(`按鍵次數: ${textAmount}`);
     } 
     
-
-  
-
     //印出正確與錯誤次數
     // console.log(`正確次數: ${rightCounter}`);
     // console.log(`錯誤次數: ${wrongCounter}`);
@@ -181,12 +164,8 @@ document.addEventListener("DOMContentLoaded", function() {
     //   return textAmount = 0
     // }
 
-  
-    
     /* console輸入結果 */
-    
- 
-    
+
     // const quoteInputElement = document.getElementById('quoteInput')
     let inputValue = quoteInputElement.value
 
@@ -203,23 +182,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const timeSum = document.getElementById('seconds').innerText   //花費時間、秒數
     
-
-    
     getresult(contentTest);
     if (countDownResult === 0) {     
       /* 送出成績 */
       $('input[name="submit_result"]').click();
     } 
-  
-
-    
-
-
-
-    
-    
   })
-
 
   /*  抓取隨機英文段落作為題目 */
   function getRandomQuote() {
@@ -314,8 +282,6 @@ document.addEventListener("DOMContentLoaded", function() {
   // setTimeout(function(){ renderNextQuote(); }, 3000);
 
   window.addEventListener('keydown', playSound);
-  
-
 
   //---------- keyboard -------------//
   
@@ -334,7 +300,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if (e.keyCode === 9){
       e.preventDefault();  //阻止tab發生原生功能 
     }     
-    
   });
 
 })
