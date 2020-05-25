@@ -6,13 +6,17 @@ class StatsController < ApplicationController
       # find_type_history 
       # find_type_history  
       # @article_accuracy = UserArticle.find_by(params[:id])
-      @arti_accuracy = current_user.user_topics.average(:accuracy).to_f #從current user抓底下create的所有文章裡的準確度.average可以算平均再算成浮點數
-      @arti_wpm = current_user.user_topics.average(:speed)
+      @arti_accuracy = current_user.user_topics.average(:accuracy).to_i #從current user抓底下create的所有文章裡的準確度.average可以算平均再算成整數
+      @arti_wpm = current_user.user_topics.average(:speed).to_i
       
-      @arti_date = current_user.user_topics.map(&:created_at)
-      @arti_amount = current_user.user_topics.average(:letter_count).to_i
-      @articles = current_user.user_topics
-      # render json: @articles
+      # @arti_count = current_user.user_topics.group_by_day('user_topics.created_at').count #('因為兩張資料表有一樣的created_at,所以要再給一次所屬資料表')
+      @arti_day = current_user.user_topics.where("created_at > ?", Date.today - 6.days).group_by_day('user_topics.created_at', format: "%m""%d").average(:accuracy) #show日hash
+      # render json: @day_week = @arti_day.values.map(&:to_i) #抓出weekday
+      @arti_day_accu = current_user.user_topics.where("created_at > ?", Date.today - 6.days).group_by_day('user_topics.created_at').average(:accuracy)
+      # render json: @arti_day_accu.values.map(&:to_i)#下排簡寫
+      # render json: @acc_day = @arti_day_accu.values.map{ |e| e.to_i} #抓出正確率整數
+
+      # @article_accuracy_presenter = ArticleAccuracyPresenter.new(current_user).perform
     else
       redirect_to typing_index_path, notice: 'Not a member?Join us to record achievements!'
     end
