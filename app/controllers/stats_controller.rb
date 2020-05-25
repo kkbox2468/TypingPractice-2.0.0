@@ -23,6 +23,5 @@ class StatsController < ApplicationController
   
   def find_type_history 
     @user_topics = current_user.user_topics
-    # @topics_type = user_topics.find_by(params[:id]).topic_id
   end
 end

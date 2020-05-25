@@ -8,7 +8,7 @@
     .nav-link {
       color: rgb(70, 70, 70);
     }
-    .nav-btn {
+    .nav-btn{
       margin-top: .1rem;
       margin-left: 1rem;
       border-radius: 1rem;
@@ -16,6 +16,36 @@
       box-shadow:  2px 2px 4px #caa741, 
                   -2px -2px 4px #ffe157;
       border: hidden;
+      display: inline-block;
+    }
+    .show{
+      border-radius: 1rem 1rem 0rem 0rem;
+    }
+    #home-dropdown-menu{
+      .dropdown-menu{
+        border-radius: 1rem;
+        background: #eec44c;
+        box-shadow: inset 2px 2px 4px #caa741, 
+                    inset -2px -2px 4px #ffe157;      
+        border: hidden;
+        display: none; 
+        
+        .dropdown-item{
+          margin-bottom: 3px;
+          color: #464646;
+          font-size: 1rem;
+          font-weight: 800;
+        }
+        .dropdown-item:hover{
+          background-color: palegoldenrod;
+        }
+      }
+    }
+    #home-dropdown-menu:hover{
+      display: inline-table;
+      .dropdown-menu{
+        display: block;
+      }
     }
   }
   .navbar-brand {
@@ -36,5 +66,19 @@
     box-shadow:  2px 2px 4px #caa741, 
                 -2px -2px 4px #ffe157;
     border: hidden;
+  }
+}
+
+@media (max-width: 991px){
+  .navbar{
+    .navbar-collapse{
+      li{
+        padding-bottom: 5px;
+      }
+      .navbar-nav{
+        display: list-item;
+        flex-direction: column;
+      }
+    }
   }
 }
