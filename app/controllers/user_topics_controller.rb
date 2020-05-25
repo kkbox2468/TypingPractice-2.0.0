@@ -12,17 +12,12 @@ class UserTopicsController < ApplicationController
       end
 
     else
-
       redirect_to url, notice: '下一關'
-
     end
- 
   end
   
-
-
-  
   private
+  
   def user_topic_params
     params.require(:user_topic).permit( :time,
                                         :letter_count,
@@ -30,11 +25,9 @@ class UserTopicsController < ApplicationController
                                         :wrong_letter,
                                         :wrong_letter_count,
                                         :accuracy,
-                                        :topic_id)
-                                        
-
-                                            
+                                        :topic_id)                                      
   end
+  
   def url
     
     case Topic.find(user_topic_params[:topic_id]).type

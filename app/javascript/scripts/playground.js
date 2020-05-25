@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function() {
     getresult(contentTest);
     if (countDownResult === 0) {     
       /* 送出成績 */
-      $('#achievement').submit();
+      $('input[name="submit_result"]').click();
     } 
   
 
