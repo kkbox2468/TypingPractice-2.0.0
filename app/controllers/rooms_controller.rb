@@ -8,16 +8,21 @@ class RoomsController < ApplicationController
       redirect_to racing_index_path, alert: 'Room has not created!'
     end
   end
+
   def show
     @room = Room.find(params[:id])
     @message = Message.new
     # article = "Whether you are training for a sports competition, a fight, a race or an exam, this quote from Nelson Mandela is a great example of determination and pugnacity."
     article = "Whether you are training."
     @topic = article.split(//)
+    @members = RoomChannel.counter
+    # debugger
   end
+
   def edit
     @room = Room.find(params[:id])
   end
+
   def update
     @room = Room.find(params[:id])
     if @room.update(room_data)
@@ -26,6 +31,7 @@ class RoomsController < ApplicationController
       redirect_to racing_index_path, alert: 'Room has not updated!'
     end
   end
+
   def destroy
     @room = Room.find(params[:id])
     @room.destroy
