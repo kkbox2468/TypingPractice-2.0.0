@@ -13,7 +13,7 @@
     <%= stylesheet_pack_tag 'application' %> 
   </head>
 
-  <body>
+  <body id="<%= controller.controller_name %>-<%= controller.action_name %>">
     <!-- <%= render "shared/navbar" unless params[:controller] == 'welcome' && params[:action] == 'index'%> -->
     <%= render "shared/flash"  unless params[:controller] == 'welcome' && params[:action] == 'index'%>
       <%= yield %> 

@@ -13,7 +13,7 @@
     <%= stylesheet_pack_tag 'application' %> 
   </head>
 
-  <body>
+  <body id="<%= controller.controller_name %>-<%= controller.action_name %>">
     <%# <%= render "shared/pure_navbar"%> 
     <%= render "shared/flash" %>
         <%= yield %>
