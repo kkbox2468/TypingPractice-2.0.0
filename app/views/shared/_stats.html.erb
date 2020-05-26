@@ -9,7 +9,9 @@
     <div class="wrong_letter">wrong_letter：<%= f.text_field :wrong_letter, value: 0, id:"wrong_letter"  %></div>
     <div class="wrong_letter_count">wrong_letter_count：<%= f.text_field :wrong_letter_count, value: 0, id:"wrong_letter_count"  %></div>
     <div class="accuracy">accuracy：<%= f.text_field :accuracy, value: 0, id:"accuracy"  %></div>
-    <div class="user_id">user_id：<%= f.text_field :user_id, value: current_user.id, id:"user_id"  %></div>
+    <% if current_user %>
+      <div class="user_id">user_id：<%= f.text_field :user_id, value: current_user.id, id:"user_id"  %></div>
+    <% end %>
     <div class="topicId">topic_id：<%= f.text_field :topic_id, value: topic.id, id:"topic_id"  %></div>
 
   <%= f.submit name: 'submit_result'%>

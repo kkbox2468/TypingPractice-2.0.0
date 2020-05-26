@@ -1,8 +1,8 @@
 class StatsController < ApplicationController
   def index
-    find_type_history 
-
+    
     if current_user
+      find_type_history 
       # find_type_history 
       # find_type_history  
       # @article_accuracy = UserArticle.find_by(params[:id])
@@ -14,7 +14,7 @@ class StatsController < ApplicationController
       @articles = current_user.user_topics
       # render json: @articles
     else
-      redirect_to typing_index_path, notice: '還不是會員嗎？加入會員來記錄成果！'
+      redirect_to typing_index_path, notice: 'Not a member?Join us to record achievements!'
     end
   
   end
