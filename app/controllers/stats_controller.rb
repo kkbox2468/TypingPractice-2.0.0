@@ -1,8 +1,8 @@
 class StatsController < ApplicationController
   def index
-    find_type_history 
-
+    
     if current_user
+      find_type_history 
       # find_type_history 
       # find_type_history  
       # @article_accuracy = UserArticle.find_by(params[:id])

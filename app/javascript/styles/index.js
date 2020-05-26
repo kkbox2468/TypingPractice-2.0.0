@@ -12,7 +12,7 @@ import './preloader.css'
 import './playground.scss'
 import './playground_racing.scss'
 
-import './mode.css'
+import './mode.scss'
 
 import './typing.scss'
 
