@@ -45,18 +45,30 @@
 </audio>
 
 <div class="check-group d-flex justify-content-center">
-  <div class="col-6 chek-area">
+  <div class="col-4 check-area mx-auto">
     <%= form_for :check, url: "/messages/new", method: 'GET',remote: true do |f| %>
-      <%= f.label "Are you ready?" %>
-      <%= f.check_box :content %>
+    <div class="mb-3">
+      Are you ready?
+    </div>
+      <%= f.label "No", for: 'check_content', class: 'ready-btn-host d-block' %>
+    <div>
+      <%= f.check_box :content, class: 'd-none' %>
+    </div>
+    <div>
       <%= f.hidden_field :room_id, value: @room.id %>
       <%= f.submit name: 'check-left', class: 'd-none' %>
+    </div>
     <% end %>
   </div>
-  <div class="col-6 chek-area">
-    <div class="guest-status"></div>
-    <input type="checkbox" id="guest-check">
+
+  <div class="col-4 check-area mx-auto">
+  <form>
+    <div class="mb-3">Are you ready?</div>
+    <div class="ready-btn-guest" id="readyBtnGuest">No</div>
+    <input type="checkbox" id="guest-check" class="d-none">
   </div>
+  </form>
+
 </div>
 
 <div class="preloader">
