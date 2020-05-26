@@ -3,36 +3,35 @@
   <div class="my-point" id="myPoint"></div>
   <div class="enemy-point" id="enemyPoint"></div>
 </div>
+<h3>人數：<%= @members %></h3>
+
 <div class="row">
   <div class="col-6">
-    <div class="racing play-container w-100" id="quoteDisplay">
-      <div class="quote-display">
-        <div id="quotetopic">
+    <div class="racing-ground w-100" id="racingQuoteDisplay">
+      <div class="racing-quote-display">
+        <div id="racingQuoteTopic">
           <%= render 'quote', topic: @topic%>
         </div>
       </div>
     </div>
     <%= form_for @message, remote: true do |f| %>
       <%= f.hidden_field :room_id, value: @room.id %>
-      <%= f.text_area :content, class: 'quote-input', 
-                                id: 'quoteInput', 
-                                type: 'hidden',
-                                autofocus: true %>
+      <%= f.text_area :content, class: 'racing-quote-input', 
+                                id: 'racingQuoteInput', 
+                                type: 'hidden' %>
       <%= f.submit name: 'left_input', class: "d-none" %>
     <% end %>
   </div>
 
-  
-
   <div class="col-6">
-    <div class="racing play-container w-100" id="quoteDisplay2">
-      <div class="quote-display2">
-        <div id="quotetopic2">
+    <div class="racing-ground w-100" id="racingQuoteDisplay2">
+      <div class="racing-quote-display2">
+        <div id="racingQuoteTopic2">
           <%= render 'quote', topic: @topic%>
         </div>
       </div>
-    <textarea class="quote-input2" id="quoteInput2" type="hidden" name="message[content]" style="display:none"></textarea>
     </div>
+    <textarea class="racing-quote-input2" id="racingQuoteInput2" type="hidden" name="message[content]"></textarea>
   </div>
 </div>
 
@@ -44,3 +43,38 @@
 <audio id="keyboard-sound">
   <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
 </audio>
+
+<div class="check-group d-flex justify-content-center">
+  <div class="col-6 chek-area">
+    <%= form_for :check, url: "/messages/new", method: 'GET',remote: true do |f| %>
+      <%= f.label "Are you ready?" %>
+      <%= f.check_box :content %>
+      <%= f.hidden_field :room_id, value: @room.id %>
+      <%= f.submit name: 'check-left', class: 'd-none' %>
+    <% end %>
+  </div>
+  <div class="col-6 chek-area">
+    <div class="guest-status"></div>
+    <input type="checkbox" id="guest-check">
+  </div>
+</div>
+
+<div class="preloader">
+  <div class="loader-ground">
+    <div class="single9"></div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    let preloader = document.querySelector('.preloader')
+    let preloaderBar = document.querySelector('.single9')
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+    }, 2500);
+    setTimeout(() => {
+      preloader.classList.add('backward');
+      preloaderBar.classList.add('backward')
+    }, 4200);
+  })
+</script>

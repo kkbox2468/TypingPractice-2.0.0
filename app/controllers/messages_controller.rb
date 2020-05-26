@@ -5,6 +5,17 @@ class MessagesController < ApplicationController
     @msg.user_id = current_user.id
     ActionCable.server.broadcast "room_channel_#{@msg.room_id}", content: @msg.content, message: @msg
   end
+  
+  def new
+    # render json: {name: 'aaa', age: 18} #for AJAX
+    user_id = current_user.id
+    room_id = params[:check][:room_id]
+    # debugger
+    ActionCable.server.broadcast "room_channel_#{room_id}", check: params[:check][:content], user_id: user_id
+
+
+    
+  end
 
   private
   def msg_params

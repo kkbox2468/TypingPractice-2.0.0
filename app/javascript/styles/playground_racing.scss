@@ -1,0 +1,62 @@
+.row {
+  .col-6 {
+    .racing-ground {
+      // border: 1px solid red;
+      padding: 20px;
+      background-color: #eeeeee;
+      border-radius: 10px;
+      box-shadow: 7px 7px 14px #cfcfcf, 
+                -7px -7px 14px #ffffff;
+      color: rgb(70, 70, 70);
+      .racing-quote-display {
+        height: 60vh;
+        overflow: hidden;
+        #racingQuoteTopic {
+          font-size: 0;
+          transition: all 1s ease 0s;
+          span {
+            font-size: 2rem;
+            white-space: pre;
+          }
+        }
+      }
+      .racing-quote-display2 {
+        height: 60vh;
+        overflow: hidden;
+        #racingQuoteTopic2 {
+          font-size: 0;
+          transition: all 1s ease 0s;
+          span {
+            font-size: 2rem;
+            white-space: pre;
+          }
+        }
+      }
+    }
+    .racing-quote-input, .racing-quote-input2 {
+      // background-color: transparent;
+      // resize: none;
+      // outline: none;
+      // border: none;
+      // color: transparent;
+      // overflow: hidden;
+    }
+  }
+}
+.end-page{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  animation: ending 0.5s ease-in-out;
+}
+@keyframes ending {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

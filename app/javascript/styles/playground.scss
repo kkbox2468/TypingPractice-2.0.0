@@ -103,9 +103,6 @@ body {
       font-size: 2rem;
       color: transparent;
     }
-    .racing.play-container {
-      height: 50vh;
-    }
   }
 }
 
@@ -155,6 +152,18 @@ body {
 
 }
 
+.selected, .selected2 {
+  text-decoration: underline;
+  background-color: rgb(117, 117, 117);
+}
+.correct {
+  color: rgb(93, 192, 0);
+  background-color: rgb(208, 238, 180);
+}
+.incorrect {
+  color: red;
+  background: rgb(255, 182, 182);
+}
 
 /* ---------keyboard---------- */
 #keyboard {
