@@ -1,5 +1,4 @@
 import Swal from "sweetalert2";
-import Rails from "@rails/ujs"
 
 $(function(){
   if ( $('#racing-index').length > 0 ){

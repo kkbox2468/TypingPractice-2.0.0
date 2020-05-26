@@ -61,7 +61,7 @@
   }
 }
 .check-group{
-  background-color: rgb(23, 25, 44);
+  background-color: rgba(23, 25, 44, 1);
   position: absolute;
   top: 0;
   left: 0;
@@ -73,7 +73,7 @@
     display: flex;
     justify-content: center;
     .ready-btn-host {
-      background-color: rgb(23, 25, 44);
+      background-color: rgba(23, 25, 44,1);
       color: hotpink;
       padding: 10px 10px;
       width: 50px;

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :playground do
+  resources :playground, only: [:index] do
     collection do 
       
       resources :typing do
@@ -36,5 +36,6 @@ Rails.application.routes.draw do
   resources :user_article
   resources :user_topics, only: [:create]
   resources :messages, only: [:new, :create]
+  resources :battle_records, only: [:new, :create]
   
 end
