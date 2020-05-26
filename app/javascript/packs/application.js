@@ -9,7 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("styles")
 require("scripts")
-
+import '../styles'
 //chart.js
 import Chart from 'chart.js';
 // var chart = new Chart(ctx, { }); //--->官網寫法
