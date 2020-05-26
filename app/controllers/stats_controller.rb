@@ -14,7 +14,7 @@ class StatsController < ApplicationController
       @articles = current_user.user_topics
       # render json: @articles
     else
-      redirect_to typing_index_path, notice: '還不是會員嗎？加入會員來記錄成果！'
+      redirect_to typing_index_path, notice: 'Not a member?Join us to record achievements!'
     end
   
   end

@@ -14,7 +14,7 @@
 
         <h5 class="card-title" id="lessonTitle">Lesson<%= "#{n}" %></h5>
         <p class="card-text ellipsis"><%= topic.content %></p>
-        <%= link_to "開始", send("#{type}_path", id: topic.id), class: "btn btn-primary d-flex justify-content-center ", id: "play-start" %>
+        <%= link_to "Start", send("#{type}_path", id: topic.id), class: "btn btn-primary d-flex justify-content-center ", id: "play-start" %>
 
         <% if current_user %>
           <% if done.include?(topic.id) %>
