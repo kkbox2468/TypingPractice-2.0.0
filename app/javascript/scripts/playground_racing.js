@@ -40,7 +40,10 @@ document.addEventListener("DOMContentLoaded", function() {
         title: '遊戲結束！',
       }).then(() => {
         window.location.replace('/playground/racing')
-        
+      })
+    }
+  })
+
   readyBox.addEventListener('input', function () {
     //console.log(this.checked); //return true or false
     // console.log(readySubmit);
@@ -94,11 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   })
 
-<<<<<<< HEAD
-=======
 
-
->>>>>>> add system for racing beginner
   /* topic area scroll */
   quoteInputLeft.addEventListener('keydown', () => {
     let selected = document.querySelector('.selected')
