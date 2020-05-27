@@ -43,6 +43,7 @@ $(function(){
             window.location.replace('/playground/racing')
           })
         }
+<<<<<<< HEAD
       })
     
       readyBox.addEventListener('input', function () {
@@ -53,6 +54,25 @@ $(function(){
     
         if (this.className.includes('ready')) {
           console.log('REady');
+=======
+        /* 播放鍵盤音效 */
+        window.addEventListener('keydown', playSound);
+      }
+    })
+
+    /* topic area scroll */
+    quoteInputLeft.addEventListener('keydown', () => {
+      let selected = document.querySelector('.selected')
+      let nextWord = selected.nextElementSibling
+      let gapAmount = (selected.offsetTop) - (topicStartLine.offsetTop)
+      let gapAmount2 = gapAmount - topicContainer
+
+      if (gapAmount > topicContainer) {
+        if (selected.offsetTop < nextWord.offsetTop) {
+          $('#racingQuoteTopic').css('margin-top',`-${gapAmount}px`)
+        } else {
+          $('#racingQuoteTopic').css('margin-top',`-${gapAmount2}px`)
+>>>>>>> clear some playground-racing code
         }
         /*
         if (this.checked) {
