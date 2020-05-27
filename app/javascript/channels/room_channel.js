@@ -28,13 +28,10 @@ $(function(){
       connected() {
         // Called when the subscription is ready for use on the server
         console.log('connected to ' + roomId );
-        
       },
-    
       disconnected() {
         // Called when the subscription has been terminated by the server
       },
-    
       received(data) {
         // Called when there's incoming data on the websocket for this channel
         // console.log(data.content);
@@ -54,15 +51,13 @@ $(function(){
           }
         }
 
-
-        /* reder messages to other player's screen */
-        quoteInputRight.innerText = data.content
-        let arrayQuote = quoteDisplayRight.querySelectorAll('span');
-        let arrayValue = quoteInputRight.value.split('')
-        let inputIndex = quoteInputRight.value.length
-
+        /* render messages to other player's screen */
         if (data.message) {
           if (userId !== data.message.user_id) {
+            quoteInputRight.innerText = data.content
+            let arrayQuote = quoteDisplayRight.querySelectorAll('span');
+            let arrayValue = quoteInputRight.value.split('')
+            let inputIndex = quoteInputRight.value.length
             checkCharacter(arrayQuote, arrayValue, inputIndex)
             if (inputIndex === arrayQuote.length) {
               Swal.fire({
@@ -84,18 +79,12 @@ $(function(){
               }
             } 
           }
-
         }
-
-
-
-
       }
     });
   }
 })
 
-// }
 
 function checkCharacter(arrayQuote, arrayValue, inputIndex) {
   arrayQuote.forEach((characterSpan, index) => {
