@@ -116,7 +116,6 @@ $(function(){
         // characterSpan.classList.add('selected')
         // console.log(character)
         if (character == null) {
-          console.log(character)
           characterSpan.classList.remove('correct')
           characterSpan.classList.remove('incorrect')
           arrayQuote[inputIndex].classList.add('selected')
