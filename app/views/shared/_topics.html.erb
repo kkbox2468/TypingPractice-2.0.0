@@ -4,7 +4,9 @@
     <% topics.each do |topic| %>
       <div class="card-body" style="width: 15rem">
 
-       <div class="accracy d-none"><%= @all_progress[n] %></div>
+        <% if current_user %>
+          <div class="accracy d-none"><%= @all_progress[n] %></div>
+        <% end %>
 
         <% if current_user %>
           <% if done.include?(topic.id) %>

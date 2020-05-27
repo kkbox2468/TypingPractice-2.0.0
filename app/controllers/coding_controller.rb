@@ -2,9 +2,10 @@ class CodingController < ApplicationController
   def index
     # render :file => "#{Rails.root}/public/404.html",  layout: false, status: :not_found
     @codes = Ruby.all
-    @done_rubies = current_user.user_topics.pluck(:topic_id).uniq
-
+    
     if current_user
+      @done_rubies = current_user.user_topics.pluck(:topic_id).uniq
+
       topics = current_user.user_topics
       @all_progress = {}
 
@@ -17,7 +18,7 @@ class CodingController < ApplicationController
 
       end
     end
-    
+
   end
   
   def new
