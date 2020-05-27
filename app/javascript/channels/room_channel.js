@@ -8,6 +8,9 @@ $(function(){
     let roomId = roomElement.getAttribute('data-room-id')
     let userElement = document.querySelector('#user-id')
     let userId = Number(userElement.getAttribute('data-user-id'))
+    let userNameLeft = document.querySelector('#userLeft')
+    let userNameRight = document.querySelector('#userRight')
+    
     /* select for highlight characters */
     let quoteInputRight = document.getElementById('racingQuoteInput2')
     let quoteDisplayRight = document.getElementById('racingQuoteDisplay2')
@@ -23,7 +26,7 @@ $(function(){
     let guestStatus = document.querySelector('.guest-status')
     let guestCheck = document.querySelector('#guest-check')
     /* select for records */
-    let guestCorrect = document.querySelector('#gestCorrect')
+    let guestCorrect = document.querySelector('#guestCorrect')
 
     consumer.subscriptions.create({ channel: "RoomChannel", room_id: roomId }, {
       connected() {
@@ -38,7 +41,10 @@ $(function(){
         // console.log(data.content);
         /* check players status */
         if (data.check) {
+          // console.log(data.user_name);
+
           if (userId !== data.user_id) {
+            userNameRight.innerText = data.user_name
             guestCheck.click();
             readyBtnGuest.classList.toggle('active')
             if (readyBtnGuest.innerText === "No") {

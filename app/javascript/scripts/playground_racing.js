@@ -29,9 +29,14 @@ $(function(){
 
     /* select for correct character amount */
     let hostCorrectAmount = document.querySelector('#hostCorrect')
+    let guestCorrectAmount = document.querySelector('#guestCorrect')
+
+
     let timeCounterView = document.querySelector('#timeCounter')
     let recordPoints = document.querySelector('#records_accuracy')
     let recoudSubmit = document.querySelector('input[name="record-submit"]')
+    let winner
+
     
     /* preloader */
     let preloader = document.querySelector('.preloader')
@@ -48,28 +53,6 @@ $(function(){
       quoteDisplayLeft.querySelectorAll('span')[0].classList.add('selected')
     }
 
-    quoteInputLeft.addEventListener('input', () => {
-      let arrayQuote = quoteDisplayLeft.querySelectorAll('span');
-      let arrayValue = quoteInputLeft.value.split('')
-      let inputIndex = quoteInputLeft.value.length
-      
-      checkCharacter(arrayQuote, arrayValue, inputIndex)
-      let correctChracters = document.querySelectorAll('#racingQuoteTopic .correct');
-      console.log(correctChracters);
-      hostCorrectAmount.innerText = correctChracters.length
-      recordPoints.value = correctChracters.length
-      recoudSubmit.click()
-      submitBtnLeft.click() //sent message to backend and broadcast to Action Cable
-      if (inputIndex === arrayQuote.length) {
-        // pageBody.appendChild(endPage)
-        Swal.fire({
-          title: '遊戲結束！',
-        }).then(() => {
-          window.location.replace('/playground/racing')
-        })
-      }
-    })
-
     readyBox.addEventListener('input', function () {
       this.classList.toggle('ready')
       readyBtnHost.classList.toggle('active')
@@ -84,16 +67,25 @@ $(function(){
     /* hightlight characters */
     quoteInputLeft.addEventListener('input', () => {
       if (startHandler === true) {
-        
         let arrayQuote = quoteDisplayLeft.querySelectorAll('span');
         let arrayValue = quoteInputLeft.value.split('')
         let inputIndex = quoteInputLeft.value.length
-    
+
+        
         checkCharacter(arrayQuote, arrayValue, inputIndex)
-        submitBtnLeft.click()
+        let correctChracters = document.querySelectorAll('#racingQuoteTopic .correct');
+        // console.log(correctChracters);
+        hostCorrectAmount.innerText = correctChracters.length
+        recordPoints.value = correctChracters.length
+        recoudSubmit.click()
+        submitBtnLeft.click() //sent message to backend and broadcast to Action Cable
+  
         if (inputIndex === arrayQuote.length) {
+
+
           endGame()
         }
+  
         /* 播放鍵盤音效 */
         window.addEventListener('keydown', playSound);
       }
@@ -125,14 +117,13 @@ $(function(){
         }, 1000);
         clearInterval(readyHandlerVal);
 
-        let countDown = 60
+        let countDown = 10
         setTimeout(() => {
           let downCounter = setInterval(() => {
             countDown -= 1
             timeCounterView.innerText = countDown
             console.log(countDown);
             if (countDown === 0) {
-              console.log('ZERO');
               clearInterval(downCounter);
               endGame()
             }
@@ -180,8 +171,21 @@ $(function(){
     }
     
     function endGame() {
+      let hostCorrectNumber = Number(hostCorrectAmount.innerText)
+      let guestCorrectNumber = Number(guestCorrectAmount.innerText)
+      let userLeft = document.querySelector('#userLeft').innerText
+      let userRight = document.querySelector('#userRight').innerText
+      let winner 
+      if (hostCorrectNumber > guestCorrectNumber) {
+        winner = userLeft
+        console.log(userLeft);
+      } else {
+        winner = userRight
+        console.log(userRight);
+      }
       Swal.fire({
         title: '遊戲結束！',
+        html: '<h1> Winner is : ' + winner + '</h1>',
       }).then(() => {
         window.location.replace('/playground/racing')
       })

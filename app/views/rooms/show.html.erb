@@ -9,6 +9,7 @@
 
   <div class="row">
     <div class="col-6">
+      <p>User: <span id="userLeft"><%= current_user.nickname %></span></p>
       <p><span id="hostCorrect">0</span> points</p>
       <div class="racing-ground w-100" id="racingQuoteDisplay">
         <div class="racing-quote-display">
@@ -33,7 +34,8 @@
     </div>
 
     <div class="col-6">
-      <p><span id="gestCorrect">0</span> points</p>
+      <p>User: <span id="userRight"></span></p>
+      <p><span id="guestCorrect">0</span> points</p>
       <div class="racing-ground w-100" id="racingQuoteDisplay2">
         <div class="racing-quote-display2">
           <div id="racingQuoteTopic2">
