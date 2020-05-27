@@ -1,80 +1,88 @@
-<h1><%= @room.name %></h1>
-<div class="tug-bar" id= "tugBar" col-1>
-  <div class="my-point" id="myPoint"></div>
-  <div class="enemy-point" id="enemyPoint"></div>
-</div>
-<h3>人數：<%= @members %></h3>
+<div id="<%= controller.controller_name %>-<%= controller.action_name %>">
+  <h3><%= @room.name %></h3>
+  <h5 id="timeCounter">10</h5>
+  <div class="tug-bar" id= "tugBar" col-1>
+    <div class="my-point" id="myPoint"></div>
+    <div class="enemy-point" id="enemyPoint"></div>
+  </div>
+  <p>人數：<%= @members %></p>
 
-<div class="row">
-  <div class="col-6">
-    <div class="racing-ground w-100" id="racingQuoteDisplay">
-      <div class="racing-quote-display">
-        <div id="racingQuoteTopic">
-          <%= render 'quote', topic: @topic%>
+  <div class="row">
+    <div class="col-6">
+      <p><span id="hostCorrect"></span> points</p>
+      <div class="racing-ground w-100" id="racingQuoteDisplay">
+        <div class="racing-quote-display">
+          <div id="racingQuoteTopic">
+            <%= render 'quote', topic: @topic%>
+          </div>
         </div>
       </div>
+      <%= form_for @message, remote: true do |f| %>
+        <%= f.hidden_field :room_id, value: @room.id %>
+        <%= f.text_area :content, class: 'racing-quote-input', 
+                                  id: 'racingQuoteInput', 
+                                  type: 'hidden' %>
+        <%= f.submit name: 'left_input', class: "d-none" %>
+      <% end %>
+      <%= form_for @battle_record, remote: true do |b| %>
+        <%= b.text_field :time %>
+        <%= b.text_field :accuracy %>
+        <%= b.submit %>
+      <% end %>
     </div>
-    <%= form_for @message, remote: true do |f| %>
-      <%= f.hidden_field :room_id, value: @room.id %>
-      <%= f.text_area :content, class: 'racing-quote-input', 
-                                id: 'racingQuoteInput', 
-                                type: 'hidden' %>
-      <%= f.submit name: 'left_input', class: "d-none" %>
-    <% end %>
-  </div>
 
-  <div class="col-6">
-    <div class="racing-ground w-100" id="racingQuoteDisplay2">
-      <div class="racing-quote-display2">
-        <div id="racingQuoteTopic2">
-          <%= render 'quote', topic: @topic%>
+    <div class="col-6">
+      <div class="racing-ground w-100" id="racingQuoteDisplay2">
+        <div class="racing-quote-display2">
+          <div id="racingQuoteTopic2">
+            <%= render 'quote', topic: @topic%>
+          </div>
         </div>
       </div>
+      <textarea class="racing-quote-input2" id="racingQuoteInput2" type="hidden" name="message[content]"></textarea>
     </div>
-    <textarea class="racing-quote-input2" id="racingQuoteInput2" type="hidden" name="message[content]"></textarea>
+  </div>
+
+  <div class="d-none">
+    <div id="user-id" data-user-id="<%= current_user.id %>" data-user-name="<%= current_user.nickname %>">User Id : <%= current_user.id %></div>
+    <div id="user-name">User name : <%= current_user.nickname %></div>
+    <div id="room-id" data-room-id="<%= @room.id %>">Room Id : <%= @room.id %></div>  
+  </div>
+  <audio id="keyboard-sound">
+    <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
+  </audio>
+
+  <div class="check-group d-none justify-content-center">
+    <div class="col-4 check-area mx-auto">
+      <%= form_for :check, url: "/messages/new", method: 'GET',remote: true do |f| %>
+      <div class="mb-3">
+        Are you ready?
+      </div>
+        <%= f.label "No", for: 'check_content', class: 'ready-btn-host d-block' %>
+      <div>
+        <%= f.check_box :content, class: 'd-none' %>
+      </div>
+      <div>
+        <%= f.hidden_field :room_id, value: @room.id %>
+        <%= f.submit name: 'check-left', class: 'd-none' %>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="col-4 check-area mx-auto">
+    <form>
+      <div class="mb-3">Are you ready?</div>
+      <div class="ready-btn-guest" id="readyBtnGuest">No</div>
+      <input type="checkbox" id="guest-check" class="d-none">
+    </div>
+    </form>
+
+  </div>
+
+  <div class="preloader d-none">
+    <div class="loader-ground">
+      <div class="single9"></div>
+    </div>
   </div>
 </div>
 
-<div class="d-none">
-  <div id="user-id" data-user-id="<%= current_user.id %>" data-user-name="<%= current_user.nickname %>">User Id : <%= current_user.id %></div>
-  <div id="user-name">User name : <%= current_user.nickname %></div>
-  <div id="room-id" data-room-id="<%= @room.id %>">Room Id : <%= @room.id %></div>  
-</div>
-<audio id="keyboard-sound">
-  <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
-</audio>
-
-<div class="check-group d-flex justify-content-center">
-  <div class="col-6 chek-area">
-    <%= form_for :check, url: "/messages/new", method: 'GET',remote: true do |f| %>
-      <%= f.label "Are you ready?" %>
-      <%= f.check_box :content %>
-      <%= f.hidden_field :room_id, value: @room.id %>
-      <%= f.submit name: 'check-left', class: 'd-none' %>
-    <% end %>
-  </div>
-  <div class="col-6 chek-area">
-    <div class="guest-status"></div>
-    <input type="checkbox" id="guest-check">
-  </div>
-</div>
-
-<div class="preloader">
-  <div class="loader-ground">
-    <div class="single9"></div>
-  </div>
-</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    let preloader = document.querySelector('.preloader')
-    let preloaderBar = document.querySelector('.single9')
-    setTimeout(() => {
-      preloader.classList.add('fade-out');
-    }, 2500);
-    setTimeout(() => {
-      preloader.classList.add('backward');
-      preloaderBar.classList.add('backward')
-    }, 4200);
-  })
-</script>

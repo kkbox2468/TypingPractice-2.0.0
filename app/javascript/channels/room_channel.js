@@ -1,6 +1,5 @@
 import consumer from "./consumer"
 
-// window.onload = function () {
 $(function(){
 
   if ( $('#rooms-show').length > 0 ){
