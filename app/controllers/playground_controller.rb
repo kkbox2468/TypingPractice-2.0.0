@@ -26,7 +26,6 @@ class PlaygroundController < ApplicationController
       articles_count = articles.count
       codes_count = codes.count
 
-
       unless current_user.user_topics.empty?
         @article_progress = (article_progress.each.map{|i|i.accuracy}.reduce(:+)/articles_count).floor(2)
         @code_progress = (code_progress.each.map{|i|i.accuracy}.reduce(:+)/codes_count).floor(2)
