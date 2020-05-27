@@ -24,6 +24,6 @@ class StatsController < ApplicationController
   private
   
   def find_type_history 
-    @user_topics = current_user.user_topics
+    @user_topics = current_user.user_topics.order("id DESC").take(10)
   end
 end
