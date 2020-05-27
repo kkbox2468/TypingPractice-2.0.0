@@ -1,33 +1,36 @@
 #welcome-index{
-  background:#eec44c ;
+  background:#eec44c ; 
 }
 
-#welcomeBg {
-  overflow: hidden;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  user-select: none;
-  touch-action: none;
-  -webkit-user-drag: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+#welcomeContainer{
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
 
-.welcome-Page {
-  left: 30rem;
-  top: 20rem;
-  position: absolute;
-  width: 30rem;
-}
-
-.welcome-Content img{
-  position: absolute;
-  left: 1rem;
-  bottom: 8rem;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
 }
 
 
-.welcome-Content h1 {
+
+#welcomeRow{
+  margin-top: 10rem;
+  display: block;
+}
+
+.logo_icon img{
+  display: block;
+  margin: auto;
+  align-items: center;
+}
+
+.type_here{
+  display: flex;
+}
+
+.row h1 {
   display: block;
   font-size: 3rem;
   color:  rgb(50, 50, 50);
@@ -35,12 +38,16 @@
   font-style: normal;
   font-weight: 700;
   text-align: start;
-  width: 30rem;
+  width: 28rem;
+  margin-top: 0rem;
 }
 
-.welcome-Content .btn-primary {
+#welcomeContainer .btn-primary {
+  display: block;
+  height: 3rem;
+  width: 6rem;
   font-size: 1.5rem;
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   color: rgb(50, 50, 50);
   background-color: #eec44c;
   border: none;
@@ -48,7 +55,7 @@
               -2px -2px 5px #ffdd56;
 }
 
-.welcome-Content .btn-primary:not(:disabled):not(.disabled):active,
+#welcomeContainer .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   border-color: black;
