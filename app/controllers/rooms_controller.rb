@@ -12,6 +12,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+
     @room = Room.find(params[:id])
     @message = Message.new
     @battle_record = BattleRecord.new
@@ -19,7 +20,7 @@ class RoomsController < ApplicationController
     article = "Whether you are training."
     @topic = article.split(//)
     @members = RoomChannel.counter
-    # debugger
+    
   end
 
   def edit
