@@ -113,8 +113,7 @@ $(function(){
 
       arrayQuote.forEach((characterSpan, index) => {
         const character = arrayValue[index] 
-        // characterSpan.classList.add('selected')
-        // console.log(character)
+
         if (character == null) {
           characterSpan.classList.remove('correct')
           characterSpan.classList.remove('incorrect', 'showWrong')
@@ -177,6 +176,7 @@ $(function(){
       if (countDownResult === 0) {     
         /* 送出成績 */
         $('input[name="submit_result"]').click();
+        stopTimer();
       } 
     })
     
@@ -210,6 +210,7 @@ $(function(){
     }
     
     let startTime
+    let timer = null
     // const minElement = document.getElementById('minutes')
     const secElement = document.getElementById('seconds')
     const millisecElement = document.getElementById('millisec')
@@ -219,7 +220,7 @@ $(function(){
       secElement.innerText = '0'
       // millisecElement.innerText = '0'
       startTime = new Date() //這會把時間設為current time
-      setInterval(() => {
+      timer = setInterval(() => {
         secElement.innerText = getTimerTime()
           
         // millisecElement.innerText = getTimeMillisec()
@@ -231,6 +232,10 @@ $(function(){
         // }
         // timer.innerText = getTimerTime() //為什麼這行timer也抓得到secElement?
       }, 1000)
+    }
+
+    function stopTimer(){
+      window.clearInterval(timer)
     }
   
     function getTimerTime() {
