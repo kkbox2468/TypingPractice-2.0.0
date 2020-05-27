@@ -30,8 +30,9 @@ $(function(){
     /* select for correct character amount */
     let hostCorrectAmount = document.querySelector('#hostCorrect')
     let timeCounterView = document.querySelector('#timeCounter')
+    let recordPoints = document.querySelector('#records_accuracy')
+    let recoudSubmit = document.querySelector('input[name="record-submit"]')
     
-
     /* preloader */
     let preloader = document.querySelector('.preloader')
     let preloaderBar = document.querySelector('.single9')
@@ -48,7 +49,6 @@ $(function(){
     }
 
     quoteInputLeft.addEventListener('input', () => {
-
       let arrayQuote = quoteDisplayLeft.querySelectorAll('span');
       let arrayValue = quoteInputLeft.value.split('')
       let inputIndex = quoteInputLeft.value.length
@@ -57,6 +57,8 @@ $(function(){
       let correctChracters = document.querySelectorAll('#racingQuoteTopic .correct');
       console.log(correctChracters);
       hostCorrectAmount.innerText = correctChracters.length
+      recordPoints.value = correctChracters.length
+      recoudSubmit.click()
       submitBtnLeft.click() //sent message to backend and broadcast to Action Cable
       if (inputIndex === arrayQuote.length) {
         // pageBody.appendChild(endPage)
@@ -112,6 +114,7 @@ $(function(){
         }
       } 
     })
+
     /* When two players are ready then start the game. */
     let readyHandlerVal = setInterval( function () {
       if ( hostCheck.checked === true && guestCheck.checked === true) {
@@ -119,7 +122,6 @@ $(function(){
         setTimeout(() => {
           checkPage.classList.add('backward')
           startHandler = true
-          return startHandler
         }, 1000);
         clearInterval(readyHandlerVal);
 
@@ -138,6 +140,7 @@ $(function(){
         }, 1000);
       }
     }, 1000);
+
     /* When two players are focus on the textarea. */
     let startVal = setInterval(() => {
       if (startHandler === true) {
@@ -151,7 +154,6 @@ $(function(){
       sound.currentTime = 0; //rewind to the start 
       sound.play();
     }
-
 
     function checkCharacter(arrayQuote, arrayValue, inputIndex) {
       arrayQuote.forEach((characterSpan, index) => {
@@ -176,6 +178,7 @@ $(function(){
     function focusInput(quoteInputLeft) {
       quoteInputLeft.focus();
     }
+    
     function endGame() {
       Swal.fire({
         title: '遊戲結束！',

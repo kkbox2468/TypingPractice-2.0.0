@@ -19,10 +19,11 @@ $(function(){
     let pageBody = document.querySelector('body')
     let endPage = document.createElement('div')
     endPage.className = "end-page"
-    /* select for check */
+    /* select for ready check */
     let guestStatus = document.querySelector('.guest-status')
     let guestCheck = document.querySelector('#guest-check')
-
+    /* select for records */
+    let guestCorrect = document.querySelector('#gestCorrect')
 
     consumer.subscriptions.create({ channel: "RoomChannel", room_id: roomId }, {
       connected() {
@@ -45,6 +46,12 @@ $(function(){
             } else {
               readyBtnGuest.innerText = "No"
             }
+          }
+        }
+
+        if (data.type == "records") {
+          if (userId !== data.user_id) {
+            guestCorrect.innerText = data.accuracy
           }
         }
 

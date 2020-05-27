@@ -9,7 +9,7 @@
 
   <div class="row">
     <div class="col-6">
-      <p><span id="hostCorrect"></span> points</p>
+      <p><span id="hostCorrect">0</span> points</p>
       <div class="racing-ground w-100" id="racingQuoteDisplay">
         <div class="racing-quote-display">
           <div id="racingQuoteTopic">
@@ -24,14 +24,16 @@
                                   type: 'hidden' %>
         <%= f.submit name: 'left_input', class: "d-none" %>
       <% end %>
-      <%= form_for @battle_record, remote: true do |b| %>
+      <%= form_for :records, url: '/messages/new', method: 'GET', remote: true do |b| %>
+        <%= b.hidden_field :room_id, value: @room.id %>
         <%= b.text_field :time %>
         <%= b.text_field :accuracy %>
-        <%= b.submit %>
+        <%= b.submit name: 'record-submit' %>
       <% end %>
     </div>
 
     <div class="col-6">
+      <p><span id="gestCorrect">0</span> points</p>
       <div class="racing-ground w-100" id="racingQuoteDisplay2">
         <div class="racing-quote-display2">
           <div id="racingQuoteTopic2">
