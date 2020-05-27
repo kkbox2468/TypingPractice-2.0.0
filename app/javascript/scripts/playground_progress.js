@@ -19,9 +19,7 @@ $(function(){
       $(progressArray[i]).css("width", `${accracyArray[i]}%`)
     }
   }
-
-  console.log($('.article_progress').value)
-
+  
   if ( $('#playground-index').length > 0 ){
     // playground判斷
     $('#typingModeBar .progress-bar').css("width", `${$(".article_progress")[0].innerText}%`)
