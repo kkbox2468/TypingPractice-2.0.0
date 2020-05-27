@@ -5,10 +5,9 @@ import './_navbar.scss'
 import './application.scss'
 
 //User 
-// import './userEdit.css'
-import './user.scss'
-//
 import './welcome.css'
+import './user.scss'
+
 import './preloader.css'
 
 import './playground.scss'
