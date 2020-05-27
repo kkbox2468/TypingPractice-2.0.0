@@ -1,8 +1,7 @@
 import Swal from "sweetalert2";
 
 $(function(){
-  if ( $('#racing-index').length > 0 ){
-    document.addEventListener("DOMContentLoaded", function() {
+  if ( $('#rooms-show').length > 0 ){
     
       /* select for highlight characters */
       let quoteDisplayLeft = document.getElementById('racingQuoteDisplay')
@@ -26,7 +25,11 @@ $(function(){
       let startHandler = false
       //const csrfToken = document.querySelector('[name=csrf-token]').content
       //const url = "http://localhost:3000/messages"
-    
+
+      if(((quoteInputLeft.value).length) <= 0){
+        quoteDisplayLeft.querySelectorAll('span')[0].classList.add('selected')
+      }
+
       quoteInputLeft.addEventListener('input', () => {
     
         let arrayQuote = quoteDisplayLeft.querySelectorAll('span');
@@ -140,7 +143,6 @@ $(function(){
         sound.currentTime = 0; //rewind to the start 
         sound.play();
       }
-    });
     function checkCharacter(arrayQuote, arrayValue, inputIndex) {
       arrayQuote.forEach((characterSpan, index) => {
         const character = arrayValue[index]

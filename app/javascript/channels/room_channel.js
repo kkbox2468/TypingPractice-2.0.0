@@ -71,22 +71,24 @@ $(function(){
                 window.location.replace('/playground/racing')
               })
             }
+            let selected = document.querySelector('.selected2')
+            let nextWord = selected.nextElementSibling
+            let gapAmount = (selected.offsetTop) - (topicStartLine.offsetTop)
+            let gapAmount2 = gapAmount - topicContainer
+        
+            if (gapAmount > topicContainer) {
+              if (selected.offsetTop < nextWord.offsetTop) {
+                $('#racingQuoteTopic2').css('margin-top',`-${gapAmount}px`)
+              } else {
+                $('#racingQuoteTopic2').css('margin-top',`-${gapAmount2}px`)
+              }
+            } 
           }
+
         }
 
 
-        let selected = document.querySelector('.selected2')
-        let nextWord = selected.nextElementSibling
-        let gapAmount = (selected.offsetTop) - (topicStartLine.offsetTop)
-        let gapAmount2 = gapAmount - topicContainer
-    
-        if (gapAmount > topicContainer) {
-          if (selected.offsetTop < nextWord.offsetTop) {
-            $('#racingQuoteTopic2').css('margin-top',`-${gapAmount}px`)
-          } else {
-            $('#racingQuoteTopic2').css('margin-top',`-${gapAmount2}px`)
-          }
-        } 
+
 
       }
     });
