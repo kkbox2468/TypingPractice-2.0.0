@@ -1,8 +1,10 @@
+#welcome-index{
+  background:#eec44c ;
+}
+
 #welcomeBg {
-  background-color: #eec44c;
   overflow: hidden;
   position: absolute;
-  z-index: -1;
   width: 100vw;
   height: 100vh;
   user-select: none;
