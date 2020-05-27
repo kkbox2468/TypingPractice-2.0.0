@@ -1,20 +1,25 @@
 /* -----遊玩模式區 ----- */
 
-.modeWrap {
+.mode_wrap {
   justify-content: space-evenly;
 
   .select-area {
-    justify-content: space-between;
+    // justify-content: space-between;
 
-    .card {
+    .mode_card {
+      border-radius: 1rem;
       background-color: #eeeeee;
       border: none;
       box-shadow: 4px 4px 8px #cfcfcf, 
                   -4px -4px 8px #ffffff;
       margin-right: 2rem;
-
-      img{
+      padding-top: 1rem;
+      
+    
+      .card-img-top{
         background-color: #eec44c;
+        overflow: hidden;
+        border-radius: .2rem;
       }
       .btn-primary {
         color:  rgb(50, 50, 50);
