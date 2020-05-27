@@ -3,6 +3,7 @@ class CodingController < ApplicationController
     # render :file => "#{Rails.root}/public/404.html",  layout: false, status: :not_found
     @codes = Ruby.all
     @done_rubies = [1, 2, 3]
+    
   end
   def new
     @codes = Ruby.new

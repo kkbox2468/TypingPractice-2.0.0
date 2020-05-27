@@ -14,7 +14,7 @@
     
   </head>
 
-  <body>
+  <body id="<%= controller.controller_name %>-<%= controller.action_name %>">
     <%= render "shared/navbar" %>
     <%= render "shared/flash"  %>
       <div class='container'>
@@ -24,7 +24,9 @@
 
 
   <!-- 色彩模式切換測試 -->
-  <script>
+  <%
+=begin%>
+ <script>
     let checkBox = document.querySelector('#mode')
     let cards = [...document.querySelectorAll('.card')]
     let cardBodys = [...document.querySelectorAll('.card-body')]
@@ -46,5 +48,7 @@
     function modeHandler(e) {
       e.classList.toggle('dark-mode')
     }
-  </script>
+  </script> 
+<%
+=end%>
 </html>
