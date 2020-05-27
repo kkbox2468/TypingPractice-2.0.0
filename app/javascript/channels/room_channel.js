@@ -38,15 +38,12 @@ $(function(){
         /* check players status */
         if (data.check) {
           if (userId !== data.user_id) {
-            if (data.check === "1") {
-              // guestStatus.innerText = "Ready"
-              guestStatus.classList.toggle('ready')
-              // console.log(guestCheck);
-              guestCheck.click();
+            guestCheck.click();
+            readyBtnGuest.classList.toggle('active')
+            if (readyBtnGuest.innerText === "No") {
+              readyBtnGuest.innerText = "Yes"
             } else {
-              // guestStatus.innerText = "Not Ready"
-              guestStatus.classList.toggle('ready')
-              guestCheck.click();
+              readyBtnGuest.innerText = "No"
             }
           }
         }

@@ -10,9 +10,7 @@ class RoomChannel < ApplicationCable::Channel
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
     stop_all_streams
-    debugger
     @@count -= 1
-    room = Room.find(params[:id])
   end
 
   def self.counter
