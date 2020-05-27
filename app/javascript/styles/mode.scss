@@ -1,21 +1,32 @@
 /* -----遊玩模式區 ----- */
 
 .mode_wrap {
-  justify-content: space-evenly;
+  justify-content: space-around;
+  // flex-wrap: wrap;
 
   .select-area {
-    // justify-content: space-between;
-
+    justify-content: space-evenly;
+    flex-flow: row wrap;
     .mode_card {
       border-radius: 1rem;
       background-color: #eeeeee;
       border: none;
       box-shadow: 4px 4px 8px #cfcfcf, 
                   -4px -4px 8px #ffffff;
-      margin-right: 2rem;
+      margin-bottom: 2rem;
+      margin-right: 1rem;
+      margin-left: 1rem;
       padding-top: 1rem;
       
-    
+      .card-title{
+        text-shadow:  -2px -2px 2px #ffffff,
+                    2px 2px 2px #b8b8b8;
+      }
+
+      .card-text{
+        font-weight: 400;
+      }
+
       .card-img-top{
         background-color: #eec44c;
         overflow: hidden;
