@@ -4,6 +4,7 @@ class TypingController < ApplicationController
 
     if current_user
       @done_article = current_user.user_topics.pluck(:topic_id).uniq
+      # @progress = current_user.user_topics.joins(:topic_id, :accruacy).count
     end
 
   end 

@@ -78,7 +78,6 @@ $(function(){
       let incorrects = document.querySelectorAll('#quotetopic .incorrect')
       incorrects.forEach(($dom) => { resultInCorrentWord.push($dom.innerText) })
         
-      console.log(resultInCorrentWord);
       let catchResultInCorrentWord = document.querySelector('#wrong_letter')
       catchResultInCorrentWord.value = filterLetters(resultInCorrentWord) || ""
     
@@ -88,10 +87,7 @@ $(function(){
         
       // 準確度
       let corrects = document.querySelectorAll('#quotetopic .correct')
-        
       let correctRate = (corrects.length / contentTest)
-        
-      console.log(correctRate);
       let catchResultAccuracy = document.querySelector('#accuracy')
       catchResultAccuracy.value = parseFloat(correctRate * 100).toFixed(1) || 0
     };
@@ -144,8 +140,8 @@ $(function(){
         
       if (event.data !== null) {
         textAmount++;
-        console.log(event.data);
-        console.log(`按鍵次數: ${textAmount}`);
+        // console.log(event.data);
+        // console.log(`按鍵次數: ${textAmount}`);
       } 
         
       //印出正確與錯誤次數

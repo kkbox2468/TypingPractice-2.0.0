@@ -7,8 +7,7 @@ $(function(){
   
       let startLine = document.querySelector('#quotetopic')
       let selected = document.querySelector('.selected')
-      let nextWord = selected.nextElementSibling.innerHTML
-      console.log(nextWord)
+      let nextWord = selected.nextElementSibling
       let gapAmount = (selected.offsetTop) - (startLine.offsetTop)
       let gapAmount2 = gapAmount - topicContain
   
