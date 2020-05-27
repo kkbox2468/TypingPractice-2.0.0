@@ -1,7 +1,11 @@
 class TypingController < ApplicationController
   def index
     @articles = Article.all
-    @done_article = current_user.user_topics.pluck(:topic_id).uniq
+
+    if current_user
+      @done_article = current_user.user_topics.pluck(:topic_id).uniq
+    end
+
   end 
 
   def new

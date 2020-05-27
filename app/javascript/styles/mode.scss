@@ -1,0 +1,96 @@
+/* -----遊玩模式區 ----- */
+
+.modeWrap {
+  justify-content: space-evenly;
+
+  .select-area {
+    justify-content: space-between;
+
+    .card {
+      background-color: #eeeeee;
+      border: none;
+      box-shadow: 4px 4px 8px #cfcfcf, 
+                  -4px -4px 8px #ffffff;
+      margin-right: 2rem;
+
+      img{
+        background-color: #eec44c;
+      }
+      .btn-primary {
+        color:  rgb(50, 50, 50);
+        border-radius: 1rem;
+        background-color: #eeeeee;
+        border: none;
+        box-shadow: 3px 3px 5px #cfcfcf, 
+                    -3px -3px 5px #ffffff;
+      }
+
+      .member-only{
+        position: relative;
+        .member-only-notice{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, .7);
+          font-size: 1.5rem;
+          a{
+            text-decoration: none;
+            color: white;
+          }
+          a:hover{
+            transform: translateY(-.5rem);
+          }
+        }
+      }
+    }
+
+    .card-title{
+      font-family:  museo sans rounded, sans-serif;
+      font-style: normal;
+      font-weight: 700;
+    }
+  }
+}
+
+.battle-area .card .btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  border: none;
+  color:  rgb(50, 50, 50);
+  background-color: #eeeeee;
+  border: none;
+  box-shadow: inset 3px 3px 5px #cfcfcf, 
+              inset -3px -3px 5px #ffffff;
+}
+
+.select-area .card .btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  border: none;
+  color:  rgb(50, 50, 50);
+  background-color: #eeeeee;
+  border: none;
+  box-shadow: inset 3px 3px 5px #cfcfcf, 
+              inset -3px -3px 5px #ffffff;
+}
+
+
+#typingModeBar .progress-bar{
+  background: #70e885;
+  background: linear-gradient(128deg, rgba(112,232,133,1) 0%, rgba(162,255,188,1) 100%);
+}
+
+#codeModeBar .progress-bar{
+  background: rgb(112,232,133);
+  background: linear-gradient(128deg, rgba(112,232,133,1) 0%, rgba(162,255,188,1) 100%);
+}
+
+#battleModeBar .progress-bar{
+  background: rgb(236,83,136);
+background: linear-gradient(128deg, rgba(236,83,136,1) 0%, rgba(255,180,195,1) 100%);
+}

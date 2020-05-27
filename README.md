@@ -1,25 +1,25 @@
-# README
+# Noob.typing
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 簡介
+你是否有常打錯字導致debug花了半個多小時的困擾？或是被萬能的編輯器寵壞了，離開編輯器就寫不出code來？
+那Noob.typing非常適合你！
+- 介面簡單，好上手
+- 個人化設計，找到自己喜愛的練習環境
+- 雙人對戰模式，學習路上不孤獨
+- 學習結果分析，了解原因對症下藥
 
-Things you may want to cover:
+## 網站環境
+- Ruby 
+- Rails 
+- PostgreSQL 
 
-* Ruby version
+## 網站工具
+- 前端：HTML5、CSS、SCSS、JavaScript、Figma、jQuery
+- 後端：AJAX、HEROKU、Action Cable、devise
+- 版本控制：Git、GitHub
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# TypingPractice-2.0.0
+## 作者
+- 高巧蓉
+- 劉恩慈
+- 盧昱偉
+- 洪澤洋

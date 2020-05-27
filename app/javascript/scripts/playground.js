@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function() {
     })
   
     return [...new Set(permittedLetter)].sort();
-    
   }
 
 
@@ -104,9 +103,6 @@ document.addEventListener("DOMContentLoaded", function() {
   };
 
   quoteInputElement.addEventListener('input', () => {
-
-
-    
     
     if (startType === 0) {
       startTimer();
@@ -148,8 +144,6 @@ document.addEventListener("DOMContentLoaded", function() {
         correct = false
       }
     })
-
-
     
     if (event.data !== null) {
       textAmount++;
