@@ -117,7 +117,7 @@ $(function(){
         // console.log(character)
         if (character == null) {
           characterSpan.classList.remove('correct')
-          characterSpan.classList.remove('incorrect')
+          characterSpan.classList.remove('incorrect', 'showWrong')
           arrayQuote[inputIndex].classList.add('selected')
           arrayQuote[inputIndex + 1 ].classList.remove('selected')
           arrayQuote[inputIndex - 1 ].classList.remove('selected')
@@ -125,13 +125,13 @@ $(function(){
 
         } else if (character === characterSpan.innerText){
           characterSpan.classList.add('correct')
-          characterSpan.classList.remove('incorrect')
+          characterSpan.classList.remove('incorrect', 'showWrong')
           rightCounter++;  
     
         } else {
           // inCorrentWordArr.length=0
           characterSpan.classList.remove('correct')
-          characterSpan.classList.add('incorrect')
+          characterSpan.classList.add('incorrect', 'showWrong')
           wrongCounter++;
           correct = false
         }
