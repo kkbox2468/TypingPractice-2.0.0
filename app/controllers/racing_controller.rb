@@ -4,5 +4,6 @@ class RacingController < ApplicationController
   def index
     @room = Room.new
     @rooms = Room.all
+    @members = RoomChannel.counter
   end
 end
