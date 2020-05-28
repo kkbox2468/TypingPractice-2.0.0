@@ -35,6 +35,9 @@ gem 'foreman', '~> 0.86.0'
 #chart
 gem 'chart-js-rails'
 
+#groupdate
+gem 'groupdate', '~> 2.5', '>= 2.5.2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
