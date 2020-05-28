@@ -68,17 +68,17 @@
     white-space: normal;
     }
   #play-start:hover {
-    background-color: #464646;
+    background-color: #323232;
     color: #eec44c;
-    box-shadow: inset 2px 2px 3px #3c3c3c, 
-                inset -2px -2px 3px #515151;
+    box-shadow: 2px 2px 3px #ffffff, 
+                -2px -2px 3px #b8b8b8;
     transition: 0s;
     
     :active{
       background-color: #464646;
       color: #eec44c;
-      box-shadow: inset 2px 2px 3px #3c3c3c, 
-                  inset -2px -2px 3px  #515151;
+      box-shadow: inset 2px 2px 3px #ffffff, 
+                  inset -2px -2px 3px  #b8b8b8;
       transition: 0s;
       
     }
