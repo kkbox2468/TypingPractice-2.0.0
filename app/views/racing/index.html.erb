@@ -13,8 +13,8 @@
       <% end %>
       <h5><%= room.name %></h5>
       <p><%= room.description %></p>
-      <p>人數：<%= @members %></p>
-      <% if @members >= 2 %>
+      <p>人數：<%= room.members %></p>
+      <% if room.members >= 2 %>
         <a href="#" class="btn disabled">Join</a>
       <% else %>
         <%= link_to "Join", room_path(room.id), class: 'btn' %>
