@@ -68,6 +68,24 @@ body {
       }
       #quotetopic{
         transition: all 1s ease 0s;
+        // position: absolute;
+      }
+      .showWrong{
+        // position: absolute;
+        animation-name: show-wrong;
+        animation-duration: .2s;
+        animation-direction: alternate;
+      }
+      @keyframes show-wrong {
+        0%{
+          padding: 0px;
+        }
+        50%{
+          padding: 5px 0px;
+        }
+        100%{
+          padding: 0px;
+        }
       }
     }
 

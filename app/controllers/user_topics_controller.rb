@@ -5,13 +5,13 @@ class UserTopicsController < ApplicationController
       
       @user_topic = UserTopic.new(user_topic_params.merge(user_id:current_user.id))
       if @user_topic.save
-        redirect_to url, notice:  '儲存成功'
+        redirect_to url
       else
-        redirect_to url, notice:  '儲存失敗'
+        redirect_to url 
       end
 
     else
-      redirect_to url, notice: '下一關'
+      redirect_to url 
     end
   end
   

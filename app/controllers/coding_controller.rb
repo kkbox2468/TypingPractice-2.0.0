@@ -2,8 +2,23 @@ class CodingController < ApplicationController
   def index
     # render :file => "#{Rails.root}/public/404.html",  layout: false, status: :not_found
     @codes = Ruby.all
-    @done_rubies = [1, 2, 3]
     
+    if current_user
+      @done_rubies = current_user.user_topics.pluck(:topic_id).uniq
+
+      topics = current_user.user_topics
+      @all_progress = {}
+
+      topics.each do |topic|
+
+        progress = current_user.user_topics.where(topic_id: topic.id).order('accuracy').last
+        if progress
+          @all_progress.merge!({topic.id=> progress.accuracy})
+        end 
+
+      end
+    end
+
   end
   
   def new

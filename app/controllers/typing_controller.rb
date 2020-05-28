@@ -4,7 +4,20 @@ class TypingController < ApplicationController
 
     if current_user
       @done_article = current_user.user_topics.pluck(:topic_id).uniq
-      # @progress = current_user.user_topics.joins(:topic_id, :accruacy).count
+  
+      topics = current_user.user_topics
+      @all_progress = {}
+
+      topics.each do |topic|
+
+        progress = current_user.user_topics.where(topic_id: topic.id).order('accuracy').last
+        if progress
+          @all_progress.merge!({topic.id=> progress.accuracy})
+        end 
+
+      end
+      # u1.user_topics.where(topic_id: 1).order('accuracy').last
+      # u1.user_topics.select('Max(accuracy), topic_id').group(:topic_id).all
     end
 
   end 
