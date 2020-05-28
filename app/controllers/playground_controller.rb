@@ -5,6 +5,7 @@ class PlaygroundController < ApplicationController
       all_progress = current_user.user_topics.order('topic_id')
       article_progress = []
       code_progress = []
+      topics = current_user.user_topics.joins(:topic)
 
       all_progress.each do |progress|
         if progress.topic_id < 30
@@ -26,13 +27,15 @@ class PlaygroundController < ApplicationController
       articles_count = articles.count
       codes_count = codes.count
 
-      unless current_user.user_topics.empty?
+      if topics.where('topics.type = ?', 'Article').present?
         @article_progress = (article_progress.each.map{|i|i.accuracy}.reduce(:+)/articles_count).floor(2)
+      end
+
+      if topics.where('topics.type = ?', 'Ruby').present?
         @code_progress = (code_progress.each.map{|i|i.accuracy}.reduce(:+)/codes_count).floor(2)
       end
 
     end
-
   end
 
   def show
