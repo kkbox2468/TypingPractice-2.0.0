@@ -6,7 +6,7 @@ class CodingController < ApplicationController
     if current_user
       @done_rubies = current_user.user_topics.pluck(:topic_id).uniq
 
-      topics = current_user.user_topics
+      topics = UserTopic.all
       @all_progress = {}
 
       topics.each do |topic|
