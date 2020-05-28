@@ -14,7 +14,11 @@
       <h5><%= room.name %></h5>
       <p><%= room.description %></p>
       <p>人數：<%= @members %></p>
-      <%= link_to "Join", room_path(room.id), class: 'btn' %>
+      <% if @members >= 2 %>
+        <a href="#" class="btn disabled">Join</a>
+      <% else %>
+        <%= link_to "Join", room_path(room.id), class: 'btn' %>
+      <% end %>
       <% if current_user.id == room.user_id%>
         <%= link_to "編輯", edit_room_path(room.id), class: 'btn' %>
         <%= link_to "刪除", room_path(room.id), class: 'btn', id: "delete-room-btn", method: "DELETE" %>

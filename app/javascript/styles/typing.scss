@@ -25,6 +25,10 @@
       color: #323232;
       
     }
+    .btn.disabled{
+      background-color: #ccc;
+      color: #aaa;
+    }
     &.dark-mode, .btn.dark-mode  {
       background-color: #212633;
       box-shadow: 3px 3px 5px rgba(14, 14, 15, 0.5), 
