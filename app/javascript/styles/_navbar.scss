@@ -67,6 +67,15 @@
                 -2px -2px 4px #ffe157;
     border: hidden;
   }
+
+  .btn-primary:focus{
+    color: rgb(50, 50, 50);
+    background: linear-gradient(145deg, #ffd251, #d6b044);
+    box-shadow:  2px 2px 4px #caa741, 
+                -2px -2px 4px #ffe157;
+    border: hidden;
+    }
+
 }
 
 @media (max-width: 991px){
