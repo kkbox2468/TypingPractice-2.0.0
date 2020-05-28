@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'foreman', '~> 0.86.0'
 #chart
 gem 'chart-js-rails'
+gem 'figaro', '~> 1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
