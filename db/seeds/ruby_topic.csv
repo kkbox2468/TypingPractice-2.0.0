@@ -10,5 +10,4 @@ content
 "a = IO.readlines(""testfile"")#b = IO.readlines(""testfile"", chomp: true)#IO.write(""testfile"", ""0123456789"", 20)#IO.write(""testfile"", ""0123456789"")"
 "even_numbers = [1, 2, 3, 4, 5].map { |element| element if element.even? }#even_numbers = even_numbers.compact"
 "One = 1#puts ""#{One} is a number”#puts ""%d is a number"" % One"
-"def alternating_characters?(s)# type = [/[aeiou]/, /[^aeiou]/].cycle#  if s.start_with?(/[^aeiou]/)#  type.next#end#  s.chars.all? { |ch| ch.match#  (type.next) }#end#alternating_characters?(“ateciyu"")
-"
+"def alternating_characters?(s)# type = [/[aeiou]/, /[^aeiou]/].cycle#  if s.start_with?(/[^aeiou]/)#   type.next# end#  s.chars.all? { |ch| ch.match?(type.next) }#end"
