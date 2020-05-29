@@ -117,7 +117,7 @@ $(function(){
         }, 1000);
         clearInterval(readyHandlerVal);
 
-        let countDown = 10
+        let countDown = 60
         setTimeout(() => {
           let downCounter = setInterval(() => {
             countDown -= 1
