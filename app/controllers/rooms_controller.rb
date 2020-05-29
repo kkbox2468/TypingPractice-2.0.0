@@ -19,7 +19,6 @@ class RoomsController < ApplicationController
     # article = "Whether you are training for a sports competition, a fight, a race or an exam, this quote from Nelson Mandela is a great example of determination and pugnacity."
     article = "Whether you are training."
     @topic = article.split(//)
-    @members = RoomChannel.counter
     
   end
 
