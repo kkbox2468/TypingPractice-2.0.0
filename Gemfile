@@ -5,6 +5,7 @@ ruby '2.6.5'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'rails_admin', '~> 2.0', '>= 2.0.2'
 gem 'cancancan', '~> 3.1'
+gem 'redis', '~> 4.1', '>= 4.1.4'
 
 gem 'omniauth', '~> 1.9', '>= 1.9.1'
 gem 'omniauth-facebook', '~> 6.0'
