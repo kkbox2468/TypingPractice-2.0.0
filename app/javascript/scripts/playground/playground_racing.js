@@ -70,7 +70,6 @@ $(function(){
         let arrayQuote = quoteDisplayLeft.querySelectorAll('span');
         let arrayValue = quoteInputLeft.value.split('')
         let inputIndex = quoteInputLeft.value.length
-
         
         checkCharacter(arrayQuote, arrayValue, inputIndex)
         let correctChracters = document.querySelectorAll('#racingQuoteTopic .correct');
@@ -81,8 +80,6 @@ $(function(){
         submitBtnLeft.click() //sent message to backend and broadcast to Action Cable
   
         if (inputIndex === arrayQuote.length) {
-
-
           endGame()
         }
   
@@ -122,7 +119,7 @@ $(function(){
           let downCounter = setInterval(() => {
             countDown -= 1
             timeCounterView.innerText = countDown
-            console.log(countDown);
+            // console.log(countDown);
             if (countDown === 0) {
               clearInterval(downCounter);
               endGame()
