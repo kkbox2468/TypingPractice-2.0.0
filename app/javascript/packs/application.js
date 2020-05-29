@@ -12,7 +12,7 @@ require("scripts")
 
 //chart.js
 import Chart from 'chart.js';
-// var chart = new Chart(ctx, { }); //--->官網寫法
+
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

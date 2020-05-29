@@ -1,4 +1,3 @@
-  <canvas id="welcomeBg"></canvas>
   
   
   <!-- admin權限登入要放出來？ -->
@@ -6,12 +5,12 @@
   <!--  <%= link_to 'admin登入（是否要藏起來）' ,new_admin_session_path , method: 'get'%>  -->
   <!-- admin權限登入要放出來？ -->
   
-  <div class="welcome-Page" >
-    <div class="welcome-Content">
-      <div class="logoIcon">
-        <a href="/playground"><img src="/img/NoobIcon_400x200.svg" type="display" alt=""></a>
+  <div class="container"  id="welcomeContainer" col-12 >
+    <div class="row" id="welcomeRow">
+      <div class="logo_icon">
+        <a href="/playground"><img src="/img/NoobIcon_400x200.svg" type="display" alt="" ></a>
       </div>
-      <div class="typeHere">
+      <div class="type_here">
         <h1>Try to type 
           <span class="txt-type" 
                 data-wait="3000" 
@@ -23,6 +22,7 @@
     </div>
   </div>
 
+  <%# <canvas id="welcomeBg"></canvas> %>
 
 
 
