@@ -10,6 +10,7 @@ require 'csv'
 
 article_topic_csv = File.read('db/seeds/article_topic.csv', encoding: 'iso-8859-1')
 ruby_topic_csv = File.read('db/seeds/ruby_topic.csv', encoding: 'iso-8859-1')
+battle_topic_csv = File.read('db/seeds/battle_topic.csv', encoding: 'iso-8859-1')
 
 article = CSV.parse(article_topic_csv, headers: true)
 ruby = CSV.parse(ruby_topic_csv, headers: true)
@@ -47,7 +48,7 @@ count = 0
 ruby.each do |row|
 
   content = row.to_hash['content'] 
-  Battle.create(content: content) 
+  BattleTopic.create(content: content) 
     
   count = count + 1 
 
@@ -56,3 +57,5 @@ end
 
 
 puts "#{count} battle topics have been saved"
+
+
