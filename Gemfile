@@ -5,6 +5,11 @@ ruby '2.6.5'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'rails_admin', '~> 2.0', '>= 2.0.2'
 gem 'cancancan', '~> 3.1'
+
+gem 'omniauth', '~> 1.9', '>= 1.9.1'
+gem 'omniauth-facebook', '~> 6.0'
+gem 'omniauth-google-oauth2', '~> 0.8.0'
+gem 'koala', '~> 3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use sqlite3 as the database for Active Record
@@ -34,6 +39,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'foreman', '~> 0.86.0'
 #chart
 gem 'chart-js-rails'
+gem 'figaro', '~> 1.2'
 
 #groupdate
 gem 'groupdate', '~> 2.5', '>= 2.5.2'
