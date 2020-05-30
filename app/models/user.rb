@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable
 
-  devise :omniauthable, omniauth_providers: %i[facebook]
+  # devise :omniauthable, omniauth_providers: %i[facebook]
+  devise :omniauthable, omniauth_providers: [:facebook,:github]
+  # devise :omniauthable, omniauth_providers: []
   
   validates_uniqueness_of :nickname
   validates_uniqueness_of :email

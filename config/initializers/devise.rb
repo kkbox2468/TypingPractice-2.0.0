@@ -261,7 +261,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   # config.omniauth :facebook, "APP_ID", "APP_SECRET"
-  
+  config.omniauth :github, ENV['github_app_id'], ENV['github_app_secret'], scope: 'user,public_repo'
   config.omniauth :facebook, ENV['fb_app_id'], ENV['fb_app_secret']
 
   # ==> Warden configuration
