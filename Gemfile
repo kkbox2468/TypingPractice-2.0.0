@@ -8,6 +8,7 @@ gem 'cancancan', '~> 3.1'
 
 gem 'omniauth', '~> 1.9', '>= 1.9.1'
 gem 'omniauth-facebook', '~> 6.0'
+gem 'omniauth-github', '~> 1.4'
 gem 'omniauth-google-oauth2', '~> 0.8.0'
 gem 'koala', '~> 3.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
