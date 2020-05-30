@@ -4,7 +4,7 @@ body {
   align-items: center;
   min-height: 100vh; 
   margin: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Museo Sans Rounded, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   &.dark-mode {
     background-color: #212633;
   }
@@ -68,10 +68,8 @@ body {
       }
       #quotetopic{
         transition: all 1s ease 0s;
-        // position: absolute;
       }
       .showWrong{
-        // position: absolute;
         animation-name: show-wrong;
         animation-duration: .2s;
         animation-direction: alternate;

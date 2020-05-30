@@ -1,21 +1,21 @@
 /* -----遊玩模式區 ----- */
 
-.mode_wrap {
+.row{
   justify-content: space-around;
-  // flex-wrap: wrap;
-
+  flex-wrap: wrap;
   .select-area {
     justify-content: space-evenly;
     flex-flow: row wrap;
     .mode_card {
+      width: 18rem;
       border-radius: 1rem;
       background-color: #eeeeee;
       border: none;
       box-shadow: 4px 4px 8px #cfcfcf, 
                   -4px -4px 8px #ffffff;
       margin-bottom: 2rem;
-      margin-right: 1rem;
-      margin-left: 1rem;
+      // margin-right: 1rem;
+      // margin-left: 1rem;
       padding-top: 1rem;
 
       .card-body{
