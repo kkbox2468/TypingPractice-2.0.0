@@ -2,8 +2,10 @@
 
 .row{
   justify-content: space-around;
-  flex-wrap: wrap;
+  display: flex;
   .select-area {
+    flex-direction: row;
+    display: flex;
     justify-content: space-evenly;
     flex-flow: row wrap;
     .mode_card {
@@ -14,8 +16,8 @@
       box-shadow: 4px 4px 8px #cfcfcf, 
                   -4px -4px 8px #ffffff;
       margin-bottom: 2rem;
-      // margin-right: 1rem;
-      // margin-left: 1rem;
+      // margin-right: .1rem;
+      // margin-left: .1rem;
       padding-top: 1rem;
 
       .card-body{
@@ -23,12 +25,13 @@
       }
       
       .card-title{
+        margin-bottom: .5rem;
         text-shadow:  -2px -2px 2px #ffffff,
                       2px 2px 2px #b8b8b8;
       }
 
       .card-text{
-        
+        margin-bottom: .6rem;
         font-weight: 400;
         font-family: Museo Sans Rounded,sans-serif ;
       }
