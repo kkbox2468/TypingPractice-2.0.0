@@ -1,8 +1,13 @@
 <div class="lesson-select">
-  <% n = 1 %>
+
+<% start = 1%>
   <div class= "card">
     <% topics.each do |topic| %>
       <div class="card-body" style="width: 15rem">
+
+        <% if current_user %>
+          <div class="accracy d-none"><%= @all_progress[n] %></div>
+        <% end %>
 
         <% if current_user %>
           <% if done.include?(topic.id) %>
@@ -12,20 +17,16 @@
           <% end %>
         <% end %>
 
-        <h5 class="card-title" id="lessonTitle">Lesson<%= "#{n}" %></h5>
+        <h5 class="card-title" id="lessonTitle">Lesson<%= "#{start}" %></h5>
         <p class="card-text ellipsis"><%= topic.content %></p>
         <%= link_to "Start", send("#{type}_path", id: topic.id), class: "btn btn-primary d-flex justify-content-center ", id: "play-start" %>
 
-        <% if current_user %>
-          <% if done.include?(topic.id) %>
-          <div class="progress d-flex" id="lessonBar" style="height: 10px;">
-            <div class="progress-bar " role="progressbar"  style="width: 10%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <% end %>
-        <% end %>
-        
+        <div class="progress d-flex" id="lessonBar" style="height: 10px;">
+          <div class="progress-bar " role="progressbar"  style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div> 
       </div>
       <% n += 1 %>
+      <% start += 1 %>
     <% end %>
   </div>
 </div>

@@ -1,7 +1,13 @@
 class RoomsController < ApplicationController
+  before_action :is_current_user?
+
   def create
     @room = Room.new(room_data)
     @room.user_id = current_user.id
+    
+    topics = Topic.where(type: "BattleTopic")
+    @room.topic_id = topics.sample.id
+
     if @room.save
       redirect_to racing_index_path, notice: 'Room has created!'
     else
@@ -10,13 +16,12 @@ class RoomsController < ApplicationController
   end
 
   def show
+
     @room = Room.find(params[:id])
     @message = Message.new
-    # article = "Whether you are training for a sports competition, a fight, a race or an exam, this quote from Nelson Mandela is a great example of determination and pugnacity."
-    article = "Whether you are training."
-    @topic = article.split(//)
-    @members = RoomChannel.counter
-    # debugger
+    @battle_record = BattleRecord.new
+    @topic = Topic.find(@room.topic_id).content.split(//)
+    
   end
 
   def edit
@@ -42,4 +47,5 @@ class RoomsController < ApplicationController
   def room_data
     params.require(:room).permit(:name, :description)
   end
+
 end

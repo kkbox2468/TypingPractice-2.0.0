@@ -5,6 +5,7 @@ ruby '2.6.5'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'rails_admin', '~> 2.0', '>= 2.0.2'
 gem 'cancancan', '~> 3.1'
+gem 'redis', '~> 4.1', '>= 4.1.4'
 
 gem 'omniauth', '~> 1.9', '>= 1.9.1'
 gem 'omniauth-facebook', '~> 6.0'
@@ -17,7 +18,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # gem 'sqlite3', '~> 1.4'
 gem 'pg', '~> 1.2', '>= 1.2.3'
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -41,6 +42,9 @@ gem 'foreman', '~> 0.86.0'
 #chart
 gem 'chart-js-rails'
 gem 'figaro', '~> 1.2'
+
+#groupdate
+gem 'groupdate', '~> 2.5', '>= 2.5.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

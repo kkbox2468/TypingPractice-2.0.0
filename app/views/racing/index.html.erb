@@ -13,7 +13,12 @@
       <% end %>
       <h5><%= room.name %></h5>
       <p><%= room.description %></p>
-      <%= link_to "Join", room_path(room.id), class: 'btn' %>
+      <p>人數：<%= room.members %></p>
+      <% if room.members >= 2 %>
+        <a href="#" class="btn disabled">Join</a>
+      <% else %>
+        <%= link_to "Join", room_path(room.id), class: 'btn' %>
+      <% end %>
       <% if current_user.id == room.user_id%>
         <%= link_to "編輯", edit_room_path(room.id), class: 'btn' %>
         <%= link_to "刪除", room_path(room.id), class: 'btn', id: "delete-room-btn", method: "DELETE" %>
@@ -107,7 +112,7 @@
       })
     }
   }
-  
+  /* delete room 彈出視窗 */
   let stepStatus = false
   deleteRoomBtn.forEach((deleteBtn) => {
     deleteBtn.addEventListener('click', (btn) => {
@@ -130,14 +135,15 @@
               showConfirmButton: false,
               timer: 1500
             })
-            return stepStatus = true;
+            stepStatus = true;
+            setTimeout(() => {
+              deleteBtn.click();
+            }, 1000);
           }
         })
       }
-
-
       if (stepStatus === true) {
-        // deleteBtn.click();
+        stepStatus = false
       }
     })
   })
