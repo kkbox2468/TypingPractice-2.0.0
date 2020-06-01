@@ -2,7 +2,7 @@ class PlaygroundController < ApplicationController
   def index
 
     if current_user
-      all_progress = current_user.user_topics.order('topic_id')
+      all_progress = current_user.user_topics.where.not(accuracy: nil).order('topic_id')
       article_progress = []
       code_progress = []
       topics = current_user.user_topics.joins(:topic)
@@ -27,13 +27,13 @@ class PlaygroundController < ApplicationController
       articles_count = articles.count
       codes_count = codes.count
 
-      # if topics.where('topics.type = ?', 'Article').present?
-      #   @article_progress = (all_articles.each.map{|i|i.accuracy}.reduce(:+)/articles_count).floor(2)
-      # end
+      if topics.where('topics.type = ?', 'Article').present?
+        @article_progress = (article_progress.each.map{|i|i.accuracy}.reduce(:+)/articles_count).floor(2)
+      end
 
-      # if topics.where('topics.type = ?', 'Ruby').present?
-      #   @code_progress = (all_rubies.each.map{|i|i.accuracy}.reduce(:+)/codes_count).floor(2)
-      # end
+      if topics.where('topics.type = ?', 'Ruby').present?
+        @code_progress = (code_progress.each.map{|i|i.accuracy}.reduce(:+)/codes_count).floor(2)
+      end
 
     end
   end
