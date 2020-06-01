@@ -21,26 +21,26 @@
 </div>
 
 <div class="row user-profile">
-  <div class=user-data>
-    <div class="user-info col-lg-4 col-md-4 col-xs-4">
+  <%# <div class=user-data> %>
+    <div class="user-info col-4">
       <canvas id="arti_accuracy" 
               data-accuracy="<%= @arti_accuracy %>%">
       </canvas>
     </div> 
-    <div class="user-info col-lg-4 col-md-4 col-xs-4">
+    <div class="user-info col-4">
       <canvas id="arti_wpm" 
               width="40" height="14" 
               data-wpm="<%= @arti_wpm %>sec">
       </canvas>
     </div>
   
-    <div class="user-info col-lg-4 col-md-4 col-xs-4">
+    <div class="user-info col-4">
       <canvas id="arti_accu_line" 
               width="40" height="20" 
               data-accday="<%= @arti_day.to_json %>"> <!----這邊的變數對js來說是字串 要再轉成Json格式--->
       </canvas>
     </div>
-  </div>
+  <%# </div> %>
 </div>
 
 <div class="row type-log">
