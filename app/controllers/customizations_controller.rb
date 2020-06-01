@@ -4,8 +4,9 @@ class CustomizationsController < ApplicationController
     @user_topics = current_user.user_topics.where(time: nil)
 
     if current_user
-      @done_customization = current_user.user_topics.pluck(:topic_id).uniq
-  
+      # @done_customization = current_user.user_topics.pluck(:topic_id).uniq
+      @done_customization = current_user.user_topics.where.not(accuracy: nil).pluck(:topic_id).uniq
+      # debugger
       topics = UserTopic.all
       @all_progress = {}
 
