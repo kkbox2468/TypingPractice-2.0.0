@@ -1,5 +1,5 @@
 $(function(){
-  if ( $('#coding-show').length > 0 || $('#typing-show').length > 0 ){
+  if ( $('#coding-show').length > 0 || $('#typing-show').length > 0 || $('#customizations-show').length > 0 ){
     
     //字體大小
       $('.typeT-item-sm').on('click', function(){

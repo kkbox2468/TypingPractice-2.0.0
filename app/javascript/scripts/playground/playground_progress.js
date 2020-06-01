@@ -1,5 +1,5 @@
 $(function(){
-  if ( $('#coding-index').length > 0 || $('#typing-index').length > 0 ){
+  if ( $('#coding-index').length > 0 || $('#typing-index').length > 0 || $('#customizations-index').length > 0 ){
     // article & code判斷
     eachAccracy = 0
     accracyArray = []

@@ -27,13 +27,13 @@ class PlaygroundController < ApplicationController
       articles_count = articles.count
       codes_count = codes.count
 
-      if topics.where('topics.type = ?', 'Article').present?
-        @article_progress = (article_progress.each.map{|i|i.accuracy}.reduce(:+)/articles_count).floor(2)
-      end
+      # if topics.where('topics.type = ?', 'Article').present?
+      #   @article_progress = (all_articles.each.map{|i|i.accuracy}.reduce(:+)/articles_count).floor(2)
+      # end
 
-      if topics.where('topics.type = ?', 'Ruby').present?
-        @code_progress = (code_progress.each.map{|i|i.accuracy}.reduce(:+)/codes_count).floor(2)
-      end
+      # if topics.where('topics.type = ?', 'Ruby').present?
+      #   @code_progress = (all_rubies.each.map{|i|i.accuracy}.reduce(:+)/codes_count).floor(2)
+      # end
 
     end
   end

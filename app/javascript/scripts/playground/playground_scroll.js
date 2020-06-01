@@ -1,5 +1,5 @@
 $(function(){
-  if ( $('#coding-show').length > 0 || $('#typing-show').length > 0 ){
+  if ( $('#coding-show').length > 0 || $('#typing-show').length > 0 || $('#customizations-show').length > 0  ){
 
     $('#quoteInput').on('keydown', function(){
       let container = document.querySelector('.play-container') 

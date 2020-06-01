@@ -9,9 +9,9 @@ class TypingController < ApplicationController
       @all_progress = {}
 
       topics.each do |topic|
-        progress = current_user.user_topics.where(topic_id: topic.id).order('accuracy').last
+        progress = current_user.user_topics.where(topic_id: topic.topic_id).order('accuracy').last
         if progress
-          @all_progress.merge!({topic.id=> progress.accuracy})
+          @all_progress.merge!({topic.topic_id => progress.accuracy})
         end 
       end
       # u1.user_topics.where(topic_id: 1).order('accuracy').last

@@ -1,0 +1,26 @@
+<div class="row  justify-content-center">
+  <%= render 'shared/timer' %>
+</div>
+
+
+
+<div class="row justify-content-center">
+  <div class="play-container mt-3" data-controller="typing">
+    <div class="quote-display" id="quoteDisplay">
+      <div id="quotetopic">
+        <% @topic.each do |character| %>
+        <span data-target="typing.content"><%= character %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <textarea id="quoteInput" class="quote-input" autofocus type="hidden" data-action="typing#typein"></textarea>
+  
+  <audio id="keyboard-sound">
+    <source class="keyboard-sound" src="/sound/keyboard_sound02.wav" type="audio/wav" > 
+  </audio>
+</div>
+
+<%= render 'shared/keyboard'  %>
+<%= render 'shared/stats', achievement: @user_topic ,topic: @customization %>
