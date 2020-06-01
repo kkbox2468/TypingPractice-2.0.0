@@ -5,17 +5,14 @@ class CodingController < ApplicationController
     
     if current_user
       @done_rubies = current_user.user_topics.pluck(:topic_id).uniq
-
       topics = UserTopic.all
       @all_progress = {}
 
       topics.each do |topic|
-
-        progress = current_user.user_topics.where(topic_id: topic.id).order('accuracy').last
+        progress = current_user.user_topics.where(topic_id: topic.topic_id).order('accuracy').last
         if progress
-          @all_progress.merge!({topic.id=> progress.accuracy})
+          @all_progress.merge!({topic.topic_id => progress.accuracy})
         end 
-
       end
     end
 

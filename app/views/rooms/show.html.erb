@@ -1,6 +1,6 @@
 <div id="<%= controller.controller_name %>-<%= controller.action_name %>">
   <h3><%= @room.name %></h3>
-  <h5 id="timeCounter">10</h5>
+  <h5 id="timeCounter">0</h5>
   <div class="tug-bar" id= "tugBar" col-1>
     <div class="my-point" id="myPoint"></div>
     <div class="enemy-point" id="enemyPoint"></div>
@@ -56,7 +56,7 @@
     <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
   </audio>
 
-  <div class="check-group d-flex justify-content-center">
+  <div class="check-group d-none justify-content-center">
     <div class="col-4 check-area mx-auto">
       <%= form_for :check, url: "/messages/new", method: 'GET',remote: true do |f| %>
       <div class="mb-3">
@@ -83,7 +83,7 @@
 
   </div>
 
-  <div class="preloader">
+  <div class="preloader d-none">
     <div class="loader-ground">
       <div class="single9"></div>
     </div>

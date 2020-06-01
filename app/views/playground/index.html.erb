@@ -2,6 +2,14 @@
     Choose Mode
 </h1>
 
+<% if current_user %>
+  <div class="article_progress d-none"><%= @article_progress %></div>
+  <div class="code_progress d-none"><%= @code_progress %></div>
+<% else %>
+  <div class="article_progress d-none"></div>
+  <div class="code_progress d-none"></div>
+<% end %>
+
 <div class="row mode_wrap">
   <div class="lesson-area">
     <div class="select-area d-flex">
@@ -54,7 +62,7 @@
             <div class="card-body">
               <h5 class="card-title">DIY</h5>
               <p class="card-text">Have fun!</p>
-              <%= link_to "START", racing_index_path,	class: "btn btn-primary"%>
+              <%= link_to "START", customizations_path,	class: "btn btn-primary"%>
               <div class="progress mt-3" id="battleModeBar"style="height: 5px;">
                 <div class="progress-bar progress-bar-striped " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
               </div>

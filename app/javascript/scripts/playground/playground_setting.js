@@ -1,15 +1,18 @@
 $(function(){
-  if ( $('#coding-show').length > 0 || $('#typing-show').length > 0 ){
+  if ( $('#coding-show').length > 0 || $('#typing-show').length > 0 || $('#customizations-show').length > 0 ){
     
     //字體大小
-      $('.typeT-item-sm').on('click', function(){
+      $('.typeT-item-sm').on('click', function(e){
         $('.quote-display span').css("font-size", "2rem");
+        $('#label-textarea').click();
       })
-      $('.typeT-item-md').on('click', function(){
+      $('.typeT-item-md').on('click', function(e){
         $('.quote-display span').css("font-size", "3rem");
+        $('#label-textarea').click();
       })
-      $('.typeT-item-lg').on('click', function(){
+      $('.typeT-item-lg').on('click', function(e){
         $('.quote-display span').css("font-size", "3.5rem");
+        $('#label-textarea').click();
       })
     
     //聲音
