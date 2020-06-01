@@ -3,11 +3,12 @@
 .row{
   justify-content: space-around;
   display: flex;
+  flex-flow: row wrap;
   .select-area {
     flex-direction: row;
     display: flex;
     justify-content: space-evenly;
-    flex-flow: row wrap;
+    
     .mode_card {
       width: 18rem;
       border-radius: 1rem;
@@ -16,8 +17,6 @@
       box-shadow: 4px 4px 8px #cfcfcf, 
                   -4px -4px 8px #ffffff;
       margin-bottom: 2rem;
-      // margin-right: .1rem;
-      // margin-left: .1rem;
       padding-top: 1rem;
 
       .card-body{
