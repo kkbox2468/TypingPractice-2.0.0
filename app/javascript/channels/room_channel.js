@@ -47,10 +47,10 @@ $(function(){
             userNameRight.innerText = data.user_name
             guestCheck.click();
             readyBtnGuest.classList.toggle('active')
-            if (readyBtnGuest.innerText === "No") {
-              readyBtnGuest.innerText = "Yes"
+            if (readyBtnGuest.innerText === "Not ready") {
+              readyBtnGuest.innerText = "Ready"
             } else {
-              readyBtnGuest.innerText = "No"
+              readyBtnGuest.innerText = "Not ready"
             }
           }
         }
