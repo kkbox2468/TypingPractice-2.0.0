@@ -27,9 +27,9 @@
       <% end %>
       <%= form_for :records, url: '/messages/new', method: 'GET', remote: true do |b| %>
         <%= b.hidden_field :room_id, value: @room.id %>
-        <%= b.text_field :time %>
-        <%= b.text_field :accuracy %>
-        <%= b.submit name: 'record-submit' %>
+        <%= b.hidden_field :time %>
+        <%= b.hidden_field :accuracy %>
+        <%= b.submit name: 'record-submit', class: 'd-none' %>
       <% end %>
     </div>
 
