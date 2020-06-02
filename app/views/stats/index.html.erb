@@ -21,7 +21,6 @@
 </div>
 
 <div class="row user-profile">
-  <%# <div class=user-data> %>
     <div class="user-info col-4">
       <canvas id="arti_accuracy" 
               data-accuracy="<%= @arti_accuracy %>%">
@@ -40,8 +39,63 @@
               data-accday="<%= @arti_day.to_json %>"> <!----這邊的變數對js來說是字串 要再轉成Json格式--->
       </canvas>
     </div>
-  <%# </div> %>
 </div>
+
+<div class="row leaderboard">
+  <% if current_user %>
+    <h3>Leaderboard</h3>
+    <table class="table">
+
+      <thead>
+        <tr>
+          <th>結果</th>
+          <th>時間</th>
+          <th>字數</th>
+          <th>速度</th>
+          <th>錯誤字數</th>
+          <th>準確度</th>
+        </tr>
+      </thead>
+      <!-- 把底下迴圈放在controller action做完再塞實體變數 -->
+      <%# @user_topics.each do |user_topic| %>
+        <tbody>
+          <tr>
+            <td><%#= user_topic.topic_id %>win</td>
+            <td><%#= user_topic.time %>11秒</td>
+            <td><%#= user_topic.letter_count %>34</td>
+            <td><%#= user_topic.speed %>55WPM</td>
+            <td><%#= user_topic.wrong_letter_count %>3</td>
+            <td><%#= user_topic.accuracy %>98%</td>
+          </tr> 
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td><%#= user_topic.topic_id %>win</td>
+            <td><%#= user_topic.time %>12秒</td>
+            <td><%#= user_topic.letter_count %>37</td>
+            <td><%#= user_topic.speed %>47WPM</td>
+            <td><%#= user_topic.wrong_letter_count %>5</td>
+            <td><%#= user_topic.accuracy %>97%</td>
+          </tr> 
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td><%#= user_topic.topic_id %>win</td>
+            <td><%#= user_topic.time %>17秒</td>
+            <td><%#= user_topic.letter_count %>41</td>
+            <td><%#= user_topic.speed %>49WPM</td>
+            <td><%#= user_topic.wrong_letter_count %>7</td>
+            <td><%#= user_topic.accuracy %>95%</td>
+          </tr> 
+        </tbody>
+      <%# end %>
+    </table>
+  <% end %>
+
+</div>
+
 
 <div class="row type-log">
   <% if current_user %>
