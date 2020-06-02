@@ -45,7 +45,7 @@ puts "#{count} ruby topics have been saved"
 
 
 count = 0
-ruby.each do |row|
+battle.each do |row|
 
   content = row.to_hash['content'] 
   BattleTopic.create(content: content) 
