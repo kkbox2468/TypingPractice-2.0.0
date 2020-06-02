@@ -3,7 +3,7 @@ class StatsController < ApplicationController
     
     if current_user
       find_type_history   
-      # @article_accuracy = UserArticle.find_by(params[:id])
+    
       @arti_accuracy = current_user.user_topics.average(:accuracy).to_i #從current user抓底下create的所有文章裡的準確度.average可以算平均再算成整數
       @arti_wpm = current_user.user_topics.average(:speed).to_i
       # render json: @arti_wpm
@@ -24,6 +24,6 @@ class StatsController < ApplicationController
   private
   
   def find_type_history 
-    @user_topics = current_user.user_topics.order("id DESC").take(10)
+    @user_topics = current_user.user_topics.where.not(accuracy: nil).order("id DESC").take(10)
   end
 end
