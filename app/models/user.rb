@@ -7,7 +7,7 @@ class User < ApplicationRecord
         
 
   # devise :omniauthable, omniauth_providers: %i[facebook]
-  devise :omniauthable, omniauth_providers: [:facebook,:github]
+  devise :omniauthable, omniauth_providers: [:facebook,:github, :google_oauth2]
   
   
   validates_uniqueness_of :nickname

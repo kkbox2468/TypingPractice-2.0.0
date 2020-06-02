@@ -265,6 +265,7 @@ Devise.setup do |config|
   # config.omniauth :facebook, "APP_ID", "APP_SECRET"
   config.omniauth :github, ENV['github_app_id'], ENV['github_app_secret'], scope: 'user,public_repo'
   config.omniauth :facebook, ENV['fb_app_id'], ENV['fb_app_secret']
+  config.omniauth :google_oauth2, ENV['google_app_id'], ENV['google_app_secret'],{access_type: "offline", approval_prompt: ""}
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
