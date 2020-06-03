@@ -21,25 +21,114 @@
 </div>
 
 <div class="row user-profile">
-  <div class="user-info col-4">
-    <canvas id="arti_accuracy" 
-            data-accuracy="<%= @arti_accuracy %>%">
-    </canvas>
-  </div> 
-  <div class="user-info col-4">
-    <canvas id="arti_wpm" 
-            width="40" height="14" 
-            data-wpm="<%= @arti_wpm %>sec">
-    </canvas>
-  </div>
-
-  <div class="user-info col-4">
-    <canvas id="arti_accu_line" 
-            width="40" height="20" 
-            data-accday="<%= @arti_day.to_json %>"> <!----這邊的變數對js來說是字串 要再轉成Json格式--->
-    </canvas>
-  </div>
+    <div class="user-info col-4">
+      <canvas id="arti_accuracy" 
+              data-accuracy="<%= @arti_accuracy %>%">
+      </canvas>
+    </div> 
+    <div class="user-info col-4">
+      <canvas id="arti_wpm" 
+              width="40" height="14" 
+              data-wpm="<%= @arti_wpm %>sec">
+      </canvas>
+    </div>
+  
+    <div class="user-info col-4">
+      <canvas id="arti_accu_line" 
+              width="40" height="20" 
+              data-accday="<%= @arti_day.to_json %>"> <!----這邊的變數對js來說是字串 要再轉成Json格式--->
+      </canvas>
+    </div>
 </div>
+
+<div class="row leaderboard">
+  <% if current_user %>
+    <h3>Leaderboard</h3>
+    <table class="table">
+
+      <thead>
+        <tr>
+          <th>WINNER</th>
+          <th>時間</th>
+          <th>字數</th>
+          <th>速度</th>
+          <th>錯誤字數</th>
+          <th>準確度</th>
+        </tr>
+      </thead>
+      <!-- 把底下迴圈放在controller action做完再塞實體變數 -->
+      <%# @user_topics.each do |user_topic| %>
+        <tbody>
+          <tr>
+            <td><%#= user_topic.topic_id %>ooo</td>
+            <td><%#= user_topic.time %>11秒</td>
+            <td><%#= user_topic.letter_count %>34</td>
+            <td><%#= user_topic.speed %>55WPM</td>
+            <td><%#= user_topic.wrong_letter_count %>3</td>
+            <td><%#= user_topic.accuracy %>98%</td>
+          </tr> 
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td><%#= user_topic.topic_id %>ooo</td>
+            <td><%#= user_topic.time %>12秒</td>
+            <td><%#= user_topic.letter_count %>37</td>
+            <td><%#= user_topic.speed %>47WPM</td>
+            <td><%#= user_topic.wrong_letter_count %>5</td>
+            <td><%#= user_topic.accuracy %>97%</td>
+          </tr> 
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td><%#= user_topic.topic_id %>liu liu</td>
+            <td><%#= user_topic.time %>17秒</td>
+            <td><%#= user_topic.letter_count %>41</td>
+            <td><%#= user_topic.speed %>49WPM</td>
+            <td><%#= user_topic.wrong_letter_count %>7</td>
+            <td><%#= user_topic.accuracy %>95%</td>
+          </tr> 
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td><%#= user_topic.topic_id %>boy</td>
+            <td><%#= user_topic.time %>23秒</td>
+            <td><%#= user_topic.letter_count %>55</td>
+            <td><%#= user_topic.speed %>53WPM</td>
+            <td><%#= user_topic.wrong_letter_count %>4</td>
+            <td><%#= user_topic.accuracy %>97%</td>
+          </tr> 
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td><%#= user_topic.topic_id %>lynn</td>
+            <td><%#= user_topic.time %>13秒</td>
+            <td><%#= user_topic.letter_count %>61</td>
+            <td><%#= user_topic.speed %>65WPM</td>
+            <td><%#= user_topic.wrong_letter_count %>1</td>
+            <td><%#= user_topic.accuracy %>99%</td>
+          </tr> 
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td><%#= user_topic.topic_id %>Joseph</td>
+            <td><%#= user_topic.time %>14秒</td>
+            <td><%#= user_topic.letter_count %>60</td>
+            <td><%#= user_topic.speed %>57WPM</td>
+            <td><%#= user_topic.wrong_letter_count %>2</td>
+            <td><%#= user_topic.accuracy %>98%</td>
+          </tr> 
+        </tbody>
+      <%# end %>
+    </table>
+  <% end %>
+
+</div>
+
 
 <div class="row type-log">
   <% if current_user %>

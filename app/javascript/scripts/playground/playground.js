@@ -1,5 +1,5 @@
 $(function(){
-  if ( $('#coding-show').length > 0 || $('#typing-show').length > 0 ){
+  if ( $('#coding-show').length > 0 || $('#typing-show').length > 0 || $('#customizations-show').length > 0 ){
 
     const RNADOM_QUOTE_API_URL = 'https://api.quotable.io/random'
     const quoteDisplayElement = document.getElementById('quoteDisplay')

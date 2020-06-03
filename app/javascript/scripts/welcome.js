@@ -1,5 +1,5 @@
-$(function(){
-  if ( $('#welcome-index').length > 0 ){
+// $(function(){
+  // if ( $('#welcome-index').length > 0 ){
     class TypeWriter {
       constructor(txtElement, words, wait = 3000) {
         this.txtElement = txtElement;
@@ -66,5 +66,5 @@ $(function(){
       // Init TypeWriter
       new TypeWriter(txtElement, words, wait);
     }
-  }
-})
+  // }
+// })

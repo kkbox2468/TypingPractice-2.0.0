@@ -4,7 +4,7 @@ body {
   align-items: center;
   min-height: 100vh; 
   margin: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Museo Sans Rounded, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   &.dark-mode {
     background-color: #212633;
   }
@@ -12,15 +12,16 @@ body {
     font-family: Museo Sans Rounded, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
   .container{
-    #create-room-btn{
+    #create-room-btn, #customization-btn {
+      border-radius: 5rem;
       border: none;
-      background-color: #eeeeee;
-      box-shadow:  7px 7px 14px #cfcfcf, 
-                  -7px -7px 14px #ffffff;
+      background-color: #eec44c;
+      box-shadow:  3px 3px 6px #cfcfcf, 
+                  -3px -3px 6px #ffffff;
       color: rgb(50, 50, 50);
-      &:hover{
-        box-shadow: inset 4px 4px 8px #cfcfcf, 
-                    inset -4px -4px 8px #ffffff;
+      &:active{
+        box-shadow: inset 2px 2px 3px #caa741, 
+                    inset -2px -2px 3px #ffe157;
         // transition: 0.05s;
         // font-size: 15.5px;
       }
@@ -68,10 +69,8 @@ body {
       }
       #quotetopic{
         transition: all 1s ease 0s;
-        // position: absolute;
       }
       .showWrong{
-        // position: absolute;
         animation-name: show-wrong;
         animation-duration: .2s;
         animation-direction: alternate;
@@ -337,3 +336,11 @@ body {
   color: #f8d472;
 }
 
+#label-textarea{
+  // background-color: rgba(0,0,0,.5);
+  position: absolute;
+  top: 56px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}

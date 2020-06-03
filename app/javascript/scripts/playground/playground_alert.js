@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  if ( $('#coding-show').length > 0 || $('#typing-show').length > 0 ){
+  if ( $('#coding-show').length > 0 || $('#typing-show').length > 0 || $('#customizations-show').length > 0  ){
     
     $('#achievement').on('submit', function(e){
       let doneAt = document.querySelector('#time').value

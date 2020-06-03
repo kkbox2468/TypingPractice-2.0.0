@@ -1,6 +1,6 @@
 <div id="<%= controller.controller_name %>-<%= controller.action_name %>">
   <h3><%= @room.name %></h3>
-  <h5 id="timeCounter">10</h5>
+  <h5 id="timeCounter">0</h5>
   <div class="tug-bar" id= "tugBar" col-1>
     <div class="my-point" id="myPoint"></div>
     <div class="enemy-point" id="enemyPoint"></div>
@@ -27,9 +27,9 @@
       <% end %>
       <%= form_for :records, url: '/messages/new', method: 'GET', remote: true do |b| %>
         <%= b.hidden_field :room_id, value: @room.id %>
-        <%= b.text_field :time %>
-        <%= b.text_field :accuracy %>
-        <%= b.submit name: 'record-submit' %>
+        <%= b.hidden_field :time %>
+        <%= b.hidden_field :accuracy %>
+        <%= b.submit name: 'record-submit', class: 'd-none' %>
       <% end %>
     </div>
 
