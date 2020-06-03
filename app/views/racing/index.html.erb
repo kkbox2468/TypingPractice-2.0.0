@@ -14,6 +14,7 @@
 <div class="racing-container justify-content-start">
   <div class="lesson-select">
     <div class="row">
+      <div id="new-create"></div>
       <% @rooms.each  do |room|%>
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
           <div class="card-body ">
@@ -28,17 +29,16 @@
 
             <h5><%= room.name %></h5>
             <p><%= room.description %></p>
-            <p>Capacity：<%= room.members %>persons</p>
-
+            <p>Player：<span class="room<%= room.id%>-counter"><%= room.members %></span>persons</p>
             <div class="link-group d-flex">
               <% if room.members >= 2 %>
                 <a href="#" class="btn disabled">Join</a>
               <% else %>
-                <%= link_to "Join", room_path(room.id), class: 'btn' %>
+                <%= link_to "Join", room_path(room.id), class: 'btn player-counter',id: room.id, data: {counter: room.members} %>
               <% end %>
               <% if current_user.id == room.user_id%>
-                <%= link_to "編輯", edit_room_path(room.id), class: 'btn' %>
-                <%= link_to "刪除", room_path(room.id), class: 'btn', id: "delete-room-btn", method: "DELETE" %>
+                <%= link_to "Edit", edit_room_path(room.id), class: 'btn' %>
+                <%= link_to "Delete", room_path(room.id), class: 'btn', id: "delete-room-btn", method: "DELETE" %>
               <% end %>
             </div>
           </div>
@@ -49,7 +49,7 @@
 </div>
 
 <!-- Create room 隱藏欄位 -->
-<div class="lesson-select statu-params d-none">
+<div class="lesson-select statu-params">
   <div class="card">
     <div class="card-body">
       <%= form_for @room do |f|%>
@@ -61,6 +61,9 @@
           <div class="form-group mr-2">
             <%= f.label :description %>
             <%= f.text_field :description, class: 'form-control' %>
+          </div>
+          <div >
+            <%#= f.text_field :user_id, :value => (current_user.id)  %>
           </div>
           <div class="form-group">
             <%= f.submit class: 'btn btn-primary', id: 'room_submit' %>
