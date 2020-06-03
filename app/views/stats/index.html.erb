@@ -39,6 +39,13 @@
               data-accday="<%= @arti_day.to_json %>"> <!----這邊的變數對js來說是字串 要再轉成Json格式--->
       </canvas>
     </div>
+
+    <div id="cal-heatmap"></div>
+<script type="text/javascript">
+	var cal = new CalHeatMap();
+	cal.init({});
+</script>
+  
 </div>
 
 <div class="row leaderboard">
