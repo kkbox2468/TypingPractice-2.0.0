@@ -1,0 +1,35 @@
+@font-face {
+  font-family: Museo Sans Rounded;
+  src: local("/fonts/MuseoSansRounded900"), local("/fonts/MuseoSansRounded700"), local("/fonts/MuseoSansRounded400"), url("/fonts/MuseoSansRounded900.otf"), url("/fonts/MuseoSansRounded700.otf"), url("/fonts/MuseoSansRounded400.otf");
+  font-weight: 900,700,400;
+  font-style: normal;
+}
+
+h1, h2, h3, h4 {
+  font-family: Museo Sans Rounded,jf-openhuninn, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  color: #323232;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  color: #323232;
+  font-family: Museo Sans Rounded, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  border: none;
+  color: #323232;
+  background-color: #eeeeee;
+  border: none;
+  -webkit-box-shadow: inset 7px 7px 10px #cfcfcf,  inset -7px -7px 10px #ffffff;
+          box-shadow: inset 7px 7px 10px #cfcfcf,  inset -7px -7px 10px #ffffff;
+}
+/*# sourceMappingURL=application.css.map */
