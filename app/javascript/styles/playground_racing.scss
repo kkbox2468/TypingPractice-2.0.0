@@ -105,3 +105,33 @@
     }
   }
 }
+#racing-index{
+  .racing-container{
+    .lesson-select{
+      .row{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        .card-body{
+          margin: 1rem 0rem;
+        }
+        .link-group{
+          justify-content: space-between;
+        }
+        @media (max-width: 767px) {
+          .link-group{
+            a{
+              width: 100px;
+            }
+          }
+        }
+        .post-news{
+          font-size: .5rem;
+          padding: 6px;
+        }
+
+      }
+    }
+  }
+
+}

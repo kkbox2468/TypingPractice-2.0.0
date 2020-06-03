@@ -43,5 +43,6 @@ Rails.application.routes.draw do
   resources :user_topics, only: [:create]
   resources :messages, only: [:new, :create]
   resources :battle_records, only: [:new, :create]
+  resources :invitation, only: [:new]
   
 end

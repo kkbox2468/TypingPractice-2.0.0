@@ -1,46 +1,37 @@
 /* -----遊玩模式區 ----- */
-
-.row{
-  justify-content: space-around;
-  // display: flex;
-  // flex-flow: row wrap;
+.mode_wrap{
   .select-area {
-    // flex-direction: row;
     display: flex;
-    justify-content: space-around;
-    
+    justify-content: space-between;
     .mode_card {
-      width: 18rem;
       border-radius: 1rem;
       background-color: #eeeeee;
       border: none;
       box-shadow: 4px 4px 8px #cfcfcf, 
                   -4px -4px 8px #ffffff;
-      margin-bottom: 2rem;
-      padding-top: 1rem;
-
-      .card-body{
-        
-        padding-left: 0rem;
-      }
-      
-      .card-title{
-        margin-bottom: .5rem;
-        text-shadow:  -2px -2px 2px #ffffff,
-                      2px 2px 2px #b8b8b8;
-      }
-
-      .card-text{
-        margin-bottom: .6rem;
-        font-weight: 400;
-        font-family: Museo Sans Rounded,sans-serif ;
-      }
-
+      padding: 1rem;
       .card-img-top{
         background-color: #eec44c;
         overflow: hidden;
         border-radius: .2rem;
       }
+      margin: 1rem 0;
+
+      .mode_content{
+        padding: 1rem 0;
+        .card-title{
+          text-shadow:  -2px -2px 2px #ffffff,
+                        2px 2px 2px #b8b8b8;
+        }
+        .card-text{
+          // margin-bottom: .6rem;
+          font-weight: 400;
+          font-family: Museo Sans Rounded,sans-serif ;
+        }
+
+      }
+
+
       .btn-primary {
         color:  hsl(0, 0%, 20%);
         border-radius: 1rem;

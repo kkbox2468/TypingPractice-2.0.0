@@ -5,4 +5,5 @@ class RacingController < ApplicationController
     @room = Room.new
     @rooms = Room.all
   end
+
 end

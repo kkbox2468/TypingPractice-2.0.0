@@ -20,6 +20,7 @@
             <a class="dropdown-item" href="/playground/typing">Typing Practice</a>
             <a class="dropdown-item" href="/playground/coding">Typing Code</a>
             <a class="dropdown-item" href="/playground/racing">Typing Battle</a>
+            <a class="dropdown-item" href="/playground/customizations">Try DIY</a>
           </div>
         </li>
         <li class="nav-item">
@@ -29,6 +30,27 @@
     </ul>
     <ul class="navbar-nav">
       <% if current_user  %>
+        <li class="nav-item nav-item-prompt ">   
+          <div class="icon-for-new-post"></div>
+          <label class="btn btn-primary nav-btn btn-toggle" for="checkbox_id">
+            <img src="/icon/bell.svg" alt="">
+          </label>
+          <div class="invitation">
+            <input type="checkbox" id="checkbox_id">
+            <div class="invitation-menu">
+              <div class="invitation-txt" id="invitation-sand">
+                <div class="no-prompt">
+                  <a href="/playground/racing">
+                    <img src="/icon/swords.png" alt="">
+                    <small>
+                      Empty! Create Your Own Racing? 
+                    </small>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
         <li class="nav-item">
           <%= link_to  "Setting", edit_user_registration_path, class: 'btn btn-primary nav-btn' %>
         </li>
