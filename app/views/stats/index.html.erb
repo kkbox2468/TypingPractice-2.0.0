@@ -48,106 +48,26 @@
   
 </div>
 
-<div class="row leaderboard">
-  <% if current_user %>
-    <h3>Leaderboard</h3>
-    <table class="table">
 
-      <thead>
-        <tr>
-          <th>WINNER</th>
-          <th>時間</th>
-          <th>字數</th>
-          <th>速度</th>
-          <th>錯誤字數</th>
-          <th>準確度</th>
-        </tr>
-      </thead>
-      <!-- 把底下迴圈放在controller action做完再塞實體變數 -->
-      <%# @user_topics.each do |user_topic| %>
-        <tbody>
-          <tr>
-            <td><%#= user_topic.topic_id %>ooo</td>
-            <td><%#= user_topic.time %>11秒</td>
-            <td><%#= user_topic.letter_count %>34</td>
-            <td><%#= user_topic.speed %>55WPM</td>
-            <td><%#= user_topic.wrong_letter_count %>3</td>
-            <td><%#= user_topic.accuracy %>98%</td>
-          </tr> 
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td><%#= user_topic.topic_id %>ooo</td>
-            <td><%#= user_topic.time %>12秒</td>
-            <td><%#= user_topic.letter_count %>37</td>
-            <td><%#= user_topic.speed %>47WPM</td>
-            <td><%#= user_topic.wrong_letter_count %>5</td>
-            <td><%#= user_topic.accuracy %>97%</td>
-          </tr> 
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td><%#= user_topic.topic_id %>liu liu</td>
-            <td><%#= user_topic.time %>17秒</td>
-            <td><%#= user_topic.letter_count %>41</td>
-            <td><%#= user_topic.speed %>49WPM</td>
-            <td><%#= user_topic.wrong_letter_count %>7</td>
-            <td><%#= user_topic.accuracy %>95%</td>
-          </tr> 
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td><%#= user_topic.topic_id %>boy</td>
-            <td><%#= user_topic.time %>23秒</td>
-            <td><%#= user_topic.letter_count %>55</td>
-            <td><%#= user_topic.speed %>53WPM</td>
-            <td><%#= user_topic.wrong_letter_count %>4</td>
-            <td><%#= user_topic.accuracy %>97%</td>
-          </tr> 
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td><%#= user_topic.topic_id %>lynn</td>
-            <td><%#= user_topic.time %>13秒</td>
-            <td><%#= user_topic.letter_count %>61</td>
-            <td><%#= user_topic.speed %>65WPM</td>
-            <td><%#= user_topic.wrong_letter_count %>1</td>
-            <td><%#= user_topic.accuracy %>99%</td>
-          </tr> 
-        </tbody>
-
-        <tbody>
-          <tr>
-            <td><%#= user_topic.topic_id %>Joseph</td>
-            <td><%#= user_topic.time %>14秒</td>
-            <td><%#= user_topic.letter_count %>60</td>
-            <td><%#= user_topic.speed %>57WPM</td>
-            <td><%#= user_topic.wrong_letter_count %>2</td>
-            <td><%#= user_topic.accuracy %>98%</td>
-          </tr> 
-        </tbody>
-      <%# end %>
-    </table>
-  <% end %>
-
-</div>
 
 
 <div class="row type-log">
   <% if current_user %>
-      <div class="form-group">
+      <div class="data-title">
+      <h3><%= current_user.nickname %>的資料分析</h3>
+      </div>
+
+      <div class="form-group data-bt">
         <label for="exampleFormControlSelect1">題目類型</label>
         <select class="form-control" id="exampleFormControlSelect1">
-          <option>ARTICLE</option>
+          <option>ALL</option>
+          <option>RUBY</option>
           <option>CODE</option>
           <option>DIY</option>
         </select>
       </div>
-      <h3><%= current_user.nickname %>的資料分析</h3>
+
+
     <table class="table">
       <thead>
         <tr>
@@ -159,11 +79,12 @@
           <th>準確度</th>
         </tr>
       </thead>
-      <!-- 把底下迴圈放在controller action做完再塞實體變數 -->
+      <!-- 把底下迴圈放在controller action做完再塞實體變數 --> 
       <% @user_topics.each do |user_topic| %>
+        
         <tbody>
           <tr>
-            <td><%= user_topic.topic_id %></td>
+            <td><%= user_topic.topic[:type] %></td>
             <td><%= user_topic.time %>秒</td>
             <td><%= user_topic.letter_count %></td>
             <td><%= user_topic.speed %>WPM</td>
@@ -171,6 +92,7 @@
             <td><%= user_topic.accuracy %>%</td>
           </tr> 
         </tbody>
+
       <% end %>
     </table>
   <% end %>

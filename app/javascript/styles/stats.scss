@@ -59,6 +59,16 @@
   border-radius: 20px;
   box-shadow: 4px 4px 5px #cfcfcf, 
               -4px -4px 5px #ffffff;
+              display: flex;
+  .data-title{
+    margin: auto;
+    margin-bottom: 3rem;
+  }
+  .data-bt{
+    margin-right: 1rem;
+    // justify-content: start;
+    
+  }
 }
 
 .leaderboard{
