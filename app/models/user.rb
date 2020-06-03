@@ -4,7 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable
 
-  devise :omniauthable, omniauth_providers: %i[facebook]
+        
+
+  # devise :omniauthable, omniauth_providers: %i[facebook]
+  devise :omniauthable, omniauth_providers: [:facebook,:github, :google_oauth2]
+  
   
   validates_uniqueness_of :nickname
   validates_uniqueness_of :email
@@ -42,6 +46,7 @@ class User < ApplicationRecord
       # If you are using confirmable and the provider(s) you use validate emails, 
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
+      
     end
     # byebug
   end

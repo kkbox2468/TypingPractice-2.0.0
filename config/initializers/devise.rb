@@ -22,6 +22,7 @@ Devise.setup do |config|
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
+  # config.mailer = 'ContactMailer'
 
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
@@ -146,6 +147,7 @@ Devise.setup do |config|
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
   config.reconfirmable = true
+  # config.reconfirmable = false
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
@@ -261,8 +263,9 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   # config.omniauth :facebook, "APP_ID", "APP_SECRET"
-  
+  config.omniauth :github, ENV['github_app_id'], ENV['github_app_secret'], scope: 'user,public_repo'
   config.omniauth :facebook, ENV['fb_app_id'], ENV['fb_app_secret']
+  config.omniauth :google_oauth2, ENV['google_app_id'], ENV['google_app_secret'],{access_type: "offline", approval_prompt: ""}
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
