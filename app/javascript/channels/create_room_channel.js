@@ -17,8 +17,9 @@ consumer.subscriptions.create("CreateRoomChannel", {
     // console.log(data.description)
     // console.log(data.id)
     // console.log(data.name)
-    $('#new-create').append(`
-      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+    // $('#new-create').addClass("col-xl-3 col-lg-4 col-md-6 col-sm-12");
+    $('#new-create').prepend(`
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" >
         <div class="card-body ">
           <div class="request-title d-flex justify-content-between">
               <p>Owner:`+ data.owner_name +`</p>
@@ -32,6 +33,6 @@ consumer.subscriptions.create("CreateRoomChannel", {
           </div>
         </div>
       </div>
-    `)
+    `);
   }
 });
