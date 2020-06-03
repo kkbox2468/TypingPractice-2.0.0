@@ -7,6 +7,7 @@ gem 'rails_admin', '~> 2.0', '>= 2.0.2'
 gem 'cancancan', '~> 3.1'
 gem 'redis', '~> 4.1', '>= 4.1.4'
 gem 'carrierwave', '~> 2.1'
+gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 
 gem 'omniauth', '~> 1.9', '>= 1.9.1'
 gem 'omniauth-facebook', '~> 6.0'
