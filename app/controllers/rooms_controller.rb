@@ -16,12 +16,14 @@ class RoomsController < ApplicationController
   end
 
   def show
-
     @room = Room.find(params[:id])
-    @message = Message.new
-    @battle_record = BattleRecord.new
-    @topic = Topic.find(@room.topic_id).content.split(//)
-    
+    if @room.members < 2
+      @message = Message.new
+      @battle_record = BattleRecord.new
+      @topic = Topic.find(@room.topic_id).content.split(//)
+    else
+      redirect_to racing_index_path, notice: '聊天室已滿'
+    end
   end
 
   def edit

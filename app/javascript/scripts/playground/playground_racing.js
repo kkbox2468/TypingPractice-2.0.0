@@ -16,6 +16,11 @@ $(function(){
     /* select for ending page */
     let endPage = document.createElement('div')
     endPage.className = "end-page"
+
+    /* select for textarea label */
+    let coverLabel = document.querySelector('#label-textarea')
+    let quoteFocus = document.querySelector('#racingQuoteDisplay')
+    
     /* select for player status */
     let readyBox = document.querySelector('#check_content')
     let readyBtnHost = document.querySelector('.ready-btn-host')
@@ -33,6 +38,7 @@ $(function(){
 
 
     let timeCounterView = document.querySelector('#timeCounter')
+    let counterZone = document.querySelector('#counterZone')
     let recordPoints = document.querySelector('#records_accuracy')
     let recoudSubmit = document.querySelector('input[name="record-submit"]')
     let winner
@@ -114,6 +120,23 @@ $(function(){
         }, 1000);
         clearInterval(readyHandlerVal);
 
+        let startDownCounter = document.createElement('h5')
+        startDownCounter.setAttribute('id', 'startCounter')
+        counterZone.append(startDownCounter)
+        let startCounterView = document.querySelector('#startCounter')
+        let startCount = 5
+        let starterVal = setInterval(() => {
+          startCounterView.innerText = startCount
+          startCount -= 1
+          if (startCount <= -1) {
+            clearInterval(starterVal);
+            startCounterView.innerText = "START!!!"
+            setTimeout(() => {
+              startCounterView.remove()
+            }, 1000);
+          }
+        }, 1000);
+
         let countDown = 60
         setTimeout(() => {
           let downCounter = setInterval(() => {
@@ -132,8 +155,14 @@ $(function(){
     /* When two players are focus on the textarea. */
     let startVal = setInterval(() => {
       if (startHandler === true) {
-        focusInput(quoteInputLeft);
+        setTimeout(() => {
+          coverLabel.classList.remove('d-none')
+          quoteFocus.classList.add('focused')
+          focusInput(quoteInputLeft);
+        }, 3000);
         clearInterval(startVal);
+
+
       }
     }, 1000);
 

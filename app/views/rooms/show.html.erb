@@ -1,5 +1,7 @@
 <div id="<%= controller.controller_name %>-<%= controller.action_name %>">
+  <div id="counterZone"></div>
   <h3 class="mt-3 mb-2"><%= @room.name %></h3>
+  <%# <h5 id="startCounter" style="color: red">5</h5> %>
   <h5 id="timeCounter">0</h5>
   <div class="tug-bar" id= "tugBar" col-1>
     <div class="my-point" id="myPoint"></div>
@@ -10,7 +12,7 @@
     <div class="col-6">
       <p class="d-inline-block mr-5">User: <span id="userLeft"><%= current_user.nickname %></span></p>
       <p  class="d-inline-block  mr-5"><span id="hostCorrect">0</span> points</p>
-      <div class="racing-ground w-100 focused" id="racingQuoteDisplay">
+      <div class="racing-ground w-100" id="racingQuoteDisplay">
         <div class="racing-quote-display">
           <div id="racingQuoteTopic">
             <%= render 'quote', topic: @topic%>
@@ -31,7 +33,7 @@
         <%= b.submit name: 'record-submit', class: 'd-none' %>
       <% end %>
     </div>
-
+    
     <div class="col-6">
       <p class="d-inline-block mr-5">User: <span id="userRight"></span></p>
       <p class="d-inline-block mr-5"><span id="guestCorrect">0</span> points</p>
@@ -55,40 +57,47 @@
     <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
   </audio>
 
-  <div class="check-group d-flex justify-content-center">
-    <div class="col-5 check-area host mx-auto">
-      <%= form_for :check, url: "/messages/new", method: 'GET',remote: true do |f| %>
-      <div class="ready-title mb-3 text-center">
-        <%= current_user.nickname %>
-      </div>
-      <div class="ready-title mb-3 text-center">
-        Are you ready?
-      </div>
-        <%= f.label "No", for: 'check_content', class: 'ready-btn-host d-block text-center mt-5' %>
-      <div>
-        <%= f.check_box :content, class: 'd-none' %>
-      </div>
-      <div>
-        <%= f.hidden_field :room_id, value: @room.id %>
-        <%= f.submit name: 'check-left', class: 'd-none' %>
-      </div>
-      <% end %>
+  <div class="check-group justify-content-center">
+    <div class="row mt-5 check-roomname">
+      <h3><%= @room.name %></h3>
     </div>
 
-    <div class="col-5 check-area guest mx-auto">
-    <form>
-      <div class="mb-3">Wait for competitor...</div>
-      <div class="ready-btn-guest text-center" id="readyBtnGuest">Not ready</div>
-      <input type="checkbox" id="guest-check" class="d-none">
+    <div class="row">
+      <div class="col-5 check-area host mx-auto">
+        <%= form_for :check, url: "/messages/new", method: 'GET',remote: true do |f| %>
+        <div class="ready-title mb-3 text-center">
+          <%= current_user.nickname %>
+        </div>
+        <div class="ready-title mb-3 text-center">
+          Are you ready?
+        </div>
+          <%= f.label "No", for: 'check_content', class: 'ready-btn-host d-block text-center mt-5' %>
+        <div>
+          <%= f.check_box :content, class: 'd-none' %>
+        </div>
+        <div>
+          <%= f.hidden_field :room_id, value: @room.id %>
+          <%= f.submit name: 'check-left', class: 'd-none' %>
+        </div>
+        <% end %>
+      </div>
+  
+      <div class="col-5 check-area guest mx-auto">
+      <form>
+        <div class="mb-3">Wait for competitor...</div>
+        <div class="ready-btn-guest text-center" id="readyBtnGuest">Not ready</div>
+        <input type="checkbox" id="guest-check" class="d-none">
+      </div>
+      </form>
     </div>
-    </form>
 
   </div>
 
-  <div class="preloader">
+  <div class="preloader d-none">
     <div class="loader-ground">
       <div class="single9"></div>
     </div>
   </div>
 </div>
 
+<label for="racingQuoteInput" id="label-textarea" class="d-none"></label>
