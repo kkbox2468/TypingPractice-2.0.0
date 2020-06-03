@@ -45,4 +45,12 @@ Rails.application.routes.draw do
   resources :battle_records, only: [:new, :create]
   resources :invitation, only: [:new]
   
+  namespace :api do
+    resources :rooms, only: [] do
+      member do
+        get :members
+      end
+    end
+  end
+
 end

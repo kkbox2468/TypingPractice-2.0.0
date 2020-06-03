@@ -113,6 +113,11 @@
       font-size: 50px;
       line-height: 60px;
     }
+    .ready-btn-host.lock{
+      color: rgb(128, 128, 128);
+      box-shadow: none;
+      cursor: none;
+    }
     .ready-btn-host.active {
       // box-shadow: inset 5px 5px 5px #070616, 
       //             inset -2px -2px 5px #2d2d57;
@@ -136,6 +141,7 @@
       box-shadow: 0px 0px 10px greenyellow;
     }
   }
+
 }
 #racing-index{
   .racing-container{
@@ -164,5 +170,13 @@
 
       }
     }
+  .ready-handler {
+    opacity: 1;
+    transition: opacity 1s;
+  }
+  .ready-handler.disapper {
+    opacity: 0;
+    transition: opacity 1s;
+  }
   }
 }

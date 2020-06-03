@@ -1,6 +1,12 @@
 class RoomsController < ApplicationController
   before_action :is_current_user?
 
+  # def new
+
+  #   room = Room.find(parmas[:format])
+  #   render json: {members: room, age: 18}
+  # end
+
   def create
     @room = Room.new(room_data)
     @room.user_id = current_user.id
