@@ -15,6 +15,22 @@
         overflow: hidden;
         border-radius: .2rem;
       }
+      .code-img{
+        background-color: #eec44c;
+        overflow: hidden;
+        border-radius: .2rem;
+      }
+      .diy-img{
+        background-color: #eec44c;
+        overflow: hidden;
+        border-radius: .2rem;
+      }
+
+      .battle-img{
+        background-color: #eec44c;
+        overflow: hidden;
+        border-radius: .2rem;
+      }
       margin: 1rem 0;
 
       .mode_content{
@@ -24,7 +40,9 @@
                         2px 2px 2px #b8b8b8;
         }
         .card-text{
-          // margin-bottom: .6rem;
+          color: #212529;
+          text-shadow:inset  -2px -2px 2px #ffffff,
+                      inset  2px 2px 2px #b8b8b8;
           font-weight: 400;
           font-family: Museo Sans Rounded,sans-serif ;
         }
@@ -70,6 +88,8 @@
       font-family:  museo sans rounded, sans-serif;
       font-style: normal;
       font-weight: 700;
+      font-size: 1.5rem;
+      
     }
   }
 }
