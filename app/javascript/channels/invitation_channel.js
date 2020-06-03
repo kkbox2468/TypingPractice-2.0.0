@@ -11,18 +11,17 @@ consumer.subscriptions.create("InvitationChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-    // $('.no-news').css("display", "none");
-    // $('#invitation-sand').append(`
-    //   <a href="/playground/racing/rooms/` + data.room_id + `">
-    //     <img src="/icon/swords.png" alt="">
-    //     <p>Invitation Form ` + data.user_id + `</p>
-    //   </a>
-    // `);
-    // $('.icon-for-new-post').css("display", "flex");
-    // $('.nav-item-news').on("click", function(){
-    //   $('.icon-for-new-post').css("display", "");
-    // })
-    console.log(data)
+    $('.no-prompt').css("display", "none");
+    $('#invitation-sand').append(`
+      <a href="/playground/racing/rooms/` + data.room_id + `">
+        <img src="/icon/swords.png" alt="">
+        <p>Invitation Form ` + data.user_id + `</p>
+      </a>
+    `);
+    $('.icon-for-new-post').css("display", "flex");
+    $('.nav-item-prompt').on("click", function(){
+      $('.icon-for-new-post').css("display", "");
+    })
   }
 });
 $(function(){
