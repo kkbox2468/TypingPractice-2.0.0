@@ -15,6 +15,9 @@ class StatsController < ApplicationController
       # render json: @acc_day = @arti_day_accu.values.map{ |e| e.to_i} #抓出正確率整數
 
       # @article_accuracy_presenter = ArticleAccuracyPresenter.new(current_user).perform
+
+      
+
     else
       redirect_to typing_index_path, notice: 'Not a member?Join us to record achievements!'
     end
