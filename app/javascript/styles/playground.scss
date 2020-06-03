@@ -28,6 +28,10 @@ body {
     }
   }
   .row {
+    .quote-input:focus {
+      outline: none;
+      border: none;
+    }
     .play-container {
       font-family: monospace, sans-serif;
       font-weight: 400;
@@ -51,9 +55,6 @@ body {
       .quote-display span, .quote-display2 span { //題目欄位
         font-size: 2rem;
         white-space: pre;
-      }
-      .quote-input:focus {
-        border-color: rgba(239, 252, 255,0);
       }
       .selected {
         text-decoration: underline;
@@ -124,7 +125,7 @@ body {
   background: #eeeeee;
   box-shadow: inset 2px 2px 3px #cfcfcf, 
               inset -2px -2px 3px #ffffff;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   position: relative;
   .my-point{
     position: absolute;
@@ -339,7 +340,7 @@ body {
 #label-textarea{
   // background-color: rgba(0,0,0,.5);
   position: absolute;
-  top: 56px;
+  top: 54px;
   left: 0;
   height: 100%;
   width: 100%;
