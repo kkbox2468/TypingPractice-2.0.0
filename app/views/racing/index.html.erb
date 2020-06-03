@@ -1,6 +1,6 @@
 <h1>Racing Rooms</h1>
 
-<div class="card" style="background-color:#eeeeee;border:none;">
+<div>
   <button class="btn mb-3 mx-auto" id="create-room-btn">Create a room</button> 
 </div>
 
@@ -11,35 +11,36 @@
   <%= f.submit id: 'sand_news', data: { disable_with: false } %>
 <% end %>
 
-<div class="row racing-container">
+<div class="racing-container justify-content-start">
   <div class="lesson-select">
-    <div class="card">
-      <% @rooms.each do |room|%>
-        <div class="card-body">
+    <div class="row">
+      <% @rooms.each  do |room|%>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+          <div class="card-body ">
+            <div class="request-title d-flex justify-content-between">
+              <% if room.user %>
+                <p>Owner:<%= room.user.nickname %></p>
+              <% end %>
+              <% if current_user.id == room.user_id%>
+                <a class="btn post-news" id="room<%= room.id %>" data-room-name="<%= room.name %>" data-room-id="<%= room.id %>" >Post<br>Request</a>
+              <% end %>
+            </div>
 
-          <div class="request-title d-flex justify-content-between">
-            <% if room.user %>
-              <p>Owner:<%= room.user.nickname %></p>
-            <% end %>
-            <% if current_user.id == room.user_id%>
-              <a class="btn post-news" id="room<%= room.id %>" data-room-name="<%= room.name %>" data-room-id="<%= room.id %>" >Post Request</a>
-            <% end %>
-          </div>
+            <h5><%= room.name %></h5>
+            <p><%= room.description %></p>
+            <p>Capacity：<%= room.members %>persons</p>
 
-          <h5><%= room.name %></h5>
-          <p><%= room.description %></p>
-          <p>Capacity：<%= room.members %>persons</p>
-
-          <div class="link-group d-flex">
-            <% if room.members >= 2 %>
-              <a href="#" class="btn disabled">Join</a>
-            <% else %>
-              <%= link_to "Join", room_path(room.id), class: 'btn' %>
-            <% end %>
-            <% if current_user.id == room.user_id%>
-              <%= link_to "編輯", edit_room_path(room.id), class: 'btn' %>
-              <%= link_to "刪除", room_path(room.id), class: 'btn', id: "delete-room-btn", method: "DELETE" %>
-            <% end %>
+            <div class="link-group d-flex">
+              <% if room.members >= 2 %>
+                <a href="#" class="btn disabled">Join</a>
+              <% else %>
+                <%= link_to "Join", room_path(room.id), class: 'btn' %>
+              <% end %>
+              <% if current_user.id == room.user_id%>
+                <%= link_to "編輯", edit_room_path(room.id), class: 'btn' %>
+                <%= link_to "刪除", room_path(room.id), class: 'btn', id: "delete-room-btn", method: "DELETE" %>
+              <% end %>
+            </div>
           </div>
         </div>
       <% end %>
