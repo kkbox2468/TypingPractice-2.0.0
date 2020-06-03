@@ -132,9 +132,18 @@
 
 <div class="row type-log">
   <% if current_user %>
-    <h3><%= current_user.nickname %>的資料分析</h3>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">題目類型</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <h3><%= current_user.nickname %>的資料分析</h3>
     <table class="table">
-
       <thead>
         <tr>
           <th>文章編號</th>
