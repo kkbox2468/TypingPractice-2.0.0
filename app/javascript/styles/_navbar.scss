@@ -6,6 +6,70 @@
   box-shadow:-3px -3px 5px rgba(255,255,255,0.02),
               3px  3px 10px rgba(0, 0, 0, 0.2);
   .navbar-nav {
+    .nav-item-prompt{
+      display: block;
+      position: relative;
+      .icon-for-new-post{
+        display: none;
+        height: .5rem;
+        width: .5rem;
+        background-color: red;
+        position: absolute;
+        right: 0;
+        border-radius: 90em;
+      }
+      @media (max-width: 991px) {
+        .icon-for-new-post{
+          right: '';
+          left: 1rem;
+        }
+      }
+      .invitation{
+        input[type=checkbox]{
+          display: none;
+        }
+        .invitation-menu{
+          display: flex;
+          position: relative;
+
+          .invitation-txt{
+            z-index: 1;
+            display: none; 
+            position: absolute;
+            flex-direction: column;
+            background: #eec44c;
+            box-shadow: 2px 2px 4px #caa741, -2px -2px 4px #ffe157;
+            border-radius: 1rem;
+            padding: .5rem;
+            a{
+              display: flex;
+              flex-direction: row;
+              width: max-content;
+              padding: .5rem;
+              margin: .3rem .2rem;
+              box-shadow: 1px 1px 1px #caa741, -1px -1px 1px #ffe157;    
+              text-decoration: none;
+              border-radius: 5rem;
+              img{
+                margin-right: .2rem;
+                height: 20px;
+                width: 20px;
+                box-sizing: border-box;
+              }
+              p{
+                margin: auto;              
+              }
+            }
+            a:hover{
+              transform: scale(.95);            
+            }
+          }
+        }
+        input[type=checkbox]:checked ~ * .invitation-txt{
+          display: flex;
+        }
+      }
+    }
     .nav-link {
       color: rgb(50, 50, 50);
     }

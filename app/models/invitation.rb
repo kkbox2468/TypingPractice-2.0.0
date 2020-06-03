@@ -1,2 +1,2 @@
-class Inviration < ApplicationRecordv
+class Inviration < ApplicationRecord
 end

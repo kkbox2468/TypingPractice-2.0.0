@@ -1,10 +1,10 @@
 <h1>Racing Rooms</h1>
 
-<div class="card">
+<div class="card" style="background-color:#eeeeee;border:none;">
   <button class="btn mb-3 mx-auto" id="create-room-btn">Create a room</button> 
 </div>
 
-<%= form_for @invitation , remote: true, html: {class: 'd-none'} do |f| %>
+<%= form_for :invitation , remote: true do |f| %>
   <%= f.text_field (:user_id), value: current_user.id %>
   <%= f.text_field (:content) %>
   <%= f.text_field (:room_id) %>
