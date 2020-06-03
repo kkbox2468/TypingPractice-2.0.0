@@ -43,7 +43,6 @@ $(function(){
     let recoudSubmit = document.querySelector('input[name="record-submit"]')
     let winner
 
-    
     /* preloader */
     let preloader = document.querySelector('.preloader')
     let preloaderBar = document.querySelector('.single9')
@@ -124,7 +123,7 @@ $(function(){
         startDownCounter.setAttribute('id', 'startCounter')
         counterZone.append(startDownCounter)
         let startCounterView = document.querySelector('#startCounter')
-        let startCount = 5
+        let startCount = 3
         let starterVal = setInterval(() => {
           startCounterView.innerText = startCount
           startCount -= 1
@@ -159,10 +158,8 @@ $(function(){
           coverLabel.classList.remove('d-none')
           quoteFocus.classList.add('focused')
           focusInput(quoteInputLeft);
-        }, 3000);
+        }, 2500);
         clearInterval(startVal);
-
-
       }
     }, 1000);
 

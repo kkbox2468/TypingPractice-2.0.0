@@ -2,7 +2,7 @@
   position: fixed;
   font-size: 100px;
   top: 50%;
-  left: 50%;
+  left: 20%;
   z-index: 1;
   color: red;
 }
@@ -88,7 +88,7 @@
   align-items: center;
   overflow: hidden;
   .check-roomname {
-    position: relative;
+    // position: relative;
     h3 {
       font-size: 35px;
       color: #fff;
@@ -149,7 +149,14 @@
       box-shadow: 0px 0px 10px greenyellow;
     }
   }
-
+  .ready-handler {
+    opacity: 1;
+    transition: opacity 1s;
+  }
+  .ready-handler.disappear {
+    opacity: 0;
+    transition: opacity 1s;
+  }
 }
 #racing-index{
   .racing-container{
@@ -178,13 +185,5 @@
 
       }
     }
-  .ready-handler {
-    opacity: 1;
-    transition: opacity 1s;
-  }
-  .ready-handler.disappear {
-    opacity: 0;
-    transition: opacity 1s;
-  }
   }
 }
