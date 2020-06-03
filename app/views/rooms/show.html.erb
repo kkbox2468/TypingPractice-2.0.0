@@ -61,7 +61,10 @@
     <div class="row mt-5 check-roomname">
       <h3><%= @room.name %></h3>
     </div>
-    <div id="readyHandler" class="ready-handler disapper">
+    <div class="row check-roomname" id="waitNotice">
+      <h3 class="mt-0 mb-0">Waiting...</h3>
+    </div>
+    <div id="readyHandler" class="ready-handler disappear">
       <div class="row">
         <div class="col-5 check-area host mx-auto">
           <%= form_for :check, url: "/messages/new", method: 'GET',remote: true do |f| %>
@@ -91,8 +94,6 @@
         </div>
       </div>
     </div>
-
-
   </div>
 
   <div class="preloader d-none">
@@ -107,6 +108,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   let readyHandler = document.querySelector('#readyHandler')
+  let waitNotice = document.querySelector('#waitNotice')
   let members
   let membersCounter = setInterval(() => {
     fetch('<%= members_api_room_path %>',{})
@@ -121,7 +123,8 @@ document.addEventListener("DOMContentLoaded", function() {
     if (members >= 2) {
       clearInterval(membersCounter)
       console.log('ready');
-      readyHandler.classList.remove('disapper')
+      readyHandler.classList.remove('disappear')
+      waitNotice.classList.add('disappear')
     }
   }, 1000);
 })
