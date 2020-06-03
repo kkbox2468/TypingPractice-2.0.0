@@ -26,6 +26,9 @@ class UserTopicsController < ApplicationController
                                         :accuracy,
                                         :topic_id)                                      
   end
+
+  def user_topic(:id)
+    case Topic.find(user_topic_params[:t])
   
   def url
     
