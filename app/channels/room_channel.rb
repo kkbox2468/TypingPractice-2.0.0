@@ -6,6 +6,13 @@ class RoomChannel < ApplicationCable::Channel
       stream_from "room_channel_#{params[:room_id]}"
       room.members += 1
       room.save
+
+      ActionCable.server.broadcast(
+        "player_counter_channel",
+        room: room,
+        room_id: room.id,
+        room_members: room.members
+      )
     end
   end
 
@@ -15,6 +22,13 @@ class RoomChannel < ApplicationCable::Channel
     room = Room.find(params[:room_id])
     room.members -= 1
     room.save
+
+    ActionCable.server.broadcast(
+      "player_counter_channel",
+      room: room,
+      room_id: room.id,
+      room_members: room.members
+    )
   end
 
 end
