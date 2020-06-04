@@ -1,5 +1,5 @@
 body {
-  background: #eeeeee;
+  background: var(--basecolor);
   justify-content: center;
   align-items: center;
   min-height: 100vh; 
@@ -56,18 +56,18 @@ body {
         font-size: 2rem;
         white-space: pre;
       }
-      .selected {
-        text-decoration: underline;
-        background-color: #757575;
-      }
-      .correct {
-        color: #5dc000;
-        background-color: rgb(208, 238, 180);
-      }
-      .incorrect {
-        color: #ff0000;
-        background: rgb(255, 182, 182);
-      }
+      // .selected {
+      //   text-decoration: underline;
+      //   background-color: #757575;
+      // }
+      // .correct {
+      //   color: #5dc000;
+      //   background-color: rgb(208, 238, 180);
+      // }
+      // .incorrect {
+      //   color: #ff0000;
+      //   background: rgb(255, 182, 182);
+      // }
       #quotetopic{
         transition: all 1s ease 0s;
       }
@@ -115,6 +115,7 @@ body {
       padding: .5rem 1rem;
       font-size: 2rem;
       color: transparent;
+      border: none;
     }
   }
 }

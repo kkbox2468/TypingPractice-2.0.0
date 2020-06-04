@@ -1,3 +1,35 @@
+:root {
+  --basecolor: #eee;
+  /* mode-pink */
+  --basepink: rgb(241, 168, 168);
+  --input-pink: rgb(240, 181, 181);
+  --shadow-pink: -3px -3px 5px rgba(248, 200, 200, 0.7),
+                 3px  3px 10px rgba(201, 39, 39, 0.5);
+  --shadow-pink-in: inset -3px -3px 5px rgba(248, 200, 200, 0.7),
+                    inset 3px  3px 10px rgba(201, 39, 39, 0.5);
+  /* mode-dark */
+  --basedark: #0c202c;
+  --input-dark: #0c202c;
+  --shadow-dark: 3px 4px 4px #061117, 
+                 -3px -4px 4px #0f2b3bc4;
+  --shadow-dark-in: inset 6px 6px 12px #061117, 
+                    inset -6px -6px 12px #122f41;
+  /* mode-blur */
+  --baseblue: #a0bdca;
+  --input-blue: #a0bdca;
+  --shadow-blue: 3px 3px 5px #88a1ac, 
+                 -3px -3px 5px #b8d9e8;
+  --shadow-blue-in:  inset 6px 6px 12px #88a1ac, 
+                     inset -6px -6px 12px #b8d9e8;
+  /* mode-green */
+  --basegreen: #ace7c4;
+  --input-green: #ace7c4;
+  --shadow-green: 3px 3px 5px #92c4a7, 
+                  -3px -3px 5px #c6ffe1;
+  --shadow-green-in:  inset 6px 6px 12px #92c4a7, 
+                      inset -6px -6px 12px #c6ffe1;
+}
+
 .dropdown {
   position: absolute;
   display: inline-block;
@@ -12,6 +44,9 @@
     border: none;
     cursor: pointer;
   }
+  .dropbtn:hover {
+    background-color: rgba(255, 255, 255, .6);
+  }
   .dropdown-content {
     text-align: right;
     display: none;
@@ -21,13 +56,15 @@
     z-index: 1;
     right: 0;
 
-    a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: inline-block;
+    button {
+      padding: 16px;
+      border: 0;
+      background-color: rgba(255, 255, 255, .6);
       img{
         width: 24px;
+      }
+      &:hover {
+        background-color: rgba(255, 213, 74, 0.842);
       }
     }
 
@@ -74,142 +111,267 @@
 
 //change-to-pink
 .change-to-pink{
-  background-color: #f3d7c8;
+  background-color: var(--basepink);
   .navbar{
-    background-color: #f1ccb8;
+    background-color: var(--basepink);
+    box-shadow: var(--shadow-pink);
     .navbar-collapse{
       .navbar-nav{
         .nav-item{
           .dropdown-menu{
-            background-color: #c65964!important;
-            box-shadow: 2px 2px 4px #c65964, -2px -2px 4px #fff!important;
+            background-color: var(--basepink)!important;
+            box-shadow: var(--shadow-pink)!important;
           }
           .nav-btn:active{
-            background-color: #c65964;
-            box-shadow: 2px 2px 4px #c65964, -2px -2px 4px #fff;
+            background-color: var(--basepink);
+            box-shadow: var(--shadow-pink-in);
           }
         }
       }
     }
     li{
       .nav-btn{
-        background-color: #f1ccb8;
-        box-shadow: 2px 2px 4px #c65964, -2px -2px 4px #fff;
+        background-color: var(--basepink);
+        box-shadow: var(--shadow-pink);
       }
     }
   }
   .justify-content-center{
       .play-container{
-        box-shadow: 2px 2px 4px #c65964, -2px -2px 4px #fff;      
+        background-color: var(--input-pink);
+        box-shadow: var(--shadow-pink-in);
       }
   }
   #keyboard{
-    background-color: #f3d7c8;
-    // .playing {
-    //   /* border: .1em solid green; */
-    //   background-color: #eec44c;
-    //   color: black;
-    //   text-decoration: none;
-    //   box-shadow: inset  2px 2px 2px  #d6b044, 
-    //               inset -2px -2px 2px #ffd854;
-
-    // }
+    background-color: var(--basepink);
+    .playing {
+      background-color: var(--basepink);
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      box-shadow: var(--shadow-pink-in)!important;
+    }
     .key{
-      background-color: #f16d7a;
-      box-shadow: 2px 2px 2px #c65964, 2px 2px 2px #ff8190;
+      background-color: var(--basepink);
+      box-shadow: var(--shadow-pink);
     }
     .arrows_all{
-      background-color: #f3d7c8;
+      background-color: var(--basepink);
       box-shadow: none;
     }
+  }
+  .selected {
+    text-decoration: underline;
+    background-color: #6594b4;
+  }
+  .correct {
+    color: #5aa085;
+    background-color: rgb(141, 228, 152);
+  }
+  .incorrect {
+    color: #8d5d99;
+    background: rgb(231, 135, 188);
   }
 }
+
 //change-to-blue
 .change-to-blue{
-  background-color: #b4c1e6;
+  background-color: var(--baseblue);
   .navbar{
-    background-color: #b4c1e6;
+    background-color: var(--baseblue);
+    box-shadow: var(--shadow-blue);
     .navbar-collapse{
       .navbar-nav{
         .nav-item{
           .dropdown-menu{
-            background-color: #4961a6!important;
-            box-shadow: 2px 2px 4px #4961a6, -2px -2px 4px #fff!important;
+            background-color: var(--baseblue)!important;
+            box-shadow: var(--shadow-blue)!important;
           }
           .nav-btn:active{
-            background-color: #4961a6;
-            box-shadow: 2px 2px 4px #4961a6, -2px -2px 4px #fff;
+            background-color: var(--baseblue);
+            box-shadow: var(--shadow-blue-in);
           }
         }
       }
     }
     li{
       .nav-btn{
-        background-color: #8b9fd8;
-        box-shadow: 2px 2px 4px #4961a6, -2px -2px 4px #fff;
+        background-color: var(--baseblue);
+        box-shadow: var(--shadow-blue);
       }
     }
   }
   .justify-content-center{
       .play-container{
-        box-shadow:2px 2px 2px #4961a6, 2px 2px 5px #fff;
+        background-color: var(--input-blue);
+        box-shadow: var(--shadow-blue-in);
       }
   }
   #keyboard{
-    background-color: #b4c1e6;
+    background-color: var(--baseblue);
+    .playing {
+      background-color: var(--baseblue);
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      box-shadow: var(--shadow-blue-in)!important;
+    }
     .key{
-      background-color: #5976ca;
-      box-shadow: 2px 2px 2px #4961a6, 2px 2px 2px #698bee;
+      background-color: var(--baseblue);
+      box-shadow: var(--shadow-blue);
     }
     .arrows_all{
-      background-color: #b4c1e6;
+      background-color: var(--baseblue);
       box-shadow: none;
     }
+  }
+  .selected {
+    text-decoration: underline;
+    background-color: #6594b4;
+  }
+  .correct {
+    color: #5aa085;
+    background-color: rgb(141, 228, 152);
+  }
+  .incorrect {
+    color: #8d5d99;
+    background: rgb(231, 135, 188);
   }
 }
 //change-to-green
 .change-to-green{
-  background-color: #abe2b7;
+  background-color: var(--basegreen);
   .navbar{
-    background-color: #abe2b7;
+    background-color: var(--basegreen);
+    box-shadow: var(--shadow-green);
     .navbar-collapse{
       .navbar-nav{
         .nav-item{
           .dropdown-menu{
-            background-color: #5da66e!important;
-            box-shadow: 2px 2px 4px #5da66e, -2px -2px 4px #fff!important;
+            background-color: var(--basegreen)!important;
+            box-shadow: var(--shadow-green)!important;
           }
           .nav-btn:active{
-            background-color: #5da66e;
-            box-shadow: 2px 2px 4px #5da66e, -2px -2px 4px #fff;
+            background-color: var(--basegreen);
+            box-shadow: var(--shadow-green-in);
           }
         }
       }
     }
     li{
       .nav-btn{
-        background-color: #72ca86;
-        box-shadow: 2px 2px 4px #5da66e, -2px -2px 4px #fff;
-      }    
+        background-color: var(--basegreen);
+        box-shadow: var(--shadow-green);
+      }
     }
   }
   .justify-content-center{
       .play-container{
-        box-shadow:2px 2px 2px #5da66e, 2px 2px 5px #fff;
+        background-color: var(--input-green);
+        box-shadow: var(--shadow-green-in);
       }
   }
   #keyboard{
-    background-color: #abe2b7;
+    background-color: var(--basegreen);
+    .playing {
+      background-color: var(--basegreen);
+      color: rgb(248, 150, 70);
+      text-decoration: none;
+      box-shadow: var(--shadow-green-in)!important;
+    }
     .key{
-      background-color: #72ca86;
-      box-shadow: 2px 2px 2px #5da66e, 2px 2px 2px #87ee9e;
-
-
+      background-color: var(--basegreen);
+      box-shadow: var(--shadow-green);
     }
     .arrows_all{
-      background-color: #abe2b7;
+      background-color: var(--basegreen);
       box-shadow: none;
     }
+  }
+  .selected {
+    text-decoration: underline;
+    background-color: #6594b4;
+  }
+  .correct {
+    color: #5aa05a;
+    background-color: #8af78a;
+  }
+  .incorrect {
+    color: #8d5d99;
+    background: rgb(231, 135, 188);
+  }
+}
+
+//change-to-dark
+.change-to-dark{
+  background-color: var(--basedark);
+  .navbar{
+    background-color: var(--basedark);
+    box-shadow: var(--shadow-dark);
+    .navbar-collapse{
+      .navbar-nav{
+        .nav-item{
+          .dropdown-menu{
+            background-color: var(--basedark)!important;
+            box-shadow: var(--shadow-dark)!important;
+            color: #71a0a8;
+          }
+          .nav-btn:active{
+            background-color: var(--basedark);
+            box-shadow: var(--shadow-dark-in);
+            color: #71a0a8;
+          }
+        }
+      }
+    }
+    li{
+      .nav-btn{
+        background-color: var(--basedark);
+        box-shadow: var(--shadow-dark);
+        color: #71a0a8;
+      }
+    }
+  }
+  .justify-content-center{
+    .play-container{
+      background-color: var(--input-dark);
+      box-shadow: var(--shadow-dark-in);
+      color: #71a0a8!important;
+    }
+    .time-counter{
+      .timer{
+        color: #71a0a8;
+      }
+    }
+  }
+  #keyboard{
+    background-color: var(--basedark);
+    .playing {
+      background-color: var(--basedark);
+      color: rgb(243, 174, 70)!important;
+      text-decoration: none;
+      box-shadow: var(--shadow-dark-in)!important;
+    }
+    .key{
+      background-color: var(--basedark);
+      box-shadow: var(--shadow-dark);
+      color: rgba(37, 96, 104, 0);
+    }
+    .arrows_all{
+      background-color: var(--basedark);
+      box-shadow: none;
+    }
+  }
+  .selected {
+    text-decoration: underline;
+    background-color: #c99470;
+    color: rgb(37, 96, 104);
+  }
+  .correct {
+    color: #5aa085;
+    background-color: rgb(141, 228, 152);
+  }
+  .incorrect {
+    color: #8d5d99;
+    background: rgb(231, 135, 188);
   }
 }
 
