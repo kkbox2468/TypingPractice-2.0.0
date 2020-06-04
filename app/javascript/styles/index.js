@@ -14,6 +14,7 @@ import './playground.scss'
 import './playground_racing.scss'
 
 import './mode.scss'
+import './custom.scss'
 
 import './typing.scss'
 

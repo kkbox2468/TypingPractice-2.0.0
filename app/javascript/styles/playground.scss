@@ -1,5 +1,5 @@
 body {
-  background: #eeeeee;
+  background: var(--basecolor);
   justify-content: center;
   align-items: center;
   min-height: 100vh; 
@@ -28,6 +28,10 @@ body {
     }
   }
   .row {
+    .quote-input:focus {
+      outline: none;
+      border: none;
+    }
     .play-container {
       font-family: monospace, sans-serif;
       font-weight: 400;
@@ -52,21 +56,18 @@ body {
         font-size: 2rem;
         white-space: pre;
       }
-      .quote-input:focus {
-        border-color: rgba(239, 252, 255,0);
-      }
-      .selected {
-        text-decoration: underline;
-        background-color: #757575;
-      }
-      .correct {
-        color: #5dc000;
-        background-color: rgb(208, 238, 180);
-      }
-      .incorrect {
-        color: #ff0000;
-        background: rgb(255, 182, 182);
-      }
+      // .selected {
+      //   text-decoration: underline;
+      //   background-color: #757575;
+      // }
+      // .correct {
+      //   color: #5dc000;
+      //   background-color: rgb(208, 238, 180);
+      // }
+      // .incorrect {
+      //   color: #ff0000;
+      //   background: rgb(255, 182, 182);
+      // }
       #quotetopic{
         transition: all 1s ease 0s;
       }
@@ -114,6 +115,7 @@ body {
       padding: .5rem 1rem;
       font-size: 2rem;
       color: transparent;
+      border: none;
     }
   }
 }
@@ -124,7 +126,7 @@ body {
   background: #eeeeee;
   box-shadow: inset 2px 2px 3px #cfcfcf, 
               inset -2px -2px 3px #ffffff;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   position: relative;
   .my-point{
     position: absolute;
@@ -339,7 +341,7 @@ body {
 #label-textarea{
   // background-color: rgba(0,0,0,.5);
   position: absolute;
-  top: 56px;
+  top: 54px;
   left: 0;
   height: 100%;
   width: 100%;

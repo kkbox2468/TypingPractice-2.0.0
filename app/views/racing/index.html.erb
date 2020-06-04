@@ -1,30 +1,49 @@
 <h1>Racing Rooms</h1>
 
+<div>
+  <button class="btn mb-3 mx-auto" id="create-room-btn">Create a room</button> 
+</div>
 
-<div class="lesson-select">
-  <div class="card">
-      <button class="btn mb-3 mx-auto" id="create-room-btn">Create a room</button> 
-  </div>
-  <div class="card">
-  <% @rooms.each do |room|%>
-    <div class="card-body w-25">
-      <% if room.user %>
-        <p>Owner:<%= room.user.nickname %></p>
-      <% end %>
-      <h5><%= room.name %></h5>
-      <p><%= room.description %></p>
-      <p>人數：<%= room.members %></p>
-      <% if room.members >= 2 %>
-        <a href="#" class="btn disabled">Join</a>
-      <% else %>
-        <%= link_to "Join", room_path(room.id), class: 'btn' %>
-      <% end %>
-      <% if current_user.id == room.user_id%>
-        <%= link_to "編輯", edit_room_path(room.id), class: 'btn' %>
-        <%= link_to "刪除", room_path(room.id), class: 'btn', id: "delete-room-btn", method: "DELETE" %>
+<%= form_for :invitation, url: '/invitation/new', method: 'get', remote: true, html: {class: "d-none"} do |f| %>
+  <%= f.text_field (:user_id), value: current_user.id %>
+  <%= f.text_field (:content) %>
+  <%= f.text_field (:room_id) %>
+  <%= f.submit id: 'sand_news', data: { disable_with: false } %>
+<% end %>
+
+<div class="racing-container justify-content-start">
+  <div class="lesson-select">
+    <div class="row" id="new-create">
+      <% @rooms.each  do |room|%>
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+          <div class="card-body ">
+            <div class="request-title d-flex justify-content-between">
+              <% if room.user %>
+                <p>Owner:<%= room.user.nickname %></p>
+              <% end %>
+              <% if current_user.id == room.user_id%>
+                <div class="btn post-news" id="room<%= room.id %>" data-room-name= "<%= room.name %>" data-room-id= "<%= room.id %>" > KNOCK </div>
+              <% end %>
+            </div>
+
+            <h5><%= room.name %></h5>
+            <p><%= room.description %></p>
+            <p>Player：<span class="room<%= room.id%>-counter"><%= room.members %></span>persons</p>
+            <div class="link-group d-flex">
+              <% if room.members >= 2 %>
+                <a href="#" class="btn disabled">Join</a>
+              <% else %>
+                <%= link_to "Join", room_path(room.id), class: 'btn player-counter',id: room.id, data: {counter: room.members} %>
+              <% end %>
+              <% if current_user.id == room.user_id%>
+                <%= link_to "Edit", edit_room_path(room.id), class: 'btn' %>
+                <%= link_to "Delete", room_path(room.id), class: 'btn', id: "delete-room-btn", method: "DELETE" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
       <% end %>
     </div>
-  <% end %>
   </div>
 </div>
 

@@ -4,7 +4,7 @@
     <input type="checkbox" name="mode" id="mode">
   </form>
   -->
-  <a class="navbar-brand" href="/" id="navbaarBrand">
+  <a class="navbar-brand" href="/playground" id="navbaarBrand">
     <img src="/img/Logo.svg" type=display alt="">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,16 +19,39 @@
           <div class="dropdown-menu" >
             <a class="dropdown-item" href="/playground/typing">Typing Practice</a>
             <a class="dropdown-item" href="/playground/coding">Typing Code</a>
+            <a class="dropdown-item" href="/playground/customizations">Try DIY</a>
             <a class="dropdown-item" href="/playground/racing">Typing Battle</a>
           </div>
         </li>
-        <li class="nav-item">
-          <%= link_to  "Stats", stats_path, class: 'btn btn-primary nav-btn' %>
-        </li>
+
       <% end  %>
     </ul>
     <ul class="navbar-nav">
       <% if current_user  %>
+        <li class="nav-item">
+          <%= link_to  "Stats", stats_path, class: 'btn btn-primary nav-btn' %>
+        </li>
+        <li class="nav-item nav-item-prompt ">   
+          <div class="icon-for-new-post"></div>
+          <label class="btn btn-primary nav-btn btn-toggle" for="checkbox_id">
+            <img src="/icon/bell.svg" alt="">
+          </label>
+          <div class="invitation">
+            <input type="checkbox" id="checkbox_id">
+            <div class="invitation-menu">
+              <div class="invitation-txt" id="invitation-sand">
+                <div class="no-prompt">
+                  <a href="/playground/racing">
+                    <img src="/icon/swords.png" alt="">
+                    <small>
+                      Empty! Create Your Own Racing? 
+                    </small>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
         <li class="nav-item">
           <%= link_to  "Setting", edit_user_registration_path, class: 'btn btn-primary nav-btn' %>
         </li>

@@ -1,5 +1,22 @@
+#startCounter {
+  position: fixed;
+  font-size: 100px;
+  top: 50%;
+  left: 20%;
+  z-index: 1;
+  color: red;
+}
 .row {
   .col-6 {
+    .racing-ground.focused {
+      box-shadow: 8px 8px 20px rgba(252, 215, 50, 0.801), 
+                  -8px -8px 20px rgba(247, 210, 44, 0.808);
+    }
+    .racing-ground.guest {
+      box-shadow: inset 4px 4px 3px #cfcfcf, 
+                  inset -4px -4px 3px #ffffff;
+      color: rgb(211, 211, 211);
+    }
     .racing-ground {
       // border: 1px solid red;
       padding: 20px;
@@ -69,39 +86,102 @@
   width: 100%;
   height: 100%;
   align-items: center;
+  overflow: hidden;
+  .check-roomname {
+    // position: relative;
+    h3 {
+      font-size: 35px;
+      color: #fff;
+      margin-top: 60px;
+    }
+    &.disappear {
+      h3{
+        opacity: 0;
+      }
+    }
+  }
   .check-area{
     color: #fff;
     display: flex;
     justify-content: center;
+    .ready-title {
+      font-size: 30px;
+    }
     .ready-btn-host {
       background-color: rgba(23, 25, 44,1);
       color: hotpink;
       padding: 10px 10px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      box-shadow: 5px 5px 5px #070616, 
-                  -2px -2px 5px #2d2d57;
+      width: 200px;
+      height: 80px;
+      border-radius: 40px;
+      box-shadow: 3px 3px 5px #9522a0, 
+                  -2px -2px 5px #d340e0;
       margin: auto;
       cursor: pointer;
+      font-size: 50px;
+      line-height: 60px;
+    }
+    .ready-btn-host.lock{
+      color: rgb(128, 128, 128);
+      box-shadow: none;
+      cursor: none;
     }
     .ready-btn-host.active {
-      box-shadow: inset 5px 5px 5px #070616, 
-                  inset -2px -2px 5px #2d2d57;
+      // box-shadow: inset 5px 5px 5px #070616, 
+      //             inset -2px -2px 5px #2d2d57;
+      box-shadow: inset 3px 3px 5px #18a018, 
+                  inset -2px -2px 5px #64ec49;
       color: greenyellow;
     }
     .ready-btn-guest {
       background-color: rgb(23, 25, 44);
-      color: hotpink;
+      color: rgb(43, 47, 78);
       padding: 10px 10px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
+      width: 200px;
+      height: 80px;
+      border-radius: 40px;
       margin: auto;
+      font-size: 30px;
+      line-height: 60px;
     }
     .ready-btn-guest.active {
       color: greenyellow;
       box-shadow: 0px 0px 10px greenyellow;
+    }
+  }
+  .ready-handler {
+    opacity: 1;
+    transition: opacity 1s;
+  }
+  .ready-handler.disappear {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+}
+#racing-index{
+  .racing-container{
+    .lesson-select{
+      .row{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        .card-body{
+          margin: 1rem 0rem;
+        }
+        .link-group{
+          justify-content: space-between;
+        }
+        @media (max-width: 767px) {
+          .link-group{
+        
+          }
+        }
+        .post-news{
+          font-size: .8rem;
+          // text-align: center;
+          // padding:auto;
+        }
+      }
     }
   }
 }

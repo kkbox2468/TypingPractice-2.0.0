@@ -40,6 +40,7 @@
   text-align: start;
   width: 28rem;
   margin-top: 0rem;
+  text-shadow: none;
 }
 
 #welcomeContainer .btn-primary {
@@ -63,6 +64,10 @@
   background-color:  #eec44c;
   box-shadow: inset 2px 2px 5px#cfab42, 
               inset -2px -2px 5px #ffdd56;
+              
+}
+#welcomeContainer .btn{
+  font-weight: 900;
 }
 .txt-type > .txt {
   border-right: 0.5rem solid rgb(50, 50, 50);
