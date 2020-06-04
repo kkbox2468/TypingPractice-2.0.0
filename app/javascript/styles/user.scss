@@ -10,7 +10,7 @@
       box-shadow: 7px 7px 14px #cfcfcf, 
                   -7px -7px 14px #ffffff;
       color: rgb(50, 50, 50);
-      padding: 30px 20px;
+      padding: 1rem 1rem;
       margin-bottom: 1rem;
       display: block;
       input[type="email"], 
@@ -20,6 +20,7 @@
         background-color: #eeeeee;
         box-shadow: inset 3px 3px 8px #cfcfcf, 
                     inset -3px -3px 3px #ffffff;
+      
       }
       .update_edit{
         border: none;
@@ -38,7 +39,7 @@
       }
 
     
-
+      
       .cancel_bt{
         border: none;
         background-color: #ff67c0;

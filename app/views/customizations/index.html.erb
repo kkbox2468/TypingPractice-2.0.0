@@ -1,7 +1,7 @@
-<h1>Customization</h1>
+<h1>MAKE YOUR OWN LESSON</h1>
 <div class="lesson-select">
   <div class="card">
-      <button class="btn mb-3 mx-auto" id="customization-btn">Customize your topics</button> 
+      <button class="btn mb-3 mx-auto" id="customization-btn">CREATE</button> 
   </div>
 </div>
 
@@ -24,7 +24,7 @@
 </div>
 
 <div class="lesson-select">
-  <% start = 1%>
+  <% start = 1 %>
   <div class= "card">
     <% @user_topics.each do |topic| %>
       <% if topic.topic %>
@@ -39,8 +39,8 @@
           <% end %>
           <h5 class="card-title" id="lessonTitle">Lesson<%= "#{start}" %></h5>
           <p class="card-text ellipsis"><%= topic.topic.content %></p>
-          <%= link_to "Start", send("customization_path", id: topic.topic.id), class: "btn btn-primary justify-content-center ", id: "play-start" %>
-          <%= link_to "編輯", edit_customization_path(topic.topic.id), class: 'btn' %>
+          <%= link_to "GO", send("customization_path", id: topic.topic.id), class: "btn btn-primary justify-content-center ", id: "play-start" %>
+          <%= link_to "EDIT", edit_customization_path(topic.topic.id), class: 'btn' %>
           <%= link_to "刪除", customization_path(topic.topic.id), class: 'btn', id: "delete-custom-btn", method: "DELETE" %>
           <div class="progress d-flex" id="lessonBar" style="height: 10px;">
             <div class="progress-bar " role="progressbar"  style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -64,7 +64,7 @@
   })
   async function getData() {
     const { value: formValues } = await Swal.fire({
-      title: 'Customize your topics',
+      title: 'MAKE YOUR OWN LESSON',
       showCancelButton: true,
       confirmButtonText: 'Yes, Create it!',
       html:
