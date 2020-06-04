@@ -69,6 +69,36 @@
     // justify-content: start;
     
   }
+  .stat-bt-group{
+    height: 2rem;
+    margin-right: 1rem;
+    padding: auto;
+    .dropdown-toggle{
+      border-radius: .9rem;
+      color:rgb(50, 50, 50);
+      padding: .2rem .8rem;
+      background-color: #eec44c;
+      box-shadow:  2px 2px 3px #cfcfcf, 
+                  -2px -2px 3px #ffffff;
+                  border: none;
+                  
+                }
+    .dropdown-toggle:hover{
+      box-shadow:  2px 2px 3px #cfcfcf, 
+                  -2px -2px 3px #ffffff;
+    }
+    .dropdown-toggle:active :focus{
+      background-color: #eec44c;
+      border: none;
+      color:rgb(50, 50, 50);
+      box-shadow: inset 2px 2px 3px #caa741, 
+                  inset -2px -2px 3px #ffe157;
+    }
+    .dropdown-menu {
+      background-color: #eec44c;
+      min-width: 3rem;
+    }
+  }
 }
 
 .leaderboard{

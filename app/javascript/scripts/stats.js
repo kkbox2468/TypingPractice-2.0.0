@@ -85,3 +85,28 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
+
+
+//打卡
+
+document.addEventListener("DOMContentLoaded", function() {
+  var cal = new CalHeatMap();
+	cal.init({
+  itemSelector: "#cal-heatmap",
+  domain: "month",
+  subDomain: "day",
+  cellRadius: 3,
+  range: 8,
+  data: ``,
+  start: new Date(2020, 4),
+  considerMissingDataAsZero: true,
+  cellSize: 20,
+  legend: [2, 4, 6, 8],
+  legendColors: {
+    empty: "8f8f8f",
+    min: "#f3d87d",
+    max: "#eec44c"
+  }
+  })
+});
+
