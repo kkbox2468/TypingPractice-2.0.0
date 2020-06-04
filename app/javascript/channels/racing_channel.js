@@ -1,6 +1,6 @@
 import consumer from "./consumer"
 
-consumer.subscriptions.create("CreateRoomChannel", {
+consumer.subscriptions.create("RacingChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
   },
@@ -10,14 +10,11 @@ consumer.subscriptions.create("CreateRoomChannel", {
   },
 
   received(data) {
-
+    console.log(data)
 
     if (data.room_id) {
-      $(function(){
-        let roomId = data.room_id
-        console.log(roomId)
-        $(`.room${roomId}-counter`)[0].innerText = data.room_members
-      })
+      let roomId = data.room_id
+      $(`.room${roomId}-counter`)[0].innerText = data.room_members
     }
     else if (data.owner_name) {
       $('#new-create').prepend(`
@@ -28,7 +25,7 @@ consumer.subscriptions.create("CreateRoomChannel", {
           </div>
           <h5>`+ data.name +`</h5>
           <p>`+ data.description +`</p>
-          <p>Player：0persons</p>
+          <p>Player：<span class="room`+ data.id +`-counter">0</span>persons</p>
           <div class="link-group d-flex">
             <a href="/playground/racing/rooms/`+ data.id +`" class="btn">Join</a>
           </div>
@@ -36,6 +33,5 @@ consumer.subscriptions.create("CreateRoomChannel", {
       </div>
     `); 
     }
-
   }
 });

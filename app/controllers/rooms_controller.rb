@@ -11,7 +11,7 @@ class RoomsController < ApplicationController
 
     if @room.save
       ActionCable.server.broadcast(
-        "create_room_channel",
+        "racing_channel",
         id: @room.id,
         name: @room.name,
         description: @room.description,

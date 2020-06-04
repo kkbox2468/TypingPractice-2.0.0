@@ -1,8 +1,6 @@
-class CreateRoomChannel < ApplicationCable::Channel
+class RacingChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "create_room_channel"
-    # stream_from "player_counter_channel"
-
+    stream_from "racing_channel"
   end
 
   def unsubscribed
