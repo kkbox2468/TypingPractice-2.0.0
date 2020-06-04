@@ -8,7 +8,7 @@ class RoomChannel < ApplicationCable::Channel
       room.save
 
       ActionCable.server.broadcast(
-        "player_counter_channel",
+        "create_room_channel",
         room: room,
         room_id: room.id,
         room_members: room.members
@@ -24,7 +24,7 @@ class RoomChannel < ApplicationCable::Channel
     room.save
 
     ActionCable.server.broadcast(
-      "player_counter_channel",
+      "create_room_channel",
       room: room,
       room_id: room.id,
       room_members: room.members

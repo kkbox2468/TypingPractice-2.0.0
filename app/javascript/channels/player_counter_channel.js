@@ -12,13 +12,13 @@ consumer.subscriptions.create("PlayerCounterChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
-    if ($('#racing-index').length > 0){
+    // if ($('#racing-index').length > 0){
 
-      $(function(){
-        let roomId = data.room_id
-        console.log(roomId)
-        $(`.room${roomId}-counter`)[0].innerText = data.room_members
-      })
-    }
+    //   $(function(){
+    //     let roomId = data.room_id
+    //     console.log(roomId)
+    //     $(`.room${roomId}-counter`)[0].innerText = data.room_members
+    //   })
+    // }
   }
 });

@@ -10,7 +10,17 @@ consumer.subscriptions.create("CreateRoomChannel", {
   },
 
   received(data) {
-    $('#new-create').prepend(`
+
+
+    if (data.room_id) {
+      $(function(){
+        let roomId = data.room_id
+        console.log(roomId)
+        $(`.room${roomId}-counter`)[0].innerText = data.room_members
+      })
+    }
+    else if (data.owner_name) {
+      $('#new-create').prepend(`
       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12" >
         <div class="card-body ">
           <div class="request-title d-flex justify-content-between">
@@ -24,6 +34,8 @@ consumer.subscriptions.create("CreateRoomChannel", {
           </div>
         </div>
       </div>
-    `);
+    `); 
+    }
+
   }
 });
