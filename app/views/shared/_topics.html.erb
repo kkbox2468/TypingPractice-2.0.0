@@ -3,10 +3,10 @@
       <% start = 1 %>
   <div class= "card" >
     <% topics.each do |topic| %>
-      <div class="card-body" style="width: 15rem">
+      <div class="card-body" style="display: flex;flex-flow: column;justify-content: space-around;width: 15rem">
 
         <% if current_user %>
-          <div class="accracy d-none"><%= @all_progress[n] %></div>
+          <div class="accracy d-none"><%= stars[n] %></div>
         <% end %>
 
         <% if current_user %>
@@ -21,8 +21,7 @@
         <p class="card-text ellipsis"><%= topic.content %></p>
         <%= link_to "Start", send("#{type}_path", id: topic.id), class: "btn btn-primary d-flex justify-content-center ", id: "play-start" %>
 
-        <div class="progress d-flex" id="lessonBar" style="height: 10px;">
-          <div class="progress-bar " role="progressbar"  style="width: 0%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="stars d-flex" id=lessonBar<%="#{start}"%>>
         </div> 
       </div>
       <% n += 1 %>
