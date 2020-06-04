@@ -173,14 +173,13 @@
         }
         @media (max-width: 767px) {
           .link-group{
-            a{
-              width: 100px;
-            }
+        
           }
         }
         .post-news{
-          font-size: .5rem;
-          padding: 6px;
+          font-size: .8rem;
+          // text-align: center;
+          // padding:auto;
         }
       }
     }
