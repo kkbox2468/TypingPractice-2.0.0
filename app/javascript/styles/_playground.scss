@@ -1,11 +1,19 @@
 :root {
   --basecolor: #eee;
+  /* mode-pink */
   --basepink: rgb(241, 168, 168);
   --input-pink: rgb(240, 181, 181);
   --shadow-pink: -3px -3px 5px rgba(248, 200, 200, 0.7),
                  3px  3px 10px rgba(201, 39, 39, 0.5);
   --shadow-pink-in: inset -3px -3px 5px rgba(248, 200, 200, 0.7),
                     inset 3px  3px 10px rgba(201, 39, 39, 0.5);
+  /* mode-dark */
+  --basedark: #0c202c;
+  --input-dark: #0c202c;
+  --shadow-dark: 3px 4px 4px #061117, 
+                 -3px -4px 4px #0f2b3bc4;
+  --shadow-dark-in: inset 6px 6px 12px #061117, 
+                    inset -6px -6px 12px #122f41;
 
 }
 
@@ -233,6 +241,73 @@
       background-color: #abe2b7;
       box-shadow: none;
     }
+  }
+}
+
+//change-to-dark
+.change-to-dark{
+  background-color: var(--basedark);
+  .navbar{
+    background-color: var(--basedark);
+    box-shadow: var(--shadow-dark);
+    .navbar-collapse{
+      .navbar-nav{
+        .nav-item{
+          .dropdown-menu{
+            background-color: var(--basedark)!important;
+            box-shadow: var(--shadow-dark)!important;
+          }
+          .nav-btn:active{
+            background-color: var(--basedark);
+            box-shadow: var(--shadow-dark-in);
+          }
+        }
+      }
+    }
+    li{
+      .nav-btn{
+        background-color: var(--basedark);
+        box-shadow: var(--shadow-dark);
+      }
+    }
+  }
+  .justify-content-center{
+      .play-container{
+        background-color: var(--input-dark);
+        box-shadow: var(--shadow-dark-in);
+        color: #71a0a8!important;
+      }
+  }
+  #keyboard{
+    background-color: var(--basedark);
+    .playing {
+      background-color: var(--basedark);
+      color: rgb(25, 207, 146)!important;
+      text-decoration: none;
+      box-shadow: var(--shadow-dark-in)!important;
+    }
+    .key{
+      background-color: var(--basedark);
+      box-shadow: var(--shadow-dark);
+      color: rgb(37, 96, 104);
+    }
+    .arrows_all{
+      background-color: var(--basedark);
+      box-shadow: none;
+    }
+  }
+  .selected {
+    text-decoration: underline;
+    background-color: #c99470;
+    color: rgb(37, 96, 104);
+  }
+  .correct {
+    color: #5aa085;
+    background-color: rgb(141, 228, 152);
+  }
+  .incorrect {
+    color: #8d5d99;
+    background: rgb(231, 135, 188);
   }
 }
 

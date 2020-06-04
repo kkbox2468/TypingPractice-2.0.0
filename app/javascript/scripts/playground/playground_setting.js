@@ -66,7 +66,10 @@ $(function(){
         $('body').removeClass();
         $('body').addClass("change-to-green")
       })
-
+      $('.color-item-dark').on('click', function(){
+        $('body').removeClass();
+        $('body').addClass("change-to-dark")
+      })
   }
 
 })
