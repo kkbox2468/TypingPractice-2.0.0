@@ -97,15 +97,16 @@ document.addEventListener("DOMContentLoaded", function() {
   subDomain: "day",
   cellRadius: 3,
   range: 8,
-  data: ``,
+  data: "google-analytics.csv",
+  dataType: "csv",
   start: new Date(2020, 4),
   considerMissingDataAsZero: true,
   cellSize: 20,
   legend: [2, 4, 6, 8],
   legendColors: {
-    empty: "8f8f8f",
     min: "#f3d87d",
-    max: "#eec44c"
+    max: "#eec44c",
+    empty: "8f8f8f"
   }
   })
 });
