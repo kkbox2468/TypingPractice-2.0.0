@@ -210,9 +210,16 @@ $(function(){
       let userLeft = document.querySelector('#userLeft').innerText
       let userRight = document.querySelector('#userRight').innerText
       let winner 
-      if(hostCorrectNumber > guestCorrectNumber){
-        winBall.css('left')
-      }
+      // let winBall = document.querySelector('.my-point')
+      // let raceBar = (winBall.marginLeft)
+      
+      // if (hostCorrectNumber > guestCorrectNumber){
+      //   $('.my-point').css('left') - 10
+      //   } else {
+      //   $('.my-point').css('left') + 10
+      //   }
+      
+
       if (hostCorrectNumber > guestCorrectNumber) {
         winner = userLeft
         console.log(userLeft);
