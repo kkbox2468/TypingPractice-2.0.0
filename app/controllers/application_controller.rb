@@ -26,6 +26,6 @@ end
 
 private 
 
-def topic_time
-  topic_time  = Time.zone.now.beginning_of_day..Time.zone.now.end_of_day
-end
+# def topic_time
+#   topic_time  = Time.zone.now.beginning_of_day..Time.zone.now.end_of_day
+# end
