@@ -5,13 +5,12 @@ class TypingController < ApplicationController
     if current_user
       @done_article = current_user.user_topics.pluck(:topic_id).uniq
   
-      topics = UserTopic.all
+      topics = UserTopic.where.not(accuracy: nil)
       @all_progress = {}
-
       topics.each do |topic|
         progress = current_user.user_topics.where(topic_id: topic.topic_id).order('accuracy').last
 
-        if progress
+        if progress != nil
           case progress.accuracy
           when 100
             @all_progress.merge!({topic.topic_id => 5})
