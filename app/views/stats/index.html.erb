@@ -34,7 +34,7 @@
     </div>
   
     <div class="user-info col-4">
-      <canvas id="arti_accu_line" 
+      <canvas id="arti_accu_line"
               width="40" height="20" 
               data-accday="<%= @arti_day.to_json %>"> <!----這邊的變數對js來說是字串 要再轉成Json格式--->
       </canvas>
@@ -44,7 +44,7 @@
 <% if current_user %>
   <div class="row user-profile">
   
-      <div class="user-activity " id="cal-heatmap"></div>
+      <div class="overflow-auto " id="cal-heatmap"></div>
       
   </div>
 

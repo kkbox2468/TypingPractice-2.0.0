@@ -15,12 +15,12 @@ $(function(){
             label: 'Totle Accuracy',
             data: accu_data,
             backgroundColor: [
-                '#3cce68',
-                '#ff7091'
+                '#75ff92',
+                '#fe67c0'
             ],
             borderColor: [
-                '#3cce68',
-                '#ff7091'
+                '#75ff92',
+                '#fe67c0'
             ],
             borderWidth: 0
         }]
@@ -74,12 +74,12 @@ $(function(){
             label: 'Accuracy%',
             data: Object.values(arti_day),
             backgroundColor: [
-                '#ffc44c'
+                '#75ff92'
             ],
             borderColor: [
-                '#6ac6ce'
+                '#4df791'
             ],
-            borderWidth: 0
+            borderWidth: 2
         }]
       }
     });
@@ -96,17 +96,17 @@ $(function(){
   itemSelector: "#cal-heatmap",
   domain: "month",
   subDomain: "day",
-  cellRadius: 3,
+  cellRadius: 5,
   range: 8,
-  data: "google-analytics.csv",
+  data: "",
   dataType: "csv",
   start: new Date(2020, 4),
   considerMissingDataAsZero: true,
   cellSize: 20,
   legend: [2, 4, 6, 8],
   legendColors: {
-    min: "#f3d87d",
-    max: "#eec44c",
+    min: "#aeaeae",
+    max: "#75fe92",
     empty: "8f8f8f"
   }
   })

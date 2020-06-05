@@ -8,7 +8,7 @@ class StatsController < ApplicationController
       @arti_accuracy = current_user.user_topics.average(:accuracy).to_i #從current user抓底下create的所有文章裡的準確度.average可以算平均再算成整數
       @arti_wpm = current_user.user_topics.average(:speed).to_i
       # render json: @arti_wpm
-      # @arti_count = current_user.user_topics.group_by_day('user_topics.created_at').count #('因為兩張資料表有一樣的created_at,所以要再給一次所屬資料表')
+      #('因為兩張資料表有一樣的created_at,所以要再給一次所屬資料表')
       @arti_day = current_user.user_topics.where("created_at > ?", Date.today - 6.days).group_by_day('user_topics.created_at', format: "%m""%d").average(:accuracy) #show日hash
       # render json: @day_week = @arti_day.values.map(&:to_i) #抓出weekday
       @arti_day_accu = current_user.user_topics.where("created_at > ?", Date.today - 6.days).group_by_day('user_topics.created_at').average(:accuracy)
