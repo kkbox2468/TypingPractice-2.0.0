@@ -6,14 +6,14 @@ class CustomizationsController < ApplicationController
     if current_user
       # @done_customization = current_user.user_topics.pluck(:topic_id).uniq
       @done_customization = current_user.user_topics.where.not(accuracy: nil).pluck(:topic_id).uniq
-      # debugger
+
       topics = UserTopic.all
       @all_progress = {}
 
       topics.each do |topic|
-        progress = current_user.user_topics.where(topic_id: topic.topic_id).order('accuracy').last
-
-        case progress.accuracy
+        progress = current_user.user_topics.where(topic_id: topic.topic_id).where.not(accuracy: nil).order('accuracy').last
+        
+        case progress
         when 100
           @all_progress.merge!({topic.topic_id => 5})
         when (80.0..99.0)
@@ -22,17 +22,18 @@ class CustomizationsController < ApplicationController
           @all_progress.merge!({topic.topic_id => 3})
         when (40.0..59.0)
           @all_progress.merge!({topic.topic_id => 2})
-        else (0.1..39.0)
+        when (0.1..39.0)
           @all_progress.merge!({topic.topic_id => 1})
+        else 
+          @all_progress.merge!({topic.topic_id => 0})
         end
-
+        # byebug
       end
-      # byebug
     end
   end
 
   def create
-    topic = Customization.create(content_params)
+    topic = Customization.new(content_params)
     current_user.topics << topic
     redirect_to customizations_path
   end
