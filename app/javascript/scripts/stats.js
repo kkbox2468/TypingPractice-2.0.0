@@ -1,6 +1,7 @@
+$(function(){
+  if ( $('#stats-index').length > 0 ){
+    
 //正確率圓餅圖
-
-document.addEventListener("DOMContentLoaded", function() {
   let arti_accuracy = document.getElementById('arti_accuracy')
   let cur_accuracy = parseFloat(arti_accuracy.dataset['accuracy'])
   let accu_data = [cur_accuracy, 100 - cur_accuracy]
@@ -26,12 +27,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
-});
+
 
 
 //wpm圖表
 
-document.addEventListener("DOMContentLoaded", function() {
+
   let arti_wpm = document.getElementById('arti_wpm')
   let cur_wpm =  parseInt(arti_wpm.dataset['wpm'])
   let wpm_data = [cur_wpm ]
@@ -55,12 +56,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
-});
+
 
 
 //正確率日成長線圖
 
-document.addEventListener("DOMContentLoaded", function() {
+
   let arti_accu_line = document.getElementById('arti_accu_line')
   let arti_day = JSON.parse(arti_accu_line.dataset['accday'])
   if(!!arti_accu_line){ 
@@ -83,14 +84,14 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
-});
+
 
 
 
 //打卡
 
-document.addEventListener("DOMContentLoaded", function() {
-  var cal = new CalHeatMap();
+
+  let cal = new CalHeatMap();
 	cal.init({
   itemSelector: "#cal-heatmap",
   domain: "month",
@@ -109,5 +110,7 @@ document.addEventListener("DOMContentLoaded", function() {
     empty: "8f8f8f"
   }
   })
-});
 
+
+}
+})

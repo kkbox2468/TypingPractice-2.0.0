@@ -136,7 +136,7 @@ $(function(){
           }
         }, 1000);
 
-        let countDown = 60
+        let countDown = 6000
         setTimeout(() => {
           let downCounter = setInterval(() => {
             countDown -= 1
@@ -199,6 +199,16 @@ $(function(){
       let userLeft = document.querySelector('#userLeft').innerText
       let userRight = document.querySelector('#userRight').innerText
       let winner 
+      // let winBall = document.querySelector('.my-point')
+      // let raceBar = (winBall.marginLeft)
+      
+      // if (hostCorrectNumber > guestCorrectNumber){
+      //   $('.my-point').css('left') - 10
+      //   } else {
+      //   $('.my-point').css('left') + 10
+      //   }
+      
+
       if (hostCorrectNumber > guestCorrectNumber) {
         winner = userLeft
         console.log(userLeft);
