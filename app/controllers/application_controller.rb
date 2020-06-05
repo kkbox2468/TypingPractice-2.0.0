@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   rescue_from ActiveRecord::RecordNotFound, with: :page_not_found
+  
 
   protected
 
@@ -20,4 +21,11 @@ class ApplicationController < ActionController::Base
         redirect_to new_user_session_path
       end
     end
+end
+
+
+private 
+
+def topic_time
+  topic_time  = Time.zone.now.beginning_of_day..Time.zone.now.end_of_day
 end

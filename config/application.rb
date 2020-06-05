@@ -17,3 +17,6 @@ module TypingPractice200
     # the framework and any gems in your application.
   end
 end
+
+config.time_zone = "Taipei"
+config.active_record.default_timezone = :local
