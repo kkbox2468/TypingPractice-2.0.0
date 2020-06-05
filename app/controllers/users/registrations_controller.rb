@@ -23,17 +23,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
-
-
-    # p '--'*10
-    
     super
+
     user = User.find(current_user.id)
-    # byebug
     user.update(params.require(:user).permit(:photo))
-
-
-
   end
 
   # DELETE /resource
