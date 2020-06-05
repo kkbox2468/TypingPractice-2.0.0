@@ -89,16 +89,44 @@
   }
 }
 
-#lessonBar.progress{
-  margin-top: 1rem;
-
-  .progress-bar{
-    background: rgb(112,232,133);
-    background: linear-gradient(128deg, rgba(112,232,133,1) 0%, rgba(162,255,188,1) 100%);
-  }
-
-}
-
 #lessonTitle {
   font-family:  museo sans rounded, sans-serif;
+}
+
+.lesson-select{
+  .card-body{
+    @media (min-width: 992px) {
+      .stars{
+        // background-color: red;
+        img{
+          width: 20%;
+          height: 100%;
+        }
+      }
+    }
+    .stars{
+      justify-content: center;
+    }
+  }
+}
+
+#customizations-index{
+  .link-group{
+    // flex-direction: row;
+    justify-content: space-between;
+    a{
+      padding-left: 0;
+      padding-right: 0;
+      align-items: center;
+    }
+    @media (max-width: 767px) {
+      a{
+        // width: auto;
+        width: 100%;
+        margin: 0 1rem;
+        padding-right: 2rem;
+        padding-left: 2rem;
+      }      
+    }
+  }
 }
