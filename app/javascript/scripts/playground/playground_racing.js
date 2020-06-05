@@ -41,7 +41,7 @@ $(function(){
     let counterZone = document.querySelector('#counterZone')
     let recordPoints = document.querySelector('#records_accuracy')
     let recoudSubmit = document.querySelector('input[name="record-submit"]')
-    let winner
+    
 
     /* preloader */
     let preloader = document.querySelector('.preloader')
@@ -69,12 +69,19 @@ $(function(){
       readySubmit.click();
     })
 
+
+
+  
+
+
+
     /* hightlight characters */
     quoteInputLeft.addEventListener('input', () => {
       if (startHandler === true) {
         let arrayQuote = quoteDisplayLeft.querySelectorAll('span');
         let arrayValue = quoteInputLeft.value.split('')
         let inputIndex = quoteInputLeft.value.length
+        
         
         checkCharacter(arrayQuote, arrayValue, inputIndex)
         let correctChracters = document.querySelectorAll('#racingQuoteTopic .correct');
@@ -83,7 +90,7 @@ $(function(){
         recordPoints.value = correctChracters.length
         recoudSubmit.click()
         submitBtnLeft.click() //sent message to backend and broadcast to Action Cable
-  
+        
         if (inputIndex === arrayQuote.length) {
           endGame()
         }
@@ -136,7 +143,7 @@ $(function(){
           }
         }, 1000);
 
-        let countDown = 60
+        let countDown = 12000
         setTimeout(() => {
           let downCounter = setInterval(() => {
             countDown -= 1
@@ -150,6 +157,8 @@ $(function(){
         }, 1000);
       }
     }, 1000);
+
+    
 
     /* When two players are focus on the textarea. */
     let startVal = setInterval(() => {
@@ -194,11 +203,16 @@ $(function(){
     }
     
     function endGame() {
+      let winMove 
+      let winBall =  document.querySelector('#myPoint')
       let hostCorrectNumber = Number(hostCorrectAmount.innerText)
       let guestCorrectNumber = Number(guestCorrectAmount.innerText)
       let userLeft = document.querySelector('#userLeft').innerText
       let userRight = document.querySelector('#userRight').innerText
       let winner 
+      if(hostCorrectNumber > guestCorrectNumber){
+        winBall.css('left')
+      }
       if (hostCorrectNumber > guestCorrectNumber) {
         winner = userLeft
         console.log(userLeft);
