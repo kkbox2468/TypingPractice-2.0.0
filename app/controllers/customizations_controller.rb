@@ -13,6 +13,7 @@ class CustomizationsController < ApplicationController
       topics.each do |topic|
         progress = current_user.user_topics.where(topic_id: topic.topic_id).where.not(accuracy: nil).order('accuracy').last
         # uu.user_topics.where(topic_id: 51).order('accuracy').where.not(accuracy: nil).last
+        if progress
           case progress.accuracy
           when 100
             @all_progress.merge!({topic.topic_id => 5})
@@ -25,8 +26,8 @@ class CustomizationsController < ApplicationController
           when (0.1..39.9)
             @all_progress.merge!({topic.topic_id => 1})
           end
+        end
       end
-      # byebug
     end
   end
 

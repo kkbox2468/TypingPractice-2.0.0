@@ -11,19 +11,20 @@ class CodingController < ApplicationController
       topics.each do |topic|
         progress = current_user.user_topics.where(topic_id: topic.topic_id).order('accuracy').last
         
-        case progress.accuracy
-        when 100
-          @all_progress.merge!({topic.topic_id => 5})
-        when (80.0..99.9)
-          @all_progress.merge!({topic.topic_id => 4})
-        when (60.0..79.9) 
-          @all_progress.merge!({topic.topic_id => 3})
-        when (40.0..59.9)
-          @all_progress.merge!({topic.topic_id => 2})
-        when (0.1..39.9)
-          @all_progress.merge!({topic.topic_id => 1})
+        if progress
+          case progress.accuracy
+          when 100
+            @all_progress.merge!({topic.topic_id => 5})
+          when (80.0..99.9)
+            @all_progress.merge!({topic.topic_id => 4})
+          when (60.0..79.9) 
+            @all_progress.merge!({topic.topic_id => 3})
+          when (40.0..59.9)
+            @all_progress.merge!({topic.topic_id => 2})
+          when (0.1..39.9)
+            @all_progress.merge!({topic.topic_id => 1})
+          end
         end
-        
       end
     end
 
