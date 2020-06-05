@@ -11,6 +11,3 @@ import './playground/playground_racing.js'
 
 import './playground/playground_progress.js'
 
-
-
-// import './playground_showtext.js'

@@ -3,7 +3,7 @@ class RacingController < ApplicationController
 
   def index
     @room = Room.new
-    @rooms = Room.all
+    @rooms = Room.includes(:user)
   end
 
 end
