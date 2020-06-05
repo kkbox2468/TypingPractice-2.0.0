@@ -6,6 +6,11 @@
       <%= render "devise/shared/error_messages", resource: resource %>
     
       <div class="field form-group">
+        <%= f.label :photo %><br />
+        <%= f.file_field :photo   %>
+      </div>
+       
+      <div class="field form-group">
         <%= f.label :nickname %><br />
         <%= f.text_field :nickname, class: "form-control" %>
       </div>
