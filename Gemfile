@@ -43,7 +43,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'foreman', '~> 0.86.0'
 #chart
 gem 'chart-js-rails'
+#cal-heatmap
+gem 'cal-heatmap-rails', '~> 3.6'
+
+
 gem 'figaro', '~> 1.2'
+
 
 #groupdate
 gem 'groupdate', '~> 2.5', '>= 2.5.2'

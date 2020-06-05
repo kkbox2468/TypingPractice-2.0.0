@@ -24,8 +24,17 @@ class UserTopicsController < ApplicationController
                                         :wrong_letter,
                                         :wrong_letter_count,
                                         :accuracy,
-                                        :topic_id)                                      
+                                        :topic_id) 
+                                                                            
   end
+
+
+  # def Aricle_lesson
+  #   @article_lessons = Topic.where(id:1..30)
+  # end
+
+  
+
   
   def url
     
