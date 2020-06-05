@@ -7,6 +7,7 @@ $(function(){
       accracyArray.push($('.accracy')[eachAccracy].innerHTML)
       eachAccracy += 1
     }
+    // debugger
     // eachProgress = 0
     // progressArray = []
     // for (let i = 0; i < $('.progress-bar').length; i++) {
@@ -17,7 +18,7 @@ $(function(){
 
     let n = 1
     for (let i = 0; i < accracyArray.length; i++) {
-
+      
       let fullStars = Number(accracyArray[i])
       function giveFullStar() {
         $(`#lessonBar${n}`).append(`<img src="/icon/star-full.png" alt="..." >`)  
@@ -26,13 +27,12 @@ $(function(){
       function giveStar() {
         $(`#lessonBar${n}`).append(`<img src="/icon/star-emtpy.png" alt="..." >`)  
       }
-      
       if (fullStars > 0){
         for (let n = 0; n < fullStars; n++) {
           giveFullStar();
         }
       }
-      if (stars > 0){
+      if (stars >= 0){
         for (let n = 0; n < stars; n++) {
           giveStar();
         }

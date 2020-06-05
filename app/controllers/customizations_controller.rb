@@ -11,29 +11,27 @@ class CustomizationsController < ApplicationController
       @all_progress = {}
 
       topics.each do |topic|
-        progress = current_user.user_topics.where(topic_id: topic.topic_id).where.not(accuracy: nil).order('accuracy').last
-        
-        case progress
-        when 100
-          @all_progress.merge!({topic.topic_id => 5})
-        when (80.0..99.0)
-          @all_progress.merge!({topic.topic_id => 4})
-        when (60.0..79.0) 
-          @all_progress.merge!({topic.topic_id => 3})
-        when (40.0..59.0)
-          @all_progress.merge!({topic.topic_id => 2})
-        when (0.1..39.0)
-          @all_progress.merge!({topic.topic_id => 1})
-        else 
-          @all_progress.merge!({topic.topic_id => 0})
-        end
-        # byebug
+        progress = current_user.user_topics.where(topic_id: topic.topic_id).order('accuracy').sort.last
+        # uu.user_topics.where(topic_id: 51).order('accuracy').where.not(accuracy: nil).last
+          case progress
+          when 100
+            @all_progress.merge!({topic.topic_id => 5})
+          when (80.0..99.0)
+            @all_progress.merge!({topic.topic_id => 4})
+          when (60.0..79.0) 
+            @all_progress.merge!({topic.topic_id => 3})
+          when (40.0..59.0)
+            @all_progress.merge!({topic.topic_id => 2})
+          when (0.1..39.0)
+            @all_progress.merge!({topic.topic_id => 1})
+          end
       end
+      # byebug
     end
   end
 
   def create
-    topic = Customization.new(content_params)
+    topic = Customization.create(content_params)
     current_user.topics << topic
     redirect_to customizations_path
   end
