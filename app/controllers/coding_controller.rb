@@ -14,13 +14,13 @@ class CodingController < ApplicationController
         case progress.accuracy
         when 100
           @all_progress.merge!({topic.topic_id => 5})
-        when (80.0..99.0)
+        when (80.0..99.9)
           @all_progress.merge!({topic.topic_id => 4})
-        when (60.0..79.0) 
+        when (60.0..79.9) 
           @all_progress.merge!({topic.topic_id => 3})
-        when (40.0..59.0)
+        when (40.0..59.9)
           @all_progress.merge!({topic.topic_id => 2})
-        else (0.1..39.0)
+        when (0.1..39.9)
           @all_progress.merge!({topic.topic_id => 1})
         end
         

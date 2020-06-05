@@ -11,18 +11,18 @@ class CustomizationsController < ApplicationController
       @all_progress = {}
 
       topics.each do |topic|
-        progress = current_user.user_topics.where(topic_id: topic.topic_id).order('accuracy').sort.last
+        progress = current_user.user_topics.where(topic_id: topic.topic_id).where.not(accuracy: nil).order('accuracy').last
         # uu.user_topics.where(topic_id: 51).order('accuracy').where.not(accuracy: nil).last
-          case progress
+          case progress.accuracy
           when 100
             @all_progress.merge!({topic.topic_id => 5})
-          when (80.0..99.0)
+          when (80.0..99.9)
             @all_progress.merge!({topic.topic_id => 4})
-          when (60.0..79.0) 
+          when (60.0..79.9) 
             @all_progress.merge!({topic.topic_id => 3})
-          when (40.0..59.0)
+          when (40.0..59.9)
             @all_progress.merge!({topic.topic_id => 2})
-          when (0.1..39.0)
+          when (0.1..39.9)
             @all_progress.merge!({topic.topic_id => 1})
           end
       end
