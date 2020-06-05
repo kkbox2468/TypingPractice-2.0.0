@@ -7,8 +7,6 @@ $(function(){
       accracyArray.push($('.accracy')[eachAccracy].innerHTML)
       eachAccracy += 1
     }
-    console.log(accracyArray)
-
     // eachProgress = 0
     // progressArray = []
     // for (let i = 0; i < $('.progress-bar').length; i++) {
@@ -20,8 +18,6 @@ $(function(){
     let n = 1
     for (let i = 0; i < accracyArray.length; i++) {
 
-      console.log($(`#lessonBar${n}`))
-      console.log(Number(accracyArray[i]))
       let fullStars = Number(accracyArray[i])
       function giveFullStar() {
         $(`#lessonBar${n}`).append(`<img src="/icon/star-full.png" alt="..." >`)  
@@ -49,6 +45,5 @@ $(function(){
     // playground判斷
     $('#typingModeBar .progress-bar').css("width", `${$(".article_progress")[0].innerText}%`)
     $('#lessonBar .progress-bar').css("width", `${$(".code_progress")[0].innerText}%`)
-
   }
 })
