@@ -16,11 +16,16 @@ class StatsController < ApplicationController
       # render json: @acc_day = @arti_day_accu.values.map{ |e| e.to_i} #抓出正確率整數
 
       # @article_accuracy_presenter = ArticleAccuracyPresenter.new(current_user).perform
-      @today_topic = current_user.user_topics.where("updated_at > ?",  Date.today).group_by_day('user_topics.updated_at').count
-      # render json: @today_topic
+      @today_topic = current_user.user_topics.group_by_day('date(updated_at)',  format: "%s").count(:updated_at)
+      respond_to do |format|
+        format.json { render json: @today_topic }
+        format.html { render :index }
+      end
     else
       redirect_to typing_index_path, notice: 'Not a member?Join us to record achievements!'
     end
+
+
   
   end
   
@@ -32,4 +37,6 @@ class StatsController < ApplicationController
     @user_topics = user_topics.order(id: :desc).limit(10)
   
   end
+
+
 end

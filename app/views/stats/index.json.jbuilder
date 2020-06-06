@@ -1,10 +1,12 @@
 # json.stats @today_topic do |date, count|
-#   json.date date.strftime('%Y-%m-%d %H:%M:%S')
+#   json.date date.to_time.to_i
 #   json.count count
 # end
 
-# json.date @today_topic
-# json.count @today_topic
+# json.to_i @today_topic
+# json.value @today_topic
+
+
 
 # [
 #   {"date": "2020-06-05 00:00:00 UTC","count":1}, 
