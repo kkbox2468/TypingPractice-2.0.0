@@ -1,4 +1,4 @@
-<div id="<%= controller.controller_name %>-<%= controller.action_name %>">
+    <div id="<%= controller.controller_name %>-<%= controller.action_name %>">
   <div id="counterZone"></div>
   <h3 class="mt-3 mb-2"><%= @room.name %></h3>
   <%# <h5 id="startCounter" style="color: red">5</h5> %>
@@ -10,8 +10,15 @@
 
   <div class="row">
     <div class="col-6">
-      <p class="d-inline-block mr-5">User: <span id="userLeft"><%= current_user.nickname %></span></p>
-      <p  class="d-inline-block  mr-5"><span id="hostCorrect">0</span> points</p>
+      <div class="player-info">
+        <div class="name-and-socre">
+          <p class="d-inline-block">User: <span id="userLeft"><%= current_user.nickname %></span></p>
+          <p  class="d-inline-block "><span id="hostCorrect">0</span> points</p>
+        </div>
+        <div class="combo-count">
+          <p class="d-inline-block combo-count"><span id="combo-count"></span></p>
+        </div>
+      </div>
       <div class="racing-ground w-100" id="racingQuoteDisplay">
         <div class="racing-quote-display">
           <div id="racingQuoteTopic">
@@ -35,8 +42,11 @@
     </div>
     
     <div class="col-6">
-      <p class="d-inline-block mr-5">User: <span id="userRight"></span></p>
-      <p class="d-inline-block mr-5"><span id="guestCorrect">0</span> points</p>
+      <div class="player-info">
+        <p class="d-inline-block">User: <span id="userRight"></span></p>
+        <p class="d-inline-block"><span id="guestCorrect">0</span> points</p>
+        <p class="d-inline-block"><span id="combo-count"></span></p>
+      </div>
       <div class="racing-ground guest w-100" id="racingQuoteDisplay2">
         <div class="racing-quote-display2">
           <div id="racingQuoteTopic2">

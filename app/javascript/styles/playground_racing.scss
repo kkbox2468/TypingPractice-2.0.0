@@ -8,6 +8,45 @@
 }
 .row {
   .col-6 {
+    .player-info{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      .name-and-socre{
+        display: flex;
+        width: 50%;
+        p{
+          width: 50%;
+        }
+      }
+      .combo-count{
+        display: flex;
+        width: 50%;
+        .combo-count{
+          animation-duration: .5s;
+          #combo-count{
+            color: red;
+            font-size: 2rem;
+          }
+        }
+        @keyframes combo{
+          0%{
+            // transform: scale(1);
+            transform: rotateY(0deg);          
+          }
+          50%{
+            // transform: scale(1);
+            transform: rotateY(45deg);          
+          }
+          100%{
+            // transform: scale(1);
+            transform: rotateY(0deg);          
+
+          }
+        }
+      }
+    }
     .racing-ground.focused {
       box-shadow: 8px 8px 20px rgba(252, 215, 50, 0.801), 
                   -8px -8px 20px rgba(247, 210, 44, 0.808);

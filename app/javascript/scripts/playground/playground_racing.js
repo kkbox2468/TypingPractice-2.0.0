@@ -203,23 +203,12 @@ $(function(){
     }
     
     function endGame() {
-      let winMove 
-      let winBall =  document.querySelector('#myPoint')
       let hostCorrectNumber = Number(hostCorrectAmount.innerText)
       let guestCorrectNumber = Number(guestCorrectAmount.innerText)
       let userLeft = document.querySelector('#userLeft').innerText
       let userRight = document.querySelector('#userRight').innerText
       let winner 
-      // let winBall = document.querySelector('.my-point')
-      // let raceBar = (winBall.marginLeft)
       
-      // if (hostCorrectNumber > guestCorrectNumber){
-      //   $('.my-point').css('left') - 10
-      //   } else {
-      //   $('.my-point').css('left') + 10
-      //   }
-      
-
       if (hostCorrectNumber > guestCorrectNumber) {
         winner = userLeft
         console.log(userLeft);
@@ -234,5 +223,55 @@ $(function(){
         window.location.replace('/playground/racing')
       })
     }
+
+      
+    function showCombo() {
+      let correctLength = $('.selected').prevUntil($('.incorrect')).length
+
+      if (correctLength < 5){
+        $('.combo-count').css('animation-name', '')
+        $('#combo-count').empty();
+      }
+      else if (correctLength > 5){
+        $('.combo-count').css('animation-name', '')
+        $('#combo-count').empty();
+        $('#combo-count').append(`
+          ${correctLength}COMBO!
+        `)
+        setTimeout(() => {
+          $('.combo-count').css('animation-name', 'combo')
+        }, 0)
+      }
+      else if (correctLength = 5){
+        $('.combo-count').css('animation-name', '')
+        $('#combo-count').empty();
+        $('#combo-count').append(`
+          ${correctLength}COMBO!
+        `)
+        $('.combo-count').css('animation-name', 'combo')
+      }
+    }
+
+    function competitionBall(){
+      let ball =  $('#myPoint')
+      let hostPoint = Number($('#hostCorrect')[0].innerText)
+      let guestPoint = Number($('#guestCorrect')[0].innerText)
+      // let ballSet = 0
+      // let scoreDifference = (hostPoint - guestPoint)/5
+      let ballSet = (hostPoint - guestPoint)/5
+
+      if (ballSet) {
+        ball.css('margin-left', `${ballSet}rem`)
+      }
+    }
+
+    window.addEventListener('keyup', function(){
+      showCombo();
+    })
+
+    setInterval(function(){
+      competitionBall();
+    },1000)
+
   }
 })
