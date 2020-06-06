@@ -1,8 +1,8 @@
 $(function(){
   if ( $('#coding-index').length > 0 || $('#typing-index').length > 0 || $('#customizations-index').length > 0 ){
     // article & code判斷
-    eachAccracy = 0
-    accracyArray = []
+    let eachAccracy = 0
+    let accracyArray = []
     for (let i = 0; i < $('.accracy').length; i++) {
       accracyArray.push($('.accracy')[eachAccracy].innerHTML)
       eachAccracy += 1
@@ -18,7 +18,7 @@ $(function(){
 
     let n = 1
     for (let i = 0; i < accracyArray.length; i++) {
-      
+      // debugger
       let fullStars = Number(accracyArray[i])
       function giveFullStar() {
         $(`#lessonBar${n}`).append(`<img src="/icon/star-full.png" alt="..." >`)  
