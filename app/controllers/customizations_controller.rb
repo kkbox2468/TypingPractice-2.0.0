@@ -1,6 +1,6 @@
 class CustomizationsController < ApplicationController
   include Accessible
-  # before_action :configure_sign_up_params, only: [:create]
+  
 
   def index
     @topic = Customization.new

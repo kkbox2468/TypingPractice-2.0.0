@@ -1,5 +1,6 @@
 class RacingController < ApplicationController
-  before_action :is_current_user?
+  include Accessible
+  
 
   def index
     @room = Room.new
