@@ -23,7 +23,7 @@
   </div>   
 </div>
 
-<% n = 51 %>
+<%# n = 51 %>
 <div class="lesson-select">
   <% start = 1 %>
   <div class= "card">
@@ -38,7 +38,7 @@
 
                 <!-- <div class="accracy d-none"><%#= current_user.user_topics.where(topic_id: topic.topic_id).order('accuracy').first.accuracy %></div> -->
                 
-                <!-- <div class="accracy d-none"><%= @all_progress[n] %></div>-->
+                <!-- <div class="accracy d-none"><%#= @all_progress[n] %></div>-->
                 <div class="accracy"> <%= @all_progress[topic.id] %></div>
 
                 
@@ -62,7 +62,7 @@
           </div>
 
           <% start += 1 %>
-          <% n += 1 %>
+          <%# n += 1 %>
         <%# end %>
       <% end %>
     <% end %>

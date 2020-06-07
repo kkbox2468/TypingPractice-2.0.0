@@ -4,6 +4,9 @@ class TypingController < ApplicationController
 
     if current_user
       @done_article = current_user.user_topics.pluck(:topic_id).uniq
+
+      # @done_customization = current_user.user_topics.where(topic_id: @user_topics.pluck(:id)).where.not(accuracy: nil).pluck(:topic_id).uniq
+
   
       topics = UserTopic.all
       @all_progress = {}

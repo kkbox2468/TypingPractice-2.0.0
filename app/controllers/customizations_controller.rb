@@ -6,22 +6,14 @@ class CustomizationsController < ApplicationController
     @topic = Customization.new
     # @user_topics = current_user.user_topics.where(time: nil)
     @user_topics = current_user.topics.where(type:'Customization').uniq
-    # custom_array_id = []
-    # @user_custom_topics.each{ |user_custom_topic|  custom_array_id  << user_custom_topic.id }
-# u.topics.where(type:'Customization').uniq.each{|f|   array<<f.id}
     
-      # @done_customization = current_user.user_topics.pluck(:topic_id).uniq
-      @done_customization = current_user.user_topics.where.not(accuracy: nil).pluck(:topic_id).uniq
 
-      # @done_custom_topics = current_user.user_topics.where(topic_id: @done_customization)
+    
+    # @done_customization = current_user.user_topics.pluck(:topic_id).uniq
+    @done_customization = current_user.user_topics.where(topic_id: @user_topics.pluck(:id)).where.not(accuracy: nil).pluck(:topic_id).uniq
 
-      # topics = UserTopic.all
-      # topics = current_user.topics.where(type:'Customization').uniq
-
-   
+    # topics = UserTopic.all
       
-
-
       if @user_topics
 
         @all_progress = {}

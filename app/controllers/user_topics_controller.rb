@@ -1,17 +1,17 @@
 class UserTopicsController < ApplicationController
   def create
-
+# byebug
     if current_user
       
-      @user_topic = UserTopic.new(user_topic_params.merge(user_id:current_user.id))
-      if @user_topic.save
-        redirect_to url
-      else
-        redirect_to url 
-      end
+      @user_topic = UserTopic.create(user_topic_params.merge(user_id:current_user.id))
+      # if @user_topic.save
+      #   redirect_to url
+      # else
+      #   redirect_to url 
+      # end
 
-    else
-      redirect_to url 
+    # else
+    #   redirect_to url 
     end
   end
   
@@ -27,17 +27,17 @@ class UserTopicsController < ApplicationController
                                         :topic_id)                                      
   end
   
-  def url
+  # def url
     
-    case Topic.find(user_topic_params[:topic_id]).type
-    when "Article"
-      typing_index_path
-    when "Ruby"
-      coding_index_path
-    else
-      root_path
-    end
+  #   case Topic.find(user_topic_params[:topic_id]).type
+  #   when "Article"
+  #     typing_index_path
+  #   when "Ruby"
+  #     coding_index_path
+  #   else
+  #     root_path
+  #   end
 
-  end
+  # end
   
 end
