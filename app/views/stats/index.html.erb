@@ -28,15 +28,13 @@
     </div> 
     <div class="user-info col-4">
       <canvas id="arti_wpm" 
-              width="40" height="14" 
               data-wpm="<%= @arti_wpm %>sec">
       </canvas>
     </div>
   
-    <div class="user-info col-4">
+    <div class="arti_accu_line col-4" id='artiAccuLine'>
       <canvas id="arti_accu_line"
-              width="40" height="20" 
-              data-accday="<%= @arti_day.to_json %>"> <!----這邊的變數對js來說是字串 要再轉成Json格式--->
+              data-accday="<%= @arti_day.to_json %>"> 
       </canvas>
     </div>
 </div>

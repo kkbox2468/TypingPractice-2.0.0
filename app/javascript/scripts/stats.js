@@ -24,6 +24,10 @@ $(function(){
             ],
             borderWidth: 0
         }]
+      },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false
       }
     });
   }
@@ -53,6 +57,10 @@ $(function(){
             ],
             borderWidth: 0
         }]
+      },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false
       }
     });
   }
@@ -80,37 +88,38 @@ $(function(){
                 '#4df791'
             ],
             borderWidth: 2
-        }]
-      }
-    });
-  }
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false
+        }
+      });
+    }
 
 
 
 
 //打卡
 
-
   let cal = new CalHeatMap();
 	cal.init({
-  itemSelector: "#cal-heatmap",
-  domain: "month",
-  subDomain: "day",
-  cellRadius: 5,
-  range: 8,
-  data: "http://localhost:3000/stats.json",
-  dataType: "json",
-  start: new Date(2020, 4),
-  considerMissingDataAsZero: true,
-  cellSize: 20,
-  legend: [2, 4, 6, 8],
-  legendColors: {
-    min: "#aeaeae",
-    max: "#75fe92",
-    empty: "8f8f8f"
+    itemSelector: "#cal-heatmap",
+    domain: "month",
+    subDomain: "day",
+    cellRadius: 5,
+    range: 8,
+    data: "http://localhost:3000/stats.json",
+    dataType: "json",
+    start: new Date(2020, 0),
+    considerMissingDataAsZero: true,
+    cellSize: 20,
+    legend: [1, 5, 10, 15, 20],
+    legendColors: {
+      min: "#eec44c",
+      max: "#004a11",
+      empty: "ededed"
+      }
+    })
   }
-  })
-
-
-}
 })
