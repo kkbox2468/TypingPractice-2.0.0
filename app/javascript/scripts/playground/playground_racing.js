@@ -256,9 +256,7 @@ $(function(){
       let ball =  $('#myPoint')
       let hostPoint = Number($('#hostCorrect')[0].innerText)
       let guestPoint = Number($('#guestCorrect')[0].innerText)
-      // let ballSet = 0
-      // let scoreDifference = (hostPoint - guestPoint)/5
-      let ballSet = (hostPoint - guestPoint)/5
+      let ballSet = -(hostPoint - guestPoint)/5
 
       if (ballSet) {
         ball.css('margin-left', `${ballSet}rem`)
@@ -275,3 +273,4 @@ $(function(){
 
   }
 })
+

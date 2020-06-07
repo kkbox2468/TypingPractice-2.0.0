@@ -32,17 +32,16 @@
         }
         @keyframes combo{
           0%{
-            // transform: scale(1);
             transform: rotateY(0deg);          
           }
-          50%{
-            // transform: scale(1);
+          40%{
             transform: rotateY(45deg);          
           }
+          80%{
+            transform: rotateY(-20deg);          
+          }
           100%{
-            // transform: scale(1);
             transform: rotateY(0deg);          
-
           }
         }
       }
@@ -234,5 +233,10 @@
         }
       }
     }
+  }
+}
+#rooms-show{
+  h3{
+    text-shadow: none;
   }
 }
