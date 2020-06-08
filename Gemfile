@@ -46,6 +46,9 @@ gem 'chart-js-rails'
 #cal-heatmap
 gem 'cal-heatmap-rails', '~> 3.6'
 
+#type.JS
+gem 'typedjsrails', '~> 0.1.0'
+
 
 gem 'figaro', '~> 1.2'
 

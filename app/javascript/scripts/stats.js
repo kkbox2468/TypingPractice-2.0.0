@@ -116,8 +116,8 @@ $(function(){
     cellSize: 20,
     legend: [1, 5, 10, 15, 20],
     legendColors: {
-      min: "#eec44c",
-      max: "#004a11",
+      min: "#ffdf85",
+      max: "#ff3c70",
       empty: "ededed"
       }
     })
