@@ -15,14 +15,14 @@
   <div class="lesson-select">
     <div class="row" id="new-create">
       <% @rooms.each  do |room|%>
-        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-          <div class="card-body ">
+        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+          <div class="card-body">
             <div class="request-title d-flex justify-content-between">
               <% if room.user %>
                 <p>Owner:<%= room.user.nickname %></p>
               <% end %>
               <% if current_user.id == room.user_id%>
-                <div class="btn post-news" id="room<%= room.id %>" data-room-name= "<%= room.name %>" data-room-id= "<%= room.id %>" > KNOCK </div>
+                <div class="btn post-news" id="room<%= room.id %>" data-room-name= "<%= room.name %>" data-room-id= " <%= room.id %>"> <%=image_tag=image_tag('/icon/globe.svg')%> </div>
               <% end %>
             </div>
 
@@ -31,13 +31,13 @@
             <p>Player：<span class="room<%= room.id%>-counter"><%= room.members %></span>persons</p>
             <div class="link-group d-flex">
               <% if room.members >= 2 %>
-                <a href="#" class="btn disabled">Join</a>
+                <a href="#" class="btn disabled">Full</a>
               <% else %>
                 <%= link_to "Join", room_path(room.id), class: 'btn player-counter',id: room.id, data: {counter: room.members} %>
               <% end %>
               <% if current_user.id == room.user_id%>
-                <%= link_to "Edit", edit_room_path(room.id), class: 'btn' %>
-                <%= link_to "Delete", room_path(room.id), class: 'btn', id: "delete-room-btn", method: "DELETE" %>
+                <%= link_to(image_tag('/icon/edit-custom.svg'), edit_room_path(room.id), class: 'edit-racing') %>
+                <%= link_to(image_tag('/icon/trash-2.svg'),  room_path(room.id), class:'trash', id: "delete-room-btn", method: "DELETE") %>
               <% end %>
             </div>
           </div>

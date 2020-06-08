@@ -11,7 +11,7 @@
 
         <% if current_user %>
           <% if done.include?(topic.id) %>
-            <div class="check-done">
+            <div class="check-done" id='checkDone'>
               <img src="/icon/check-circle.svg" alt="">
             </div>
           <% end %>
