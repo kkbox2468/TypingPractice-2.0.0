@@ -27,7 +27,6 @@ class CodingController < ApplicationController
         else
           @all_progress.merge!({code.id => 0})
         end
-        
       end
     end
 

@@ -25,7 +25,6 @@ class TypingController < ApplicationController
         else
           @all_progress.merge!({article.id => 0})
         end
-          
       end
       
     # u1.user_topics.select('Max(accuracy), topic_id').group(:topic_id).all

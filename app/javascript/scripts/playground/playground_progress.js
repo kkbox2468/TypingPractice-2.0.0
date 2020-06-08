@@ -7,14 +7,6 @@ $(function(){
       accracyArray.push($('.accracy')[i].innerHTML)
     
     }
-    // debugger
-    // eachProgress = 0
-    // progressArray = []
-    // for (let i = 0; i < $('.progress-bar').length; i++) {
-    //   progressArray.push($('.progress-bar')[eachProgress])
-    //   eachProgress += 1
-    // }
-    // console.log(progressArray)
 
     
     for (let i = 0; i < accracyArray.length; i++) {

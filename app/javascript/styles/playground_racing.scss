@@ -93,6 +93,7 @@
       font-size: 35px;
       color: #fff;
       margin-top: 60px;
+      text-shadow: none;
     }
     &.disappear {
       h3{
@@ -127,8 +128,6 @@
       cursor: none;
     }
     .ready-btn-host.active {
-      // box-shadow: inset 5px 5px 5px #070616, 
-      //             inset -2px -2px 5px #2d2d57;
       box-shadow: inset 3px 3px 5px #18a018, 
                   inset -2px -2px 5px #64ec49;
       color: greenyellow;

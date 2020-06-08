@@ -1,11 +1,11 @@
+$(function(){
+  if ( $('#stats-index').length > 0 ){
+    
 //正確率圓餅圖
-
-document.addEventListener("DOMContentLoaded", function() {
   let arti_accuracy = document.getElementById('arti_accuracy')
   let cur_accuracy = parseFloat(arti_accuracy.dataset['accuracy'])
   let accu_data = [cur_accuracy, 100 - cur_accuracy]
   if(!!arti_accuracy){ //確認有arti_accuracy有這個物件才執行（強制轉型）
-    // console.log(arti_accuracy)
     arti_accuracy.getContext('2d');
     var chart = new Chart(arti_accuracy, {
       type: 'doughnut',
@@ -15,34 +15,33 @@ document.addEventListener("DOMContentLoaded", function() {
             label: 'Totle Accuracy',
             data: accu_data,
             backgroundColor: [
-                '#3cce68',
-                '#ff7091'
+                '#75ff92',
+                '#fe67c0'
             ],
             borderColor: [
-                '#3cce68',
-                '#ff7091'
+                '#75ff92',
+                '#fe67c0'
             ],
             borderWidth: 0
         }]
       }
     });
   }
-});
+
 
 
 //wpm圖表
 
-document.addEventListener("DOMContentLoaded", function() {
+
   let arti_wpm = document.getElementById('arti_wpm')
   let cur_wpm =  parseInt(arti_wpm.dataset['wpm'])
   let wpm_data = [cur_wpm ]
   if(!!arti_wpm){ 
-    // console.log(arti_wpm)
     arti_wpm.getContext('2d');
     var chart = new Chart(arti_wpm, {
       type: 'horizontalBar',
       data: {
-        // labels: ["Avg wpm"],
+        labels: ["Average wpm"],
         datasets: [{
             label: 'Speed(wpm)',
             data: wpm_data,
@@ -57,12 +56,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
-});
+
 
 
 //正確率日成長線圖
 
-document.addEventListener("DOMContentLoaded", function() {
+
   let arti_accu_line = document.getElementById('arti_accu_line')
   let arti_day = JSON.parse(arti_accu_line.dataset['accday'])
   if(!!arti_accu_line){ 
@@ -75,15 +74,43 @@ document.addEventListener("DOMContentLoaded", function() {
             label: 'Accuracy%',
             data: Object.values(arti_day),
             backgroundColor: [
-                '#ffc44c'
+                '#75ff92'
             ],
             borderColor: [
-                '#6ac6ce'
+                '#4df791'
             ],
-            borderWidth: 0
+            borderWidth: 2
         }]
       }
     });
   }
-});
 
+
+
+
+//打卡
+
+
+  let cal = new CalHeatMap();
+	cal.init({
+  itemSelector: "#cal-heatmap",
+  domain: "month",
+  subDomain: "day",
+  cellRadius: 5,
+  range: 8,
+  data: "http://localhost:3000/stats.json",
+  dataType: "json",
+  start: new Date(2020, 4),
+  considerMissingDataAsZero: true,
+  cellSize: 20,
+  legend: [2, 4, 6, 8],
+  legendColors: {
+    min: "#aeaeae",
+    max: "#75fe92",
+    empty: "8f8f8f"
+  }
+  })
+
+
+}
+})

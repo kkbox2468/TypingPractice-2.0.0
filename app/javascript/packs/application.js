@@ -9,9 +9,12 @@ require("@rails/activestorage").start()
 require("channels")
 require("styles")
 require("scripts")
+require("chart.js")
+
 
 //chart.js
 import Chart from 'chart.js';
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -32,3 +35,7 @@ import "controllers"
 
 import Swal from 'sweetalert2'
 window.Swal = Swal
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+window.AOS = AOS
