@@ -252,15 +252,58 @@ $(function(){
       }
     }
 
-    function competitionBall(){
+    function competition(){
       let ball =  $('#myPoint')
       let hostPoint = Number($('#hostCorrect')[0].innerText)
       let guestPoint = Number($('#guestCorrect')[0].innerText)
       let ballSet = -(hostPoint - guestPoint)/5
+      let width = Math.floor((hostPoint - guestPoint)/10)
+      let hostWidth 
+      let guestWidth
 
       if (ballSet) {
         ball.css('margin-left', `${ballSet}rem`)
       }
+
+      if(width){
+        if (width > 0){
+          $('.row .col').removeClass();
+  
+          if (width >= 3){
+            // $('.row .col').removeClass();
+            hostWidth = `col-9`
+            guestWidth = `col-3`
+            $('.row .col')[0].classList.add(`${hostWidth}`)
+            $('.row .col')[1].classList.add(`${guestWidth}`)
+          }
+          else{
+            // $('.row .col').removeClass();
+            hostWidth = `col-${6+width}`
+            guestWidth = `col-${6-width}`
+            $('.row .col')[0].classList.add(`${hostWidth}`)
+            $('.row .col')[1].classList.add(`${guestWidth}`)
+          }
+        }
+        else {
+          $('.row .col').removeClass();
+  
+          if (width <= -3){
+            // $('.row .col').removeClass();
+            width = `col-3`
+            guestWidth = `col-9`
+            $('.row .col')[0].classList.add(`${hostWidth}`)
+            $('.row .col')[1].classList.add(`${guestWidth}`)
+          }
+          else{
+            // $('.row .col').removeClass();
+            hostWidth = `col-${6+width}`
+            guestWidth = `col-${6-width}`
+            $('.row .col')[0].classList.add(`${hostWidth}`)
+            $('.row .col')[1].classList.add(`${guestWidth}`)
+          }
+        }
+      }
+
     }
 
     window.addEventListener('keyup', function(){
@@ -268,9 +311,8 @@ $(function(){
     })
 
     setInterval(function(){
-      competitionBall();
+      competition();
     },1000)
-
   }
 })
 
