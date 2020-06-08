@@ -114,6 +114,20 @@ $(function(){
           $('#racingQuoteTopic').css('margin-top',`-${gapAmount2}px`)
         }
       } 
+      let hostPoint = Number($('#hostCorrect')[0].innerText)
+      let guestPoint = Number($('#guestCorrect')[0].innerText)
+  
+      let hostWidth = Math.floor((hostPoint/(hostPoint+guestPoint))*100)
+      let guestWidth = Math.floor((guestPoint/(hostPoint+guestPoint))*100)
+
+      console.log(hostWidth)
+      console.log(guestWidth)
+
+      $('.host').attr('style', `width:${hostWidth}%`)
+      $('.guest').attr('style', `width:${guestWidth}%`)
+
+      // $('.host').prop('width', `${hostWidth}%!important`)
+      // $('.guest').prop('width', `${guestWidth}%!important`)
     })
 
     /* When two players are ready then start the game. */
@@ -257,52 +271,74 @@ $(function(){
       let hostPoint = Number($('#hostCorrect')[0].innerText)
       let guestPoint = Number($('#guestCorrect')[0].innerText)
       let ballSet = -(hostPoint - guestPoint)/5
-      let width = Math.floor((hostPoint - guestPoint)/10)
-      let hostWidth 
-      let guestWidth
+      let hostWidth = Math.floor((hostPoint/(hostPoint+guestPoint))*100)
+      let guestWidth = Math.floor((guestPoint/(hostPoint+guestPoint))*100)
 
       if (ballSet) {
         ball.css('margin-left', `${ballSet}rem`)
       }
 
-      if(width){
-        if (width > 0){
-          $('.row .col').removeClass();
+      console.log(hostWidth)
+      console.log(guestWidth)
+
+      $('.host').css('width', `${hostWidth}%!important`)
+      $('.guest').css('width', `${guestWidth}%!important`)
+      // if (hostWidth){
+      //   $('.host').css('width', '')
+      //   $('.guest').css('width', '')
+      //   setTimeout(() => {
+      //     $('.host').css('width', `${hostWidth}%`)
+      //     $('.guest').css('width', `${guestWidth}%`)
+      //   }, 10000)
+      // }
+
+
+      // if(width){
+      //   if (width > 0){
+      //     $('.row .col').removeClass();
   
-          if (width >= 3){
-            // $('.row .col').removeClass();
-            hostWidth = `col-9`
-            guestWidth = `col-3`
-            $('.row .col')[0].classList.add(`${hostWidth}`)
-            $('.row .col')[1].classList.add(`${guestWidth}`)
-          }
-          else{
-            // $('.row .col').removeClass();
-            hostWidth = `col-${6+width}`
-            guestWidth = `col-${6-width}`
-            $('.row .col')[0].classList.add(`${hostWidth}`)
-            $('.row .col')[1].classList.add(`${guestWidth}`)
-          }
-        }
-        else {
-          $('.row .col').removeClass();
+      //     if (width >= 3){
+      //       // $('.row .col').removeClass();
+      //       hostWidth = `col-9`
+      //       guestWidth = `col-3`
+      //       setTimeout(() => {
+      //         $('.row .col')[0].classList.add(`${hostWidth}`)
+      //         $('.row .col')[1].classList.add(`${guestWidth}`)
+      //       }, 0)
+      //     }
+      //     else{
+      //       // $('.row .col').removeClass();
+      //       hostWidth = `col-${6+width}`
+      //       guestWidth = `col-${6-width}`
+      //       setTimeout(() => {
+      //         $('.row .col')[0].classList.add(`${hostWidth}`)
+      //         $('.row .col')[1].classList.add(`${guestWidth}`)
+      //       }, 0)
+      //     }
+      //   }
+      //   else {
+      //     $('.row .col').removeClass();
   
-          if (width <= -3){
-            // $('.row .col').removeClass();
-            width = `col-3`
-            guestWidth = `col-9`
-            $('.row .col')[0].classList.add(`${hostWidth}`)
-            $('.row .col')[1].classList.add(`${guestWidth}`)
-          }
-          else{
-            // $('.row .col').removeClass();
-            hostWidth = `col-${6+width}`
-            guestWidth = `col-${6-width}`
-            $('.row .col')[0].classList.add(`${hostWidth}`)
-            $('.row .col')[1].classList.add(`${guestWidth}`)
-          }
-        }
-      }
+      //     if (width <= -3){
+      //       // $('.row .col').removeClass();
+      //       width = `col-3`
+      //       guestWidth = `col-9`
+      //       setTimeout(() => {
+      //         $('.row .col')[0].classList.add(`${hostWidth}`)
+      //         $('.row .col')[1].classList.add(`${guestWidth}`)
+      //       }, 0)
+      //     }
+      //     else{
+      //       // $('.row .col').removeClass();
+      //       hostWidth = `col-${6+width}`
+      //       guestWidth = `col-${6-width}`
+      //       setTimeout(() => {
+      //         $('.row .col')[0].classList.add(`${hostWidth}`)
+      //         $('.row .col')[1].classList.add(`${guestWidth}`)
+      //       }, 0)
+      //     }
+      //   }
+      // }
 
     }
 
@@ -310,9 +346,9 @@ $(function(){
       showCombo();
     })
 
-    setInterval(function(){
-      competition();
-    },1000)
+    // setInterval(function(){
+    //   competition();
+    // },1000)
   }
 })
 

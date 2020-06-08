@@ -6,8 +6,12 @@
   z-index: 1;
   color: red;
 }
-.row {
-  .col {
+.game-zone {
+  display: flex;
+  .host,
+  .guest {
+    padding: 1rem;
+    width: 50%;
     .player-info{
       display: flex;
       justify-content: space-between;

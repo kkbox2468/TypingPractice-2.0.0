@@ -8,8 +8,8 @@
     <div class="enemy-point" id="enemyPoint"></div>
   </div>
 
-  <div class="row">
-    <div class="col">
+  <div class="game-zone">
+    <div class="host">
       <div class="player-info">
         <div class="name-and-socre">
           <p class="d-inline-block">User: <span id="userLeft"><%= current_user.nickname %></span></p>
@@ -41,7 +41,7 @@
       <% end %>
     </div>
     
-    <div class="col">
+    <div class="guest">
       <div class="player-info">
         <p class="d-inline-block">User: <span id="userRight"></span></p>
         <p class="d-inline-block"><span id="guestCorrect">0</span> points</p>
