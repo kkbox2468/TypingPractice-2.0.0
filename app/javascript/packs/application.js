@@ -10,7 +10,7 @@ require("channels")
 require("styles")
 require("scripts")
 require("chart.js")
-//= require typedjs
+
 
 
 //chart.js
