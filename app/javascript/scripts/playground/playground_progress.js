@@ -1,11 +1,11 @@
 $(function(){
   if ( $('#coding-index').length > 0 || $('#typing-index').length > 0 || $('#customizations-index').length > 0 ){
     // article & code判斷
-    // let eachAccracy = 0
+    
     let accracyArray = []
     for (let i = 0; i < $('.accracy').length; i++) {
       accracyArray.push($('.accracy')[i].innerHTML)
-      // eachAccracy += 1
+    
     }
     // debugger
     // eachProgress = 0
@@ -16,9 +16,9 @@ $(function(){
     // }
     // console.log(progressArray)
 
-    // let n = 1
+    
     for (let i = 0; i < accracyArray.length; i++) {
-      // debugger
+      
       let fullStars = Number(accracyArray[i])
       function giveFullStar() {
         $(`#lessonBar${(i+1)}`).append(`<img src="/icon/star-full.png" alt="..." >`)  
@@ -27,17 +27,15 @@ $(function(){
       function giveStar() {
         $(`#lessonBar${(i+1)}`).append(`<img src="/icon/star-emtpy.png" alt="..." >`)  
       }
-      // if (fullStars > 0){
+      
         for (let n = 0; n < fullStars; n++) {
           giveFullStar();
         }
-      // }
-      // if (stars >= 0){
+      
         for (let n = 0; n < stars; n++) {
           giveStar();
         }
-      // }
-      // n += 1
+      
     }
   }
   

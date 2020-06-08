@@ -4,59 +4,38 @@ class CustomizationsController < ApplicationController
 
   def index
     @topic = Customization.new
-    # @user_topics = current_user.user_topics.where(time: nil)
+    
     @user_topics = current_user.topics.where(type:'Customization').uniq
     
-
-    
-    # @done_customization = current_user.user_topics.pluck(:topic_id).uniq
+    #篩選出客製化題目中，未做過的題目的id
     @done_customization = current_user.user_topics.where(topic_id: @user_topics.pluck(:id)).where.not(accuracy: nil).pluck(:topic_id).uniq
+  
+    if @user_topics
 
-    # topics = UserTopic.all
-      
-      if @user_topics
+      @all_progress = {}
 
-        @all_progress = {}
+      @user_topics.each do |user_topic|
 
-        @user_topics.each do |user_topic|
-          max_accuracy = current_user.user_topics.where(topic_id: user_topic.id).maximum(:accuracy)
-          # uu.user_topics.where(topic_id: 51).order('accuracy').where.not(accuracy: nil).last
-          # byebug
-          # progress = current_user.user_topics.where(topic_id: topic.topic_id).where.not(accuracy: nil).order('accuracy').last
-            case max_accuracy
-            when 100
-              @all_progress.merge!({user_topic.id => 5})
-            when (80.0..99.9)
-              @all_progress.merge!({user_topic.id => 4})
-            when (60.0..79.9) 
-              @all_progress.merge!({user_topic.id => 3})
-            when (40.0..59.9)
-              @all_progress.merge!({user_topic.id => 2})
-            when (20.0..39.9)
-              @all_progress.merge!({user_topic.id => 1})
-            else
-              @all_progress.merge!({user_topic.id => 0})
-            end
-        end
-        # byebug
+      max_accuracy = current_user.user_topics.where(topic_id: user_topic.id).maximum(:accuracy)
+        
+      case max_accuracy
+      when 100
+        @all_progress.merge!({user_topic.id => 5})
+      when (80.0..99.9)
+        @all_progress.merge!({user_topic.id => 4})
+      when (60.0..79.9) 
+        @all_progress.merge!({user_topic.id => 3})
+      when (40.0..59.9)
+        @all_progress.merge!({user_topic.id => 2})
+      when (20.0..39.9)
+        @all_progress.merge!({user_topic.id => 1})
+      else
+        @all_progress.merge!({user_topic.id => 0})
       end
-      # topics.each do |topic|
-      #   progress = current_user.user_topics.where(topic_id: topic.topic_id).where.not(accuracy: nil).order('accuracy').last
-      #   # uu.user_topics.where(topic_id: 51).order('accuracy').where.not(accuracy: nil).last
-      #     case progress.accuracy
-      #     when 100
-      #       @all_progress.merge!({topic.topic_id => 5})
-      #     when (80.0..99.9)
-      #       @all_progress.merge!({topic.topic_id => 4})
-      #     when (60.0..79.9) 
-      #       @all_progress.merge!({topic.topic_id => 3})
-      #     when (40.0..59.9)
-      #       @all_progress.merge!({topic.topic_id => 2})
-      #     when (0.1..39.9)
-      #       @all_progress.merge!({topic.topic_id => 1})
-      #     end
-      # end
-      # byebug
+      
+    end     
+  end
+      
     
   end
 

@@ -23,23 +23,20 @@
   </div>   
 </div>
 
-<%# n = 51 %>
+
 <div class="lesson-select">
   <% start = 1 %>
   <div class= "card">
     <% if @user_topics %>
       <% @user_topics.each do |topic| %>
         
-        <%# if topic.topic %>
+        
         
           <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card-body" style="display: flex;flex-flow: column;justify-content: space-around">
-              <%# if current_user %>
+              
 
-                <!-- <div class="accracy d-none"><%#= current_user.user_topics.where(topic_id: topic.topic_id).order('accuracy').first.accuracy %></div> -->
-                
-                <!-- <div class="accracy d-none"><%#= @all_progress[n] %></div>-->
-                <div class="accracy"> <%= @all_progress[topic.id] %></div>
+                <div class="accracy d-none"> <%= @all_progress[topic.id] %></div>
 
                 
 
@@ -48,7 +45,7 @@
                     <img src="/icon/check-circle.svg" alt="">
                   </div>
                 <% end %>
-              <%# end %>
+              
               <h5 class="card-title" id="lessonTitle">Lesson<%= "#{start}" %></h5>
               <p class="card-text ellipsis"><%= topic.content %></p>
               <div class="link-group d-flex">
@@ -62,8 +59,7 @@
           </div>
 
           <% start += 1 %>
-          <%# n += 1 %>
-        <%# end %>
+          
       <% end %>
     <% end %>
   </div>
