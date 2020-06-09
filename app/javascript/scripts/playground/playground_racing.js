@@ -164,7 +164,7 @@ $(function(){
           }
         }, 1000);
 
-        let countDown = 12000
+        let countDown = 60
         setTimeout(() => {
           let downCounter = setInterval(() => {
             countDown -= 1

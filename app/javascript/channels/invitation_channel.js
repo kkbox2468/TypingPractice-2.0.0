@@ -33,6 +33,7 @@ $(function(){
       let thisOwner = $(`#${thisRoomId}`).data('owner-name')
       
       $('#invitation_content')[0].value = thisRoomName
+      $('#invitation_room_id')[0].value = thisRoomNum
       $('#invitation_owner_name')[0].value = thisOwner
       $('input#sand_news')[0].click();
     })
