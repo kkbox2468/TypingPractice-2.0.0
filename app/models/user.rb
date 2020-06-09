@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  include RailsAdminCharts
+
   devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :validatable
 
@@ -8,6 +10,9 @@ class User < ApplicationRecord
 
   # devise :omniauthable, omniauth_providers: %i[facebook]
   devise :omniauthable, omniauth_providers: [:facebook,:github, :google_oauth2]
+
+
+  
   
   
   validates_uniqueness_of :nickname
@@ -32,6 +37,8 @@ class User < ApplicationRecord
   has_many :rooms
 
   mount_uploader :photo, AvatarUploader
+
+  
 
           
   def self.from_omniauth(auth)

@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'rails_admin', '~> 2.0', '>= 2.0.2'
+gem 'rails_admin_charts', '~> 0.0.12'
+gem 'coffee-rails', '~> 5.0'
 gem 'cancancan', '~> 3.1'
 gem 'redis', '~> 4.1', '>= 4.1.4'
 gem 'carrierwave', '~> 2.1'
