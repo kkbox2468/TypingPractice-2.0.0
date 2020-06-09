@@ -38,7 +38,28 @@ class User < ApplicationRecord
 
   mount_uploader :photo, AvatarUploader
 
-  
+  def self.graph_data since=1.days.ago
+    [
+      {
+          name: 'Admin Users',
+          pointInterval: point_interval = 1.day * 1000,
+          pointStart: start_point = since.to_i * 1000,
+          data: self.where.not(id:nil).delta_records_since(since)
+      },
+      # {
+      #     name: 'Standard Users',
+      #     pointInterval: point_interval,
+      #     pointStart: start_point,
+      #     data: self.where(type: nil).delta_records_since(since)
+      # },
+      # {
+      #     name: 'Admin Users',
+      #     pointInterval: point_interval,
+      #     pointStart: start_point,
+      #     data: self.where(type: nil).delta_records_since(since)
+      # }
+    ]
+  end
 
           
   def self.from_omniauth(auth)
