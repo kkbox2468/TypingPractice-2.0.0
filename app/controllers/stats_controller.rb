@@ -49,7 +49,7 @@ class StatsController < ApplicationController
     # user_topics = current_user.user_topics.where.not(speed: "NaN")
     # user_topics = user_topics.joins(:topic).where('topics.type = ?', params[:type].camelize) if params[:type].present?
     @user_topics = user_topics.order(id: :desc).limit(10)
-    user_topics = current_user.user_topics.where.not(wrong_letter: nil)
+    # user_topics = current_user.user_topics.where.not(wrong_letter: nil)
   
   end
 
