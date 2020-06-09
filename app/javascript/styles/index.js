@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 //公共區
 import './_navbar.scss'
 import './application.scss'
+import './landing-page.scss'
 
 //User 
 import './welcome.css'

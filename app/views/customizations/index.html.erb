@@ -8,12 +8,12 @@
 <!-- Customization 隱藏欄位 -->
 <div class="card d-none">
   <div class="card-body">
-    <%= form_for @topic do |f|%>
+    <%= form_for @topic do |f| %>
       <div class="form-row">
         <div class="form-group mr-2">
           <%= f.label :content %>
           <%= f.text_field :content, class: 'form-control' %>
-          <%= f.hidden_field :type, valus: 'Customization' %>
+          <%= f.hidden_field :type, value: 'Customization' %>
         </div>
         <div class="form-group">
           <%= f.submit class: 'btn btn-primary', id: 'customization_submit' %>
@@ -23,39 +23,43 @@
   </div>   
 </div>
 
-<% n = 51 %>
+
 <div class="lesson-select">
   <% start = 1 %>
   <div class= "card">
-    <% @user_topics.each do |topic| %>
-      <% if topic.topic %>
-        <div class="col-lg-4 col-md-6 col-sm-12">
-          <div class="card-body" style="display: flex;flex-flow: column;justify-content: space-around">
-            <% if current_user %>
+    <% if @user_topics %>
+      <% @user_topics.each do |topic| %>
+        
+        
+        
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card-body" style="display: flex;flex-flow: column;justify-content: space-around">
+              
 
-              <!-- <div class="accracy d-none"><%#= current_user.user_topics.where(topic_id: topic.topic_id).order('accuracy').first.accuracy %></div> -->
-              <div class="accracy d-none"><%= @all_progress[n] %></div>
+                <div class="accracy d-none"> <%= @all_progress[topic.id] %></div>
 
-              <% if @done_customization.include?(topic.topic_id) %>
-                <div class="check-done">
-                  <img src="/icon/check-circle.svg" alt="">
-                </div>
-              <% end %>
-            <% end %>
-            <h5 class="card-title" id="lessonTitle">Lesson<%= "#{start}" %></h5>
-            <p class="card-text ellipsis"><%= topic.topic.content %></p>
-            <div class="link-group d-flex">
-              <%= link_to "Start", send("customization_path", id: topic.topic.id), class: 'btn', id: "play-start" %>
-              <%= link_to "Edit", edit_customization_path(topic.topic.id), class: 'btn' %>
-              <%= link_to "Delete", customization_path(topic.topic.id), class: 'btn', id: "delete-custom-btn", method: "DELETE" %>
-            </div>
-            <div class="stars d-flex" id=lessonBar<%= start %>>
-            </div> 
-          </div>        
-        </div>
+                
 
-        <% start += 1 %>
-        <% n += 1 %>
+                <% if @done_customization.include?(topic.id) %>
+                  <div class="check-done">
+                    <img src="/icon/check-circle.svg" alt="">
+                  </div>
+                <% end %>
+              
+              <h5 class="card-title" id="lessonTitle">Lesson<%= "#{start}" %></h5>
+              <p class="card-text ellipsis"><%= topic.content %></p>
+              <div class="link-group d-flex">
+                <%= link_to "Start", send("customization_path", id: topic.id), class: 'btn', id: "play-start" %>
+                <%= link_to(image_tag('/icon/edit-custom.svg'),  edit_customization_path(topic.id))%>
+                <%= link_to(image_tag('/icon/trash-2.svg'),  customization_path(topic.id), class:'trash',id: "delete-custom-btn", method: "DELETE") %>
+              </div>
+              <div class="stars d-flex" id=lessonBar<%= start %>>
+              </div> 
+            </div>        
+          </div>
+
+          <% start += 1 %>
+          
       <% end %>
     <% end %>
   </div>
