@@ -1,13 +1,12 @@
 <div>
   <%= form_for @topic do |f|%>
-  <%# <%= f.label :content %> 
-  <h1>Edit Your Own Lesson</h1>
-  <%= f.text_area :content, class: "form-control" %>
-  
-  <%= f.submit class:"btn diy-update-bt"%>
-  <div class="actions d-flex justify-content-center">
-        <%= link_to "Back", customizations_path , class: 'btn btn-primary back_bt'%>
-  </div>
-  
+    <h1>Edit Your Own Lesson</h1>
+
+    <div class="actions d-flex justify-content-end">
+      <%= f.submit class:"diy-update-bt"%>
+      <%= link_to "Back", customizations_path , class: 'back_bt'%>
+    </div>
+
+    <%= f.text_area :content, class: "form-control" %>
   <% end %>
 </div>
