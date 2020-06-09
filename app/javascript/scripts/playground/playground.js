@@ -69,7 +69,7 @@ $(function(){
       // 速度
       //存到資料庫不能是瞬時速度
       // let resultWpm = document.querySelector('#wpm').innerText
-              
+
       let catchResultWpm = document.querySelector('#speed')
       catchResultWpm.value =  parseFloat((resultType/5)/(resultTime/60)).toFixed(1)
       
