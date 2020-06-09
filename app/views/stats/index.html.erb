@@ -2,8 +2,15 @@
 
 <div class="row user-profile">
   <div class="user-pic col-3">
-    <img class="img-circle" src="<%= current_user.photo_url(:small) %>" />
+    <% if current_user.photo_url  %>
+      <img class="img-circle" src="<%= current_user.photo_url(:small) %>" />
+    <% else  %>
+      <img class="img-circle" src="public/img/AvatarDefault.jpg"  width="200px" height="200px"/>
+    <% end  %>
   </div>
+
+  
+  <%# byebug  %>
   <div class="user-info col-6">
     <div class="user-info-nickname">
       <%= current_user.nickname %>
