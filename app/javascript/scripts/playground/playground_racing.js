@@ -253,7 +253,7 @@ $(function(){
         $('.combo-count').css('animation-name', '')
         $('#combo-count').empty();
       }
-      else if (correctLength > 5){
+      else if (correctLength >= 5){
         $('.combo-count').css('animation-name', '')
         $('#combo-count').empty();
         $('#combo-count').append(`
@@ -262,14 +262,6 @@ $(function(){
         setTimeout(() => {
           $('.combo-count').css('animation-name', 'combo')
         }, 0)
-      }
-      else if (correctLength = 5){
-        $('.combo-count').css('animation-name', '')
-        $('#combo-count').empty();
-        $('#combo-count').append(`
-          ${correctLength}COMBO!
-        `)
-        $('.combo-count').css('animation-name', 'combo')
       }
     }
 
