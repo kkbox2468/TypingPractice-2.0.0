@@ -1,6 +1,8 @@
 <h1>MAKE YOUR OWN LESSON</h1>
-<div class="lesson-create">
-  <button class="btn mb-3 mx-auto" id="customization-btn">CREATE</button> 
+<div class="lesson-select">
+  <div class="card">
+      <button class="btn mb-3 mx-auto" id="customization-btn">CREATE</button> 
+  </div>
 </div>
 
 <!-- Customization 隱藏欄位 -->
@@ -55,54 +57,11 @@
               </div> 
             </div>        
           </div>
-          <div class="form-group">
-            <%= f.submit class: 'btn btn-primary', id: 'customization_submit' %>
-          </div>
-        </div>
+
+          <% start += 1 %>
+          
       <% end %>
-    </div>   
-  </div>
-  
-  
-  <div class="lesson-select">
-    <% start = 1 %>
-    <div class= "card">
-      <% if @user_topics %>
-        <% @user_topics.each do |topic| %>
-          
-          
-          
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card-body" style="display: flex;flex-flow: column;justify-content: space-around">
-                
-  
-                  <div class="accracy d-none"> <%= @all_progress[topic.id] %></div>
-  
-                  
-  
-                  <% if @done_customization.include?(topic.id) %>
-                    <div class="check-done">
-                      <img src="/icon/check-circle.svg" alt="">
-                    </div>
-                  <% end %>
-                
-                <h5 class="card-title" id="lessonTitle">Lesson<%= "#{start}" %></h5>
-                <p class="card-text ellipsis"><%= topic.content %></p>
-                <div class="link-group d-flex">
-                  <%= link_to "Start", send("customization_path", id: topic.id), class: 'btn', id: "play-start" %>
-                  <%= link_to(image_tag('/icon/edit-custom.svg'),  edit_customization_path(topic.id))%>
-                  <%= link_to(image_tag('/icon/trash-2.svg'),  customization_path(topic.id), class:'trash',id: "delete-custom-btn", method: "DELETE") %>
-                </div>
-                <div class="stars d-flex" id=lessonBar<%= start %>>
-                </div> 
-              </div>        
-            </div>
-  
-            <% start += 1 %>
-            
-        <% end %>
-      <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
 
@@ -110,6 +69,7 @@
   let customizationBtn = document.querySelector('#customization-btn')
   let deleteCustomBtn = document.querySelectorAll('#delete-custom-btn')
   let customizationContent = document.querySelector('#customization_content')
+  // let roomDescription = document.querySelector('#room_description')
   let createBtn = document.querySelector('#customization_submit')
   
   customizationBtn.addEventListener('click', () => {
@@ -137,56 +97,56 @@
         }
       }
     })
-  
-      if (formValues) {
-  
-        let timerInterval
-        Swal.fire({
-          title: 'Topic has created!',
-          timer: 2000,
-          timerProgressBar: false,
-          onClose: () => {
-            clearInterval(timerInterval)
+
+    if (formValues) {
+
+      let timerInterval
+      Swal.fire({
+        title: 'Topic has created!',
+        timer: 2000,
+        timerProgressBar: false,
+        onClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then(() => {
+        customizationContent.value = formValues[0]
+        createBtn.click()
+      })
+    }
+  }
+  /* delete room 彈出視窗 */
+  let stepStatus = false
+  deleteCustomBtn.forEach((deleteBtn) => {
+    deleteBtn.addEventListener('click', (btn) => {
+      if (stepStatus === false) {
+        btn.preventDefault();
+        btn.stopPropagation();
+          Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.value) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Your room has deleted!',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            stepStatus = true;
+            setTimeout(() => {
+              deleteBtn.click();
+            }, 1000);
           }
-        }).then(() => {
-          customizationContent.value = formValues[0]
-          createBtn.click()
         })
       }
-    }
-    /* delete room 彈出視窗 */
-    let stepStatus = false
-    deleteCustomBtn.forEach((deleteBtn) => {
-      deleteBtn.addEventListener('click', (btn) => {
-        if (stepStatus === false) {
-          btn.preventDefault();
-          btn.stopPropagation();
-            Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-          }).then((result) => {
-            if (result.value) {
-              Swal.fire({
-                icon: 'success',
-                title: 'Your room has deleted!',
-                showConfirmButton: false,
-                timer: 1500
-              })
-              stepStatus = true;
-              setTimeout(() => {
-                deleteBtn.click();
-              }, 1000);
-            }
-          })
-        }
-        if (stepStatus === true) {
-          stepStatus = false
-        }
-      })
+      if (stepStatus === true) {
+        stepStatus = false
+      }
     })
-  </script>
+  })
+</script>
