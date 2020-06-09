@@ -1,10 +1,4 @@
-  
-  
-  <!-- admin權限登入要放出來？ -->
-  <!-- <%= link_to 'admin登出（是否要藏起來）' ,destroy_admin_session_path , method: :delete %> -->
-  <!--  <%= link_to 'admin登入（是否要藏起來）' ,new_admin_session_path , method: 'get'%>  -->
-  <!-- admin權限登入要放出來？ -->
-  
+
   <div class="container"  id="welcomeContainer" col-12 >
     <div class="row" id="welcomeRow">
       <div class="logo_icon">
@@ -14,19 +8,21 @@
         </a>
         
       </div>
-      <div class="type_here">
-        <h1>Try to type 
-          <span class="txt-type" 
-                data-wait="3000" 
-                data-words='["faster !", "better !", "more !"]'>
-          </span>
-        </h1>
+      <div id="typed-strings" class=type_here>
+        <h1> Try to type 
+        <span id="typed" class =txt-type></span>
       </div>
-          <%= link_to  "GO!", playground_index_path, class: 'btn btn-primary' %>
+      </h1>
+        <%= link_to  "GO!", playground_index_path, class: 'btn btn-primary' %>
     </div>
   </div>
 
-  <%# <canvas id="welcomeBg"></canvas> %>
+  
+<script>
+   
+  </script>
+
+
 
 <div class="landing-page mt-5 ">
   <div class="row trouble mt-5">
