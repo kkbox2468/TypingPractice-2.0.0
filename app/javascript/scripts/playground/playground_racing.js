@@ -114,6 +114,27 @@ $(function(){
           $('#racingQuoteTopic').css('margin-top',`-${gapAmount2}px`)
         }
       } 
+
+      let hostPoint = Number($('#hostCorrect')[0].innerText)
+      let guestPoint = Number($('#guestCorrect')[0].innerText)
+  
+      let hostWidth = Math.floor((hostPoint/(hostPoint+guestPoint))*100)
+      let guestWidth = Math.floor((guestPoint/(hostPoint+guestPoint))*100)
+
+      console.log(hostWidth)
+      console.log(guestWidth)
+
+      if(hostWidth > 70 ){
+        hostWidth = 70
+        guestWidth = 30
+      }
+      if(guestWidth > 70 ){
+        hostWidth = 30
+        guestWidth = 70
+      }
+
+      $('.host').attr('style', `width:${hostWidth}%`)
+      $('.guest').attr('style', `width:${guestWidth}%`)
     })
 
     /* When two players are ready then start the game. */
@@ -143,7 +164,7 @@ $(function(){
           }
         }, 1000);
 
-        let countDown = 12000
+        let countDown = 60
         setTimeout(() => {
           let downCounter = setInterval(() => {
             countDown -= 1
@@ -203,23 +224,12 @@ $(function(){
     }
     
     function endGame() {
-      let winMove 
-      let winBall =  document.querySelector('#myPoint')
       let hostCorrectNumber = Number(hostCorrectAmount.innerText)
       let guestCorrectNumber = Number(guestCorrectAmount.innerText)
       let userLeft = document.querySelector('#userLeft').innerText
       let userRight = document.querySelector('#userRight').innerText
       let winner 
-      // let winBall = document.querySelector('.my-point')
-      // let raceBar = (winBall.marginLeft)
       
-      // if (hostCorrectNumber > guestCorrectNumber){
-      //   $('.my-point').css('left') - 10
-      //   } else {
-      //   $('.my-point').css('left') + 10
-      //   }
-      
-
       if (hostCorrectNumber > guestCorrectNumber) {
         winner = userLeft
         console.log(userLeft);
@@ -234,5 +244,46 @@ $(function(){
         window.location.replace('/playground/racing')
       })
     }
+
+      
+    function showCombo() {
+      let correctLength = $('.selected').prevUntil($('.incorrect')).length
+
+      if (correctLength < 5){
+        $('.combo-count').css('animation-name', '')
+        $('#combo-count').empty();
+      }
+      else if (correctLength >= 5){
+        $('.combo-count').css('animation-name', '')
+        $('#combo-count').empty();
+        $('#combo-count').append(`
+          ${correctLength}COMBO!
+        `)
+        setTimeout(() => {
+          $('.combo-count').css('animation-name', 'combo')
+        }, 0)
+      }
+    }
+
+    function competition(){
+      let ball =  $('#myPoint')
+      let hostPoint = Number($('#hostCorrect')[0].innerText)
+      let guestPoint = Number($('#guestCorrect')[0].innerText)
+      let ballSet = -(hostPoint - guestPoint)/5
+
+      if (ballSet) {
+        ball.css('margin-left', `${ballSet}rem`)
+      }
+
+    }
+
+    window.addEventListener('keyup', function(){
+      showCombo();
+    })
+
+    setInterval(function(){
+      competition();
+    },1000)
   }
 })
+

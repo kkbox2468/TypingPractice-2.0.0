@@ -39,7 +39,7 @@
             flex-direction: column;
             background: #eec44c;
             box-shadow: 2px 2px 4px #caa741, -2px -2px 4px #ffe157;
-            border-radius: 1rem;
+            border-radius: .3rem;
             padding: .5rem;
             a{
               display: flex;
@@ -47,9 +47,9 @@
               width: max-content;
               padding: .5rem;
               margin: .3rem .2rem;
-              box-shadow: 1px 1px 1px #caa741, -1px -1px 1px #ffe157;    
               text-decoration: none;
-              border-radius: 5rem;
+              border-bottom: .08rem solid #caa741;
+              color: #323232;
               img{
                 margin-right: .2rem;
                 height: 20px;
@@ -61,7 +61,8 @@
               }
             }
             a:hover{
-              transform: scale(.95);            
+              transform: scale(.95);    
+              color: #f8f9fa;            
             }
           }
         }
@@ -94,6 +95,7 @@
                     inset -2px -2px 4px #ffe157;      
         border: hidden;
         display: none; 
+        position: absolute;
         
         .dropdown-item{
           margin-bottom: 3px;
