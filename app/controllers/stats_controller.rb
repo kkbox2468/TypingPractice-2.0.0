@@ -31,6 +31,8 @@ class StatsController < ApplicationController
     else
       redirect_to typing_index_path, notice: 'Not a member?Join us to record achievements!'
     end
+
+    
     
     
   end
@@ -44,7 +46,8 @@ class StatsController < ApplicationController
   
   def find_type_history 
     user_topics = current_user.user_topics.where.not(accuracy: nil)
-    user_topics = user_topics.joins(:topic).where('topics.type = ?', params[:type].camelize) if params[:type].present?
+    # user_topics = current_user.user_topics.where.not(speed: "NaN")
+    # user_topics = user_topics.joins(:topic).where('topics.type = ?', params[:type].camelize) if params[:type].present?
     @user_topics = user_topics.order(id: :desc).limit(10)
     user_topics = current_user.user_topics.where.not(wrong_letter: nil)
   
