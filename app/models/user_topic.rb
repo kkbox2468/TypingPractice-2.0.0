@@ -24,10 +24,14 @@ class UserTopic < ApplicationRecord
   def self.graph_data(since = 30.days.ago)
     UserTopic.group(:accuracy).count.to_a
     # Output
-    # [["Bagmati", 3], ["Gandaki", 3], ["Janakpur", 5]]
+    [["Bagmati", 3], ["Gandaki", 3], ["Janakpur", 5]]
   end
 
   def self.chart_type
     'pie'
   end
 end
+
+# UserTopic.where("(accuracy >= 0 AND accuracy <= 19.9) OR (accuracy >= 20.0 AND accuracy <= 39.9) OR (accuracy >= 40.0 AND accuracy <= 59.9) OR (accuracy >= 60.0 AND accuracy <= 79.9) OR (accuracy >= 80.0 AND accuracy <= 09.9) OR (accuracy = 100.0)").group(:accuracy).count
+
+# UserTopic.group("user_id").maximum(:accuracy)
