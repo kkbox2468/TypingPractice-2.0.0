@@ -12,6 +12,7 @@ require("scripts")
 require("chart.js")
 
 
+
 //chart.js
 import Chart from 'chart.js';
 

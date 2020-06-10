@@ -4,7 +4,7 @@ $breakpoint-md: 768px;
 .landing-page {
   .trouble {
     width: 100%;
-    background-color: #ddd;
+    background-color: #eee;
     margin-left: 0px;
     // padding: 50px;
     .tb-tx {
@@ -26,7 +26,29 @@ $breakpoint-md: 768px;
     margin-left: 0px;
     .solution-tx {
       padding: 10px 50px;
+      p {
+        text-align: justify;
+      }
+      .yellow-btn {
+        border: none;
+        background-color: #eec44c;
+        border-radius: 20px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3),
+                    -3px -3px 5px rgba(255, 222, 116, 1);
+        &:hover {
+          box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3),
+                      inset -2px -2px 4px rgba(255, 222, 116, 1);
+        }
+        &:active {
+          background-color: #000;
+          color: #eec44c;
+          border: none;
+          box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3),
+                      inset -2px -2px 4px rgba(255, 222, 116, 1);
+        }
+      }
     } 
+
     .solution-img {
       padding: 10px 50px;
       // order: 1;
@@ -44,24 +66,64 @@ $breakpoint-md: 768px;
       width: 100%;
     }
     .feature-cd {
+      background-color: #eec44c;
       overflow: hidden;
       border: none;
-      background-color: #eee;
+      height: 100%;
       border-radius: 10px;
       box-shadow: 4px 4px 7px rgba(0,0,0,.3),
-                  -5px -5px 7px rgba(255,255,255,1);
+                  -3px -3px 5px rgba(255,255,255, 0.8);
+      img {
+        width: 60%;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      .card-body {
+        background-color: #eee;
+        padding-top: 10px;
+        h4 {
+
+        }
+      }
     }
   }
   .feedback {
-    .feedback-tmp-pic {
+    .feedback-pic {
+      .carousel-item {
+        padding: 20px;
+        .fd-item {
+          padding: 20px;
+          background-color: #eec44c;
+          border-radius: 20px;
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3),
+                      -3px -3px 5px rgba(255, 222, 116, 1);
+          .col-4 {
+            .fd-avatar {
+              background-color: #fff;
+              width: 120px;
+              height: 120px;
+              border-radius: 50%;
+              overflow: hidden;
+            }
+          }
+          .col-8 {
+            border-radius: 10px;
+            background-color: #fff;
+            padding: 10px;
+            text-align: justify;
+          }
+        }
+      }
       img {
-        width: 100%;
+        // width: 100%;
       }
     }
   }
   .call-to-action {
     width: 100%;
-    background-color: #ddd;
+    background-color: #eee;
     margin-left: 0px;
     .cta-tx {
       padding: 10px 50px;
@@ -71,6 +133,25 @@ $breakpoint-md: 768px;
         width: 100%;
       }
     }
+  }
+}
+
+// 共用區
+.gray-btn {
+  border: none;
+  background-color: #eee;
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px rgba(0,0,0, .3),
+              -3px -3px 5px rgba(255,255,255, 1);
+  &:hover {
+    box-shadow: inset 2px 2px 4px rgba(0,0,0, .1),
+                inset -2px -2px 4px rgba(255,255,255, .8);
+  }
+  &:active {
+    background-color: #eec44c;
+    
+    box-shadow: inset 2px 2px 4px rgba(0,0,0, .3),
+                inset -2px -2px 4px rgba(255, 229, 156, 0.8);
   }
 }
 

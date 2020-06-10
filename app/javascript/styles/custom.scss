@@ -1,13 +1,36 @@
 #customizations-edit{
-  .diy-update-bt{
-    margin-top: 1rem;
-    margin-left: 0;
-    width: 4rem;
-    border-radius: 1rem;
-    border: none;
-    background-color:  #eec44c;
-    box-shadow: 2px 2px 3px #cfcfcf, 
-                -2px -2px 3px #ffffff;
-    color: #323232;
+  .actions{
+    padding: 1rem;
+
+    .diy-update-bt{
+      width: 4rem;
+      border-radius: 1rem;
+      border: none;
+      // background-color:  #eec44c;
+      // box-shadow: 2px 2px 3px #cfcfcf, 
+      //             -2px -2px 3px #ffffff;
+      color: #323232;
+    }
+    .diy-update-bt:hover{
+      color: #eec44c;
+    }
+    a{
+      color: #323232;
+      margin-left: 1rem;
+    }
+    a:hover{
+      text-decoration: none;
+      color: #eec44c;
+
+    }
+    a:focus{
+      border: none;
+    }
+  }
+}
+
+#customizations-index{
+  .lesson-create{
+    padding-left: 2rem;
   }
 }

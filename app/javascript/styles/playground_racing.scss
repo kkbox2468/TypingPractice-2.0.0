@@ -6,8 +6,50 @@
   z-index: 1;
   color: red;
 }
-.row {
-  .col-6 {
+.game-zone {
+  display: flex;
+  .host,
+  .guest {
+    padding: 1rem;
+    width: 50%;
+    .player-info{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      .name-and-socre{
+        display: flex;
+        width: 50%;
+        p{
+          width: 50%;
+        }
+      }
+      .combo-count{
+        display: flex;
+        width: 50%;
+        .combo-count{
+          animation-duration: .5s;
+          #combo-count{
+            color: red;
+            font-size: 2rem;
+          }
+        }
+        @keyframes combo{
+          0%{
+            transform: rotateY(0deg);          
+          }
+          40%{
+            transform: rotateY(45deg);          
+          }
+          80%{
+            transform: rotateY(-20deg);          
+          }
+          100%{
+            transform: rotateY(0deg);          
+          }
+        }
+      }
+    }
     .racing-ground.focused {
       box-shadow: 8px 8px 20px rgba(252, 215, 50, 0.801), 
                   -8px -8px 20px rgba(247, 210, 44, 0.808);
@@ -169,6 +211,19 @@
         }
         .link-group{
           justify-content: space-between;
+          .trash img{
+            display: flex;
+            position: absolute;
+            top: 1.2rem;
+            right: 3rem;
+          }
+          .edit-racing{
+            display: flex;
+            position: absolute;
+            top: 1.2rem;
+            right: 4.8rem;
+          }
+          
         }
         @media (max-width: 767px) {
           .link-group{
@@ -182,5 +237,10 @@
         }
       }
     }
+  }
+}
+#rooms-show{
+  h3{
+    text-shadow: none;
   }
 }
