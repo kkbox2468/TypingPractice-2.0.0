@@ -229,6 +229,20 @@
           }
           
         }
+        
+        @media(min-width: 992px){
+
+          .request-title p{ 
+            max-width: 10rem;
+            max-height: 1.4rem;
+          }
+        }
+        @media(min-width: 1200px){
+          .request-title p{ 
+            max-width: 11rem;
+            max-height: 1.4rem;
+          }
+        }
         @media (min-width: 768px) {
           
         }
