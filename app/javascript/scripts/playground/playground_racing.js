@@ -254,6 +254,7 @@ $(function(){
       }
     }
 
+    /* Show user combo count if user key in correct 5 times. */
     window.addEventListener('keyup', function(){
       showCombo();
     })

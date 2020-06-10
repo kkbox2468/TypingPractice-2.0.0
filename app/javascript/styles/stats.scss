@@ -13,11 +13,13 @@
               -4px -4px 5px #ffffff;
 
   .user-pic{
-    max-width: 100%;
     img{
-      border-radius: 10rem;
-      box-shadow:   .2rem .3em .3rem #cfcfcf, 
-                    -.2rem -.3rem .3rem #ffffff;
+      width: 22vh;
+      height: 22vh;
+      border-radius: 50%;
+      object-fit: cover;
+      max-width: 200px;
+      max-height: 200px;
     }
   }
   .user-info{

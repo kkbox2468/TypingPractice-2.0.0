@@ -6,6 +6,11 @@
     <div class="my-point" id="myPoint"></div>
     <div class="enemy-point" id="enemyPoint"></div>
   </div>
+  <div class="users-photo ball-center">
+    <div class="racing-center">
+      <img src="/icon/triangle.svg" class="back-to-racing" alt="..." >
+    </div>
+  </div>
 
   <div class="game-zone">
     <div class="host">
@@ -68,6 +73,9 @@
 
   <div class="check-group justify-content-center">
     <div class="mt-5 check-roomname">
+      <a href="/playground/racing">
+        <img src="/icon/exit-1.svg" class="back-to-racing" alt="..." >
+      </a>
       <h3><%= @room.name %></h3>
     </div>
     <div class="check-roomname" id="waitNotice">
@@ -76,6 +84,8 @@
     <div id="readyHandler" class="ready-handler disappear">
       <div class="row">
         <div class="col-5 check-area host mx-auto">
+          <img class="room-owner-pic" src="<%= current_user.photo_url(:small) %>"/>
+
           <%= form_for :check, url: "/messages/new", method: 'GET',remote: true do |f| %>
           <div class="ready-title mb-3 text-center">
             <%= current_user.nickname %>
@@ -83,20 +93,22 @@
           <div class="ready-title mb-3 text-center">
             Are you ready?
           </div>
-            <%= f.label "No", for: 'check_content', class: 'ready-btn-host d-block text-center mt-5' %>
+            <%= f.label "Yes", for: 'check_content', class: 'ready-btn-host d-block text-center mt-5' %>
           <div>
             <%= f.check_box :content, class: 'd-none' %>
           </div>
           <div>
             <%= f.hidden_field :room_id, value: @room.id %>
+            <%= f.hidden_field :user_photo, value: current_user.photo %>
             <%= f.submit name: 'check-left', class: 'd-none' %>
           </div>
           <% end %>
         </div>
     
         <div class="col-5 check-area guest mx-auto">
+          <div id="guest-name"></div>
           <form>
-            <div class="ready-title mb-3">Wait for competitor...</div>
+            <div class="ready-title ready-title-guest mb-3">Wait for competitor...</div>
             <div class="ready-btn-guest text-center" id="readyBtnGuest">Not ready</div>
             <input type="checkbox" id="guest-check" class="d-none">
           </form>
@@ -128,6 +140,7 @@
         members = resp.members
         return members
       })
+
       if (members >= 2) {
         clearInterval(membersCounter)
         console.log('ready');

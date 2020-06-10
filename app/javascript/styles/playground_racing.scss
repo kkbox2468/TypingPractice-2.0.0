@@ -6,6 +6,12 @@
   z-index: 1;
   color: red;
 }
+.ball-center{
+  .racing-center{
+    display: flex;
+    justify-content: space-around;
+  }
+}
 .game-zone {
   display: flex;
   .host,
@@ -129,6 +135,18 @@
   align-items: center;
   overflow: hidden;
   .check-roomname {
+    position: relative;
+    img{
+      width: 30px;
+      margin: .5rem;
+    }
+    .back-to-racing{
+      display: flex;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+    }
     h3 {
       font-size: 35px;
       color: #fff;
@@ -144,7 +162,18 @@
   .check-area{
     color: #fff;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    img{
+      width: 22vh;
+      height: 22vh;
+      border-radius: 50%;
+      object-fit: cover;
+      max-width: 200px;
+      max-height: 200px;
+      margin: 2rem;
+    }
     .ready-title {
       font-size: 30px;
     }
@@ -187,6 +216,11 @@
       color: greenyellow;
       box-shadow: 0px 0px 10px greenyellow;
     }
+    #guest-name{
+      font-size: 30px;
+      padding-bottom: 50px;
+      text-align: center;
+    }
   }
   .ready-handler {
     opacity: 1;
@@ -211,6 +245,13 @@
         display: flex;
         justify-content: flex-start;
         flex-direction: row;
+        .room-owner-pic{
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+          
+        }
         .card-body{
           margin: 1rem 0rem;
           .request-title p{
@@ -271,3 +312,5 @@
     text-shadow: none;
   }
 }
+
+
