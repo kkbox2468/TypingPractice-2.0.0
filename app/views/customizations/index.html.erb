@@ -35,20 +35,17 @@
               
 
                 <div class="accracy d-none"> <%= @all_progress[topic.id] %></div>
-
-                
-
-                <% if @done_customization.include?(topic.id) %>
+                  <% if @done_customization.include?(topic.id) %>
                   <div class="check-done">
                     <img src="/icon/check-circle.svg" alt="">
                   </div>
-                <% end %>
+                  <% end %>
               
               <h5 class="card-title" id="lessonTitle">Lesson<%= "#{start}" %></h5>
               <p class="card-text ellipsis"><%= topic.content %></p>
               <div class="link-group d-flex">
                 <%= link_to "Start", send("customization_path", id: topic.id), class: 'btn', id: "play-start" %>
-                <%= link_to(image_tag('/icon/edit-custom.svg'),  edit_customization_path(topic.id))%>
+                <%= link_to(image_tag('/icon/edit-custom.svg'),  edit_customization_path(topic.id), class:'edit-custom')%>
                 <%= link_to(image_tag('/icon/trash-2.svg'),  customization_path(topic.id), class:'trash',id: "delete-custom-btn", method: "DELETE") %>
               </div>
               <div class="stars d-flex" id=lessonBar<%= start %>>

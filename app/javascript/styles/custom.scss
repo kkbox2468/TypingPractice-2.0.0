@@ -29,8 +29,45 @@
   }
 }
 
+
+
 #customizations-index{
-  .lesson-create{
-    padding-left: 2rem;
-  }
+    .lesson-select{
+      padding-left: 2rem;
+      .row{
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        
+        .card-body{
+          margin: 1rem 0rem;
+        }
+        .link-group{
+          justify-content: space-between;
+          .trash img{
+            display: flex;
+            position: absolute;
+            top: 1.2rem;
+            right: 3rem;
+          }
+          .edit-custom{
+            display: flex;
+            position: absolute;
+            top: 1.2rem;
+            right: 4.8rem;
+          }
+          
+        }
+        @media (max-width: 767px) {
+          .link-group{
+        
+          }
+        }
+        .post-news{
+          font-size: .8rem;
+          // text-align: center;
+          // padding:auto;
+        }
+      }
+    }
 }
