@@ -27,6 +27,15 @@ $(function(){
     let guestCheck = document.querySelector('#guest-check')
     /* select for records */
     let guestCorrect = document.querySelector('#guestCorrect')
+    /* sweet alert for leave battle */
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+    let userLeaving = false
 
     consumer.subscriptions.create({ channel: "RoomChannel", room_id: roomId }, {
       connected() {
@@ -63,6 +72,7 @@ $(function(){
 
         /* render messages to other player's screen */
         if (data.message) {
+          userLeaving = true
           if (userId !== data.message.user_id) {
             quoteInputRight.innerText = data.content
             let arrayQuote = quoteDisplayRight.querySelectorAll('span');
@@ -90,6 +100,25 @@ $(function(){
             } 
           }
         }
+        if (userLeaving !== true && data.leave) {
+          swalWithBootstrapButtons.fire({
+            title: '對手離開聊天室',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: '繼續等待',
+            cancelButtonText: '離開對戰',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.value) {
+              location.reload();
+            } else if (
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              history.go(-1)
+            }
+          })
+        } 
       }
     });
   }

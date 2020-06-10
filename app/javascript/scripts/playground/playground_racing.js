@@ -121,9 +121,6 @@ $(function(){
       let hostWidth = Math.floor((hostPoint/(hostPoint+guestPoint))*100)
       let guestWidth = Math.floor((guestPoint/(hostPoint+guestPoint))*100)
 
-      console.log(hostWidth)
-      console.log(guestWidth)
-
       if(hostWidth > 70 ){
         hostWidth = 70
         guestWidth = 30
@@ -232,10 +229,8 @@ $(function(){
       
       if (hostCorrectNumber > guestCorrectNumber) {
         winner = userLeft
-        console.log(userLeft);
       } else {
         winner = userRight
-        console.log(userRight);
       }
       Swal.fire({
         title: '遊戲結束！',
