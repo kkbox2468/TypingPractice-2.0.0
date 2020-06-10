@@ -45,7 +45,7 @@ class User < ApplicationRecord
           pointInterval: point_interval = 1.day * 1000,
           pointStart: start_point = since.to_i * 1000,
           data: self.where.not(id:nil).delta_records_since(since)
-      },
+      }#,
       # {
       #     name: 'Standard Users',
       #     pointInterval: point_interval,
