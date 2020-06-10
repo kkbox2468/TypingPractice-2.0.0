@@ -1,62 +1,63 @@
 <h1>MAKE YOUR OWN LESSON</h1>
-<div class="lesson-create">
-      <button class="btn mb-3 mx-auto" id="customization-btn">CREATE</button> 
-</div>
-
-<!-- Customization 隱藏欄位 -->
-<div class="card d-none">
-  <div class="card-body">
-    <%= form_for @topic do |f| %>
-      <div class="form-row">
-        <div class="form-group mr-2">
-          <%= f.label :content %>
-          <%= f.text_field :content, class: 'form-control' %>
-          <%= f.hidden_field :type, value: 'Customization' %>
-        </div>
-        <div class="form-group">
-          <%= f.submit class: 'btn btn-primary', id: 'customization_submit' %>
-        </div>
-      </div>
-    <% end %>
-  </div>   
-</div>
-
-
-<div class="lesson-select">
-  <% start = 1 %>
-  <div class= "card">
-    <% if @user_topics %>
-      <% @user_topics.each do |topic| %>
-        
-        
-        
-          <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card-body" style="display: flex;flex-flow: column;justify-content: space-around">
-              
-
-                <div class="accracy d-none"> <%= @all_progress[topic.id] %></div>
-                  <% if @done_customization.include?(topic.id) %>
-                  <div class="check-done">
-                    <img src="/icon/check-circle.svg" alt="">
-                  </div>
-                  <% end %>
-              
-              <h5 class="card-title" id="lessonTitle">Lesson<%= "#{start}" %></h5>
-              <p class="card-text ellipsis"><%= topic.content %></p>
-              <div class="link-group d-flex">
-                <%= link_to "Start", send("customization_path", id: topic.id), class: 'btn', id: "play-start" %>
-                <%= link_to(image_tag('/icon/edit-custom.svg'),  edit_customization_path(topic.id), class:'edit-custom')%>
-                <%= link_to(image_tag('/icon/trash-2.svg'),  customization_path(topic.id), class:'trash',id: "delete-custom-btn", method: "DELETE") %>
-              </div>
-              <div class="stars d-flex" id=lessonBar<%= start %>>
-              </div> 
-            </div>        
+  <div>
+  <button class="btn mb-3 mx-auto" id="customization-btn">CREATE</button> 
+  </div>
+  <!-- Customization 隱藏欄位 -->
+  <div class="card d-none">
+    <div class="card-body">
+      <%= form_for @topic do |f| %>      
+        <div class="form-row">
+          <div class="form-group mr-2">
+            <%= f.label :content %>
+            <%= f.text_field :content, class: 'form-control' %>
+            <%= f.hidden_field :type, value: 'Customization' %>
           </div>
-
-          <% start += 1 %>
-          
+          <div class="form-group">
+            <%= f.submit class: 'btn btn-primary', id: 'customization_submit' %>
+          </div>
+        </div>
       <% end %>
-    <% end %>
+    </div>   
+  </div>
+  
+  
+  <div class="lesson-select">
+    <div class="row">
+    <% start = 1 %>
+    <div class= "card">
+      <% if @user_topics %>
+        <% @user_topics.each do |topic| %>
+          
+          
+            <div class="col-lg-4 col-md-6 col-sm-12">
+          
+              <div class="card-body" style="display: flex;flex-flow: column;justify-content: space-around">
+                
+  
+                  <div class="accracy d-none"> <%= @all_progress[topic.id] %></div>
+                    <% if @done_customization.include?(topic.id) %>
+                    <div class="check-done">
+                      <img src="/icon/check-circle.svg" alt="">
+                    </div>
+                    <% end %>
+                
+                <h5 class="card-title" id="lessonTitle">Lesson<%= "#{start}" %></h5>
+                <p class="card-text ellipsis"><%= topic.content %></p>
+                <div class="link-group d-flex">
+                  <%= link_to "Start", send("customization_path", id: topic.id), class: 'btn', id: "play-start" %>
+                  <%= link_to(image_tag('/icon/edit-custom.svg'),  edit_customization_path(topic.id), class:'edit-custom')%>
+                  <%= link_to(image_tag('/icon/trash-2.svg'),  customization_path(topic.id), class:'trash',id: "delete-custom-btn", method: "DELETE") %>
+                </div>
+                <div class="stars d-flex" id=lessonBar<%= start %>>
+                </div> 
+              </div>        
+            </div>
+  
+            <% start += 1 %>
+            
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 

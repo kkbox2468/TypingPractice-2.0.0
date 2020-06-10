@@ -23,6 +23,7 @@
   .user-info{
     display: flex;
     flex-direction: column;
+    
 
     .user-info-nickname{
       font-size: 2rem;
@@ -64,8 +65,6 @@
   }
   .data-bt{
     margin-right: 1rem;
-    // justify-content: start;
-    
   }
   .stat-bt-group{
     height: 2rem;

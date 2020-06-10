@@ -30,10 +30,10 @@
 <div class="row user-profile">
     <div class="user-info col-4">
       <canvas id="arti_accuracy" 
-              data-accuracy="<%= @arti_accuracy %>%">
+              data-accuracy="<%= @arti_accuracy %>">
       </canvas>
     </div> 
-    <div class="user-info col-4">
+    <div class="user-info avg-wpm col-4">
       <canvas id="arti_wpm" 
               data-wpm="<%= @arti_wpm %>sec">
       </canvas>
@@ -61,16 +61,9 @@
       <div class="data-title">
       <h3><%= current_user.nickname %>的資料分析</h3>
       </div>
-
-      
-
-
-  <%= render 'shared/article_stat'  %>
-
-
-    
-  <% end %>
+  <%= render 'shared/article_stat', user_topic: @user_topic %>
 </div>
+<% end %>
 
 
 

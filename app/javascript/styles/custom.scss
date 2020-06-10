@@ -33,13 +33,14 @@
 
 #customizations-index{
     .lesson-select{
-      padding-left: 2rem;
+      // padding-left: 2rem;
       .row{
         display: flex;
         justify-content: flex-start;
         flex-direction: row;
         
         .card-body{
+          width: 18rem;
           margin: 1rem 0rem;
         }
         .link-group{
@@ -48,13 +49,13 @@
             display: flex;
             position: absolute;
             top: 1.2rem;
-            right: 3rem;
+            right: 1rem;
           }
           .edit-custom{
             display: flex;
             position: absolute;
             top: 1.2rem;
-            right: 4.8rem;
+            right: 3rem;
           }
           
         }

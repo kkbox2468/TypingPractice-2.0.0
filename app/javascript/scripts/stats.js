@@ -3,7 +3,7 @@ $(function(){
     
 //正確率圓餅圖
   let arti_accuracy = document.getElementById('arti_accuracy')
-  let cur_accuracy = parseFloat(arti_accuracy.dataset['accuracy'])
+  let cur_accuracy = parseFloat(arti_accuracy.dataset['accuracy']).toFixed(1)
   let accu_data = [cur_accuracy, 100 - cur_accuracy]
   if(!!arti_accuracy){ //確認有arti_accuracy有這個物件才執行（強制轉型）
     arti_accuracy.getContext('2d');
@@ -45,7 +45,7 @@ $(function(){
     var chart = new Chart(arti_wpm, {
       type: 'horizontalBar',
       data: {
-        labels: ["Average wpm"],
+        labels: ["Average"],
         datasets: [{
             label: 'Speed(wpm)',
             data: wpm_data,
@@ -79,7 +79,7 @@ $(function(){
       data: {
         labels: Object.keys(arti_day),
         datasets: [{
-            label: 'Accuracy%',
+            label: 'Accuracy', 
             data: Object.values(arti_day),
             backgroundColor: [
                 '#75ff92'
@@ -109,7 +109,7 @@ $(function(){
     subDomain: "day",
     cellRadius: 5,
     range: 8,
-    data: "https://www.noobtyping.com/stats.json",
+    data: "http://localhost:3000/stats.json",
     dataType: "json",
     start: new Date(2020, 0),
     considerMissingDataAsZero: true,
