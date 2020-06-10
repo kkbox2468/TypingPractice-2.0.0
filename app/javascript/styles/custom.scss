@@ -59,9 +59,18 @@
           }
           
         }
-        @media (max-width: 767px) {
-          .link-group{
-        
+        @media (min-width: 768px) {
+          .stars img{
+            // margin: 20rem;
+            height: 1.7rem;
+            margin: 0.2rem;
+          }
+        }
+        @media (max-width: 767px){
+          .stars img{
+            // margin: 20rem;
+            height: 1.7rem;
+            margin: 0.2rem;
           }
         }
         .post-news{

@@ -60,7 +60,6 @@
       color: rgb(211, 211, 211);
     }
     .racing-ground {
-      // border: 1px solid red;
       padding: 20px;
       background-color: #eeeeee;
       border-radius: 10px;
@@ -130,7 +129,6 @@
   align-items: center;
   overflow: hidden;
   .check-roomname {
-    // position: relative;
     h3 {
       font-size: 35px;
       color: #fff;
@@ -208,7 +206,13 @@
         flex-direction: row;
         .card-body{
           margin: 1rem 0rem;
+          .request-title p{
+            max-width: 14rem;
+            max-height: 1.4rem;
+            overflow: hidden;
+          }
         }
+        
         .link-group{
           justify-content: space-between;
           .trash img{
@@ -225,10 +229,8 @@
           }
           
         }
-        @media (max-width: 767px) {
-          .link-group{
-        
-          }
+        @media (min-width: 768px) {
+          
         }
         .post-news{
           font-size: .8rem;
