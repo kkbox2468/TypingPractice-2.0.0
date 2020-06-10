@@ -102,7 +102,7 @@ NoobTyping 可以在以下瀏覽器中順利執行：
 - Internet Explorer 11
 
 # Mobile/Tablets
-NoobTyping 專注於提供舒適的打字體驗，因此不支援行動平台。
+NoobTyping 專注於提供舒適的打字練習體驗，暫不支援行動平台。
 
 # 開發者
 高巧蓉
