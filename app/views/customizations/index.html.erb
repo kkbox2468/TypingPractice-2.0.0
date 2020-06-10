@@ -1,8 +1,6 @@
 <h1>MAKE YOUR OWN LESSON</h1>
-<div class="lesson-select">
-  <div class="card">
-      <button class="btn mb-3 mx-auto" id="customization-btn">CREATE</button> 
-  </div>
+<div class="lesson-create">
+  <button class="btn mb-3 mx-auto" id="customization-btn">CREATE</button> 
 </div>
 
 <!-- Customization 隱藏欄位 -->
@@ -50,8 +48,8 @@
               <p class="card-text ellipsis"><%= topic.content %></p>
               <div class="link-group d-flex">
                 <%= link_to "Start", send("customization_path", id: topic.id), class: 'btn', id: "play-start" %>
-                <%= link_to "Edit", edit_customization_path(topic.id), class: 'btn' %>
-                <%= link_to "Delete", customization_path(topic.id), class: 'btn', id: "delete-custom-btn", method: "DELETE" %>
+                <%= link_to(image_tag('/icon/edit-custom.svg'),  edit_customization_path(topic.id))%>
+                <%= link_to(image_tag('/icon/trash-2.svg'),  customization_path(topic.id), class:'trash',id: "delete-custom-btn", method: "DELETE") %>
               </div>
               <div class="stars d-flex" id=lessonBar<%= start %>>
               </div> 

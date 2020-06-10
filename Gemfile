@@ -5,7 +5,6 @@ ruby '2.6.5'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'rails_admin', '~> 2.0', '>= 2.0.2'
 gem 'cancancan', '~> 3.1'
-gem 'redis', '~> 4.1', '>= 4.1.4'
 gem 'carrierwave', '~> 2.1'
 gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 
@@ -45,6 +44,9 @@ gem 'foreman', '~> 0.86.0'
 gem 'chart-js-rails'
 #cal-heatmap
 gem 'cal-heatmap-rails', '~> 3.6'
+
+#type.JS
+gem 'typedjsrails', '~> 0.1.0'
 
 
 gem 'figaro', '~> 1.2'

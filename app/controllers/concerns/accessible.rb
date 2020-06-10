@@ -17,7 +17,7 @@ module Accessible
       # redirect_to(authenticated_user_root_path) and return
       # redirect_to root_path
     else
-      redirect_to new_user_session_path
+      redirect_to new_user_session_path, notice: 'Not a member? Join us !'
       
     end
   end

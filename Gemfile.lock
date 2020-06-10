@@ -249,7 +249,6 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    redis (4.1.4)
     regexp_parser (1.7.0)
     remotipart (1.4.4)
     responders (3.0.0)
@@ -295,6 +294,7 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
+    typedjsrails (0.1.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     unicode-display_width (0.1.1)
@@ -348,13 +348,13 @@ DEPENDENCIES
   puma (~> 4.3)
   rails (~> 6.0.2, >= 6.0.2.2)
   rails_admin (~> 2.0, >= 2.0.2)
-  redis (~> 4.1, >= 4.1.4)
   sass-rails (>= 6)
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
   stimulus_reflex (~> 3.2)
   turbolinks (~> 5)
+  typedjsrails (~> 0.1.0)
   tzinfo-data
   web-console (>= 3.3.0)
   webdrivers

@@ -8,10 +8,17 @@
     <div class="enemy-point" id="enemyPoint"></div>
   </div>
 
-  <div class="row">
-    <div class="col-6">
-      <p class="d-inline-block mr-5">User: <span id="userLeft"><%= current_user.nickname %></span></p>
-      <p  class="d-inline-block  mr-5"><span id="hostCorrect">0</span> points</p>
+  <div class="game-zone">
+    <div class="host">
+      <div class="player-info">
+        <div class="name-and-socre">
+          <p class="d-inline-block">User: <span id="userLeft"><%= current_user.nickname %></span></p>
+          <p  class="d-inline-block "><span id="hostCorrect">0</span> points</p>
+        </div>
+        <div class="combo-count">
+          <p class="d-inline-block combo-count"><span id="combo-count"></span></p>
+        </div>
+      </div>
       <div class="racing-ground w-100" id="racingQuoteDisplay">
         <div class="racing-quote-display">
           <div id="racingQuoteTopic">
@@ -34,9 +41,12 @@
       <% end %>
     </div>
     
-    <div class="col-6">
-      <p class="d-inline-block mr-5">User: <span id="userRight"></span></p>
-      <p class="d-inline-block mr-5"><span id="guestCorrect">0</span> points</p>
+    <div class="guest">
+      <div class="player-info">
+        <p class="d-inline-block">User: <span id="userRight"></span></p>
+        <p class="d-inline-block"><span id="guestCorrect">0</span> points</p>
+        <p class="d-inline-block"><span id="combo-count"></span></p>
+      </div>
       <div class="racing-ground guest w-100" id="racingQuoteDisplay2">
         <div class="racing-quote-display2">
           <div id="racingQuoteTopic2">

@@ -35,15 +35,13 @@
     </div> 
     <div class="user-info col-4">
       <canvas id="arti_wpm" 
-              width="40" height="14" 
               data-wpm="<%= @arti_wpm %>sec">
       </canvas>
     </div>
   
-    <div class="user-info col-4">
+    <div class="arti_accu_line col-4" id='artiAccuLine'>
       <canvas id="arti_accu_line"
-              width="40" height="20" 
-              data-accday="<%= @arti_day.to_json %>"> <!----這邊的變數對js來說是字串 要再轉成Json格式--->
+              data-accday="<%= @arti_day.to_json %>"> 
       </canvas>
     </div>
 </div>
@@ -66,20 +64,8 @@
 
       
 
-  <div class="btn-group stat-bt-group" role="group" aria-label="Button group with nested dropdown">
-      <div class="btn-group" role="group">
-      <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        ALL
-      </button>
-      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-        <a class="dropdown-item" href="playground">ARTICLE</a>
-        <a class="dropdown-item" href="#">RUBY</a>
-        <a class="dropdown-item" href="#">DIY</a>
-      </div>
-    </div>
-  </div>
 
-  <%= render 'shared/article_stat', achievement: @user_topic ,topic: @articles, type: "typing", n:1 %>
+  <%= render 'shared/article_stat'  %>
 
 
     
