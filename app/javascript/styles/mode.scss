@@ -118,16 +118,18 @@
 
 
 #typingModeBar .progress-bar{
-  background: #70e885;
   background: linear-gradient(128deg, rgba(112,232,133,1) 0%, rgba(162,255,188,1) 100%);
 }
 
 #codeModeBar .progress-bar{
-  background: rgb(112,232,133);
+  background: linear-gradient(128deg, rgba(112,232,133,1) 0%, rgba(162,255,188,1) 100%);
+}
+
+#diyModeBar .progress-bar{
   background: linear-gradient(128deg, rgba(112,232,133,1) 0%, rgba(162,255,188,1) 100%);
 }
 
 #battleModeBar .progress-bar{
-  background: rgb(236,83,136);
-background: linear-gradient(128deg, rgba(236,83,136,1) 0%, rgba(255,180,195,1) 100%);
+  background-color: #eee;
+  background-image: none;
 }
