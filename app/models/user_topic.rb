@@ -4,34 +4,43 @@ class UserTopic < ApplicationRecord
   belongs_to :topic
 
 
-  # def self.graph_data since=7.days.ago
-  #   [
-  #     {
-  #         name: 'User  accuracy',
-  #         pointInterval: point_interval = 1.day * 1000,
-  #         pointStart: start_point = since.to_i * 1000,
-  #         data: self.where.not( accuracy: nil).delta_records_since(since)
-  #     },
-  #     # {
-  #     #     name: 'Standard Users',
-  #     #     pointInterval: point_interval,
-  #     #     pointStart: start_point,
-  #     #     data: self.where(type: nil).delta_records_since(since)
-  #     # }
-  #   ]
-  # end
+
+
+
 
   def self.graph_data(since = 30.days.ago)
-    UserTopic.group(:accuracy).count.to_a
+    # UserTopic.group(:accuracy).count.to_a
     # Output
-    [["Bagmati", 3], ["Gandaki", 3], ["Janakpur", 5]]
+    
+    user_acurracy = UserTopic.group("user_id").maximum(:accuracy).to_a
+
+    people_count = Array.new(6,0)
+    user_acurracy.each do |item|
+      
+      case item[1]
+      when 100
+        people_count[0] = people_count[0]+1
+      when (80.0..99.9)
+        people_count[1] = people_count[1]+1
+      when (60.0..79.9) 
+        people_count[2] = people_count[2]+1
+      when (40.0..59.9)
+        people_count[3] = people_count[3]+1
+      when (20.0..39.9)
+        people_count[4] = people_count[4]+1
+      else
+        people_count[5] = people_count[5]+1
+      end
+      
+    end
+    
+    [["100%", people_count[0]], ["80.0～99.9%", people_count[1]],["60.0～79.9%", people_count[2]],["40.0～59.9%", people_count[3]],["20.0～39.9%", people_count[4]],["0.0～19.9%", people_count[5]]]
+    
   end
 
   def self.chart_type
     'pie'
   end
+  
 end
 
-# UserTopic.where("(accuracy >= 0 AND accuracy <= 19.9) OR (accuracy >= 20.0 AND accuracy <= 39.9) OR (accuracy >= 40.0 AND accuracy <= 59.9) OR (accuracy >= 60.0 AND accuracy <= 79.9) OR (accuracy >= 80.0 AND accuracy <= 09.9) OR (accuracy = 100.0)").group(:accuracy).count
-
-# UserTopic.group("user_id").maximum(:accuracy)
