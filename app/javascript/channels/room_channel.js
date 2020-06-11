@@ -47,11 +47,9 @@ $(function(){
       },
       received(data) {
         // Called when there's incoming data on the websocket for this channel
-        // console.log(data.content);
+
         /* check players status */
         if (data.check) {
-          // console.log(data.user_name);
-
           if (userId !== data.user_id) {
             userNameRight.innerText = data.user_name
             guestCheck.click();
