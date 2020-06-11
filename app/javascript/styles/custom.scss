@@ -29,17 +29,22 @@
 
 
 #customizations-index{
+  #customization-btn:hover{
+    background-color: #323232;
+    color: #eec44c;
+    box-shadow: 2px 2px 3px #ffffff, 
+                -2px -2px 3px #b8b8b8;
+    transition: 0s;
+  }
     .lesson-select{
-      // padding-left: 2rem;
       .row{
         display: flex;
         justify-content: flex-start;
         flex-direction: row;
-        
         .card-body{
-          // width: 15rem;
+          width: 18rem;
           margin: 1rem 0rem;
-          // margin-right: 3rem;
+          margin-right: 9rem;
         }
         .link-group{
           justify-content: space-between;

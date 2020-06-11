@@ -108,7 +108,6 @@
 #lessonTitle {
   font-family:  museo sans rounded, sans-serif;
 }
-
 .lesson-select{
   .card-body{
     .stars{
@@ -138,7 +137,6 @@
 
 #customizations-index{
   .link-group{
-    // flex-direction: row;
     justify-content: space-between;
     a{
       padding-left: 0;
@@ -159,7 +157,6 @@
     }
   
       .stars img{
-        // margin: 20rem;
         height: 1.7rem;
         margin: 0.2rem;
       }     
@@ -167,9 +164,9 @@
   }
 }
 
-.swal2-icon.swal2-warning{
-  border-color: #ff67c0;
-  color: #ff67c0;
-}
+  .swal2-icon.swal2-warning{
+    border-color: #ff67c0;
+    color: #ff67c0;
+  }
 
 }

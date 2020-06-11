@@ -198,6 +198,13 @@
   }
 }
 #racing-index{
+  #create-room-btn:hover{
+    background-color: #323232;
+    color: #eec44c;
+    box-shadow: 2px 2px 3px #ffffff, 
+                -2px -2px 3px #b8b8b8;
+    transition: 0s;
+  }
   .racing-container{
     .lesson-select{
       .row{
@@ -215,6 +222,13 @@
         
         .link-group{
           justify-content: space-between;
+          .player-counter:hover{
+            background-color: #323232;
+            color: #eec44c;
+            box-shadow: 2px 2px 3px #ffffff, 
+                        -2px -2px 3px #b8b8b8;
+            transition: 0s;
+          }
           .trash img{
             display: flex;
             position: absolute;
@@ -231,7 +245,6 @@
         }
         
         @media(min-width: 992px){
-
           .request-title p{ 
             max-width: 10rem;
             max-height: 1.4rem;
@@ -248,8 +261,6 @@
         }
         .post-news{
           font-size: .8rem;
-          // text-align: center;
-          // padding:auto;
         }
       }
     }
