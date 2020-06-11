@@ -365,7 +365,6 @@ DEPENDENCIES
   rails (~> 6.0.2, >= 6.0.2.2)
   rails_admin (~> 2.0, >= 2.0.2)
   rails_admin_charts (~> 0.0.12)
-  redis (~> 4.1, >= 4.1.4)
   sass-rails (>= 6)
   selenium-webdriver
   spring
