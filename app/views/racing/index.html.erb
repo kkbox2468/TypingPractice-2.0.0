@@ -21,7 +21,7 @@
             <div class="request-title d-flex justify-content-between">
               <% if room.user %>
                 <div>
-                  <img class="room-owner-pic" src="<%= current_user.photo_url(:small) %>"/>
+                  Owner : 
                   <%= room.user.nickname %>
                 </div>
               <% end %>
