@@ -254,9 +254,12 @@
         }
         .card-body{
           margin: 1rem 0rem;
-          .request-title p{
-            width: 70%;
+          .request-title {
+            width: 67%;
+            white-space: nowrap;
             overflow: hidden;
+            text-shadow:  -2px -2px 2px #ffffff, 
+            2px 2px 2px #b8b8b8;;
           }
         }
         
