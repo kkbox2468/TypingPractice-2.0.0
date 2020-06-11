@@ -6,9 +6,6 @@
       width: 4rem;
       border-radius: 1rem;
       border: none;
-      // background-color:  #eec44c;
-      // box-shadow: 2px 2px 3px #cfcfcf, 
-      //             -2px -2px 3px #ffffff;
       color: #323232;
     }
     .diy-update-bt:hover{
@@ -40,8 +37,9 @@
         flex-direction: row;
         
         .card-body{
-          // width: 18rem;
+          // width: 15rem;
           margin: 1rem 0rem;
+          // margin-right: 3rem;
         }
         .link-group{
           justify-content: space-between;
@@ -61,22 +59,18 @@
         }
         @media (min-width: 768px) {
           .stars img{
-            // margin: 20rem;
             height: 1.7rem;
             margin: 0.2rem;
           }
         }
         @media (max-width: 767px){
           .stars img{
-            // margin: 20rem;
             height: 1.7rem;
             margin: 0.2rem;
           }
         }
         .post-news{
           font-size: .8rem;
-          // text-align: center;
-          // padding:auto;
         }
       }
     }

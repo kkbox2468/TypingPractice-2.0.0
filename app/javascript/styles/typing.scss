@@ -9,7 +9,6 @@
   }
   .card-body {
     margin: 1rem 0rem;
-    // margin: 10px;
     border: none;
     border-radius: 1rem;
     background-color: #eeeeee;
@@ -17,7 +16,12 @@
                 -3px -3px 6px #ffffff;
     color: rgb(50, 50, 50);
     position: relative;
-
+    h5{
+      overflow: hidden;
+    }
+    p{
+      overflow: hidden;
+    }
     .btn {
       width: 4rem;
       border-radius: 1rem;
@@ -120,23 +124,15 @@
     
     @media (min-width: 768px) {
       .stars img{
-        // margin: 20rem;
         height: 1.7rem;
         margin: 0.2rem;
       }
     }
     @media (max-width: 767px) {
       .stars img{
-        // margin: 20rem;
         height: 1.7rem;
         margin: 0.2rem;
       }
-      a{
-        width: 100%;
-        margin: 0 1rem;
-        padding-right: 2rem;
-        padding-left: 2rem;
-      } 
   }
 }
 
