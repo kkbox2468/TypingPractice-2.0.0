@@ -84,8 +84,12 @@
     <div id="readyHandler" class="ready-handler disappear">
       <div class="row">
         <div class="col-5 check-area host mx-auto">
-          <img class="room-owner-pic" src="<%= current_user.photo_url(:small) %>"/>
-
+          <% if current_user.photo_url  %>
+            <img class="img-circle" src="<%= current_user.photo_url(:small) %>" />
+          <% else  %>
+            <img class="img-circle" src="/img/AvatarDefault.jpg"  width="200px" height="200px"/>
+          <% end  %>
+          
           <%= form_for :check, url: "/messages/new", method: 'GET',remote: true do |f| %>
           <div class="ready-title mb-3 text-center">
             <%= current_user.nickname %>
