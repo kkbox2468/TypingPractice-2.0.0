@@ -1,18 +1,18 @@
 
-  <div class="container"  id="welcomeContainer" col-12 >
+  <div class="container"  id="welcomeContainer" >
     <div class="row" id="welcomeRow">
-      <div class="logo_icon">
-        <a href="/playground"><img src="/img/NoobIcon_400x200.svg" type="display" alt="" >
+      <div class="logo_wrap col-12">
+        <div class="logo_icon">
+          <a href="/playground"><img src="/img/NoobIcon_400x200.svg" type="display" alt="" ></a>
+        </div>
 
-        </a>
-        
-      </div>
-      <div id="typed-strings" class=type_here>
-        <h1> Try to type 
-        <span id="typed" class =txt-type></span>
-      </div>
-      </h1>
-        <%= link_to  "GO!", playground_index_path, class: 'btn btn-primary' %>
+          <div id="typed-strings" class=type_here>
+            <h1> Try to type 
+            <span id="typed" class =txt-type></span>
+            </h1>
+          </div>
+        </div>
+          <%= link_to "GO!", playground_index_path, class: 'btn btn-primary' %>
     </div>
   </div>
 

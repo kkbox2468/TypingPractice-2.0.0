@@ -255,8 +255,7 @@
         .card-body{
           margin: 1rem 0rem;
           .request-title p{
-            max-width: 14rem;
-            max-height: 1.4rem;
+            width: 70%;
             overflow: hidden;
           }
         }
@@ -285,21 +284,6 @@
           
         }
         
-        @media(min-width: 992px){
-          .request-title p{ 
-            max-width: 10rem;
-            max-height: 1.4rem;
-          }
-        }
-        @media(min-width: 1200px){
-          .request-title p{ 
-            max-width: 11rem;
-            max-height: 1.4rem;
-          }
-        }
-        @media (min-width: 768px) {
-          
-        }
         .post-news{
           font-size: .8rem;
         }
