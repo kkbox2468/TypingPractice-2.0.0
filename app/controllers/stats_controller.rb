@@ -6,7 +6,7 @@ class StatsController < ApplicationController
     
       find_type_history   
       
-      @user_topic = @user_topics.first
+      
       @arti_accuracy = current_user.user_topics.average(:accuracy).to_i #從current user抓底下create的所有文章裡的準確度.average可以算平均再算成整數
       @arti_wpm = current_user.user_topics.where.not(speed:nil).where("speed != ?", "Infinity").average(:speed).to_i
       #('因為兩張資料表有一樣的created_at,所以要再給一次所屬資料表')
@@ -41,7 +41,7 @@ class StatsController < ApplicationController
   def find_type_history 
     user_topics = current_user.user_topics.where.not(accuracy: nil)
     # user_topics = current_user.user_topics.where.not(speed: "NaN")
-    user_topics = user_topics.joins(:topic).where('topics.type = ?', params[:type].camelize) if params[:type].present?
+    # user_topics = user_topics.joins(:topic).where('topics.type = ?', params[:type].camelize) if params[:type].present?
     @user_topics = user_topics.order(id: :desc).limit(10)
     # user_topics = current_user.user_topics.where.not(wrong_letter: nil)
   
