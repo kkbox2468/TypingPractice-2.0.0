@@ -34,6 +34,7 @@ $(function(){
   if ( $('#playground-index').length > 0 ){
     // playground判斷
     $('#typingModeBar .progress-bar').css("width", `${$(".article_progress")[0].innerText}%`)
-    $('#lessonBar .progress-bar').css("width", `${$(".code_progress")[0].innerText}%`)
+    $('#codeModeBar .progress-bar').css("width", `${$(".code_progress")[0].innerText}%`)
+    $('#diyModeBar .progress-bar').css("width", `${$(".diy_progress")[0].innerText}%`)
   }
 })

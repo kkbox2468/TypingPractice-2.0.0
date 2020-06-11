@@ -49,8 +49,12 @@ class RoomsController < ApplicationController
 
   def destroy
     @room = Room.find(params[:id])
-    @room.destroy
-    redirect_to racing_index_path, alert: 'Room has deleted!'
+    if @room.user_id == current_user.id
+      @room.destroy
+      redirect_to racing_index_path, notice: 'Room has deleted!'
+    else
+      redirect_to racing_index_path, alert: 'You are not owener'
+    end
   end
 
   private

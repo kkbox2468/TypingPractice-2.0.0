@@ -29,20 +29,17 @@ $(function(){
     let hostCheck = document.querySelector('#check_content')
     let checkPage = document.querySelector('.check-group')
     let startHandler = false
-    //const csrfToken = document.querySelector('[name=csrf-token]').content
-    //const url = "http://localhost:3000/messages"
+
 
     /* select for correct character amount */
     let hostCorrectAmount = document.querySelector('#hostCorrect')
     let guestCorrectAmount = document.querySelector('#guestCorrect')
-
 
     let timeCounterView = document.querySelector('#timeCounter')
     let counterZone = document.querySelector('#counterZone')
     let recordPoints = document.querySelector('#records_accuracy')
     let recoudSubmit = document.querySelector('input[name="record-submit"]')
     
-
     /* preloader */
     let preloader = document.querySelector('.preloader')
     let preloaderBar = document.querySelector('.single9')
@@ -69,12 +66,6 @@ $(function(){
       readySubmit.click();
     })
 
-
-
-  
-
-
-
     /* hightlight characters */
     quoteInputLeft.addEventListener('input', () => {
       if (startHandler === true) {
@@ -82,10 +73,8 @@ $(function(){
         let arrayValue = quoteInputLeft.value.split('')
         let inputIndex = quoteInputLeft.value.length
         
-        
         checkCharacter(arrayQuote, arrayValue, inputIndex)
         let correctChracters = document.querySelectorAll('#racingQuoteTopic .correct');
-        // console.log(correctChracters);
         hostCorrectAmount.innerText = correctChracters.length
         recordPoints.value = correctChracters.length
         recoudSubmit.click()
@@ -94,7 +83,6 @@ $(function(){
         if (inputIndex === arrayQuote.length) {
           endGame()
         }
-  
         /* 播放鍵盤音效 */
         window.addEventListener('keydown', playSound);
       }
@@ -117,12 +105,8 @@ $(function(){
 
       let hostPoint = Number($('#hostCorrect')[0].innerText)
       let guestPoint = Number($('#guestCorrect')[0].innerText)
-  
       let hostWidth = Math.floor((hostPoint/(hostPoint+guestPoint))*100)
       let guestWidth = Math.floor((guestPoint/(hostPoint+guestPoint))*100)
-
-      console.log(hostWidth)
-      console.log(guestWidth)
 
       if(hostWidth > 70 ){
         hostWidth = 70
@@ -132,7 +116,6 @@ $(function(){
         hostWidth = 30
         guestWidth = 70
       }
-
       $('.host').attr('style', `width:${hostWidth}%`)
       $('.guest').attr('style', `width:${guestWidth}%`)
     })
@@ -178,8 +161,6 @@ $(function(){
         }, 1000);
       }
     }, 1000);
-
-    
 
     /* When two players are focus on the textarea. */
     let startVal = setInterval(() => {
@@ -232,10 +213,8 @@ $(function(){
       
       if (hostCorrectNumber > guestCorrectNumber) {
         winner = userLeft
-        console.log(userLeft);
       } else {
         winner = userRight
-        console.log(userRight);
       }
       Swal.fire({
         title: '遊戲結束！',
@@ -245,7 +224,6 @@ $(function(){
       })
     }
 
-      
     function showCombo() {
       let correctLength = $('.selected').prevUntil($('.incorrect')).length
 
@@ -274,7 +252,6 @@ $(function(){
       if (ballSet) {
         ball.css('margin-left', `${ballSet}rem`)
       }
-
     }
 
     window.addEventListener('keyup', function(){

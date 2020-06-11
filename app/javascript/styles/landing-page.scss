@@ -101,23 +101,24 @@ $breakpoint-md: 768px;
                       -3px -3px 5px rgba(255, 222, 116, 1);
           .col-4 {
             .fd-avatar {
-              background-color: #fff;
+              background-color: #eee;
               width: 120px;
               height: 120px;
               border-radius: 50%;
               overflow: hidden;
+              img {
+                width: 120px;
+              }
             }
+
           }
           .col-8 {
             border-radius: 10px;
-            background-color: #fff;
+            background-color: #eee;
             padding: 10px;
             text-align: justify;
           }
         }
-      }
-      img {
-        // width: 100%;
       }
     }
   }
