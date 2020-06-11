@@ -8,9 +8,7 @@ $(function(){
     let roomId = roomElement.getAttribute('data-room-id')
     let userElement = document.querySelector('#user-id')
     let userId = Number(userElement.getAttribute('data-user-id'))
-    let userNameLeft = document.querySelector('#userLeft')
     let userNameRight = document.querySelector('#userRight')
-    
     /* select for highlight characters */
     let quoteInputRight = document.getElementById('racingQuoteInput2')
     let quoteDisplayRight = document.getElementById('racingQuoteDisplay2')
@@ -18,12 +16,7 @@ $(function(){
     let quoteContainer = document.querySelector('.racing-ground')
     let topicContainer = quoteContainer.clientHeight * 0.33 
     let topicStartLine = document.querySelector('#racingQuoteTopic2')
-    /* select for ending page */
-    let pageBody = document.querySelector('body')
-    let endPage = document.createElement('div')
-    endPage.className = "end-page"
     /* select for ready check */
-    let guestStatus = document.querySelector('.guest-status')
     let guestCheck = document.querySelector('#guest-check')
     /* select for records */
     let guestCorrect = document.querySelector('#guestCorrect')
@@ -121,7 +114,6 @@ $(function(){
     });
   }
 })
-
 
 function checkCharacter(arrayQuote, arrayValue, inputIndex) {
   arrayQuote.forEach((characterSpan, index) => {
