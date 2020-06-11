@@ -14,12 +14,12 @@
         
         <tbody>
           <tr>
-            <td><%= user_topic.topic.type %><%= user_topic.topic.id %></td>
-            <td><%= user_topic.time %>秒</td>
-            <td><%= user_topic.letter_count %></td>
-            <td><%= user_topic.speed %>WPM</td>
-            <td><%= user_topic.wrong_letter_count %></td>
-            <td><%= user_topic.accuracy %>%</td>
+            <td><%=user_topic.topic.type %><%=user_topic.topic.id %></td>
+            <td><%=user_topic.time %>秒</td>
+            <td><%=user_topic.letter_count %></td>
+            <td><%=user_topic.speed %>WPM</td>
+            <td><%=user_topic.wrong_letter_count %></td>
+            <td><%=user_topic.accuracy %>%</td>
           </tr> 
         </tbody>
       <% end %>

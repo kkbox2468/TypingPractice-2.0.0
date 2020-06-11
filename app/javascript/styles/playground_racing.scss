@@ -60,7 +60,6 @@
       color: rgb(211, 211, 211);
     }
     .racing-ground {
-      // border: 1px solid red;
       padding: 20px;
       background-color: #eeeeee;
       border-radius: 10px;
@@ -130,7 +129,6 @@
   align-items: center;
   overflow: hidden;
   .check-roomname {
-    // position: relative;
     h3 {
       font-size: 35px;
       color: #fff;
@@ -200,6 +198,13 @@
   }
 }
 #racing-index{
+  #create-room-btn:hover{
+    background-color: #323232;
+    color: #eec44c;
+    box-shadow: 2px 2px 3px #ffffff, 
+                -2px -2px 3px #b8b8b8;
+    transition: 0s;
+  }
   .racing-container{
     .lesson-select{
       .row{
@@ -208,9 +213,22 @@
         flex-direction: row;
         .card-body{
           margin: 1rem 0rem;
+          .request-title p{
+            max-width: 14rem;
+            max-height: 1.4rem;
+            overflow: hidden;
+          }
         }
+        
         .link-group{
           justify-content: space-between;
+          .player-counter:hover{
+            background-color: #323232;
+            color: #eec44c;
+            box-shadow: 2px 2px 3px #ffffff, 
+                        -2px -2px 3px #b8b8b8;
+            transition: 0s;
+          }
           .trash img{
             display: flex;
             position: absolute;
@@ -225,15 +243,24 @@
           }
           
         }
-        @media (max-width: 767px) {
-          .link-group{
         
+        @media(min-width: 992px){
+          .request-title p{ 
+            max-width: 10rem;
+            max-height: 1.4rem;
           }
+        }
+        @media(min-width: 1200px){
+          .request-title p{ 
+            max-width: 11rem;
+            max-height: 1.4rem;
+          }
+        }
+        @media (min-width: 768px) {
+          
         }
         .post-news{
           font-size: .8rem;
-          // text-align: center;
-          // padding:auto;
         }
       }
     }
