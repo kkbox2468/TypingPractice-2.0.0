@@ -4,20 +4,20 @@
       local("/fonts/MuseoSansRounded900"),
       local("/fonts/MuseoSansRounded700"),
       local("/fonts/MuseoSansRounded400"),
-      // local("/fonts/jf-openhuninn-1.1.ttf")
+
       url("/fonts/MuseoSansRounded900.otf"),
       url("/fonts/MuseoSansRounded700.otf"),
       url("/fonts/MuseoSansRounded400.otf");
-      // url("/fonts/jf-openhuninn-1.1.ttf");
+
   font-weight: 900,700,400;
   font-style: normal;
 }
 
-//標準色區
+
 $BGgrey:#eeeeee;
 $noob-yellow:#ffc44c;
-$grey1:#323232;
-$grey2:#757575;
+$DarkGrey:#323232;
+$LightGrey:#757575;
 $correct:#5dc000;
 $incorrect:#ff0000;
 
@@ -26,7 +26,7 @@ h1, h2, h3, h4 {
   font-family:  Museo Sans Rounded,jf-openhuninn, sans-serif;
   font-style: normal;
   font-weight: 900;
-  color: $grey1;
+  color: $DarkGrey;
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -34,7 +34,7 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary {
-  color:$grey1;
+  color:$DarkGrey;
   font-family: Museo Sans Rounded, sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -44,7 +44,7 @@ h1, h2, h3, h4 {
 .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   border: none;
-  color: $grey1;
+  color: $DarkGrey;
   background-color: $BGgrey;
   border: none;
   box-shadow: inset 7px 7px 10px #cfcfcf, 

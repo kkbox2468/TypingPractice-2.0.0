@@ -254,9 +254,9 @@
         }
         .card-body{
           margin: 1rem 0rem;
-          .request-title p{
-            max-width: 14rem;
-            max-height: 1.4rem;
+          .request-title {
+            // max-width: 10rem;
+            // max-height: 1.4rem;
             overflow: hidden;
           }
         }
@@ -285,20 +285,33 @@
           
         }
         
+        @media(min-width: 1200px){
+          .request-title p{ 
+            max-width: 9rem;
+            max-height: 1.4rem;
+            overflow: hidden;
+          }
+        }
         @media(min-width: 992px){
           .request-title p{ 
             max-width: 10rem;
             max-height: 1.4rem;
-          }
-        }
-        @media(min-width: 1200px){
-          .request-title p{ 
-            max-width: 11rem;
-            max-height: 1.4rem;
+            overflow: hidden;
           }
         }
         @media (min-width: 768px) {
-          
+          .request-title p{ 
+            max-width: 70%;
+            max-height: 1.4rem;
+            overflow: hidden;
+          }
+        }
+        @media (max-width: 767px) {
+          .request-title p{ 
+            max-width: 80%;
+            max-height: 1.4rem;
+            overflow: hidden;
+          }
         }
         .post-news{
           font-size: .8rem;
