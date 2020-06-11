@@ -48,9 +48,17 @@ $(function(){
             guestCheck.click();
             readyBtnGuest.classList.toggle('active')
             if (readyBtnGuest.innerText === "Not ready") {
-              readyBtnGuest.innerText = "Ready"
+              readyBtnGuest.innerText = "Is Ready"
+              $('.ready-title-guest').empty();
+              $('#guest-name').append(
+                '<small>Your competitor : </small><br>' + data.user_name 
+              )
             } else {
               readyBtnGuest.innerText = "Not ready"
+              $('#guest-name').empty();
+              $('.ready-title-guest').append(`
+                Wait for competitor...
+              `)
             }
           }
         }

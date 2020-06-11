@@ -48,23 +48,14 @@
 
 <% if current_user %>
   <div class="row user-profile">
-  
-      <div class="overflow-auto " id="cal-heatmap"></div>
-      
+    <div class="overflow-auto " id="cal-heatmap"></div>
   </div>
 
-
-
-
-
-<div class="row type-log">
-      <div class="data-title">
+  <div class="row type-log">
+    <div class="data-title">
       <h3><%= current_user.nickname %>的資料分析</h3>
-      </div>
-  <%= render 'shared/article_stat', user_topic: @user_topic %>
-</div>
+    </div>
+    <%= render 'shared/article_stat', user_topic: @user_topic %>
+  </div>
 <% end %>
-
-
-
-
+<%= render 'shared/limited_use'%>

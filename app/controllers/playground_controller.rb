@@ -16,7 +16,6 @@ class PlaygroundController < ApplicationController
       @diy_progress = (done_diy_count.fdiv(Ruby.count)*100).floor(2)
      
     end
-    
   end
 
   def show

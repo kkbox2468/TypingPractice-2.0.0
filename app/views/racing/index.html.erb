@@ -20,7 +20,10 @@
           <div class="card-body">
             <div class="request-title d-flex justify-content-between">
               <% if room.user %>
-                <p>Owner:<%= room.user.nickname %></p>
+                <div>
+                  Owner : 
+                  <%= room.user.nickname %>
+                </div>
               <% end %>
               
               <% if current_user.id == room.user_id%>
@@ -71,7 +74,7 @@
     </div>   
   </div>
 </div>
-
+<%= render 'shared/limited_use'%>
 
 
 
