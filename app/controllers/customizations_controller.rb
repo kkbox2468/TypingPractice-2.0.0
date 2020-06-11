@@ -58,7 +58,7 @@ class CustomizationsController < ApplicationController
   def update
     topic = Topic.find(params[:id])
     if topic.update(content_params)
-      redirect_to customizations_path
+      redirect_to customizations_path, notice: 'ok'
     else
       redirect_to customizations_path, alert: 'Topic has not updated!'
     end

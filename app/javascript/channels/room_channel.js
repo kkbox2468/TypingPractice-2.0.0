@@ -8,9 +8,7 @@ $(function(){
     let roomId = roomElement.getAttribute('data-room-id')
     let userElement = document.querySelector('#user-id')
     let userId = Number(userElement.getAttribute('data-user-id'))
-    let userNameLeft = document.querySelector('#userLeft')
     let userNameRight = document.querySelector('#userRight')
-    
     /* select for highlight characters */
     let quoteInputRight = document.getElementById('racingQuoteInput2')
     let quoteDisplayRight = document.getElementById('racingQuoteDisplay2')
@@ -18,15 +16,19 @@ $(function(){
     let quoteContainer = document.querySelector('.racing-ground')
     let topicContainer = quoteContainer.clientHeight * 0.33 
     let topicStartLine = document.querySelector('#racingQuoteTopic2')
-    /* select for ending page */
-    let pageBody = document.querySelector('body')
-    let endPage = document.createElement('div')
-    endPage.className = "end-page"
     /* select for ready check */
-    let guestStatus = document.querySelector('.guest-status')
     let guestCheck = document.querySelector('#guest-check')
     /* select for records */
     let guestCorrect = document.querySelector('#guestCorrect')
+    /* sweet alert for leave battle */
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-success',
+        cancelButton: 'btn btn-danger'
+      },
+      buttonsStyling: false
+    })
+    let gameStartStatus = false
 
     consumer.subscriptions.create({ channel: "RoomChannel", room_id: roomId }, {
       connected() {
@@ -38,11 +40,9 @@ $(function(){
       },
       received(data) {
         // Called when there's incoming data on the websocket for this channel
-        // console.log(data.content);
+
         /* check players status */
         if (data.check) {
-          // console.log(data.user_name);
-
           if (userId !== data.user_id) {
             userNameRight.innerText = data.user_name
             guestCheck.click();
@@ -63,6 +63,7 @@ $(function(){
 
         /* render messages to other player's screen */
         if (data.message) {
+          gameStartStatus = true
           if (userId !== data.message.user_id) {
             quoteInputRight.innerText = data.content
             let arrayQuote = quoteDisplayRight.querySelectorAll('span');
@@ -90,11 +91,29 @@ $(function(){
             } 
           }
         }
+        if (gameStartStatus !== true && data.leave) {
+          swalWithBootstrapButtons.fire({
+            title: '對手離開聊天室',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: '繼續等待',
+            cancelButtonText: '離開對戰',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.value) {
+              location.reload();
+            } else if (
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              history.go(-1)
+            }
+          })
+        } 
       }
     });
   }
 })
-
 
 function checkCharacter(arrayQuote, arrayValue, inputIndex) {
   arrayQuote.forEach((characterSpan, index) => {

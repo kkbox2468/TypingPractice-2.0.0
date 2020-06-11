@@ -10,7 +10,6 @@ consumer.subscriptions.create("RacingChannel", {
   },
 
   received(data) {
-    console.log(data)
 
     if (data.room_id) {
       let roomId = data.room_id

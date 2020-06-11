@@ -29,6 +29,8 @@ class RoomChannel < ApplicationCable::Channel
       room_id: room.id,
       room_members: room.members
     )
+    ActionCable.server.broadcast "room_channel_#{params[:room_id]}", leave: 'user leave'
+
   end
 
 end
