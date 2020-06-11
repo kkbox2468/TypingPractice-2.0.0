@@ -109,7 +109,7 @@ $(function(){
     subDomain: "day",
     cellRadius: 5,
     range: 8,
-    data: "http://localhost:3000/stats.json",
+    data: "https://www.noobtyping.com/stats.json",
     dataType: "json",
     start: new Date(2020, 0),
     considerMissingDataAsZero: true,
