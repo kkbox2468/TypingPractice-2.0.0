@@ -113,3 +113,41 @@
   box-shadow: 4px 4px 5px #cfcfcf, 
               -4px -4px 5px #ffffff;
 }
+
+@media (max-width: 991px){
+  #stats-index{
+    .user-pic {
+      img{
+        max-width: 80px;
+        max-height: 80px;
+      }
+    }
+    .user-stats-info{
+      flex-direction: column;
+      .user-info {
+        padding: 1rem 0;
+      }
+      .arti_accu_line{
+        padding: 1rem 0;
+      }
+    }
+    .user-info{
+      font-size: .5rem;
+    }
+    .overflow-auto {
+      .cal-heatmap-container{
+        .graph-legend{
+          position: fixed;
+        }
+      }
+    }
+    .type-log{
+      .user-stats{
+        overflow: scroll;
+        .article-stat{
+          font-size: .5rem;
+        }
+      }
+    }
+  }
+}
