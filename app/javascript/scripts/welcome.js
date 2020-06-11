@@ -7,4 +7,8 @@ $(function(){
       loop:true
     });
   }
+
+  $('.limited-use .limited-link button').on("click", function(){
+    $('.limited-use').css('display', 'none')
+  })
 })
