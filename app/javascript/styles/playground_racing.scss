@@ -301,4 +301,50 @@
   }
 }
 
+#rooms-edit{
+  .edit_room{
+    text-align: end;
+    padding: 1rem;
+    .rooms-submit{
+      border: none;
+    }
+    .rooms-submit:hover{
+      color: #eec44c;
+    }
+    .room-name,
+    .room-description{
+      justify-content: space-between;
+      display: flex;
+      margin: 1rem 0;
+      input{
+        width: 70%;
+        border: none;
+        border-radius: 0.25rem;
+        padding: .3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px){
+  #rooms-edit{
+    .edit_room{
+      text-align: end;
+      padding: 1rem;
+      .rooms-submit{
+        border: none;
+      }
+      .room-name,
+      .room-description{
+        justify-content: space-between;
+        display: flex;
+        margin: 1rem 0;
+        input{
+          border: none;
+          width: auto;
+        }
+      }
+    }
+  }
+}
 

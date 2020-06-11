@@ -412,7 +412,7 @@ body {
       .back-to-homepage{
         margin-top: 1rem;
         background-color: #eec44c;
-        padding: .5rem;
+        padding: .3rem;
         border-radius: .8rem;
         a{        
           color: #323232;
@@ -432,5 +432,11 @@ body {
         margin: 1rem;
       }
     }
+  }
+}
+
+@media (max-width: 991px){
+  .limited-use {
+    font-size: .5rem;
   }
 }

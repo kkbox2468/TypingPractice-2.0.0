@@ -25,19 +25,19 @@
   </div>
 </div>
 
-<div class="row user-profile">
-    <div class="user-info col-4">
+<div class="row user-profile user-stats-info">
+    <div class="user-info col-xl-4 col-lg-4 col-md-12 col-sm-12">
       <canvas id="arti_accuracy" 
               data-accuracy="<%= @arti_accuracy %>">
       </canvas>
     </div> 
-    <div class="user-info avg-wpm col-4">
+    <div class="user-info avg-wpm col-xl-4 col-lg-4 col-md-12 col-sm-12">
       <canvas id="arti_wpm" 
               data-wpm="<%= @arti_wpm %>sec">
       </canvas>
     </div>
   
-    <div class="arti_accu_line col-4" id='artiAccuLine'>
+    <div class="arti_accu_line col-xl-4 col-lg-4 col-md-12 col-sm-12" id='artiAccuLine'>
       <canvas id="arti_accu_line"
               data-accday="<%= @arti_day.to_json %>"> 
       </canvas>
@@ -53,7 +53,9 @@
     <div class="data-title">
       <h3><%= current_user.nickname %>的資料分析</h3>
     </div>
-    <%= render 'shared/article_stat', user_topic: @user_topic %>
+    <div class="user-stats">
+      <%= render 'shared/article_stat', user_topic: @user_topic %>
+    </div>
   </div>
 <% end %>
 <%= render 'shared/limited_use'%>

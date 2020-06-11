@@ -65,3 +65,33 @@
 .txt-type > .txt {
   border-right: 0.5rem solid rgb(50, 50, 50);
 }
+
+@media (max-width: 991px){
+  #welcome-index{
+    #welcomeRow{
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
+    .landing-page{
+      .feedback{
+        .feedback-pic {
+          .fd-item{
+            .col-4{
+              margin-right: .5rem;
+              .fd-avatar {
+                object-fit: contain;
+                height: 80px;
+                width: 80px;
+                img{
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
