@@ -58,10 +58,10 @@ $(function(){
     readyBox.addEventListener('input', function () {
       this.classList.toggle('ready')
       readyBtnHost.classList.toggle('active')
-      if (readyBtnHost.innerText === "No") {
+      if (readyBtnHost.innerText === "Ready") {
         readyBtnHost.innerText = "Yes"
       } else {
-        readyBtnHost.innerText = "No"
+        readyBtnHost.innerText = "Ready"
       }
       readySubmit.click();
     })
