@@ -50,36 +50,36 @@ class User < ApplicationRecord
   end
 
           
-  def self.from_omniauth(auth)
+  # def self.from_omniauth(auth)
     
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0, 20]
-      user.nickname = auth.info.name   # assuming the user model has a name
-      # user.name = auth.info.name   # assuming the user model has a name
-      # user.image = auth.info.image # assuming the user model has an image
-      user.remote_photo_url = auth.info.image # assuming the user model has an image
-      # If you are using confirmable and the provider(s) you use validate emails, 
-      # uncomment the line below to skip the confirmation emails.
-      # user.skip_confirmation!
-    end
+  #   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+  #     user.email = auth.info.email
+  #     user.password = Devise.friendly_token[0, 20]
+  #     user.nickname = auth.info.name   # assuming the user model has a name
+  #     # user.name = auth.info.name   # assuming the user model has a name
+  #     # user.image = auth.info.image # assuming the user model has an image
+  #     user.remote_photo_url = auth.info.image # assuming the user model has an image
+  #     # If you are using confirmable and the provider(s) you use validate emails, 
+  #     # uncomment the line below to skip the confirmation emails.
+  #     # user.skip_confirmation!
+  #   end
     
-  end
+  # end
 
    def self.from_omniauth(auth)
     # byebug
     user = find_or_initialize_by(provider: auth.provider, uid: auth.uid)
     # byebug
-    user.email = auth.info.email
+    # user.email = auth.info.email
     # byebug
-    user.password = Devise.friendly_token[0, 20]
+    # user.password = Devise.friendly_token[0, 20]
     # byebug
-    user.nickname = auth.info.name   # assuming the user model has a name
+    # user.nickname = auth.info.name   # assuming the user model has a name
     # byebug
-    user.remote_photo_url = auth.info.image # assuming the user model has an image
-    # byebug
+    # user.remote_photo_url = auth.info.image # assuming the user model has an image
+    byebug
 
-    user.save
+    # user.save
     user
     # byebug
     # byebug
@@ -88,7 +88,7 @@ class User < ApplicationRecord
   def self.new_with_session(params, session)
     # byebug
     super.tap do |user|
-      # byebug
+      byebug
       if data = session["devise.facebook_data"] 
         # byebug
         user.email = session["devise.facebook_data"]["info"]["email"] if user.email.blank?
