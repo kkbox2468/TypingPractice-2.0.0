@@ -91,13 +91,34 @@ body {
       top: 1rem;
       display: flex;
       .timer{
-        color: rgb(9, 12, 44);
-        font-size: 1rem;
+        color: #323232;
+        font-size: 1.4rem;
         font-weight: bold;
         display: flex;
+
+        .second{
+          color: #ff67c0;
+          margin-right: .5rem;
+        }
+
         .millisec{
           margin-left: 2rem;
           color: red;
+        }
+      }
+      .time-title{
+        margin-right: 1rem;
+      }
+      .speed{
+        color: #323232;
+        font-size: 1.4rem;
+        font-weight: bold;
+        display: flex;
+        margin-left: 1rem;
+        .timer{
+          color: #ff67c0;
+          margin-right: .5rem;
+          margin-left: .5rem;
         }
       }
     }
