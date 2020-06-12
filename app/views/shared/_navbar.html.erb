@@ -56,17 +56,17 @@
           <%= link_to  "Setting", edit_user_registration_path, class: 'btn btn-primary nav-btn' %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Logout' ,destroy_user_session_path , method: 'delete',class: 'btn btn-primary nav-btn'  %>
+          <%= link_to 'Log out' ,destroy_user_session_path , method: 'delete',class: 'btn btn-primary nav-btn'  %>
         </li>
       <% else  %>
         <li class="nav-item">
           <%= link_to 'Start', playground_index_path, class: 'btn btn-primary nav-btn'  %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Registered' ,new_user_registration_path, class: 'nav-link'  %>
+          <%= link_to 'Sign up' ,new_user_registration_path, class: 'nav-link'  %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Login' ,new_user_session_path, class: 'nav-link' %>
+          <%= link_to 'Log in' ,new_user_session_path, class: 'nav-link' %>
         </li>
       <% end  %>
     </ul>
