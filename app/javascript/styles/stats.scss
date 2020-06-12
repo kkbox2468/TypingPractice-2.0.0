@@ -113,13 +113,17 @@
   box-shadow: 4px 4px 5px #cfcfcf, 
               -4px -4px 5px #ffffff;
 }
-
-@media (max-width: 991px){
+.type-log{
+  .user-stats{
+    width: -webkit-fill-available;
+  }
+}
+@media (max-width: 767px){
   #stats-index{
     .user-pic {
       img{
-        max-width: 80px;
-        max-height: 80px;
+        max-width: 80px!important;
+        max-height: 80px!important;
       }
     }
     .user-stats-info{
