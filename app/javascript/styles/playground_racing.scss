@@ -299,6 +299,27 @@
   h3{
     text-shadow: none;
   }
+  .swal2-popup{
+    .swal2-icon{
+      border-color: #ff67c0;
+      color: #ff67c0;
+    }
+  }
+  .swal2-actions{
+    .swal2-cancel{
+      background-color: #ff67c0;
+      border-color: #ff67c0;
+      color: white;
+      margin: 0 1rem;
+    }
+    .swal2-confirm{
+      background-color: #eec44c;
+      border-color: #eec44c;
+      margin: 0 1rem;
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+    }
+  }
 }
 
 #rooms-edit{
