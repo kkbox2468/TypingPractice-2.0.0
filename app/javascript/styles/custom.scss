@@ -34,47 +34,59 @@
                 -2px -2px 3px #b8b8b8;
     transition: 0s;
   }
+  .lesson-select{
+    .row{
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      .card-body{
+        width: 18rem;
+        margin: 1rem 0rem;
+        margin-right: 9rem;
+      }
+      .link-group{
+        justify-content: space-between;
+        .trash img{
+          display: flex;
+          position: absolute;
+          top: 1.2rem;
+          right: 1rem;
+        }
+        .edit-custom{
+          display: flex;
+          position: absolute;
+          top: 1.2rem;
+          right: 3rem;
+        }
+        
+      }
+      @media (min-width: 768px) {
+        .stars img{
+          height: 1.7rem;
+          margin: 0.2rem;
+        }
+      }
+      @media (max-width: 767px){
+        .stars img{
+          height: 1.7rem;
+          margin: 0.2rem;
+        }
+      }
+      .post-news{
+        font-size: .8rem;
+      }
+    }
+  }
+  @media (max-width: 991px){
     .lesson-select{
-      .row{
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: row;
-        .card-body{
-          width: 18rem;
-          margin: 1rem 0rem;
-          margin-right: 9rem;
-        }
-        .link-group{
-          justify-content: space-between;
-          .trash img{
-            display: flex;
-            position: absolute;
-            top: 1.2rem;
-            right: 1rem;
+      .card{
+        .col-xl-4{
+          display: flex;
+          .card-body{
+            margin-right: 0;
           }
-          .edit-custom{
-            display: flex;
-            position: absolute;
-            top: 1.2rem;
-            right: 3rem;
-          }
-          
-        }
-        @media (min-width: 768px) {
-          .stars img{
-            height: 1.7rem;
-            margin: 0.2rem;
-          }
-        }
-        @media (max-width: 767px){
-          .stars img{
-            height: 1.7rem;
-            margin: 0.2rem;
-          }
-        }
-        .post-news{
-          font-size: .8rem;
         }
       }
     }
+  }
 }
