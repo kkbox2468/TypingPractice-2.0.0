@@ -66,10 +66,17 @@
   border-right: 0.5rem solid rgb(50, 50, 50);
 }
 
-@media (max-width: 991px){
+@media (max-width: 767px){
   #welcome-index{
     #welcomeRow{
       width: 100%;
+      .logo_wrap{
+        .type_here{
+          h1{
+            font-size: 1.5rem!important;
+          }
+        }
+      }
       img{
         width: 100%;
       }
