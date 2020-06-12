@@ -17,7 +17,7 @@
       <%= current_user.email %>
     </div>
     <div class="user-info-created_at">
-      You have been join us since <%= current_user.created_at.strftime('%Y/%m/%d')  %>
+      You have been joined us since <%= current_user.created_at.strftime('%Y/%m/%d')  %>
     </div>
     <div class="user-info-edit">
       <%= link_to  "Wanna change a charming name?", edit_user_registration_path %>
@@ -51,7 +51,7 @@
 
   <div class="row type-log">
     <div class="data-title">
-      <h3><%= current_user.nickname %>的資料分析</h3>
+      <h3><%= current_user.nickname%> 的資料分析</h3>
     </div>
     <div class="user-stats">
       <%= render 'shared/article_stat', user_topic: @user_topic %>
