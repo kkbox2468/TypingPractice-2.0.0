@@ -89,13 +89,18 @@ class User < ApplicationRecord
     byebug
     super.tap do |user| # super會呼叫父類別中的self.new_with_session(params, session)方法並回傳當下的User物件
       byebug
-      if data = session["devise.facebook_data"] 
+      if data = session["devise.social_login_data"] 
         # byebug
-        user.email = session["devise.facebook_data"]["info"]["email"] if user.email.blank?
-        user.nickname = session["devise.facebook_data"]["info"]["name"] if user.nickname.blank?
-        user.remote_photo_url = session["devise.facebook_data"]["info"]["image"] if user.photo_url.blank?
-        user.provider = session["devise.facebook_data"]["provider"] if user.provider.blank?
-        user.uid = session["devise.facebook_data"]["uid"] if user.uid.blank?
+        user.email = session["devise.social_login_data"]["info"]["email"] if user.email.blank?
+        user.nickname = session["devise.social_login_data"]["info"]["name"] if user.nickname.blank?
+        user.remote_photo_url = session["devise.social_login_data"]["info"]["image"] if user.photo_url.blank?
+        user.provider = session["devise.social_login_data"]["provider"] if user.provider.blank?
+        user.uid = session["devise.social_login_data"]["uid"] if user.uid.blank?
+        # user.email = session["devise.facebook_data"]["info"]["email"] if user.email.blank?
+        # user.nickname = session["devise.facebook_data"]["info"]["name"] if user.nickname.blank?
+        # user.remote_photo_url = session["devise.facebook_data"]["info"]["image"] if user.photo_url.blank?
+        # user.provider = session["devise.facebook_data"]["provider"] if user.provider.blank?
+        # user.uid = session["devise.facebook_data"]["uid"] if user.uid.blank?
       end
     end
     # byebug
