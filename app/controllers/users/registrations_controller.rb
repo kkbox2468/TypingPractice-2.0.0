@@ -1,33 +1,34 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  byebug
   # session = nil
   # include Accessible
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-    
-  #   super
+  def new
+    byebug
+    super
   #   # byebug 
   #   # @user = User.new
   #   # user = User.find(current_user.id)
   #   # user.remote_photo_url = session["devise.facebook_data"].info.image
   #   # user.save
-  # end
+  end
 
   # POST /resource
   def create
     byebug
-    # super #此處會再呼叫self.new_with_session(params, session)
-    # 
+    super #此處會先呼叫self.new_with_session(params, session)之後，取得new_with_session(params, session)回傳的User物件，再儲存該User物件
+    
     # byebug
-    user = User.new( params.require(:user).permit(:email,:password, :nickname))
-    user.remote_photo_url = session["devise.facebook_data"]["info"]["image"]
-    user.provider = session["devise.facebook_data"]["provider"]
-    user.uid = session["devise.facebook_data"]["uid"]
-    user.save
+    # user = User.new( params.require(:user).permit(:email,:password, :nickname))
+    # user.remote_photo_url = session["devise.facebook_data"]["info"]["image"]
+    # user.provider = session["devise.facebook_data"]["provider"]
+    # user.uid = session["devise.facebook_data"]["uid"]
+    # user.save
     byebug
   end
 
