@@ -67,22 +67,17 @@ class User < ApplicationRecord
   # end
 
    def self.from_omniauth(auth)
-    byebug
+    
     user = find_or_initialize_by(provider: auth.provider, uid: auth.uid)
-    # byebug
+    
     # user.email = auth.info.email
-    # byebug
     # user.password = Devise.friendly_token[0, 20]
-    # byebug
     # user.nickname = auth.info.name   # assuming the user model has a name
-    # byebug
     # user.remote_photo_url = auth.info.image # assuming the user model has an image
-    byebug
-
+    
     # user.save
     user
-    # byebug
-    # byebug
+    
   end
 
   def self.new_with_session(params, session)
