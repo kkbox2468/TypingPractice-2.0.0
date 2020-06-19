@@ -81,11 +81,11 @@ class User < ApplicationRecord
   end
 
   def self.new_with_session(params, session)
-    byebug
+    
     super.tap do |user| # super會呼叫父類別中的self.new_with_session(params, session)方法並回傳當下的User物件
-      byebug
+      
       if data = session["devise.social_login_data"] 
-        # byebug
+    
         user.email = session["devise.social_login_data"]["info"]["email"] if user.email.blank?
         user.nickname = session["devise.social_login_data"]["info"]["name"] if user.nickname.blank?
         user.remote_photo_url = session["devise.social_login_data"]["info"]["image"] if user.photo_url.blank?
@@ -98,7 +98,7 @@ class User < ApplicationRecord
         # user.uid = session["devise.facebook_data"]["uid"] if user.uid.blank?
       end
     end
-    # byebug
+    
   end
 
 end
