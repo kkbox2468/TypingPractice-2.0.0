@@ -127,13 +127,14 @@
 }
 .check-group{
   background-color: rgba(23, 25, 44, 1);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   align-items: center;
   overflow: hidden;
+  z-index: 1;
   .check-roomname {
     position: relative;
     img{
@@ -254,10 +255,12 @@
         }
         .card-body{
           margin: 1rem 0rem;
-          .request-title p{
-            max-width: 14rem;
-            max-height: 1.4rem;
+          .request-title {
+            width: 67%;
+            white-space: nowrap;
             overflow: hidden;
+            text-shadow:  -2px -2px 2px #ffffff, 
+            2px 2px 2px #b8b8b8;;
           }
         }
         
@@ -285,21 +288,6 @@
           
         }
         
-        @media(min-width: 992px){
-          .request-title p{ 
-            max-width: 10rem;
-            max-height: 1.4rem;
-          }
-        }
-        @media(min-width: 1200px){
-          .request-title p{ 
-            max-width: 11rem;
-            max-height: 1.4rem;
-          }
-        }
-        @media (min-width: 768px) {
-          
-        }
         .post-news{
           font-size: .8rem;
         }
@@ -311,6 +299,73 @@
   h3{
     text-shadow: none;
   }
+  .swal2-popup{
+    .swal2-icon{
+      border-color: #ff67c0;
+      color: #ff67c0;
+    }
+  }
+  .swal2-actions{
+    .swal2-cancel{
+      background-color: #ff67c0;
+      border-color: #ff67c0;
+      color: white;
+      margin: 0 1rem;
+    }
+    .swal2-confirm{
+      background-color: #eec44c;
+      border-color: #eec44c;
+      margin: 0 1rem;
+      padding-left: 1.2rem;
+      padding-right: 1.2rem;
+    }
+  }
 }
 
+#rooms-edit{
+  .edit_room{
+    text-align: end;
+    padding: 1rem;
+    .rooms-submit{
+      border: none;
+    }
+    .rooms-submit:hover{
+      color: #eec44c;
+    }
+    .room-name,
+    .room-description{
+      justify-content: space-between;
+      display: flex;
+      margin: 1rem 0;
+      input{
+        width: 70%;
+        border: none;
+        border-radius: 0.25rem;
+        padding: .3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 991px){
+  #rooms-edit{
+    .edit_room{
+      text-align: end;
+      padding: 1rem;
+      .rooms-submit{
+        border: none;
+      }
+      .room-name,
+      .room-description{
+        justify-content: space-between;
+        display: flex;
+        margin: 1rem 0;
+        input{
+          border: none;
+          width: auto;
+        }
+      }
+    }
+  }
+}
 

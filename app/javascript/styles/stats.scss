@@ -29,14 +29,16 @@
 
     .user-info-nickname{
       font-size: 2rem;
+      overflow: hidden;
     }
     .user-info-edit{
       text-align: end;
       font-size: 0.5rem;
       display: flex;
-      
+      justify-content: flex-end;
       a{
         color:#ff67c0;
+        font-size: .7rem;
       }
     }
   }
@@ -64,6 +66,7 @@
   .data-title{
     margin: auto;
     margin-bottom: 3rem;
+    overflow: hidden;
   }
   .data-bt{
     margin-right: 1rem;
@@ -110,4 +113,46 @@
   border-radius: 20px;
   box-shadow: 4px 4px 5px #cfcfcf, 
               -4px -4px 5px #ffffff;
+}
+.type-log{
+  .user-stats{
+    width: -webkit-fill-available;
+  }
+}
+@media (max-width: 767px){
+  #stats-index{
+    .user-pic {
+      img{
+        max-width: 80px!important;
+        max-height: 80px!important;
+      }
+    }
+    .user-stats-info{
+      flex-direction: column;
+      .user-info {
+        padding: 1rem 0;
+      }
+      .arti_accu_line{
+        padding: 1rem 0;
+      }
+    }
+    .user-info{
+      font-size: .5rem;
+    }
+    .overflow-auto {
+      .cal-heatmap-container{
+        .graph-legend{
+          position: fixed;
+        }
+      }
+    }
+    .type-log{
+      .user-stats{
+        overflow: scroll;
+        .article-stat{
+          font-size: .5rem;
+        }
+      }
+    }
+  }
 }

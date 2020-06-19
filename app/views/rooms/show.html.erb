@@ -1,4 +1,56 @@
 <div id="<%= controller.controller_name %>-<%= controller.action_name %>">
+
+  <div class="check-group justify-content-center">
+    <div class="mt-5 check-roomname">
+      <a href="/playground/racing">
+        <img src="/icon/exit-1.svg" class="back-to-racing" alt="..." >
+      </a>
+      <h3><%= @room.name %></h3>
+    </div>
+    <div class="check-roomname" id="waitNotice">
+      <h3 class="mt-0 mb-0">Waiting...</h3>
+    </div>
+    <div id="readyHandler" class="ready-handler disappear">
+      <div class="row">
+        <div class="col-5 check-area host mx-auto">
+          <% if current_user.photo_url  %>
+            <img class="img-circle" src="<%= current_user.photo_url(:small) %>" />
+          <% else  %>
+            <img class="img-circle" src="/img/AvatarDefault.jpg"  width="200px" height="200px"/>
+          <% end  %>
+          
+          <%= form_for :check, url: "/messages/new", method: 'GET',remote: true do |f| %>
+          <div class="ready-title mb-3 text-center">
+            <%= current_user.nickname %>
+          </div>
+          <div class="ready-title mb-3 text-center">
+            Are you ready?
+          </div>
+            <%= f.label "Yes", for: 'check_content', class: 'ready-btn-host d-block text-center mt-5' %>
+          <div>
+            <%= f.check_box :content, class: 'd-none' %>
+          </div>
+          <div>
+            <%= f.hidden_field :room_id, value: @room.id %>
+            <%= f.hidden_field :user_photo, value: current_user.photo %>
+            <%= f.submit name: 'check-left', class: 'd-none' %>
+          </div>
+          <% end %>
+        </div>
+    
+        <div class="col-5 check-area guest mx-auto">
+          <div id="guest-name"></div>
+          <form>
+            <div class="ready-title ready-title-guest mb-3">Wait for competitor...</div>
+            <div class="ready-btn-guest text-center" id="readyBtnGuest">Not ready</div>
+            <input type="checkbox" id="guest-check" class="d-none">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div id="counterZone"></div>
   <h3 class="mt-3 mb-2"><%= @room.name %></h3>
   <h5 id="timeCounter">0</h5>
@@ -71,51 +123,7 @@
     <source src="/sound/keyboard_sound01.wav" type="audio/wav" > 
   </audio>
 
-  <div class="check-group justify-content-center">
-    <div class="mt-5 check-roomname">
-      <a href="/playground/racing">
-        <img src="/icon/exit-1.svg" class="back-to-racing" alt="..." >
-      </a>
-      <h3><%= @room.name %></h3>
-    </div>
-    <div class="check-roomname" id="waitNotice">
-      <h3 class="mt-0 mb-0">Waiting...</h3>
-    </div>
-    <div id="readyHandler" class="ready-handler disappear">
-      <div class="row">
-        <div class="col-5 check-area host mx-auto">
-          <img class="room-owner-pic" src="<%= current_user.photo_url(:small) %>"/>
-
-          <%= form_for :check, url: "/messages/new", method: 'GET',remote: true do |f| %>
-          <div class="ready-title mb-3 text-center">
-            <%= current_user.nickname %>
-          </div>
-          <div class="ready-title mb-3 text-center">
-            Are you ready?
-          </div>
-            <%= f.label "Yes", for: 'check_content', class: 'ready-btn-host d-block text-center mt-5' %>
-          <div>
-            <%= f.check_box :content, class: 'd-none' %>
-          </div>
-          <div>
-            <%= f.hidden_field :room_id, value: @room.id %>
-            <%= f.hidden_field :user_photo, value: current_user.photo %>
-            <%= f.submit name: 'check-left', class: 'd-none' %>
-          </div>
-          <% end %>
-        </div>
-    
-        <div class="col-5 check-area guest mx-auto">
-          <div id="guest-name"></div>
-          <form>
-            <div class="ready-title ready-title-guest mb-3">Wait for competitor...</div>
-            <div class="ready-btn-guest text-center" id="readyBtnGuest">Not ready</div>
-            <input type="checkbox" id="guest-check" class="d-none">
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
   <div class="preloader d-none">
     <div class="loader-ground">

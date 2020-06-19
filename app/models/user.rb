@@ -13,10 +13,9 @@ class User < ApplicationRecord
 
 
   
+  validates :email, presence: true, uniqueness: true
+  validates :nickname, presence: true, uniqueness: true, length: { maximum: 10 }
   
-  
-  validates_uniqueness_of :nickname
-  validates_uniqueness_of :email
 
 
   has_many :user_articles

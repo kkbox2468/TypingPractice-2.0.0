@@ -80,7 +80,7 @@ $(function(){
             checkCharacter(arrayQuote, arrayValue, inputIndex)
             if (inputIndex === arrayQuote.length) {
               Swal.fire({
-                title: '遊戲結束！',
+                title: 'GAME OVER!',
               }).then(() => {
                 window.location.replace('/playground/racing')
               })
@@ -101,12 +101,11 @@ $(function(){
         }
         if (gameStartStatus !== true && data.leave) {
           swalWithBootstrapButtons.fire({
-            title: '對手離開聊天室',
-            text: "You won't be able to revert this!",
+            title: 'Your competitor has been leaved',
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: '繼續等待',
-            cancelButtonText: '離開對戰',
+            confirmButtonText: 'Stay',
+            cancelButtonText: 'Leave',
             reverseButtons: true
           }).then((result) => {
             if (result.value) {

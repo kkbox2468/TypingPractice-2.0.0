@@ -91,13 +91,34 @@ body {
       top: 1rem;
       display: flex;
       .timer{
-        color: rgb(9, 12, 44);
-        font-size: 1rem;
+        color: #323232;
+        font-size: 1.4rem;
         font-weight: bold;
         display: flex;
+
+        .second{
+          color: #ff67c0;
+          margin-right: .5rem;
+        }
+
         .millisec{
           margin-left: 2rem;
           color: red;
+        }
+      }
+      .time-title{
+        margin-right: 1rem;
+      }
+      .speed{
+        color: #323232;
+        font-size: 1.4rem;
+        font-weight: bold;
+        display: flex;
+        margin-left: 1rem;
+        .timer{
+          color: #ff67c0;
+          margin-right: .5rem;
+          margin-left: .5rem;
         }
       }
     }
@@ -328,7 +349,7 @@ body {
 
 /* Alert */
 .swal2-actions .swal2-styled.swal2-confirm{
-  background: #f7c232;
+  background: #eec44c;
 }
 
 .swal2-footer a{
@@ -371,14 +392,14 @@ body {
 //     }
 //   }
 // }
-@media (min-width: 992px){
+@media (min-width: 768px){
   .limited-use{
     display: none;
   }
 }
 .limited-use{
   z-index: 5;
-  background-color: slategrey;
+  background-color: #323232;
   position: fixed;
   top: 0;right: 0;left: 0;bottom: 0;
   opacity: .9;
@@ -394,11 +415,13 @@ body {
     top: 0!important;
     .limited-txt{
       background-color: black;
-      color: yellow;
+      color: #eec44c;
       padding: .5rem;
       border-radius: .5rem;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 70%;      
       img{
         width: 80px;
       }
@@ -411,15 +434,15 @@ body {
       flex-direction: column;
       .back-to-homepage{
         margin-top: 1rem;
-        background-color: yellow;
-        padding: .5rem;
+        background-color: #eec44c;
+        padding: .3rem;
         border-radius: .8rem;
         a{        
-          color: darkslategrey;
+          color: #323232;
         }
         a:hover{
           text-decoration: none;
-          color: #84712d;
+          color: #ffffff;
         }
         img{
           width: 30px;
@@ -432,5 +455,11 @@ body {
         margin: 1rem;
       }
     }
+  }
+}
+
+@media (max-width: 991px){
+  .limited-use {
+    font-size: .5rem;
   }
 }

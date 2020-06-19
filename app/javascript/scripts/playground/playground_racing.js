@@ -217,7 +217,7 @@ $(function(){
         winner = userRight
       }
       Swal.fire({
-        title: '遊戲結束！',
+        title: 'GAME OVER！',
         html: '<h1> Winner is : ' + winner + '</h1>',
       }).then(() => {
         window.location.replace('/playground/racing')

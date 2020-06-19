@@ -60,7 +60,6 @@
     </div>
   </div>
 </div>
-<%= render 'shared/limited_use'%>
 
 
 <script>
@@ -98,7 +97,7 @@
 
       let timerInterval
       Swal.fire({
-        title: 'Topic has created!',
+        title: 'Created!',
         timer: 2000,
         timerProgressBar: false,
         onClose: () => {
@@ -130,7 +129,7 @@
           if (result.value) {
             Swal.fire({
               icon: 'success',
-              title: 'Your room has deleted!',
+              title: 'Deleted!',
               showConfirmButton: false,
               timer: 1500
             })

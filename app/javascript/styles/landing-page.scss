@@ -114,7 +114,9 @@ $breakpoint-md: 768px;
           }
           .col-8 {
             border-radius: 10px;
-            background-color: #eee;
+            background-color: #eec44c;
+            box-shadow:inset .2rem .2rem .3rem #caa741, 
+                        inset -.2rem -.2rem .3rem #ffe157;
             padding: 10px;
             text-align: justify;
           }
@@ -137,7 +139,7 @@ $breakpoint-md: 768px;
   }
 }
 
-// 共用區
+
 .gray-btn {
   border: none;
   background-color: #eee;
