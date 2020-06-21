@@ -49,29 +49,37 @@ class User < ApplicationRecord
   end
 
           
+  
+
   def self.from_omniauth(auth)
     
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0, 20]
-      user.nickname = auth.info.name   # assuming the user model has a name
-      # user.name = auth.info.name   # assuming the user model has a name
-      # user.image = auth.info.image # assuming the user model has an image
-      user.remote_photo_url = auth.info.image # assuming the user model has an image
-      # If you are using confirmable and the provider(s) you use validate emails, 
-      # uncomment the line below to skip the confirmation emails.
-      # user.skip_confirmation!
-    end
+    user = find_or_initialize_by(provider: auth.provider, uid: auth.uid)
+    
+    # user.email = auth.info.email
+    # user.password = Devise.friendly_token[0, 20]
+    # user.nickname = auth.info.name   # assuming the user model has a name
+    # user.remote_photo_url = auth.info.image # assuming the user model has an image
+    
+    # user.save
+    user
     
   end
 
   def self.new_with_session(params, session)
-    super.tap do |user|
     
-      if data = session["devise.facebook_data"] 
-        user.email = session["devise.facebook_data"]["info"]["email"] if user.email.blank?
+    super.tap do |user| # super會呼叫父類別中的self.new_with_session(params, session)方法並回傳當下的User物件
+      
+      if data = session["devise.social_login_data"] 
+    
+        user.email = session["devise.social_login_data"]["info"]["email"] if user.email.blank?
+        user.nickname = session["devise.social_login_data"]["info"]["name"] if user.nickname.blank?
+        user.remote_photo_url = session["devise.social_login_data"]["info"]["image"] if user.photo_url.blank?
+        user.provider = session["devise.social_login_data"]["provider"] if user.provider.blank?
+        user.uid = session["devise.social_login_data"]["uid"] if user.uid.blank?
+        
       end
     end
+    
   end
 
 end
